@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>high needs funding on My New Hugo Site</title>
+    <link>http://example.org/tags/high-needs-funding/</link>
+    <description>Recent content in high needs funding on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/tags/high-needs-funding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>High needs benchmarking tool</title>
+      <link>http://example.org/resources/high-needs-benchmarking-tool/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/high-needs-benchmarking-tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High Needs Funding (collection)</title>
+      <link>http://example.org/resources/high-needs-funding-collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/high-needs-funding-collection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High needs funding arrangements: 2019 to 2020</title>
+      <link>http://example.org/resources/high-needs-funding-arrangements-2019-to-2020/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/high-needs-funding-arrangements-2019-to-2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High needs funding arrangements: 2020 to 2021</title>
+      <link>http://example.org/resources/high-needs-funding-arrangements-2020-to-2021/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/high-needs-funding-arrangements-2020-to-2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High needs funding arrangements: 2021 to 2022</title>
+      <link>http://example.org/resources/high-needs-funding-arrangements-2021-to-2022/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/high-needs-funding-arrangements-2021-to-2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High needs: allocated place numbers</title>
+      <link>http://example.org/resources/high-needs-allocated-place-numbers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/high-needs-allocated-place-numbers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>National funding formula tables for schools and high needs: 2018 to 2019</title>
+      <link>http://example.org/resources/national-funding-formula-tables-for-schools-and-high-needs-2018-to-2019/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/national-funding-formula-tables-for-schools-and-high-needs-2018-to-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>National funding formula tables for schools and high needs: 2019 to 2020</title>
+      <link>http://example.org/resources/national-funding-formula-tables-for-schools-and-high-needs-2019-to-2020/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/national-funding-formula-tables-for-schools-and-high-needs-2019-to-2020/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

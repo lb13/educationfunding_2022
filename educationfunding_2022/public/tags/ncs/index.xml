@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ncs on My New Hugo Site</title>
+    <link>http://example.org/tags/ncs/</link>
+    <description>Recent content in ncs on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/tags/ncs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Find a course (National Careers Service)</title>
+      <link>http://example.org/resources/find-a-course-national-careers-service/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/find-a-course-national-careers-service/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Publish to the Course Directory</title>
+      <link>http://example.org/resources/publish-to-the-course-directory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/publish-to-the-course-directory/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

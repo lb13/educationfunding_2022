@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devolved authority on My New Hugo Site</title>
+    <link>http://example.org/tags/devolved-authority/</link>
+    <description>Recent content in devolved authority on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/tags/devolved-authority/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cambridgeshire and Peterborough Combined Authority (CPCA)</title>
+      <link>http://example.org/resources/cambridgeshire-and-peterborough-combined-authority-cpca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/cambridgeshire-and-peterborough-combined-authority-cpca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GLA Open Project System</title>
+      <link>http://example.org/resources/gla-open-project-system/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/gla-open-project-system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Greater London Authority (GLA)</title>
+      <link>http://example.org/resources/greater-london-authority-gla/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/greater-london-authority-gla/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Greater Manchester Combined Authority (GMCA)</title>
+      <link>http://example.org/resources/greater-manchester-combined-authority-gmca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/greater-manchester-combined-authority-gmca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Liverpool City Region Combined Authority (LCRCA)</title>
+      <link>http://example.org/resources/liverpool-city-region-combined-authority-lcrca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/liverpool-city-region-combined-authority-lcrca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>North of Tyne Combined Authority (NTCA)</title>
+      <link>http://example.org/resources/north-of-tyne-combined-authority-ntca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/north-of-tyne-combined-authority-ntca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sheffield City Region (SCR)</title>
+      <link>http://example.org/resources/sheffield-city-region-scr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/sheffield-city-region-scr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tees Valley Combined Authority (TVCA)</title>
+      <link>http://example.org/resources/tees-valley-combined-authority-tvca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/tees-valley-combined-authority-tvca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>West Midlands Combined Authority (WMCA)</title>
+      <link>http://example.org/resources/west-midlands-combined-authority-wmca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/west-midlands-combined-authority-wmca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>West of England Combined Authority (WECA)</title>
+      <link>http://example.org/resources/west-of-england-combined-authority-weca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/west-of-england-combined-authority-weca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>West Yorkshire Combined Authority (WYCA)</title>
+      <link>http://example.org/resources/west-yorkshire-combined-authority-wyca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/resources/west-yorkshire-combined-authority-wyca/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
