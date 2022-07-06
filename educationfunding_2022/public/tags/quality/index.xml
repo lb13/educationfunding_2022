@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>quality on My New Hugo Site</title>
-    <link>http://example.org/tags/quality/</link>
-    <description>Recent content in quality on My New Hugo Site</description>
+    <title>quality on Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/tags/quality/</link>
+    <description>Recent content in quality on Education Funding UK (beta)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/tags/quality/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://beta.educationfunding.uk/tags/quality/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How the ESFA measures the performance of FE providers it funds</title>
-      <link>http://example.org/resources/how-the-esfa-measures-the-performance-of-fe-providers-it-funds/</link>
+      <link>https://beta.educationfunding.uk/resources/how-the-esfa-measures-the-performance-of-fe-providers-it-funds/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/how-the-esfa-measures-the-performance-of-fe-providers-it-funds/</guid>
+      <guid>https://beta.educationfunding.uk/resources/how-the-esfa-measures-the-performance-of-fe-providers-it-funds/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Qualification achievement rates and minimum standards</title>
-      <link>http://example.org/resources/qualification-achievement-rates-and-minimum-standards/</link>
+      <link>https://beta.educationfunding.uk/resources/qualification-achievement-rates-and-minimum-standards/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/qualification-achievement-rates-and-minimum-standards/</guid>
+      <guid>https://beta.educationfunding.uk/resources/qualification-achievement-rates-and-minimum-standards/</guid>
       <description></description>
     </item>
     

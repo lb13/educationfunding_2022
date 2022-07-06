@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>traineeship funding on My New Hugo Site</title>
-    <link>http://example.org/tags/traineeship-funding/</link>
-    <description>Recent content in traineeship funding on My New Hugo Site</description>
+    <title>traineeship funding on Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/tags/traineeship-funding/</link>
+    <description>Recent content in traineeship funding on Education Funding UK (beta)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/tags/traineeship-funding/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://beta.educationfunding.uk/tags/traineeship-funding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ESFA funded 16 to 18 traineeships</title>
-      <link>http://example.org/resources/esfa-funded-16-to-18-traineeships/</link>
+      <link>https://beta.educationfunding.uk/resources/esfa-funded-16-to-18-traineeships/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/esfa-funded-16-to-18-traineeships/</guid>
+      <guid>https://beta.educationfunding.uk/resources/esfa-funded-16-to-18-traineeships/</guid>
       <description></description>
     </item>
     

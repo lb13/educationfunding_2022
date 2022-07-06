@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cdf on My New Hugo Site</title>
-    <link>http://example.org/tags/cdf/</link>
-    <description>Recent content in cdf on My New Hugo Site</description>
+    <title>cdf on Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/tags/cdf/</link>
+    <description>Recent content in cdf on Education Funding UK (beta)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/tags/cdf/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://beta.educationfunding.uk/tags/cdf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Industry placements</title>
-      <link>http://example.org/resources/industry-placements/</link>
+      <link>https://beta.educationfunding.uk/resources/industry-placements/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/industry-placements/</guid>
+      <guid>https://beta.educationfunding.uk/resources/industry-placements/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Industry placements: capacity and delivery fund (CDF) for providers delivering in the 2021 to 2022 academic year</title>
-      <link>http://example.org/resources/industry-placements-capacity-and-delivery-fund-cdf-for-providers-delivering-in-the-2021-to-2022-academic-year/</link>
+      <link>https://beta.educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-providers-delivering-in-the-2021-to-2022-academic-year/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/industry-placements-capacity-and-delivery-fund-cdf-for-providers-delivering-in-the-2021-to-2022-academic-year/</guid>
+      <guid>https://beta.educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-providers-delivering-in-the-2021-to-2022-academic-year/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Industry placements: policy framework</title>
-      <link>http://example.org/resources/industry-placements-policy-framework/</link>
+      <link>https://beta.educationfunding.uk/resources/industry-placements-policy-framework/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/industry-placements-policy-framework/</guid>
+      <guid>https://beta.educationfunding.uk/resources/industry-placements-policy-framework/</guid>
       <description></description>
     </item>
     

@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>t level funding on My New Hugo Site</title>
-    <link>http://example.org/tags/t-level-funding/</link>
-    <description>Recent content in t level funding on My New Hugo Site</description>
+    <title>t level funding on Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/tags/t-level-funding/</link>
+    <description>Recent content in t level funding on Education Funding UK (beta)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/tags/t-level-funding/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://beta.educationfunding.uk/tags/t-level-funding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How T Levels are funded</title>
-      <link>http://example.org/resources/how-t-levels-are-funded/</link>
+      <link>https://beta.educationfunding.uk/resources/how-t-levels-are-funded/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/how-t-levels-are-funded/</guid>
+      <guid>https://beta.educationfunding.uk/resources/how-t-levels-are-funded/</guid>
       <description></description>
     </item>
     
     <item>
       <title>How T Levels will be funded in academic year 2020 to 2021</title>
-      <link>http://example.org/resources/how-t-levels-will-be-funded-in-academic-year-2020-to-2021/</link>
+      <link>https://beta.educationfunding.uk/resources/how-t-levels-will-be-funded-in-academic-year-2020-to-2021/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/how-t-levels-will-be-funded-in-academic-year-2020-to-2021/</guid>
+      <guid>https://beta.educationfunding.uk/resources/how-t-levels-will-be-funded-in-academic-year-2020-to-2021/</guid>
       <description></description>
     </item>
     
     <item>
       <title>T Levels: next steps for providers</title>
-      <link>http://example.org/resources/t-levels-next-steps-for-providers/</link>
+      <link>https://beta.educationfunding.uk/resources/t-levels-next-steps-for-providers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/t-levels-next-steps-for-providers/</guid>
+      <guid>https://beta.educationfunding.uk/resources/t-levels-next-steps-for-providers/</guid>
       <description></description>
     </item>
     

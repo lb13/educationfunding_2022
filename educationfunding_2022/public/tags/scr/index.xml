@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>scr on My New Hugo Site</title>
-    <link>http://example.org/tags/scr/</link>
-    <description>Recent content in scr on My New Hugo Site</description>
+    <title>scr on Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/tags/scr/</link>
+    <description>Recent content in scr on Education Funding UK (beta)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/tags/scr/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://beta.educationfunding.uk/tags/scr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sheffield City Region (SCR)</title>
-      <link>http://example.org/resources/sheffield-city-region-scr/</link>
+      <link>https://beta.educationfunding.uk/resources/sheffield-city-region-scr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/sheffield-city-region-scr/</guid>
+      <guid>https://beta.educationfunding.uk/resources/sheffield-city-region-scr/</guid>
       <description></description>
     </item>
     

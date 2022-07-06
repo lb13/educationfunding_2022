@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>all19 on My New Hugo Site</title>
-    <link>http://example.org/tags/all19/</link>
-    <description>Recent content in all19 on My New Hugo Site</description>
+    <title>all19 on Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/tags/all19/</link>
+    <description>Recent content in all19 on Education Funding UK (beta)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/tags/all19/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://beta.educationfunding.uk/tags/all19/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Advanced learner loans funding rules 2019 to 2020</title>
-      <link>http://example.org/resources/advanced-learner-loans-funding-rules-2019-to-2020/</link>
+      <link>https://beta.educationfunding.uk/resources/advanced-learner-loans-funding-rules-2019-to-2020/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/advanced-learner-loans-funding-rules-2019-to-2020/</guid>
+      <guid>https://beta.educationfunding.uk/resources/advanced-learner-loans-funding-rules-2019-to-2020/</guid>
       <description></description>
     </item>
     

@@ -1,80 +1,80 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>higher education on My New Hugo Site</title>
-    <link>http://example.org/tags/higher-education/</link>
-    <description>Recent content in higher education on My New Hugo Site</description>
+    <title>higher education on Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/tags/higher-education/</link>
+    <description>Recent content in higher education on Education Funding UK (beta)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/tags/higher-education/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://beta.educationfunding.uk/tags/higher-education/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HESA</title>
-      <link>http://example.org/resources/hesa/</link>
+      <link>https://beta.educationfunding.uk/resources/hesa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/hesa/</guid>
+      <guid>https://beta.educationfunding.uk/resources/hesa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HESA Data Collection</title>
-      <link>http://example.org/resources/hesa-data-collection/</link>
+      <link>https://beta.educationfunding.uk/resources/hesa-data-collection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/hesa-data-collection/</guid>
+      <guid>https://beta.educationfunding.uk/resources/hesa-data-collection/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HESA Graduate Outcomes</title>
-      <link>http://example.org/resources/hesa-graduate-outcomes/</link>
+      <link>https://beta.educationfunding.uk/resources/hesa-graduate-outcomes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/hesa-graduate-outcomes/</guid>
+      <guid>https://beta.educationfunding.uk/resources/hesa-graduate-outcomes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HESA Heidi Plus</title>
-      <link>http://example.org/resources/hesa-heidi-plus/</link>
+      <link>https://beta.educationfunding.uk/resources/hesa-heidi-plus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/hesa-heidi-plus/</guid>
+      <guid>https://beta.educationfunding.uk/resources/hesa-heidi-plus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HESA Identity System</title>
-      <link>http://example.org/resources/hesa-identity-system/</link>
+      <link>https://beta.educationfunding.uk/resources/hesa-identity-system/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/hesa-identity-system/</guid>
+      <guid>https://beta.educationfunding.uk/resources/hesa-identity-system/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NSS eXtranet</title>
-      <link>http://example.org/resources/nss-extranet/</link>
+      <link>https://beta.educationfunding.uk/resources/nss-extranet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/nss-extranet/</guid>
+      <guid>https://beta.educationfunding.uk/resources/nss-extranet/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OfS Portal</title>
-      <link>http://example.org/resources/ofs-portal/</link>
+      <link>https://beta.educationfunding.uk/resources/ofs-portal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/ofs-portal/</guid>
+      <guid>https://beta.educationfunding.uk/resources/ofs-portal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OfS Portal User Administration</title>
-      <link>http://example.org/resources/ofs-portal-user-administration/</link>
+      <link>https://beta.educationfunding.uk/resources/ofs-portal-user-administration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/ofs-portal-user-administration/</guid>
+      <guid>https://beta.educationfunding.uk/resources/ofs-portal-user-administration/</guid>
       <description></description>
     </item>
     

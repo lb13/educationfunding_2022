@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>eas on My New Hugo Site</title>
-    <link>http://example.org/tags/eas/</link>
-    <description>Recent content in eas on My New Hugo Site</description>
+    <title>eas on Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/tags/eas/</link>
+    <description>Recent content in eas on Education Funding UK (beta)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/tags/eas/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://beta.educationfunding.uk/tags/eas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Earnings adjustment statement (EAS)</title>
-      <link>http://example.org/resources/earnings-adjustment-statement-eas/</link>
+      <link>https://beta.educationfunding.uk/resources/earnings-adjustment-statement-eas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/earnings-adjustment-statement-eas/</guid>
+      <guid>https://beta.educationfunding.uk/resources/earnings-adjustment-statement-eas/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Submit Learner Data</title>
-      <link>http://example.org/resources/submit-learner-data/</link>
+      <link>https://beta.educationfunding.uk/resources/submit-learner-data/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/submit-learner-data/</guid>
+      <guid>https://beta.educationfunding.uk/resources/submit-learner-data/</guid>
       <description></description>
     </item>
     

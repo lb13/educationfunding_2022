@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>office for students on My New Hugo Site</title>
-    <link>http://example.org/tags/office-for-students/</link>
-    <description>Recent content in office for students on My New Hugo Site</description>
+    <title>office for students on Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/tags/office-for-students/</link>
+    <description>Recent content in office for students on Education Funding UK (beta)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/tags/office-for-students/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://beta.educationfunding.uk/tags/office-for-students/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Office for Students (OfS)</title>
-      <link>http://example.org/resources/office-for-students-ofs/</link>
+      <link>https://beta.educationfunding.uk/resources/office-for-students-ofs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/office-for-students-ofs/</guid>
+      <guid>https://beta.educationfunding.uk/resources/office-for-students-ofs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OfS Portal</title>
-      <link>http://example.org/resources/ofs-portal/</link>
+      <link>https://beta.educationfunding.uk/resources/ofs-portal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/ofs-portal/</guid>
+      <guid>https://beta.educationfunding.uk/resources/ofs-portal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OfS Portal User Administration</title>
-      <link>http://example.org/resources/ofs-portal-user-administration/</link>
+      <link>https://beta.educationfunding.uk/resources/ofs-portal-user-administration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/ofs-portal-user-administration/</guid>
+      <guid>https://beta.educationfunding.uk/resources/ofs-portal-user-administration/</guid>
       <description></description>
     </item>
     

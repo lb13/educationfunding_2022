@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gla on My New Hugo Site</title>
-    <link>http://example.org/tags/gla/</link>
-    <description>Recent content in gla on My New Hugo Site</description>
+    <title>gla on Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/tags/gla/</link>
+    <description>Recent content in gla on Education Funding UK (beta)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/tags/gla/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://beta.educationfunding.uk/tags/gla/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GLA Open Project System</title>
-      <link>http://example.org/resources/gla-open-project-system/</link>
+      <link>https://beta.educationfunding.uk/resources/gla-open-project-system/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/gla-open-project-system/</guid>
+      <guid>https://beta.educationfunding.uk/resources/gla-open-project-system/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Greater London Authority (GLA)</title>
-      <link>http://example.org/resources/greater-london-authority-gla/</link>
+      <link>https://beta.educationfunding.uk/resources/greater-london-authority-gla/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/greater-london-authority-gla/</guid>
+      <guid>https://beta.educationfunding.uk/resources/greater-london-authority-gla/</guid>
       <description></description>
     </item>
     

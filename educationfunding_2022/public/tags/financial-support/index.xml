@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>financial support on My New Hugo Site</title>
-    <link>http://example.org/tags/financial-support/</link>
-    <description>Recent content in financial support on My New Hugo Site</description>
+    <title>financial support on Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/tags/financial-support/</link>
+    <description>Recent content in financial support on Education Funding UK (beta)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/tags/financial-support/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://beta.educationfunding.uk/tags/financial-support/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>16 to 19 bursary fund guide 2020 to 2021 academic year</title>
-      <link>http://example.org/resources/16-to-19-bursary-fund-guide-2020-to-2021-academic-year/</link>
+      <link>https://beta.educationfunding.uk/resources/16-to-19-bursary-fund-guide-2020-to-2021-academic-year/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/16-to-19-bursary-fund-guide-2020-to-2021-academic-year/</guid>
+      <guid>https://beta.educationfunding.uk/resources/16-to-19-bursary-fund-guide-2020-to-2021-academic-year/</guid>
       <description></description>
     </item>
     
     <item>
       <title>16 to 19 education: financial support for students</title>
-      <link>http://example.org/resources/16-to-19-education-financial-support-for-students/</link>
+      <link>https://beta.educationfunding.uk/resources/16-to-19-education-financial-support-for-students/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/16-to-19-education-financial-support-for-students/</guid>
+      <guid>https://beta.educationfunding.uk/resources/16-to-19-education-financial-support-for-students/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Free meals in further education funded institutions: guide for the 2020 to 2021 academic year</title>
-      <link>http://example.org/resources/free-meals-in-further-education-funded-institutions-guide-for-the-2020-to-2021-academic-year/</link>
+      <link>https://beta.educationfunding.uk/resources/free-meals-in-further-education-funded-institutions-guide-for-the-2020-to-2021-academic-year/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/free-meals-in-further-education-funded-institutions-guide-for-the-2020-to-2021-academic-year/</guid>
+      <guid>https://beta.educationfunding.uk/resources/free-meals-in-further-education-funded-institutions-guide-for-the-2020-to-2021-academic-year/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learner Support</title>
-      <link>http://example.org/resources/learner-support/</link>
+      <link>https://beta.educationfunding.uk/resources/learner-support/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/resources/learner-support/</guid>
+      <guid>https://beta.educationfunding.uk/resources/learner-support/</guid>
       <description></description>
     </item>
     
