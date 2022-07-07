@@ -140,7 +140,7 @@
                                     let tagsHTML = '';
 
                                     page.tags.forEach(function(tag){
-                                        tagsHTML += "<a href=\"/tags/" + tag.replace(' ','-') + "\" class=\"tag mr-2\">" + tag + "</a>";
+                                        tagsHTML += "<a href=\"/tags/" + tag.replace(/ /g,'-') + "\" class=\"tag mr-2\">" + tag + "</a>";
                                     })
                                     
                                     let resultHTML = "<li class='elbi-results-item'><span style=\"display: inline-block; background-color: #FFC300; color: #403100; border: 1px solid #403100; padding: 5px; margin-top: 5px; margin-bottom: 10px; border-radius: 5px\">" + page.section + "</span><h2 style='font-size: 1.5rem; font-weight: 800;'>" + page.title + "</h2><p>" + page.description + "</p><a class=\"button my-2 mr-2\" href='" + page.link + "'>Go to Resource</a><a class=\"button is-dark my-2\" href=\"" + page.permalink + "\">More Details</a><p style='margin-top: 5px'>" + tagsHTML + "</p></li>";

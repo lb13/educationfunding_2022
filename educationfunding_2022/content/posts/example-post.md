@@ -1,3 +1,4 @@
 ---
-title: This is an example post page
+Tags: []
+Title: This is an example post page
 ---

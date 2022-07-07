@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Education Funding UK (beta)</title>
-    <link>https://beta.educationfunding.uk/posts/</link>
-    <description>Recent content in Posts on Education Funding UK (beta)</description>
+    <title>posts on Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/tags/posts/</link>
+    <description>Recent content in posts on Education Funding UK (beta)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 20 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://beta.educationfunding.uk/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://beta.educationfunding.uk/tags/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What is the National Skills Fund?</title>
       <link>https://beta.educationfunding.uk/posts/what-is-the-national-skills-fund/</link>
@@ -72,15 +72,6 @@ Find a Learning Aim This is a new government service which you can use to search
       <description>Hello, this is a quick post to say hello!
 After working in the field of education funding for several years, I have amassed a prodigious list of bookmarks - and every year the list grows as more resources are published, new organisations emerge, and new web services are developed.
 It was becoming tricky to keep track of all these links, and trickier still to make them available to colleagues in a simple and straightforward way.</description>
-    </item>
-    
-    <item>
-      <title>This is an example post page</title>
-      <link>https://beta.educationfunding.uk/posts/example-post/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://beta.educationfunding.uk/posts/example-post/</guid>
-      <description></description>
     </item>
     
   </channel>
