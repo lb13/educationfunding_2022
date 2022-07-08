@@ -138,13 +138,19 @@
             
                                 
                                 filteredPages.forEach(function(page) {
+                                    
                                     let tagsHTML = '';
-
                                     page.tags.forEach(function(tag){
                                         tagsHTML += "<a href=\"/tags/" + tag.replace(/ /g,'-') + "\" class=\"tag mr-2\">" + tag + "</a>";
                                     })
+
+                                    let linkAddress = '';
+                                    if ( page.link == null ) { linkAddress = page.permalink } else { linkAddress = page.link };
                                     
-                                    let resultHTML = "<li class='elbi-results-item'><span style=\"display: inline-block; background-color: #FFC300; color: #403100; border: 1px solid #403100; padding: 5px; margin-top: 5px; margin-bottom: 10px; border-radius: 5px\">" + page.section + "</span><h2 style='font-size: 1.5rem; font-weight: 800;'>" + page.title + "</h2><p>" + page.description + "</p><a class=\"button my-2 mr-2\" href='" + page.link + "'>Go to Resource</a><a class=\"button is-dark my-2\" href=\"" + page.permalink + "\">More Details</a><p style='margin-top: 5px'>" + tagsHTML + "</p></li>";
+                                    
+                                    let buttonText = "Go to " + page.section.charAt(0).toUpperCase() + page.section.slice(1,page.section.length - 1);
+
+                                    let resultHTML = "<li class='elbi-results-item'><span style=\"display: inline-block; background-color: #FFC300; color: #403100; border: 1px solid #403100; padding: 5px; margin-top: 5px; margin-bottom: 10px; border-radius: 5px\">" + page.section + "</span><h2 style='font-size: 1.5rem; font-weight: 800;'>" + page.title + "</h2><p>" + page.description + "</p><a class=\"button my-2 mr-2\" href='" + linkAddress + "'>" + buttonText + "</a><a class=\"button is-dark my-2\" href=\"" + page.permalink + "\">More Details</a><p style='margin-top: 5px'>" + tagsHTML + "</p></li>";
                                     results.insertAdjacentHTML("beforeend",resultHTML);
             
                                     if (display_score == true) {
