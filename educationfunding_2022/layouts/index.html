@@ -19,7 +19,10 @@
             <h1 class="is-size-1">Education Funding v2 (beta)</h1>
 
             <div class="notification my-4">
-              This is going to look a bit different when it's finished...
+              <p>Hi! 👋 This version of the site is in development, keep checking back for updates.</p>
+              <p><strong>Latest build: {{ now }}</strong></p>
+              <br>
+              <p><a href="https://educationfunding.uk">Click here to go back to the current version.</a></p>
             </div>
 
             <style>
@@ -34,135 +37,124 @@
                 }
             </style>
             
-            <div>
+            <div class="my-5">
                 <input type="search" class="input is-size-4" id="elbi-input" placeholder="Search the site..." autofocus />
                 <ul id="elbi-results"></ul>
             </div>
             
-            <script>
-                const input = document.getElementById("elbi-input");
-                const results = document.getElementById("elbi-results");
-                const request = new Request("/index.json");
-                const display_score = false; // Set to true if you want to see the score in the results
-            
-                fetch(request)
-                    .then(response => response.json())
-                    .then(data => {
-                        let pages = data;
-            
-                        input.addEventListener("input",function(){
-                            let filteredPages = pages;
-                            results.innerHTML = "";
-            
-                            // If there is something in the search field
-                            if (input.value != ""){
-            
-                                // Reset the page score to zero
-                                filteredPages.forEach(function(page) {
-                                    page.score = 0;
-                                });
-            
-                                // Create array of search terms, split by space character
-                                // Normalize and replace diacritics
-                                let searchterms = input.value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().split(" ");
-            
-                                // Apply a filter to the array of pages for each search term
-                                searchterms.forEach(function(term) {
-                                    if (term != "") {
-                                        filteredPages = filteredPages.filter(function(page) {
-                                            // The description is the full object, includes title, tags, categories, and summary text
-                                            // You could make this more specific by doing something like:
-                                            // let description = page.title;
-                                            // or you could combine fields, for example page title and tags:
-                                            // let description = page.title + ' ' + JSON.stringify(page.tags)
-                                            let description = JSON.stringify(page);
-                                            return description.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().indexOf(term) !== -1;
-                                        });
-                                    }
-                                }); // end of filter for loop
-            
-                                // Apply weighting to the results
-                                searchterms.forEach(function(term) {
-                                    if (term != "") {
-                                        // Loop through each page in the array
-                                        filteredPages.forEach(function(page) {
-            
-                                            // Assign 3 points for search term in title
-                                            if (page.title.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().includes(term)) {
-                                                page.score += 3
-                                            };
-            
-                                            // Assign 2 points for search term in tags
-                                            if (JSON.stringify(page.tags).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().includes(term)) {
-                                                page.score += 2
-                                            };
-            
-                                            // Assign 1 point for search term in summary
-                                            if (page.description.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().includes(term)) {
-                                                page.score += 1
-                                            };
-            
-                                            // Assign 1 point for search term in the page categories
-                                            if (JSON.stringify(page.categories).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().includes(term)) {
-                                                page.score += 1
-                                            };
-                                        })
-                                    };                                      
-                                });
-            
-                                // Filter out any pages that don't have a score of at least 1
-                                filteredPages = filteredPages.filter(function(page){
-                                    return page.score > 0;
-                                })
-            
-                                // sort filtered results by title
-                                // borrowed from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-                                filteredPages.sort(function(a, b) {
-                                    const titleA = a.title.toUpperCase(); // ignore upper and lowercase
-                                    const titleB = b.title.toUpperCase(); // ignore upper and lowercase
-                                    if (titleA < titleB) {
-                                        return -1;
-                                    }
-                                    if (titleA > titleB) {
-                                        return 1;
-                                    }
-                                    // titles must be equal
-                                    return 0;
-                                });
-                                
-                                // then sort by page score
-                                filteredPages.sort(function(a, b) {
-                                    return b.score - a.score;
-                                });
-            
-                                // For each of the pages in the final filtered list, insert into the results list
-                                filteredPages.forEach(function(page) {
-                                    
-                                    let tagsHTML = '';
-                                    page.tags.forEach(function(tag){
-                                        tagsHTML += "<a href=\"/tags/" + tag.replace(/ /g,'-') + "\" class=\"tag mr-2\">" + tag + "</a>";
-                                    })
+            <script src="/js/elbisearch.js"></script>
 
-                                    let linkAddress = '';
-                                    if ( page.link == null ) { linkAddress = page.permalink } else { linkAddress = page.link };
-                                    
-                                    // Capitalise first letter of section name, depluralise
-                                    let buttonText = "Go to " + page.section.charAt(0).toUpperCase() + page.section.slice(1,page.section.length - 1);
+            <div class="columns">
 
-                                    let resultHTML = "<li class='elbi-results-item'><span style=\"display: inline-block; background-color: #FFC300; color: #403100; border: 1px solid #403100; padding: 5px; margin-top: 5px; margin-bottom: 10px; border-radius: 5px\">" + page.section + "</span><h2 style='font-size: 1.5rem; font-weight: 800;'>" + page.title + "</h2><p>" + page.description + "</p><a class=\"button my-2 mr-2\" href='" + linkAddress + "'>" + buttonText + "</a><a class=\"button is-dark my-2\" href=\"" + page.permalink + "\">More Details</a><p style='margin-top: 5px'>" + tagsHTML + "</p></li>";
-                                    results.insertAdjacentHTML("beforeend",resultHTML);
-            
-                                    if (display_score == true) {
-                                        results.insertAdjacentHTML("beforeend","<p>Result score: " + page.score + "</p>")
-                                    };
-            
-                                }); // end of page for loop
-            
-                            }; // end of IF
-                            
-                        }); // end of event listener
-                    });
-            </script>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <h1>14-16 Funding</h1>
+                                <p>Funding for learners aged 14-15 when they begin their studies, enrolled at further education training providers.</p>
+                            </div><!-- end of content -->
+                        </div><!-- end of card-content -->
+                    </div><!-- end of card -->
+                </div><!-- end of column -->
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <h1>16-19 Programme Funding</h1>
+                                <p>Funding for those aged 16-18 when they begin their studies, or 19-24 with an EHCP.</p>
+                            </div><!-- end of content -->
+                        </div><!-- end of card-content -->
+                    </div><!-- end of card -->
+                </div><!-- end of column -->
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <h1>Adult Education Budget</h1>
+                                <p>Qualification-based funding for those aged 19 or older.</p>
+                            </div><!-- end of content -->
+                        </div><!-- end of card-content -->
+                    </div><!-- end of card -->
+                </div><!-- end of column -->
+
+            </div><!-- end of columns -->
+
+            <div class="columns">
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <h1>Apprenticeship Funding</h1>
+                                <p>Work-based learning with off-the-job training and development.</p>
+                            </div><!-- end of content -->
+                        </div><!-- end of card-content -->
+                    </div><!-- end of card -->
+                </div><!-- end of column -->
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <h1>Higher Education</h1>
+                                <p>Funding for study at level 4 and above.</p>
+                            </div><!-- end of content -->
+                        </div><!-- end of card-content -->
+                    </div><!-- end of card -->
+                </div><!-- end of column -->
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <h1>Higher Technical Qualifications</h1>
+                                <p>Level 4 and 5 qualifications aligned to occupational standards.</p>
+                            </div><!-- end of content -->
+                        </div><!-- end of card-content -->
+                    </div><!-- end of card -->
+                </div><!-- end of column -->
+
+            </div><!-- end of columns -->
+
+            <div class="columns">
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <h1>Skills Bootcamps</h1>
+                                <p>Short courses designed to build up sector-specific skills and fast-track learners to an interview with a local employer.</p>
+                            </div><!-- end of content -->
+                        </div><!-- end of card-content -->
+                    </div><!-- end of card -->
+                </div><!-- end of column -->
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <h1>T Levels</h1>
+                                <p>Vocational study programmes with a strong focus on work preparation.</p>
+                            </div><!-- end of content -->
+                        </div><!-- end of card-content -->
+                    </div><!-- end of card -->
+                </div><!-- end of column -->
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <h1>Traineeship Funding</h1>
+                                <p>Study programmes with high levels of work experience and preparation, designed to get learners into employment, an apprenticeship, or further study.</p>
+                            </div><!-- end of content -->
+                        </div><!-- end of card-content -->
+                    </div><!-- end of card -->
+                </div><!-- end of column -->
+
+            </div><!-- end of columns -->
+
         </div>
     </div>
         
