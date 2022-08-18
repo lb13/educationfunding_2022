@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Education Funding UK (beta)
+    </title>
+    <link rel="stylesheet" href="/css/bulma.css">
+  </head>
+  <body>
+    <navbar><a href="/">Home</a> | <a href="/posts/">Posts</a> | <a href="/resources/">Resources</a> | <a href="/funding-assessment">Funding Assessment</a></navbar>
+    
+
+<h1 class="is-size-1">Funding Lookup v0.1</h1>
+
+<div class="container">
+    <div class="columns">
+        <div id="learner-data-collection" class="column">
+
+            <form>
+                <h2 class="is-size-2">
+                    Learner details
+                </h2>
+
+                <div class="field">
+                    <label class="label">How old are you?</label>
+                    <div class="control">
+                        <input class="input learner-input" type="number" step="1" id="age"/>
+                    </div>
+                    <p class="help">We need to know your age on the day you plan to start your course.</p>
+                </div>
+
+                <div class="field">
+                    <label class="label">EHCP</label>
+                    <div class="control">
+                        <select class="learner-input" id=hasEHCP>
+                            <option value=></option>
+                            <option value=Yes>Yes</option>
+                            <option value=No>No</option>
+                        </select>
+                    </div>
+                    <p class="help">Do you have an Education, Health & Care Plan? This would normally be set up while you are at school.</p>
+                </div>
+                
+                <label>
+                Achieved GCSE English Grade C/4
+                    <select class="learner-input" id=achievedEnglishGrade4>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+                
+                <label>
+                Achieved GCSE Maths Grade C/4
+                    <select class="learner-input" id=achievedMathsGrade4>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Digital skills assessed at below level 1
+                    <select class="learner-input" id=digitalSkillsBelowLevel1>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Level 2 qualification using WECA level 2 retraining offer
+                    <select class="learner-input" id=spentWECAL2RetrainingOffer>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Level 3 qualification using WECA level 3 retraining offer
+                    <select class="learner-input" id=spentWECAL3RetrainingOffer>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Qualified at level 4 or above
+                    <select class="learner-input" id=achievedLevel4Plus>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Legal Entitlement Level 2 Qualification
+                    <select class="learner-input" id=achievedFullLevel2>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Legal Entitlement Level 3 Qualification
+                    <select class="learner-input" id=achievedFullLevel3>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Short FCFJ Qualification
+                    <select class="learner-input" id=achievedShortFCFJ>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Full FCFJ Qualification
+                    <select class="learner-input" id=achievedFullFCFJ>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Full FCFJ Qualification Achieved Prior to 2021-04-01
+                    <select class="learner-input" id=achievedFullFCFJPriorToApril2021>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Legal Entitlement Level 3 Qualification Prior to 2021-04-01
+                    <select class="learner-input" id=achievedFullLevel3PriorToApril2021>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Meets Unemployed Definition
+                    <select class="learner-input" id=meetsUnemployedDefinition>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Is Employed
+                    <select class="learner-input" id=isEmployed>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Is Low Wage
+                    <select class="learner-input" id=isLowWage>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Is Receiving Benefits
+                    <select class="learner-input" id=isReceivingBenefits>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+                    
+            </form>
+        </div>
+        <div id="results" class="column"></div>
+    </div>
+</div>
+
+    <script>
+        const learner = {"objectName":"learner"};
+        const results = document.getElementById("results");
+        const request = new Request("/data/scenarios.json");
+        
+        document.querySelectorAll('.learner-input').forEach(item => {
+            item.addEventListener('change', event => {
+                let property = item.id; 
+                let value = item.value; 
+                learner[property] = value; 
+                console.log(learner); 
+
+                fetch(request)
+                    .then(response => response.json())
+                    .then(data => {
+                        let scenarios = data;
+                        let filteredScenarios = scenarios;
+                        results.innerHTML = "";
+
+                        filteredScenarios.forEach(function(scenario) {
+                            scenario.score = 0;
+                            scenario.targetScore = scenario.conditions.length + 2;
+
+                            if (learner.age >= scenario.minAge) {
+                                scenario.score += 1;
+                            };
+
+                            if (learner.age <= scenario.maxAge) {
+                                scenario.score += 1;
+                            };
+
+                            scenario.conditions.forEach(function(condition) {
+                                let cn = condition.conditionName; 
+                                let cv = condition.conditionValue; 
+
+                                if (cv == learner[cn]) {
+                                    
+                                    scenario.score += 1;
+                                } else {
+                                    
+                                }
+
+                            })
+
+                            
+                        });
+
+                        filteredScenarios = filteredScenarios.filter(function(scenario){
+                            return scenario.score == scenario.targetScore;
+                        });
+
+                        filteredScenarios.sort(function(a, b) {
+                            const titleA = a.name.toUpperCase(); 
+                            const titleB = b.name.toUpperCase(); 
+                            if (titleA < titleB) {
+                                return -1;
+                            }
+                            if (titleA > titleB) {
+                                return 1;
+                            }
+                            
+                            return 0;
+                        });
+
+                        filteredScenarios.sort(function(a, b) {
+                            return a.ffi - b.ffi;
+                        });
+
+                        console.log('------------------------');
+
+                        filteredScenarios.forEach(function(scenario) {
+                            console.log(scenario.name + ': ' + scenario.score + ' out of '+ scenario.targetScore);
+
+                            let resultsHTML = "<div style=\"border: 1px dotted black; padding: 5px; margin: 5px\"><h1>"+scenario.name+"</h1><p>Congrats, you can use this funding option.</p></div>";
+
+                            results.insertAdjacentHTML("beforeend",resultsHTML);
+                        })
+                    })
+                })
+        })
+
+    </script>
+
+
+    
+    
+  </body>
+</html>
