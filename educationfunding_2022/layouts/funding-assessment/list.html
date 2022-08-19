@@ -1,7 +1,5 @@
 {{ define "main" }}
 
-
-
 <div class="container">
     <div class="container is-fluid">
         <h1 class="is-size-1">Funding Lookup v0.1</h1>
@@ -409,116 +407,116 @@
     </div>
 </div>
 
-    <script>
-        const learner = {"objectName":"learner"};
-        const results = document.getElementById("results");
-        const request = new Request("/data/scenarios.json");
-        const questions = document.querySelectorAll(".learner-input");
-        const questionArray = Array.from(questions);
-        const counterMessages = document.querySelectorAll(".counter-message");
-        
-        document.querySelectorAll('.learner-input').forEach(item => {
-            item.addEventListener('change', event => {
-                let property = item.id; // input id is used as the property name for the learner
-                let value = item.value; // input value is used as the property value for the learner
-                learner[property] = value; // adds the new property as a key:value pair
-                console.log(learner); // report learner object in console with all new additions
+<script>
+    const learner = {"objectName":"learner"};
+    const results = document.getElementById("results");
+    const request = new Request("/data/scenarios.json");
+    const questions = document.querySelectorAll(".learner-input");
+    const questionArray = Array.from(questions);
+    const counterMessages = document.querySelectorAll(".counter-message");
+    
+    document.querySelectorAll('.learner-input').forEach(item => {
+        item.addEventListener('change', event => {
+            let property = item.id; // input id is used as the property name for the learner
+            let value = item.value; // input value is used as the property value for the learner
+            learner[property] = value; // adds the new property as a key:value pair
+            console.log(learner); // report learner object in console with all new additions
 
-                fetch(request)
-                    .then(response => response.json())
-                    .then(data => {
-                        let scenarios = data;
-                        let filteredScenarios = scenarios;
-                        results.innerHTML = "";
+            fetch(request)
+                .then(response => response.json())
+                .then(data => {
+                    let scenarios = data;
+                    let filteredScenarios = scenarios;
+                    results.innerHTML = "";
 
-                        filteredScenarios.forEach(function(scenario) {
-                            scenario.score = 0;
-                            scenario.targetScore = scenario.conditions.length + 2;
+                    filteredScenarios.forEach(function(scenario) {
+                        scenario.score = 0;
+                        scenario.targetScore = scenario.conditions.length + 2;
 
-                            if (learner.age >= scenario.minAge) {
+                        if (learner.age >= scenario.minAge) {
+                            scenario.score += 1;
+                        };
+
+                        if (learner.age <= scenario.maxAge) {
+                            scenario.score += 1;
+                        };
+
+                        scenario.conditions.forEach(function(condition) {
+                            let cn = condition.conditionName; // e.g. hasEHCP
+                            let cv = condition.conditionValue; // e.g. Yes
+
+                            if (cv == learner[cn]) {
+                                //console.log('Meets criteria ' + cn);
                                 scenario.score += 1;
-                            };
-
-                            if (learner.age <= scenario.maxAge) {
-                                scenario.score += 1;
-                            };
-
-                            scenario.conditions.forEach(function(condition) {
-                                let cn = condition.conditionName; // e.g. hasEHCP
-                                let cv = condition.conditionValue; // e.g. Yes
-
-                                if (cv == learner[cn]) {
-                                    //console.log('Meets criteria ' + cn);
-                                    scenario.score += 1;
-                                } else {
-                                    //console.log('Does not meet criteria ' + cn);
-                                }
-
-                            })
-
-                            
-                        });
-
-                        filteredScenarios = filteredScenarios.filter(function(scenario){
-                            return scenario.score == scenario.targetScore;
-                        });
-
-                        filteredScenarios.sort(function(a, b) {
-                            const titleA = a.name.toUpperCase(); // ignore upper and lowercase
-                            const titleB = b.name.toUpperCase(); // ignore upper and lowercase
-                            if (titleA < titleB) {
-                                return -1;
+                            } else {
+                                //console.log('Does not meet criteria ' + cn);
                             }
-                            if (titleA > titleB) {
-                                return 1;
-                            }
-                            // titles must be equal
-                            return 0;
-                        });
-
-                        filteredScenarios.sort(function(a, b) {
-                            return a.ffi - b.ffi;
-                        });
-
-                        console.log('------------------------');
-
-                        filteredScenarios.forEach(function(scenario) {
-                            console.log(scenario.name + ': ' + scenario.score + ' out of '+ scenario.targetScore);
-
-                            let bgColor;
-                            if (scenario.ffi == 1) { bgColor = "green" } else if (scenario.ffi == 2) { bgColor = "gold" } else { bgColor = "#921515" };
-
-                            let resultsHTML = "<div style=\"border: 1px dotted black; padding: 5px; margin: 5px; border-top: 5px solid "+ bgColor + "\"><h1 class=\"is-size-3\"><strong>"+scenario.name+"</strong></h1><p>Congrats, you can use this funding option.</p></div>";
-
-                            results.insertAdjacentHTML("beforeend",resultsHTML);
 
                         })
 
-                    })
-
-                    console.log(questionArray);
-
-                    remainingQuestions = questionArray.filter(function(question){
-                        return question.value == "";
-                    }).length;
-                    
-                    counterMessages.forEach(function(message){
-                        message.classList.add("has-text-danger")
-
-                        if(remainingQuestions == 0) {
-                            message.innerHTML = 'You have answered all questions!';
-                            message.classList.remove("has-text-danger");
-                            message.classList.add("has-text-success")
-                        } else if (remainingQuestions == 1) {
-                            message.innerHTML = 'You have 1 unanswered question'
-                        } else {
-                            message.innerHTML = 'You have ' + remainingQuestions + ' unanswered questions.';
-                        }
                         
+                    });
+
+                    filteredScenarios = filteredScenarios.filter(function(scenario){
+                        return scenario.score == scenario.targetScore;
+                    });
+
+                    filteredScenarios.sort(function(a, b) {
+                        const titleA = a.name.toUpperCase(); // ignore upper and lowercase
+                        const titleB = b.name.toUpperCase(); // ignore upper and lowercase
+                        if (titleA < titleB) {
+                            return -1;
+                        }
+                        if (titleA > titleB) {
+                            return 1;
+                        }
+                        // titles must be equal
+                        return 0;
+                    });
+
+                    filteredScenarios.sort(function(a, b) {
+                        return a.ffi - b.ffi;
+                    });
+
+                    console.log('------------------------');
+
+                    filteredScenarios.forEach(function(scenario) {
+                        console.log(scenario.name + ': ' + scenario.score + ' out of '+ scenario.targetScore);
+
+                        let bgColor;
+                        if (scenario.ffi == 1) { bgColor = "green" } else if (scenario.ffi == 2) { bgColor = "gold" } else { bgColor = "#921515" };
+
+                        let resultsHTML = "<div style=\"border: 1px dotted black; padding: 5px; margin: 5px; border-top: 5px solid "+ bgColor + "\"><h1 class=\"is-size-3\"><strong>"+scenario.name+"</strong></h1><p>Congrats, you can use this funding option.</p></div>";
+
+                        results.insertAdjacentHTML("beforeend",resultsHTML);
+
                     })
 
                 })
-        })
 
-    </script>
+                console.log(questionArray);
+
+                remainingQuestions = questionArray.filter(function(question){
+                    return question.value == "";
+                }).length;
+                
+                counterMessages.forEach(function(message){
+                    message.classList.add("has-text-danger")
+
+                    if(remainingQuestions == 0) {
+                        message.innerHTML = 'You have answered all questions!';
+                        message.classList.remove("has-text-danger");
+                        message.classList.add("has-text-success")
+                    } else if (remainingQuestions == 1) {
+                        message.innerHTML = 'You have 1 unanswered question'
+                    } else {
+                        message.innerHTML = 'You have ' + remainingQuestions + ' unanswered questions.';
+                    }
+                    
+                })
+
+            })
+    })
+
+</script>
 {{ end }}
