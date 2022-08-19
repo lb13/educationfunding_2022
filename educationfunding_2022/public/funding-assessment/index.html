@@ -8,6 +8,9 @@
         Education Funding UK (beta)
     </title>
     <link rel="stylesheet" href="/css/bulma.css">
+    <script defer type="text/javascript" src="https://api.pirsch.io/pirsch.js"
+    id="pirschjs"
+    data-code="myjGlUjcMVgwoSq0QvTJr7eb0Fjb0dWf"></script>
   </head>
   <body>
     <nav class="navbar is-dark mb-5" role="navigation" aria-label="main navigation">
@@ -16,14 +19,14 @@
         EFUK
       </a>
   
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
   
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div id="navMenu" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="/">
           Home
@@ -61,8 +64,6 @@
     </div>
   </nav>
     
-
-
 
 <div class="container">
     <div class="container is-fluid">
@@ -471,121 +472,122 @@
     </div>
 </div>
 
-    <script>
-        const learner = {"objectName":"learner"};
-        const results = document.getElementById("results");
-        const request = new Request("/data/scenarios.json");
-        const questions = document.querySelectorAll(".learner-input");
-        const questionArray = Array.from(questions);
-        const counterMessages = document.querySelectorAll(".counter-message");
-        
-        document.querySelectorAll('.learner-input').forEach(item => {
-            item.addEventListener('change', event => {
-                let property = item.id; 
-                let value = item.value; 
-                learner[property] = value; 
-                console.log(learner); 
+<script>
+    const learner = {"objectName":"learner"};
+    const results = document.getElementById("results");
+    const request = new Request("/data/scenarios.json");
+    const questions = document.querySelectorAll(".learner-input");
+    const questionArray = Array.from(questions);
+    const counterMessages = document.querySelectorAll(".counter-message");
+    
+    document.querySelectorAll('.learner-input').forEach(item => {
+        item.addEventListener('change', event => {
+            let property = item.id; 
+            let value = item.value; 
+            learner[property] = value; 
+            console.log(learner); 
 
-                fetch(request)
-                    .then(response => response.json())
-                    .then(data => {
-                        let scenarios = data;
-                        let filteredScenarios = scenarios;
-                        results.innerHTML = "";
+            fetch(request)
+                .then(response => response.json())
+                .then(data => {
+                    let scenarios = data;
+                    let filteredScenarios = scenarios;
+                    results.innerHTML = "";
 
-                        filteredScenarios.forEach(function(scenario) {
-                            scenario.score = 0;
-                            scenario.targetScore = scenario.conditions.length + 2;
+                    filteredScenarios.forEach(function(scenario) {
+                        scenario.score = 0;
+                        scenario.targetScore = scenario.conditions.length + 2;
 
-                            if (learner.age >= scenario.minAge) {
+                        if (learner.age >= scenario.minAge) {
+                            scenario.score += 1;
+                        };
+
+                        if (learner.age <= scenario.maxAge) {
+                            scenario.score += 1;
+                        };
+
+                        scenario.conditions.forEach(function(condition) {
+                            let cn = condition.conditionName; 
+                            let cv = condition.conditionValue; 
+
+                            if (cv == learner[cn]) {
+                                
                                 scenario.score += 1;
-                            };
-
-                            if (learner.age <= scenario.maxAge) {
-                                scenario.score += 1;
-                            };
-
-                            scenario.conditions.forEach(function(condition) {
-                                let cn = condition.conditionName; 
-                                let cv = condition.conditionValue; 
-
-                                if (cv == learner[cn]) {
-                                    
-                                    scenario.score += 1;
-                                } else {
-                                    
-                                }
-
-                            })
-
-                            
-                        });
-
-                        filteredScenarios = filteredScenarios.filter(function(scenario){
-                            return scenario.score == scenario.targetScore;
-                        });
-
-                        filteredScenarios.sort(function(a, b) {
-                            const titleA = a.name.toUpperCase(); 
-                            const titleB = b.name.toUpperCase(); 
-                            if (titleA < titleB) {
-                                return -1;
+                            } else {
+                                
                             }
-                            if (titleA > titleB) {
-                                return 1;
-                            }
-                            
-                            return 0;
-                        });
-
-                        filteredScenarios.sort(function(a, b) {
-                            return a.ffi - b.ffi;
-                        });
-
-                        console.log('------------------------');
-
-                        filteredScenarios.forEach(function(scenario) {
-                            console.log(scenario.name + ': ' + scenario.score + ' out of '+ scenario.targetScore);
-
-                            let bgColor;
-                            if (scenario.ffi == 1) { bgColor = "green" } else if (scenario.ffi == 2) { bgColor = "gold" } else { bgColor = "#921515" };
-
-                            let resultsHTML = "<div style=\"border: 1px dotted black; padding: 5px; margin: 5px; border-top: 5px solid "+ bgColor + "\"><h1 class=\"is-size-3\"><strong>"+scenario.name+"</strong></h1><p>Congrats, you can use this funding option.</p></div>";
-
-                            results.insertAdjacentHTML("beforeend",resultsHTML);
 
                         })
 
-                    })
+                        
+                    });
 
-                    console.log(questionArray);
+                    filteredScenarios = filteredScenarios.filter(function(scenario){
+                        return scenario.score == scenario.targetScore;
+                    });
 
-                    remainingQuestions = questionArray.filter(function(question){
-                        return question.value == "";
-                    }).length;
-                    
-                    counterMessages.forEach(function(message){
-                        message.classList.add("has-text-danger")
-
-                        if(remainingQuestions == 0) {
-                            message.innerHTML = 'You have answered all questions!';
-                            message.classList.remove("has-text-danger");
-                            message.classList.add("has-text-success")
-                        } else if (remainingQuestions == 1) {
-                            message.innerHTML = 'You have 1 unanswered question'
-                        } else {
-                            message.innerHTML = 'You have ' + remainingQuestions + ' unanswered questions.';
+                    filteredScenarios.sort(function(a, b) {
+                        const titleA = a.name.toUpperCase(); 
+                        const titleB = b.name.toUpperCase(); 
+                        if (titleA < titleB) {
+                            return -1;
+                        }
+                        if (titleA > titleB) {
+                            return 1;
                         }
                         
+                        return 0;
+                    });
+
+                    filteredScenarios.sort(function(a, b) {
+                        return a.ffi - b.ffi;
+                    });
+
+                    console.log('------------------------');
+
+                    filteredScenarios.forEach(function(scenario) {
+                        console.log(scenario.name + ': ' + scenario.score + ' out of '+ scenario.targetScore);
+
+                        let bgColor;
+                        if (scenario.ffi == 1) { bgColor = "green" } else if (scenario.ffi == 2) { bgColor = "gold" } else { bgColor = "#921515" };
+
+                        let resultsHTML = "<div style=\"border: 1px dotted black; padding: 5px; margin: 5px; border-top: 5px solid "+ bgColor + "\"><h1 class=\"is-size-3\"><strong>"+scenario.name+"</strong></h1><p>Congrats, you can use this funding option.</p></div>";
+
+                        results.insertAdjacentHTML("beforeend",resultsHTML);
+
                     })
 
                 })
-        })
 
-    </script>
+                console.log(questionArray);
+
+                remainingQuestions = questionArray.filter(function(question){
+                    return question.value == "";
+                }).length;
+                
+                counterMessages.forEach(function(message){
+                    message.classList.add("has-text-danger")
+
+                    if(remainingQuestions == 0) {
+                        message.innerHTML = 'You have answered all questions!';
+                        message.classList.remove("has-text-danger");
+                        message.classList.add("has-text-success")
+                    } else if (remainingQuestions == 1) {
+                        message.innerHTML = 'You have 1 unanswered question'
+                    } else {
+                        message.innerHTML = 'You have ' + remainingQuestions + ' unanswered questions.';
+                    }
+                    
+                })
+
+            })
+    })
+
+</script>
 
 
     
     
+    <script src="/js/main.js"></script>
   </body>
 </html>
