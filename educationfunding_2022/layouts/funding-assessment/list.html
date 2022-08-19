@@ -1,405 +1,409 @@
 {{ define "main" }}
 
-<h1 class="is-size-1">Funding Lookup v0.1</h1>
+
 
 <div class="container">
-    <div class="columns mb-5">
-        <div id="learner-data-collection" class="column">
+    <div class="container is-fluid">
+        <h1 class="is-size-1">Funding Lookup v0.1</h1>
+        <p class="text-muted"></p>
+        <div class="columns mb-5">
+            <div id="learner-data-collection" class="column">
 
-            <form>
-                <h2 class="is-size-2 mt-5">
-                    Learner details
-                </h2>
+                <form>
+                    <h2 class="is-size-2 mt-5">
+                        Your details
+                    </h2>
 
-                <div class="notification is-info is-light my-5">
-                    <p class="content">
-                        In order to get an accurate result, please answer every question, even if it doesn't seem relevant to you. The displayed options will be tailored to your personal circumstances.
-                    </p>
-                    <p class="content">
-                        These funding scenarios are mapped to the 2022/23 ESFA funding rules for young people and adults, and also include options specific to the West of England Combined Authority (WECA). You can check which funding authority applies to your postcode using this online service (not published by EducationFunding.UK): <a href="https://skillspostcodecheck.com/" target="_blank">https://skillspostcodecheck.com/</a>
-                    </p>
-                    <p class="content">
-                        These questions do not (currently) evaluate your residency or nationality - please be aware that additional restrictions to funding may apply. In general, if you are a UK national with three years of UK residency, you can assume that you will meet the basic requirements. If your circumstances are different, please speak to your planned training provider.
-                    </p>
-                    <p class="content">
-                        This tool is provided by EducationFunding.UK; it is not endorsed or supported by any government agencies - it is provided for information purposes only, and should not be considered an official guarantee of access to funding.
-                    </p>
-                </div>
-                
-                <div class="field">
-                    <label class="label">How old are you?</label>
-                    <div class="control">
-                        <input class="input learner-input" type="number" step="1" id="age"/>
+                    <div class="notification is-info is-light my-5">
+                        <p class="content">
+                            In order to get an accurate result, please answer every question, even if it doesn't seem relevant to you. The displayed options will be tailored to your personal circumstances.
+                        </p>
+                        <p class="content">
+                            These funding scenarios are mapped to the 2022/23 ESFA funding rules for young people and adults, and also include options specific to the West of England Combined Authority (WECA). You can check which funding authority applies to your postcode using this online service (not published by EducationFunding.UK): <a href="https://skillspostcodecheck.com/" target="_blank">https://skillspostcodecheck.com/</a>
+                        </p>
+                        <p class="content">
+                            These questions do not (currently) evaluate your residency or nationality - please be aware that additional restrictions to funding may apply. In general, if you are a UK national with three years of UK residency, you can assume that you will meet the basic requirements. If your circumstances are different, please speak to your planned training provider.
+                        </p>
+                        <p class="content">
+                            This tool is provided by EducationFunding.UK; it is not endorsed or supported by any government agencies - it is provided for information purposes only, and should not be considered an official guarantee of access to funding.
+                        </p>
                     </div>
-                    <p class="help">We need to know your age on the day you plan to start your course.</p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-                
-                <hr>
-                
-                <div class="field">
-                    <label class="label">Do you have an EHCP?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=hasEHCP>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">Do you have an Education, Health & Care Plan? This would normally be set up while you are at school.</p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-
-                <hr>
-                
-                <div class="field">
-                    <label class="label">Have you achieved GCSE English Grade C/4?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=achievedEnglishGrade4>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">If you haven't achieved grade 4 (or grade C under the old marking scheme) then you can study this subject free of charge!</p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-
-                <hr>
-                
-                <div class="field">
-                    <label class="label">Have you achieved GCSE Maths Grade C/4?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=achievedMathsGrade4>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">If you haven't achieved grade 4 (or grade C under the old marking scheme) then you can study this subject free of charge!</p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-
-                <hr>
-                
-                <div class="field">
-                    <label class="label">Are your digital skills assessed at below level 1?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=digitalSkillsBelowLevel1>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">Have you been formally assessed for digital skills and discovered you are below level 1? As an adult, you can claim full funding to establish basic digital literacy and skills.</p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-
-                <hr>
-                
-                <div class="field">
-                    <label class="label">Have you already claimed your level 2 WECA retraining offer?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=spentWECAL2RetrainingOffer>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">Have you already claimed your level 2 WECA retraining offer?</p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-
-                <hr>
-                
-                <div class="field">
-                    <label class="label">Have you already claimed your level 3 WECA retraining offer?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=spentWECAL3RetrainingOffer>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">Have you already claimed your level 3 WECA retraining offer?</p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-
-                <hr>
-
-                <div class="field">
-                    <label class="label">Have you achieved a 'full' level 2 qualification?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=achievedFullLevel2>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">Full level 2 is equivalent to 5 GCSEs (grade A*-C or 9-4), or any qualifications falling within the Legal Entitlement, or which are designated as 'full' on <a target="_blank" href="https://submit-learner-data.service.gov.uk/find-a-learning-aim/">Find a Learning Aim</a>. You might also find the government's list of qualification levels useful: <a target="_blank" href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels">https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels</a></p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-
-                <hr>
-
-                <div class="field">
-                    <label class="label">Have you achieved a 'full' level 3 qualification?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=achievedFullLevel3>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">Full level 3 is equivalent to 2 A Levels (or 4 A/S Levels), or any qualifications falling within the Legal Entitlement, or which are designated as 'full' on <a target="_blank" href="https://submit-learner-data.service.gov.uk/find-a-learning-aim/">Find a Learning Aim</a>. You might also find the government's list of qualification levels useful: <a target="_blank" href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels">https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels</a></p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-
-                <hr>
-
-                <div class="field">
-                    <label class="label">Are you qualified at level 4 or above?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=achievedLevel4Plus>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">Not sure? Try this: <a target="_blank" href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels">https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels</a></p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-
-                <hr>
-
-                <div class="field">
-                    <label class="label">Have you achieved a 'short' FCFJ qualification?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=achievedShortFCFJ>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">The Free Courses for Jobs (FCFJ) offer was introduced in 2021 - originally called the National Skills Fund. A variety of qualifications were included in this offer, some of which were classified as 'short' - the terms of the offer mean that you can fund the achievement one of these smaller qualifications without spending your entitlement to the offer.</p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-                
-                <hr>
-
-                <div class="field">
-                    <label class="label">Have you achieved a non-short FCFJ qualification?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=achievedFullFCFJ>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">The Free Courses for Jobs (FCFJ) offer was introduced in 2021 - originally called the National Skills Fund. A variety of qualifications were included in this offer, if you have achieved one of these qualification, and it is not classified as 'short' then you have spent your entitlement.</p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-                
-                <hr>
-
-                <div class="field">
-                    <label class="label">Have you achieved a non-short FCFJ qualification prior to 1st April 2021?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=achievedFullFCFJPriorToApril2021>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">When the Free Courses for Jobs offer was introduced, you could not use it if you had already achieved one of the qualifications - even if you achieved it prior to the introduction of the offer. In 2022 this requirement was partially removed - you can now use the offer if you achieved your FCFJ qualification before the offer started (1st April 2021), but only if you are also unemployed or in receipt of a low wage.</p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-                
-                <hr>
-
-                <div class="field">
-                    <label class="label">Have you achieved a 'full' level 3 qualification prior to 1st April 2021?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=achievedFullLevel3PriorToApril2021>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">When the Free Courses for Jobs offer was introduced, you could not use it if you had already achieved one of the qualifications - even if you achieved it prior to the introduction of the offer. In 2022 this requirement was partially removed - you can now use the offer if you achieved your FCFJ qualification before the offer started (1st April 2021), but only if you are also unemployed or in receipt of a low wage.</p>
-                    <p class="help">Full level 3 is equivalent to 2 A Levels (or 4 A/S Levels), or any qualifications falling within the Legal Entitlement, or which are designated as 'full' on <a target="_blank" href="https://submit-learner-data.service.gov.uk/find-a-learning-aim/">Find a Learning Aim</a>. You might also find the government's list of qualification levels useful: <a target="_blank" href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels">https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels</a></p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-                
-                <hr>
-
-                <article class="message is-info">
-                    <div class="message-header">
-                      <p>ESFA Definition: Unemployed</p>
-                    </div>
-                    <div class="message-body">
-                        <div class="content">
-                            <p><strong>Source: <a target="blank" href="https://www.gov.uk/government/publications/adult-education-budget-aeb-funding-rules-2022-to-2023/adult-education-budget-aeb-funding-rules-2022-to-2023#unemployed">Adult education budget (AEB) funding rules 2022 to 2023</a></strong></p>
-                            <p>
-                                For funding purposes, we define a learner as unemployed if one or more of the following apply, they:
-                                <ul>
-                                <li class="">receive Jobseeker’s Allowance (JSA), including those receiving National Insurance credits only</li>
-                                <li>receive Employment and Support Allowance (ESA)</li>
-                                <li>receive Universal Credit (UC), and their take-home pay as recorded on their UC statement (disregarding UC payments and other benefits) is less than £345 a month (learner is sole adult in their benefit claim) or £552 a month (learner has a joint benefit claim with their partner)</li>
-                                <li>are released on temporary licence, studying outside a prison environment, and not funded by the Ministry of Justice</li>
-                                </ul>
-                            </p>
-                            <p>
-                                Providers may also use their discretion to fully fund other learners if both of the following apply. The learner:
-                                <ul>
-                                    <li>receives other state benefits (not included in the list above) and their take-home pay (disregarding UC payments and other benefits) is less than £345 a month (learner is sole adult in their benefit claim) or £552 a month (learner has a joint benefit claim with their partner), and</li>
-                                    <li>wants to be employed, or progress into more sustainable employment, and their take-home pay (disregarding UC payments and other benefits) is less than £345 a month (learner is sole adult in their benefit claim) or £552 a month (learner has a joint benefit claim with their partner), and you are satisfied identified learning is directly relevant to their employment prospects and the local labour market needs</li>
-                                </ul>
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <div class="field">
-                    <label class="label">Do you meet the ESFA's definition of 'unemployed'?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=meetsUnemployedDefinition>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-                
-                <hr>
-                
-                <div class="field">
-                    <label class="label">Are you employed or self-employed?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=isEmployed>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">If someone gives you money to do something, congrats, you're employed.</p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-                
-                <hr>
-
-                <div class="field">
-                    <label class="label">Is your annual income (before tax) below £18,525?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=isLowWage>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help">This is the threshold for the ESFA (and WECA) to consider you in receipt of 'low wage'. Other devolved funding authories may have different thresholds.</p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-                
-                <hr>
-
-                <article class="message is-info">
-                    <div class="message-header">
-                      <p>UK Benefits</p>
-                    </div>
-                    <div class="message-body">
-                        <div class="content">
-                            <p><strong>Source: <a target="blank" href="https://www.gov.uk/government/collections/dwp-statistical-summaries">DWP benefits statistics</a></strong></p>
-                            <p>    
-                                Did you know it's nigh on impossible to obtain an official list of UK state benefits? Here's a list of the main ones I was able to find:
-                                <ul>
-                                    <li>Attendance Allowance (AA)</li>
-                                    <li>Bereavement benefits (BB)</li>
-                                    <li>Bereavement Support Payment (BSP)</li>
-                                    <li>Carer's Allowance (CA)</li>
-                                    <li>Child Benefit (CB)</li>
-                                    <li>Disability Living Allowance (DLA)</li>
-                                    <li>Employment and Support Allowance (ESA)</li>
-                                    <li>Housing Benefit (HB)</li>
-                                    <li>Incapacity Benefit (IB)</li>
-                                    <li>Income Support (IS)</li>
-                                    <li>Industrial Injuries Disablement Benefit (IIDB)</li>
-                                    <li>Jobseeker's Allowance (JSA)</li>
-                                    <li>Maternity Allowance (MA)</li>
-                                    <li>Pension Credit (PC)</li>
-                                    <li>Personal Independence Payment (PIP)</li>
-                                    <li>Severe Disablement Allowance (SDA)</li>
-                                    <li>State Pension (SP)</li>
-                                    <li>Universal Credit (UC)</li>
-                                    <li>Widow's Benefit (WB)</li>
-                                </ul>
-                            </p>
-                            <p>You might also want to check out Citizens Advice: <a target="_blank" href="https://www.citizensadvice.org.uk/benefits/">https://www.citizensadvice.org.uk/benefits/</a></p>
-                        </div>
-                    </div>
-                </article>
-
-                <div class="field">
-                    <label class="label">Are you receiving any state benefits?</label>
-                    <div class="control">
-                        <div class="select">
-                            <select class="learner-input" id=isReceivingBenefits>
-                                <option value=></option>
-                                <option value=Yes>Yes</option>
-                                <option value=No>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="help"></p>
-                    <p class="help has-text-danger counter-message"></p>
-                </div>
-
-                <hr>
                     
-            </form>
+                    <div class="field">
+                        <label class="label">How old are you?</label>
+                        <div class="control">
+                            <input class="input learner-input" type="number" step="1" id="age"/>
+                        </div>
+                        <p class="help">We need to know your age on the day you plan to start your course.</p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="field">
+                        <label class="label">Do you have an EHCP?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=hasEHCP>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">Do you have an Education, Health & Care Plan? This would normally be set up while you are at school.</p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
 
-            <a href="#your-results">Jump to results >></a>
-        </div>
-        <div class="column">
-            <h2 id="your-results" class="is-size-2 my-5">
-                Your results
-            </h2>
-            <div id="results">
+                    <hr>
+                    
+                    <div class="field">
+                        <label class="label">Have you achieved GCSE English Grade C/4?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=achievedEnglishGrade4>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">If you haven't achieved grade 4 (or grade C under the old marking scheme) then you can study this subject free of charge!</p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
 
+                    <hr>
+                    
+                    <div class="field">
+                        <label class="label">Have you achieved GCSE Maths Grade C/4?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=achievedMathsGrade4>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">If you haven't achieved grade 4 (or grade C under the old marking scheme) then you can study this subject free of charge!</p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+
+                    <hr>
+                    
+                    <div class="field">
+                        <label class="label">Are your digital skills assessed at below level 1?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=digitalSkillsBelowLevel1>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">Have you been formally assessed for digital skills and discovered you are below level 1? As an adult, you can claim full funding to establish basic digital literacy and skills.</p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+
+                    <hr>
+                    
+                    <div class="field">
+                        <label class="label">Have you already claimed your level 2 WECA retraining offer?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=spentWECAL2RetrainingOffer>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">Have you already claimed your level 2 WECA retraining offer?</p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+
+                    <hr>
+                    
+                    <div class="field">
+                        <label class="label">Have you already claimed your level 3 WECA retraining offer?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=spentWECAL3RetrainingOffer>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">Have you already claimed your level 3 WECA retraining offer?</p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+
+                    <hr>
+
+                    <div class="field">
+                        <label class="label">Have you achieved a 'full' level 2 qualification?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=achievedFullLevel2>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">Full level 2 is equivalent to 5 GCSEs (grade A*-C or 9-4), or any qualifications falling within the Legal Entitlement, or which are designated as 'full' on <a target="_blank" href="https://submit-learner-data.service.gov.uk/find-a-learning-aim/">Find a Learning Aim</a>. You might also find the government's list of qualification levels useful: <a target="_blank" href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels">https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels</a></p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+
+                    <hr>
+
+                    <div class="field">
+                        <label class="label">Have you achieved a 'full' level 3 qualification?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=achievedFullLevel3>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">Full level 3 is equivalent to 2 A Levels (or 4 A/S Levels), or any qualifications falling within the Legal Entitlement, or which are designated as 'full' on <a target="_blank" href="https://submit-learner-data.service.gov.uk/find-a-learning-aim/">Find a Learning Aim</a>. You might also find the government's list of qualification levels useful: <a target="_blank" href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels">https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels</a></p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+
+                    <hr>
+
+                    <div class="field">
+                        <label class="label">Are you qualified at level 4 or above?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=achievedLevel4Plus>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">Not sure? Try this: <a target="_blank" href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels">https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels</a></p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+
+                    <hr>
+
+                    <div class="field">
+                        <label class="label">Have you achieved a 'short' FCFJ qualification?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=achievedShortFCFJ>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">The Free Courses for Jobs (FCFJ) offer was introduced in 2021 - originally called the National Skills Fund. A variety of qualifications were included in this offer, some of which were classified as 'short' - the terms of the offer mean that you can fund the achievement one of these smaller qualifications without spending your entitlement to the offer.</p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+                    
+                    <hr>
+
+                    <div class="field">
+                        <label class="label">Have you achieved a non-short FCFJ qualification?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=achievedFullFCFJ>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">The Free Courses for Jobs (FCFJ) offer was introduced in 2021 - originally called the National Skills Fund. A variety of qualifications were included in this offer, if you have achieved one of these qualification, and it is not classified as 'short' then you have spent your entitlement.</p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+                    
+                    <hr>
+
+                    <div class="field">
+                        <label class="label">Have you achieved a non-short FCFJ qualification prior to 1st April 2021?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=achievedFullFCFJPriorToApril2021>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">When the Free Courses for Jobs offer was introduced, you could not use it if you had already achieved one of the qualifications - even if you achieved it prior to the introduction of the offer. In 2022 this requirement was partially removed - you can now use the offer if you achieved your FCFJ qualification before the offer started (1st April 2021), but only if you are also unemployed or in receipt of a low wage.</p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+                    
+                    <hr>
+
+                    <div class="field">
+                        <label class="label">Have you achieved a 'full' level 3 qualification prior to 1st April 2021?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=achievedFullLevel3PriorToApril2021>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">When the Free Courses for Jobs offer was introduced, you could not use it if you had already achieved one of the qualifications - even if you achieved it prior to the introduction of the offer. In 2022 this requirement was partially removed - you can now use the offer if you achieved your FCFJ qualification before the offer started (1st April 2021), but only if you are also unemployed or in receipt of a low wage.</p>
+                        <p class="help">Full level 3 is equivalent to 2 A Levels (or 4 A/S Levels), or any qualifications falling within the Legal Entitlement, or which are designated as 'full' on <a target="_blank" href="https://submit-learner-data.service.gov.uk/find-a-learning-aim/">Find a Learning Aim</a>. You might also find the government's list of qualification levels useful: <a target="_blank" href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels">https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels</a></p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+                    
+                    <hr>
+
+                    <article class="message is-info">
+                        <div class="message-header">
+                        <p>ESFA Definition: Unemployed</p>
+                        </div>
+                        <div class="message-body">
+                            <div class="content">
+                                <p><strong>Source: <a target="blank" href="https://www.gov.uk/government/publications/adult-education-budget-aeb-funding-rules-2022-to-2023/adult-education-budget-aeb-funding-rules-2022-to-2023#unemployed">Adult education budget (AEB) funding rules 2022 to 2023</a></strong></p>
+                                <p>
+                                    For funding purposes, we define a learner as unemployed if one or more of the following apply, they:
+                                    <ul>
+                                    <li class="">receive Jobseeker’s Allowance (JSA), including those receiving National Insurance credits only</li>
+                                    <li>receive Employment and Support Allowance (ESA)</li>
+                                    <li>receive Universal Credit (UC), and their take-home pay as recorded on their UC statement (disregarding UC payments and other benefits) is less than £345 a month (learner is sole adult in their benefit claim) or £552 a month (learner has a joint benefit claim with their partner)</li>
+                                    <li>are released on temporary licence, studying outside a prison environment, and not funded by the Ministry of Justice</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    Providers may also use their discretion to fully fund other learners if both of the following apply. The learner:
+                                    <ul>
+                                        <li>receives other state benefits (not included in the list above) and their take-home pay (disregarding UC payments and other benefits) is less than £345 a month (learner is sole adult in their benefit claim) or £552 a month (learner has a joint benefit claim with their partner), and</li>
+                                        <li>wants to be employed, or progress into more sustainable employment, and their take-home pay (disregarding UC payments and other benefits) is less than £345 a month (learner is sole adult in their benefit claim) or £552 a month (learner has a joint benefit claim with their partner), and you are satisfied identified learning is directly relevant to their employment prospects and the local labour market needs</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="field">
+                        <label class="label">Do you meet the ESFA's definition of 'unemployed'?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=meetsUnemployedDefinition>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="field">
+                        <label class="label">Are you employed or self-employed?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=isEmployed>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">If someone gives you money to do something, congrats, you're employed.</p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+                    
+                    <hr>
+
+                    <div class="field">
+                        <label class="label">Is your annual income (before tax) below £18,525?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=isLowWage>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help">This is the threshold for the ESFA (and WECA) to consider you in receipt of 'low wage'. Other devolved funding authories may have different thresholds.</p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+                    
+                    <hr>
+
+                    <article class="message is-info">
+                        <div class="message-header">
+                        <p>UK Benefits</p>
+                        </div>
+                        <div class="message-body">
+                            <div class="content">
+                                <p><strong>Source: <a target="blank" href="https://www.gov.uk/government/collections/dwp-statistical-summaries">DWP benefits statistics</a></strong></p>
+                                <p>    
+                                    Did you know it's nigh on impossible to obtain an official list of UK state benefits? Here's a list of the main ones I was able to find:
+                                    <ul>
+                                        <li>Attendance Allowance (AA)</li>
+                                        <li>Bereavement benefits (BB)</li>
+                                        <li>Bereavement Support Payment (BSP)</li>
+                                        <li>Carer's Allowance (CA)</li>
+                                        <li>Child Benefit (CB)</li>
+                                        <li>Disability Living Allowance (DLA)</li>
+                                        <li>Employment and Support Allowance (ESA)</li>
+                                        <li>Housing Benefit (HB)</li>
+                                        <li>Incapacity Benefit (IB)</li>
+                                        <li>Income Support (IS)</li>
+                                        <li>Industrial Injuries Disablement Benefit (IIDB)</li>
+                                        <li>Jobseeker's Allowance (JSA)</li>
+                                        <li>Maternity Allowance (MA)</li>
+                                        <li>Pension Credit (PC)</li>
+                                        <li>Personal Independence Payment (PIP)</li>
+                                        <li>Severe Disablement Allowance (SDA)</li>
+                                        <li>State Pension (SP)</li>
+                                        <li>Universal Credit (UC)</li>
+                                        <li>Widow's Benefit (WB)</li>
+                                    </ul>
+                                </p>
+                                <p>You might also want to check out Citizens Advice: <a target="_blank" href="https://www.citizensadvice.org.uk/benefits/">https://www.citizensadvice.org.uk/benefits/</a></p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="field">
+                        <label class="label">Are you receiving any state benefits?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="learner-input" id=isReceivingBenefits>
+                                    <option value=></option>
+                                    <option value=Yes>Yes</option>
+                                    <option value=No>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help"></p>
+                        <p class="help has-text-danger counter-message"></p>
+                    </div>
+
+                    <hr>
+                        
+                </form>
+
+                <a href="#your-results">Jump to results >></a>
+            </div>
+            <div class="column">
+                <h2 id="your-results" class="is-size-2 my-5">
+                    Your results
+                </h2>
+                <div id="results">
+
+                </div>
             </div>
         </div>
     </div>
