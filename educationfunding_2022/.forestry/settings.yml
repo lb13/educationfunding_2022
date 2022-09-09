@@ -5,23 +5,8 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: educationfunding_2022/content
-  label: Pages
-  create: all
-  match: "*"
-- type: directory
-  path: educationfunding_2022/content/resources
+  path: educationfunding_2022/educationfunding_2022/content/resources
   label: Resources
-  create: all
-  match: "**/*"
-- type: directory
-  path: educationfunding_2022/content/posts
-  label: Posts
-  create: all
-  match: "**/*"
-- type: directory
-  path: educationfunding_2022/content/funding-assessment
-  label: Funding assessment
   create: all
   match: "**/*"
 upload_dir: educationfunding_2022//static/uploads
