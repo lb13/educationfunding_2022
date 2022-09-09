@@ -14,3 +14,5 @@ fields:
 - type: list
   name: Tags
   label: Tags
+pages:
+- educationfunding_2022/content/resources/skills-bootcamps-funding-and-performance-management-2022-to-2023.md
