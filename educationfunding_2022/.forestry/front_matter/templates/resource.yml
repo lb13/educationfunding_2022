@@ -1,0 +1,16 @@
+---
+label: Resource
+hide_body: true
+fields:
+- type: list
+  name: Tags
+  label: Tags
+- type: text
+  name: Title
+  label: Title
+- type: text
+  name: Description
+  label: Description
+- type: text
+  name: Link
+  label: Link
