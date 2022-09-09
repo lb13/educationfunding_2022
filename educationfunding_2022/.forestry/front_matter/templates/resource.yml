@@ -2,9 +2,6 @@
 label: Resource
 hide_body: true
 fields:
-- type: list
-  name: Tags
-  label: Tags
 - type: text
   name: Title
   label: Title
@@ -14,3 +11,6 @@ fields:
 - type: text
   name: Link
   label: Link
+- type: list
+  name: Tags
+  label: Tags
