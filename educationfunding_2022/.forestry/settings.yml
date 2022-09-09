@@ -5,7 +5,7 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: educationfunding_2022/educationfunding_2022/content/resources
+  path: content/resources
   label: Resources
   create: all
   match: "**/*"
