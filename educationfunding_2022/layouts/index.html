@@ -11,17 +11,19 @@
             </div>
 
             <!-- recent sources -->
-            <h2 class="is-size-2 p-3" style="color: #032539; text-decoration: underline solid #FA991C">Recent resources</h2>
+            <h2 class="is-size-3 p-3">Recently added resources</h2>
 
             <div class="columns is-multiline">
                 {{ range first 3 (sort (where .Site.RegularPages "Section" "resources") ".Params.DateAdded" "desc") }}
                 <div class="item column is-one-third">
-                  <article class="tile is-child box">
+                  <article class="tile is-child box is-info">
                         <p class="title item-title">{{ .Title }}</p>
                        
-                        <p class="item-abstract">{{ .Params.description | truncate 100 }}</p>
-                        
-                        <p style="margin-top: 5px"><a href="{{.Permalink}}">Start reading...</a></p>
+                        <p class="item-abstract">{{ .Params.description }}</p>
+
+                        <a class="button my-2 mr-2" href="{{ .Params.link }}">Go to Resource</a>
+
+                        <a class="button is-dark my-2" href="{{.Permalink}}">More Details</a>
 
                         {{ if (isset .Params "tags") }}
                         <hr>
