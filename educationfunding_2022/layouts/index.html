@@ -31,8 +31,10 @@
             
             <script src="/js/elbisearch.js"></script>
 
+            <hr>
+            
             <!-- recent sources -->
-            <h2 class="is-size-3 p-3">Recently added resources</h2>
+            <h2 class="is-size-3 p-3 mb-4" style="border-left: 10px solid #317E36; border-bottom: 2px solid #317E36;">Recently added resources</h2>
 
             <div class="columns is-multiline">
                 {{ range first 3 (sort (where .Site.RegularPages "Section" "resources") ".Params.DateAdded" "desc") }}
@@ -66,8 +68,9 @@
             </div>
             <!-- end of recent sources -->
 
+            <hr>
 
-            <h2 class="is-size-3 p-3">Resources by funding type</h2>
+            <h2 class="is-size-3 p-3 mb-4" style="border-left: 10px solid #31537E; border-bottom: 2px solid #31537E;">Resources by funding type</h2>
             <div class="columns">
 
                 <div class="column">
