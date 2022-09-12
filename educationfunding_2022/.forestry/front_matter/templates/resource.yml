@@ -14,6 +14,17 @@ fields:
 - type: list
   name: Tags
   label: Tags
+- name: DateAdded
+  type: datetime
+  label: Date Added
+  description: Date that you add the resource to the site.
+  config:
+    required: true
+    date_format: YYYY-MM-DD
+    time_format: 
+    display_utc: false
+    export_format: YYYY-MM-DD
+  default: now
 pages:
 - educationfunding_2022/content/resources/adult-education-budget-aeb-funding-rules-2022-to-2023.md
 - educationfunding_2022/content/resources/document-exchange-external-user-guide.md
