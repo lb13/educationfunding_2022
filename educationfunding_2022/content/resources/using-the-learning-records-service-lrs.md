@@ -4,6 +4,5 @@ Description = "Guides for learning providers, local authorities and awarding org
 Link = "https://www.gov.uk/government/publications/learner-registration-bodies-user-guide"
 Tags = ["lrs", "learning records service"]
 Title = "Using the learning records service (LRS)"
-draft = true
 
 +++
