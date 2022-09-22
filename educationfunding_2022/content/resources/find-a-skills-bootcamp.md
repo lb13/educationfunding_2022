@@ -4,6 +4,5 @@ Description = "Skills Bootcamps offer free, flexible courses of up to 16 weeks. 
 Link = "https://www.gov.uk/guidance/find-a-skills-bootcamp"
 Tags = ["online services", "skills bootcamps"]
 Title = "Find a Skills Bootcamp"
-draft = true
 
 +++
