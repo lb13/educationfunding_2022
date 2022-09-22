@@ -114,12 +114,12 @@ fetch(request)
 
                     let moreDetailsButtonHTML = '';
                     if ( page.section == 'resources' ) {
-                        moreDetailsButtonHTML = "<a class=\"button is-dark my-2\" href=\"" + page.permalink + "\">More Details</a>"
+                        moreDetailsButtonHTML = "<a class=\"button is-dark my-2 mr-2\" href=\"" + page.permalink + "\">More Details</a>"
                     }
 
                     let editButtonHTML = '';
                     if ( page.section == 'resources' ) {
-                        editButtonHTML = "<a class=\"button is-info is-light my-2\" href=\"https://app.forestry.io/sites/ppqfmkwrf0fh4a/#/pages/educationfunding_2022-content-resources-" + page.filename.replace(".md","-md") + "\">Edit record</a>"
+                        editButtonHTML = "<a class=\"button is-info is-inverted my-2\" href=\"https://app.forestry.io/sites/ppqfmkwrf0fh4a/#/pages/educationfunding_2022-content-resources-" + page.filename.replace(".md","-md") + "\">Edit record</a>"
                     }
                     
                     // Capitalise first letter of section name, depluralise
