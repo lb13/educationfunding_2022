@@ -119,7 +119,7 @@ fetch(request)
 
                     let editButtonHTML = '';
                     if ( page.section == 'resources' ) {
-                        editButtonHTML = "<a class=\"my-2\" href=\"https://app.forestry.io/sites/ppqfmkwrf0fh4a/#/pages/educationfunding_2022-content-resources-" + page.filename + "\">Edit record</a>"
+                        editButtonHTML = "<a class=\"button is-info is-light my-2\" href=\"https://app.forestry.io/sites/ppqfmkwrf0fh4a/#/pages/educationfunding_2022-content-resources-" + page.filename.replace(".md","-md") + "\">Edit record</a>"
                     }
                     
                     // Capitalise first letter of section name, depluralise
