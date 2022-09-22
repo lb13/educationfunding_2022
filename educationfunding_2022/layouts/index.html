@@ -25,7 +25,7 @@
             </style>
             
             <div class="my-5">
-                <h2 class="is-size-4">Search our index of {{ len (where .Site.RegularPages "Section" "==" "resources") }} resources...</h2>
+                <span class="tag is-primary is-light mb-3">{{ len (where .Site.RegularPages "Section" "==" "resources") }} resources (and counting!)</span>
                 <input type="search" class="input is-size-4" id="elbi-input" placeholder="Search the site..." autofocus />
                 <ul id="elbi-results"></ul>
             </div>
