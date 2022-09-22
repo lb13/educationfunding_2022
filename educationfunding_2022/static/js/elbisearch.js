@@ -119,7 +119,7 @@ fetch(request)
 
                     let editButtonHTML = '';
                     if ( page.section == 'resources' ) {
-                        editButtonHTML = "<a class=\"button is-info is-inverted my-2\" href=\"https://app.forestry.io/sites/ppqfmkwrf0fh4a/#/pages/educationfunding_2022-content-resources-" + page.filename.replace(".md","-md").replaceAll(",","") + "\">Edit Record</a>"
+                        editButtonHTML = "<a target=\"_blank\" class=\"button is-info is-inverted my-2\" href=\"https://app.forestry.io/sites/ppqfmkwrf0fh4a/#/pages/educationfunding_2022-content-resources-" + page.filename.replace(".md","-md").replaceAll(",","") + "\">Edit Record</a>"
                     }
                     
                     // Capitalise first letter of section name, depluralise
