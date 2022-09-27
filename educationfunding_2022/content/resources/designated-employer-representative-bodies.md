@@ -4,6 +4,5 @@ Description = "Details of the employer representative bodies designated to lead 
 Link = "https://www.gov.uk/government/publications/designated-employer-representative-bodies"
 Tags = ["erb", "employer representative bodies"]
 Title = "Designated employer representative bodies"
-draft = true
 
 +++
