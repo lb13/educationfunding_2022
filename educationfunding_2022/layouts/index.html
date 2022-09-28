@@ -3,12 +3,23 @@
         <div style="padding: 20px">
             <h1 class="is-size-1">Education Funding v2 (beta)</h1>
 
-            <div class="notification my-4">
-              <p>Hi! 👋 This version of the site is in development, keep checking back for updates.</p>
-              <p><strong>Latest build: {{ now }}</strong></p>
-              <br>
-              <p><a href="https://educationfunding.uk">Click here to go back to the current version.</a></p>
+            <div class="columns">
+                <div class="column">
+                    <div class="notification my-4">
+                        <p>Hi! 👋 This version of the site is in development, keep checking back for updates.</p>
+                        <p><strong>Latest build: {{ now }}</strong></p>
+                        <br>
+                        <p><a href="https://educationfunding.uk">Click here to go back to the current version.</a></p>
+                    </div>
+                </div>
+
+                <div class="column">
+                    {{ range $.Site.Data.ilrdates }}
+                        {{ . }}
+                    {{ end }}
+                </div>
             </div>
+            
 
             
 
