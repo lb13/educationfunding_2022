@@ -114,13 +114,18 @@ fetch(request)
 
                     let moreDetailsButtonHTML = '';
                     if ( page.section == 'resources' ) {
-                        moreDetailsButtonHTML = "<a class=\"button is-dark my-2\" href=\"" + page.permalink + "\">More Details</a>"
+                        moreDetailsButtonHTML = "<a class=\"button is-dark my-2 mr-2\" href=\"" + page.permalink + "\">More Details</a>"
+                    }
+
+                    let editButtonHTML = '';
+                    if ( page.section == 'resources' ) {
+                        editButtonHTML = "<a target=\"_blank\" class=\"button is-info is-inverted my-2\" href=\"https://app.forestry.io/sites/ppqfmkwrf0fh4a/#/pages/educationfunding_2022-content-resources-" + page.filename.replace(".md","-md").replaceAll(",","") + "\">Edit Record</a>"
                     }
                     
                     // Capitalise first letter of section name, depluralise
                     let buttonText = "Go to " + page.section.charAt(0).toUpperCase() + page.section.slice(1,page.section.length - 1);
 
-                    let resultHTML = "<li class='elbi-results-item'><span style=\"display: inline-block; background-color: " + flagBgColour + "; color: " + flagColour + "; padding: 10px; margin-top: 5px; margin-bottom: 10px;\"><a style=\"color: inherit\" href=\"/" + page.section + "\">" + page.section + "</a></span><h2 style='font-size: 1.5rem; font-weight: 800;'>" + page.title + "</h2><p>" + page.description + "</p><a class=\"button my-2 mr-2\" href='" + linkAddress + "'>" + buttonText + "</a>" + moreDetailsButtonHTML + "<p style='margin-top: 5px'>" + tagsHTML + "</p></li>";
+                    let resultHTML = "<li class='elbi-results-item'><span style=\"display: inline-block; background-color: " + flagBgColour + "; color: " + flagColour + "; padding: 10px; margin-top: 5px; margin-bottom: 10px;\"><a style=\"color: inherit\" href=\"/" + page.section + "\">" + page.section + "</a></span><h2 style='font-size: 1.5rem; font-weight: 800;'>" + page.title + "</h2><p>" + page.description + "</p><a class=\"button my-2 mr-2\" href='" + linkAddress + "'>" + buttonText + "</a>" + moreDetailsButtonHTML + editButtonHTML + "<p style='margin-top: 5px'>" + tagsHTML + "</p></li>";
                     results.insertAdjacentHTML("beforeend",resultHTML);
 
                     if (display_score == true) {

@@ -17,10 +17,10 @@
     <loc>https://beta.educationfunding.uk/tags/nsf/</loc>
     <lastmod>2021-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://beta.educationfunding.uk/tags/posts/</loc>
+    <loc>https://beta.educationfunding.uk/posts/</loc>
     <lastmod>2021-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://beta.educationfunding.uk/posts/</loc>
+    <loc>https://beta.educationfunding.uk/tags/posts/</loc>
     <lastmod>2021-07-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/</loc>
@@ -115,6 +115,8 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/2021-to-2022/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/tags/2022-to-2023/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/tags/2023-to-2024/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/aat/</loc>
@@ -146,6 +148,8 @@
     <loc>https://beta.educationfunding.uk/resources/adult-education-budget-aeb-funding-rules-2020-to-2021/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/adult-education-budget-aeb-funding-rules-2021-to-2022/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/adult-education-budget-aeb-funding-rules-2022-to-2023/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/adult-education-budget-aeb-postcode-files/</loc>
   </url><url>
@@ -195,19 +199,33 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/appendices-validation-rules-and-schema-ilr-2021-to-2022/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/resources/appendices-validation-rules-and-schema-ilr-2022-to-2023/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/applying-for-and-delivering-industry-placements-capacity-and-delivery-fund-cdf-for-the-2021-to-2022-academic-year/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/apprenticeship-agreement-template/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/apprenticeship-funding/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/apprenticeship-funding/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/resources/apprenticeship-funding-bands/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/apprenticeship-funding-rules/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/tags/apprenticeship-levy/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/apprenticeship-service/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/tags/apprenticeship-service/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/apprenticeship-technical-funding-guide/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/apprenticeships-gov.uk/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/apprenticeships-and-technical-educations-ifate-revisions-status-report/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/apprenticeships-off-the-job-training/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/aqa/</loc>
   </url><url>
@@ -245,7 +263,11 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/cpca/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/resources/creating-an-apprenticeship-vacancy-as-a-training-provider/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/data-collection-maintenance-schedule/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/designated-employer-representative-bodies/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/devolution/</loc>
   </url><url>
@@ -257,9 +279,19 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/dfe-services/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/resources/document-exchange/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/tags/document-exchange/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/document-exchange-external-user-guide/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/eal/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/earnings-adjustment-statement-eas/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/earnings-adjustment-statement-eas-2021-to-2022/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/earnings-adjustment-statement-eas-2022-to-2023/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/eas/</loc>
   </url><url>
@@ -269,7 +301,11 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/employer-data-service/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/tags/employer-representative-bodies/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/tags/end-point-assessment/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/tags/erb/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/esfa/</loc>
   </url><url>
@@ -311,6 +347,8 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/find-a-learning-aim/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/resources/find-a-skills-bootcamp/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/find-a-traineeship/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/find-an-apprenticeship/</loc>
@@ -341,6 +379,8 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/funding-education-for-16-to-19-year-olds/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/tags/funding-guidance/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/funding-guidance-for-young-people-ilr-funding-returns/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/funding-guidance-for-young-people-subcontracting-controls/</loc>
@@ -348,6 +388,8 @@
     <loc>https://beta.educationfunding.uk/resources/funding-rates-and-formula/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/funding-rules/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/further-education-workforce-data-collection/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/get-help-with-the-apprenticeship-service/</loc>
   </url><url>
@@ -393,11 +435,15 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/higher-education/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/tags/higher-technical-qualifications/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/higher-technical-qualifications-htqs/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/highfield-qualifications/</loc>
   </url><url>
-    <loc>https://beta.educationfunding.uk/tags/home-education/</loc>
-  </url><url>
     <loc>https://beta.educationfunding.uk/resources/home-education/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/tags/home-education/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/how-esfa-maintains-oversight-of-independent-training-providers-itps/</loc>
   </url><url>
@@ -407,9 +453,17 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/how-the-esfa-measures-the-performance-of-fe-providers-it-funds/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/resources/how-to-register-and-use-the-apprenticeship-service-as-an-employer/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/how-to-register-on-the-learning-records-service/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/how-to-register-to-deliver-t-levels-in-2023-to-2024-academic-year/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/resources/how-to-take-on-an-apprentice/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/how-to-use-the-apprenticeships-standards-revision-status-report/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/tags/htq/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/hub-reports/</loc>
   </url><url>
@@ -421,15 +475,19 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/ilr-specification-validation-rules-and-appendices-2019-to-2020/</loc>
   </url><url>
-    <loc>https://beta.educationfunding.uk/tags/industry-placements/</loc>
+    <loc>https://beta.educationfunding.uk/tags/ilr-validation/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/tags/incentive-payments/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/industry-placements/</loc>
   </url><url>
-    <loc>https://beta.educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-2019-to-2020-for-providers-in-receipt-of-cdf-in-academic-year-2018-to-2019/</loc>
+    <loc>https://beta.educationfunding.uk/tags/industry-placements/</loc>
   </url><url>
-    <loc>https://beta.educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-providers-delivering-in-2020-to-2021-academic-year/</loc>
+    <loc>https://beta.educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-2019-to-2020/</loc>
   </url><url>
-    <loc>https://beta.educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-providers-delivering-in-the-2021-to-2022-academic-year/</loc>
+    <loc>https://beta.educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-2020-to-2021/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-2021-to-2022/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/industry-placements-policy-framework/</loc>
   </url><url>
@@ -441,17 +499,27 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/lcrca/</loc>
   </url><url>
-    <loc>https://beta.educationfunding.uk/resources/learner-record-service-lrs/</loc>
-  </url><url>
     <loc>https://beta.educationfunding.uk/resources/learner-support/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/learning-aim-class-codes/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/learning-aims-reference-service-lars/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/tags/learning-records-service/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/learning-records-service-lrs/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/liverpool-city-region-combined-authority-lcrca/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/loans/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/local-skills-improvement-plans/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/tags/local-skills-improvement-plans/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/tags/lrs/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/tags/lsip/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/manage-your-education-and-skills-funding/</loc>
   </url><url>
@@ -487,6 +555,8 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/office-for-students-ofs/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/resources/office-for-students-ofs-deadlines/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/tags/ofs/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/ofs-portal/</loc>
@@ -496,6 +566,12 @@
     <loc>https://beta.educationfunding.uk/tags/ofsted/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/online-services/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/tags/otj/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/pay-apprenticeship-levy/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/payments-for-hiring-a-young-apprentice/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/pdsat/</loc>
   </url><url>
@@ -514,6 +590,12 @@
     <loc>https://beta.educationfunding.uk/resources/provider-support-manual-2020-to-2021/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/provider-support-manual-latest-version/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/provider-support-manual-for-2022-to-2023/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/providers-selected-to-deliver-t-levels-and-providers-planning-to-deliver-the-t-level-transition-programme/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/providing-supported-internships-for-young-people-with-an-ehc-plan/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/psm/</loc>
   </url><url>
@@ -541,6 +623,8 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/recruit-an-apprentice-guidance/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/resources/redundancy-support-for-apprentices/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/register-of-apprenticeship-training-providers/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/register-of-regulated-qualifications/</loc>
@@ -555,11 +639,17 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/sheffield-city-region-scr/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/tags/skills-bootcamps/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/skills-bootcamps-funding-and-performance-management-2022-to-2023/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/tags/slc/</loc>
   </url><url>
-    <loc>https://beta.educationfunding.uk/resources/specification-of-the-individualised-learner-record-latest-version/</loc>
-  </url><url>
     <loc>https://beta.educationfunding.uk/resources/specification-of-the-individualised-learner-record-for-2020-to-2021/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/specification-of-the-individualised-learner-record-for-2021-to-2022/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/specification-of-the-individualised-learner-record-for-2022-to-2023/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/statistics-national-achievement-rates-tables/</loc>
   </url><url>
@@ -572,6 +662,10 @@
     <loc>https://beta.educationfunding.uk/resources/submit-learner-data/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/support/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/resources/supported-internships/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/tags/supported-internships/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/t-level-action-plan/</loc>
   </url><url>
@@ -611,6 +705,8 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/ukrlp/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/resources/using-the-learning-records-service-lrs/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/tags/vacancies/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/view-your-education-data/</loc>
@@ -619,7 +715,11 @@
   </url><url>
     <loc>https://beta.educationfunding.uk/tags/weca/</loc>
   </url><url>
+    <loc>https://beta.educationfunding.uk/resources/weca-funding-policies-and-guidance/</loc>
+  </url><url>
     <loc>https://beta.educationfunding.uk/resources/west-midlands-combined-authority-wmca/</loc>
+  </url><url>
+    <loc>https://beta.educationfunding.uk/tags/west-of-england-combined-authority/</loc>
   </url><url>
     <loc>https://beta.educationfunding.uk/resources/west-of-england-combined-authority-weca/</loc>
   </url><url>

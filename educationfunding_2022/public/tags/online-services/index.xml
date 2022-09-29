@@ -43,6 +43,15 @@
     </item>
     
     <item>
+      <title>Document Exchange</title>
+      <link>https://beta.educationfunding.uk/resources/document-exchange/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://beta.educationfunding.uk/resources/document-exchange/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Employer Data Service</title>
       <link>https://beta.educationfunding.uk/resources/employer-data-service/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -52,7 +61,7 @@
     </item>
     
     <item>
-      <title>ESFA Information Exchange</title>
+      <title>ESFA Information Exchange [service withdrawn]</title>
       <link>https://beta.educationfunding.uk/resources/esfa-information-exchange/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -84,6 +93,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://beta.educationfunding.uk/resources/find-a-learning-aim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Find a Skills Bootcamp</title>
+      <link>https://beta.educationfunding.uk/resources/find-a-skills-bootcamp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://beta.educationfunding.uk/resources/find-a-skills-bootcamp/</guid>
       <description></description>
     </item>
     
@@ -196,20 +214,20 @@
     </item>
     
     <item>
-      <title>Learner Record Service (LRS)</title>
-      <link>https://beta.educationfunding.uk/resources/learner-record-service-lrs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://beta.educationfunding.uk/resources/learner-record-service-lrs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Learning Aims Reference Service (LARS)</title>
       <link>https://beta.educationfunding.uk/resources/learning-aims-reference-service-lars/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://beta.educationfunding.uk/resources/learning-aims-reference-service-lars/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning Records Service (LRS)</title>
+      <link>https://beta.educationfunding.uk/resources/learning-records-service-lrs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://beta.educationfunding.uk/resources/learning-records-service-lrs/</guid>
       <description></description>
     </item>
     
