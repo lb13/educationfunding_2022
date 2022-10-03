@@ -4,6 +4,5 @@ Description = "Information on accessing and using our data collection systems to
 Link = "https://www.gov.uk/guidance/complete-the-school-census/submit-your-data"
 Tags = ["school census", "schools"]
 Title = "Complete the school census"
-draft = true
 
 +++
