@@ -15,6 +15,11 @@ fetch(ilr_request)
     .then(data => {
         let returns = data;
 
+        // sort by submission date
+        returns = returns.sort(function(a, b) {
+            return a.return_date_number - b.return_date_number;
+        });
+
         let upcoming_returns = returns.filter(function(r) {
             return r.return_date_number >= today_number;
         });
@@ -22,7 +27,18 @@ fetch(ilr_request)
         let next_return = upcoming_returns.slice(0,1);
 
         next_return.forEach(function(r){
-            let displayHTML = "Next ILR return is " + r.return_name + " (" + r.academic_year + "), due on " + r.return_date + ".";
+            let days_remaining = r.return_date_number - today_number;
+            let days_remaining_desc;
+
+            if( days_remaining == 1 ) {
+                days_remaining_desc = "tomorrow"
+            } else if (days_remaining == 0 ) {
+                days_remaining_desc = "today"
+            } else {
+                days_remaining_desc = "in " + days_remaining + " days"
+            };
+
+            let displayHTML = "<p><em>Next ILR (" + days_remaining_desc + ")</em></p><p class=\"title\">" + r.return_name + " (" + r.academic_year + ")</p><p>Due date: " + r.return_date + "<br>Reference date:" + r.reference_date + "</p>"
             next_return_div.insertAdjacentHTML("beforeend",displayHTML);
         })
 
@@ -30,6 +46,7 @@ fetch(ilr_request)
 
         upcoming_returns_afternext.forEach(function(r){
             let displayHTML = "<strong>" + r.academic_year + "</strong> - " + r.return_name + " (due on " + r.return_date + ")<br>";
+
             upcoming_returns_div.insertAdjacentHTML("beforeend",displayHTML);
         })
 

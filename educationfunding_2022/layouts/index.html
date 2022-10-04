@@ -3,21 +3,14 @@
         <div style="padding: 20px">
             <h1 class="is-size-1">Education Funding v2 (beta)</h1>
 
-            <div class="columns">
-                <div class="column">
-                    <div class="notification my-4">
-                        <p>Hi! 👋 This version of the site is in development, keep checking back for updates.</p>
-                        <p><strong>Latest build: {{ now }}</strong></p>
-                        <br>
-                        <p><a href="https://educationfunding.uk">Click here to go back to the current version.</a></p>
-                    </div>
-                </div>
+            
 
+            <div class="columns">
                 <div class="column">
                     <div class="card">
                         <div class="card-content">
-                          <p class="title" id="next-return">
-                          </p>
+                          <div class="m-3" id="next-return">
+                          </div>
                           <button class="button" onclick="toggleUpcomingReturns()">Show/Hide Upcoming Returns</button>
                             <a class="button is-success" target="_blank" href="https://submit-learner-data.service.gov.uk/">Submit ILR</a>
                           <p class="subtitle" id="ilr-dates" style="display: none">
@@ -26,6 +19,12 @@
                         </div>
                       </div>
                     <script src="/js/ilrdates.js"></script>
+                </div>
+
+                <div class="column">
+                    <div class="notification is-info">
+                          Watch this space...
+                      </div>
                 </div>
             </div>
             
@@ -51,6 +50,13 @@
             </div>
             
             <script src="/js/elbisearch.js"></script>
+
+            <div class="notification my-4">
+                <p>Hi! 👋 This version of the site is in development, keep checking back for updates.</p>
+                <p><strong>Latest build: {{ now }}</strong></p>
+                <br>
+                <p><a href="https://educationfunding.uk">Click here to go back to the current version.</a></p>
+            </div>
 
             <hr>
             
