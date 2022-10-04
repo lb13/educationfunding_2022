@@ -44,11 +44,13 @@ fetch(ilr_request)
 
         let upcoming_returns_afternext = upcoming_returns.slice(1,99);
 
-        upcoming_returns_afternext.forEach(function(r){
-            let displayHTML = "<strong>" + r.academic_year + "</strong> - " + r.return_name + " (due on " + r.return_date + ")<br>";
+        let displayHTML = "";
 
-            upcoming_returns_div.insertAdjacentHTML("beforeend",displayHTML);
+        upcoming_returns_afternext.forEach(function(r){
+            displayHTML += "<li><strong>" + r.academic_year + "</strong> - " + r.return_name + " (due on " + r.return_date + ")</li>";
         })
+
+        upcoming_returns_div.insertAdjacentHTML("beforeend","<div class=\"content\"><ul>" + displayHTML + "</ul></div>");
 
     });
 
