@@ -4820,7 +4820,7 @@
     "Status": "active",
     "Rule Name": "FD_DateLevelApp_MA",
     "Rule Description": "if the prior attainment entity is returned the date level applies from is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The prior attainment applies from date has not been returned"
   },
   {
@@ -4829,7 +4829,7 @@
     "Status": "active",
     "Rule Name": "FD_PriorLevel_MA",
     "Rule Description": "If the prior attainment entity is returned the prior level is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The prior attainment level has not been returned"
   },
   {
@@ -4838,7 +4838,7 @@
     "Status": "active",
     "Rule Name": "FD_Accom_AL",
     "Rule Description": "The number of digits for Accommodation must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for Accom is not 1 character long"
   },
   {
@@ -4847,7 +4847,7 @@
     "Status": "active",
     "Rule Name": "FD_AddHours_AL",
     "Rule Description": "The Additional delivery hours must be between 1 and 4 digits long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for AddHours is not between 1 and 4 characters"
   },
   {
@@ -4856,7 +4856,7 @@
     "Status": "active",
     "Rule Name": "FD_AddHours_AR",
     "Rule Description": "The AddHours must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The AddHours is out of range"
   },
   {
@@ -4865,7 +4865,7 @@
     "Status": "active",
     "Rule Name": "FD_AddLine1_AL",
     "Rule Description": "The number of characters for Address line 1 must be 50 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for AddLine1 is not between 1 and 50 characters"
   },
   {
@@ -4874,7 +4874,7 @@
     "Status": "change",
     "Rule Name": "FD_AddLine1_AP",
     "Rule Description": "The AddLine1 must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The AddLine1 does not match the validation pattern"
   },
   {
@@ -4883,7 +4883,7 @@
     "Status": "active",
     "Rule Name": "FD_AddLine2_AL",
     "Rule Description": "The number of characters for Address line 2 must be 50 or less.",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for AddLine2 is not between 1 and 50 characters"
   },
   {
@@ -4892,7 +4892,7 @@
     "Status": "active",
     "Rule Name": "FD_AddLine2_AP",
     "Rule Description": "The AddLine2 must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The AddLine2 does not match the validation pattern"
   },
   {
@@ -4901,7 +4901,7 @@
     "Status": "active",
     "Rule Name": "FD_AddLine3_AL",
     "Rule Description": "The number of characters for Address line 3 must be 50 or less.",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for AddLine3 is not between 1 and 50 characters"
   },
   {
@@ -4910,7 +4910,7 @@
     "Status": "active",
     "Rule Name": "FD_AddLine3_AP",
     "Rule Description": "The AddLine3 must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The AddLine3 does not match the validation pattern"
   },
   {
@@ -4919,7 +4919,7 @@
     "Status": "active",
     "Rule Name": "FD_AddLine4_AL",
     "Rule Description": "The number of characters for Address line 4 must be 50 or less.",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for AddLine4 is not between 1 and 50 characters"
   },
   {
@@ -4928,7 +4928,7 @@
     "Status": "active",
     "Rule Name": "FD_AddLine4_AP",
     "Rule Description": "The AddLine4 must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The AddLine4 does not match the validation pattern"
   },
   {
@@ -4937,7 +4937,7 @@
     "Status": "active",
     "Rule Name": "FD_AFinAmount_AL",
     "Rule Description": "The Apprenticeship Financial Amount must be between 1 and 6 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for AFinAmount is not between 1 and 6 characters"
   },
   {
@@ -4946,7 +4946,7 @@
     "Status": "active",
     "Rule Name": "FD_AFinAmount_AR",
     "Rule Description": "The AFinAmount must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The AFinAmount is out of range"
   },
   {
@@ -4955,7 +4955,7 @@
     "Status": "active",
     "Rule Name": "FD_AFinAmount_MA",
     "Rule Description": "AFinAmount is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Apprenticeship Financial Amount has not been returned"
   },
   {
@@ -4964,7 +4964,7 @@
     "Status": "active",
     "Rule Name": "FD_AFinCode_AL",
     "Rule Description": "The Apprenticeship Financial Code must be between 1 and 2 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for AFinCode is not between 1 and 2 characters"
   },
   {
@@ -4973,7 +4973,7 @@
     "Status": "active",
     "Rule Name": "FD_AFinCode_MA",
     "Rule Description": "AFinCode is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Apprenticeship Financial Code has not been returned"
   },
   {
@@ -4982,7 +4982,7 @@
     "Status": "active",
     "Rule Name": "FD_AFinDate_MA",
     "Rule Description": "AFinDate is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Apprenticeship Financial Record Date has not been returned"
   },
   {
@@ -4991,7 +4991,7 @@
     "Status": "active",
     "Rule Name": "FD_AFinType_AL",
     "Rule Description": "The Apprenticeship Financial Type must be between 1 and 3 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for AFinType is not between 1 and 3 characters"
   },
   {
@@ -5000,7 +5000,7 @@
     "Status": "active",
     "Rule Name": "FD_AFinType_AP",
     "Rule Description": "The AFinType must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The AFinType does not match the validation pattern"
   },
   {
@@ -5009,7 +5009,7 @@
     "Status": "active",
     "Rule Name": "FD_AFinType_MA",
     "Rule Description": "AFinType is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Apprenticeship Financial Type has not been returned"
   },
   {
@@ -5018,7 +5018,7 @@
     "Status": "active",
     "Rule Name": "FD_AimSeqNumber_AL",
     "Rule Description": "The number of digits for Aim sequence number must be 2 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for AimSeqNumber is not between 1 and 2 characters"
   },
   {
@@ -5027,7 +5027,7 @@
     "Status": "active",
     "Rule Name": "FD_AimSeqNumber_AR",
     "Rule Description": "The AimSeqNumber must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The AimSeqNumber is out of range"
   },
   {
@@ -5036,7 +5036,7 @@
     "Status": "active",
     "Rule Name": "FD_AimSeqNumber_MA",
     "Rule Description": "AimSeqNumber is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The AimSeqNumber has not been returned"
   },
   {
@@ -5045,7 +5045,7 @@
     "Status": "active",
     "Rule Name": "FD_AimType_AL",
     "Rule Description": "The number of digits for Aim type must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for AimType is not 1 character long"
   },
   {
@@ -5054,7 +5054,7 @@
     "Status": "active",
     "Rule Name": "FD_AimType_MA",
     "Rule Description": "AimType is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The AimType has not been returned"
   },
   {
@@ -5063,7 +5063,7 @@
     "Status": "active",
     "Rule Name": "FD_ALSCost_AL",
     "Rule Description": "The Learning support cost must be between 1 and 6 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for ALSCost is not between 1 and 6 characters"
   },
   {
@@ -5072,7 +5072,7 @@
     "Status": "active",
     "Rule Name": "FD_ALSCost_AR",
     "Rule Description": "The ALSCost must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ALSCost is out of range"
   },
   {
@@ -5081,7 +5081,7 @@
     "Status": "active",
     "Rule Name": "FD_CampId_AL",
     "Rule Description": "The Campus Identifier must be between 1 and 8 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for CampId is greater than the permitted length"
   },
   {
@@ -5090,7 +5090,7 @@
     "Status": "active",
     "Rule Name": "FD_CampId_AP",
     "Rule Description": "The CampId must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The CampId does not match the validation pattern"
   },
   {
@@ -5099,7 +5099,7 @@
     "Status": "active",
     "Rule Name": "FD_CompStatus_AL",
     "Rule Description": "The number of digits for Completion status must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for CompStatus is not 1 character long"
   },
   {
@@ -5108,7 +5108,7 @@
     "Status": "active",
     "Rule Name": "FD_CompStatus_MA",
     "Rule Description": "CompStatus is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The CompStatus has not been returned"
   },
   {
@@ -5117,7 +5117,7 @@
     "Status": "active",
     "Rule Name": "FD_ConRefNumber_AL",
     "Rule Description": "The number of characters for Subcontracted or partnership UKPRN must be 20 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for ConRefNumber is not between 1 and 20 characters"
   },
   {
@@ -5126,7 +5126,7 @@
     "Status": "active",
     "Rule Name": "FD_ConRefNumber_AP",
     "Rule Description": "The ConRefNumber must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ConRefNumber does not match the validation pattern"
   },
   {
@@ -5135,7 +5135,7 @@
     "Status": "active",
     "Rule Name": "FD_ContactPreference_EO",
     "Rule Description": "The maximum occurences for ContactPreference is one",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The number of occurrences for ContactPreference has occurred more than the maximum allowed"
   },
   {
@@ -5144,7 +5144,7 @@
     "Status": "active",
     "Rule Name": "FD_ContPrefCode_AL",
     "Rule Description": "The number of digits for Contact preference code must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for ContPrefCode is not 1 character long"
   },
   {
@@ -5153,7 +5153,7 @@
     "Status": "active",
     "Rule Name": "FD_ContPrefCode_MA",
     "Rule Description": "ContPrefCode is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ContPrefCode has not been returned"
   },
   {
@@ -5162,7 +5162,7 @@
     "Status": "active",
     "Rule Name": "FD_ContPrefType_AL",
     "Rule Description": "The number of characters for Contact preference type must be 3 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for ContPrefType is not between 1 and 3 characters"
   },
   {
@@ -5171,7 +5171,7 @@
     "Status": "active",
     "Rule Name": "FD_ContPrefType_AP",
     "Rule Description": "The ContPrefType must match the validation pattern in the ILR Specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ContPrefType does not match the validation pattern"
   },
   {
@@ -5180,7 +5180,7 @@
     "Status": "active",
     "Rule Name": "FD_ContPrefType_MA",
     "Rule Description": "ContPrefType is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ContPrefType has not been returned"
   },
   {
@@ -5189,7 +5189,7 @@
     "Status": "active",
     "Rule Name": "FD_DateEmpStatApp_MA",
     "Rule Description": "DateEmpStatApp is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Date Employment Status Applies has not been returned"
   },
   {
@@ -5198,7 +5198,7 @@
     "Status": "active",
     "Rule Name": "FD_DelLocPostCode_AL",
     "Rule Description": "If returned, the number of characters for Delivery location postcode must be 8 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for DelLocPostCode is not between 1 and 8 characters"
   },
   {
@@ -5207,7 +5207,7 @@
     "Status": "active",
     "Rule Name": "FD_DelLocPostCode_AP",
     "Rule Description": "The DelLocPostCode must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The DelLocPostCode does not match the validation pattern"
   },
   {
@@ -5216,7 +5216,7 @@
     "Status": "active",
     "Rule Name": "FD_DelLocPostCode_MA",
     "Rule Description": "DelLocPostcode is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The DelLocPostCode has not been returned"
   },
   {
@@ -5225,7 +5225,7 @@
     "Status": "active",
     "Rule Name": "FD_DOMICILE_AL",
     "Rule Description": "The number of characters for Domicile must be 2 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for DOMICILE is not between 1 and 2 characters"
   },
   {
@@ -5234,7 +5234,7 @@
     "Status": "active",
     "Rule Name": "FD_DOMICILE_AP",
     "Rule Description": "The DOMICILE must match the validation pattern in the ILR specificaiton",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The DOMICILE does not match the validation pattern"
   },
   {
@@ -5243,7 +5243,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_DPOutcome_EO",
     "Rule Description": "The minimum occurrence for DPOutcome must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The DPOutcome has not met the minimum occurrence requirement"
   },
   {
@@ -5252,7 +5252,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_LearnRefNumber_AL",
     "Rule Description": "The number of characters for Learner reference number must be 12 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for LearnRefNumber is not between 1 and 12 characters"
   },
   {
@@ -5261,7 +5261,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_LearnRefNumber_AP",
     "Rule Description": "The LearnRefNumber must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnRefNumber does not match the validation pattern"
   },
   {
@@ -5270,7 +5270,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_LearnRefNumber_MA",
     "Rule Description": "LearnRefNumber is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Learner Reference Number has not been returned"
   },
   {
@@ -5279,7 +5279,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_OutCode_AL",
     "Rule Description": "The OutCode must be between 1 and 3 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for OutCode is not between 1 and 3 characters"
   },
   {
@@ -5288,7 +5288,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_OutCode_MA",
     "Rule Description": "OutCode is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The OutCode has not been returned"
   },
   {
@@ -5297,7 +5297,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_OutCollDate_MA",
     "Rule Description": "The OutCollDate is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The OutCollDate has not been returned"
   },
   {
@@ -5306,7 +5306,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_OutStartDate_MA",
     "Rule Description": "OutStartDate is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Outcome Start Date has not been returned"
   },
   {
@@ -5315,7 +5315,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_OutType_AL",
     "Rule Description": "The Outcome Type must be between 1 and 3 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for OutType is not between 1 and 3 characters"
   },
   {
@@ -5324,7 +5324,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_OutType_AP",
     "Rule Description": "The OutType must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The OutType does not match the validation pattern"
   },
   {
@@ -5333,7 +5333,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_OutType_MA",
     "Rule Description": "OutType is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The OutType has not been returned"
   },
   {
@@ -5342,7 +5342,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_ULN_AL",
     "Rule Description": "The number of characters for ULN must be 10 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for ULN is not between 1 and 10 characters"
   },
   {
@@ -5351,7 +5351,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_ULN_AR",
     "Rule Description": "The ULN must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ULN is out of range"
   },
   {
@@ -5360,7 +5360,7 @@
     "Status": "active",
     "Rule Name": "FD_DP_ULN_MA",
     "Rule Description": "ULN is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ULN has not been returned"
   },
   {
@@ -5369,7 +5369,7 @@
     "Status": "active",
     "Rule Name": "FD_ELQ_AL",
     "Rule Description": "The number of digits for ELQ must be 1 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for ELQ is not 1 character long"
   },
   {
@@ -5378,7 +5378,7 @@
     "Status": "active",
     "Rule Name": "FD_Email_AL",
     "Rule Description": "The number of characters for Email must be 100 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for Email is not between 1 and 100 characters"
   },
   {
@@ -5387,7 +5387,7 @@
     "Status": "active",
     "Rule Name": "FD_Email_AP",
     "Rule Description": "Email must match the validation pattern in the ILR Specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Email does not match the validation pattern"
   },
   {
@@ -5396,7 +5396,7 @@
     "Status": "active",
     "Rule Name": "FD_EmpId_AL",
     "Rule Description": "The number of characters for Employer identifier must be must be 9 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for EmpId is not between 1 and 9 characters"
   },
   {
@@ -5405,7 +5405,7 @@
     "Status": "change",
     "Rule Name": "FD_EmploymentStatusMonitoring_EO",
     "Rule Description": "The maximum number of occurences for EmploymentStatusMonitoring is 7 10",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The number of occurrences for EmploymentStatusMonitoring has occurred more than the maximum allowed"
   },
   {
@@ -5414,7 +5414,7 @@
     "Status": "active",
     "Rule Name": "FD_EmpOutcome_AL",
     "Rule Description": "If returned, the number of digits for Employment outcome must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for EmpOutcome is not 1 character long"
   },
   {
@@ -5423,7 +5423,7 @@
     "Status": "active",
     "Rule Name": "FD_EmpStat_AL",
     "Rule Description": "The number of digits for Employment status is 2 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for EmpStat is not between 1 and 2 characters"
   },
   {
@@ -5432,7 +5432,7 @@
     "Status": "active",
     "Rule Name": "FD_EmpStat_MA",
     "Rule Description": "EmpStat is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The EmpStat has not been returned"
   },
   {
@@ -5441,7 +5441,7 @@
     "Status": "active",
     "Rule Name": "FD_EngGrade_AL",
     "Rule Description": "The number of characters for EngGrade must be 4 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for EngGrade is not between 1 and 4 characters"
   },
   {
@@ -5450,7 +5450,7 @@
     "Status": "active",
     "Rule Name": "FD_EngGrade_AP",
     "Rule Description": "The EngGrade must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The EngGrade does not match the validation pattern"
   },
   {
@@ -5459,7 +5459,7 @@
     "Status": "active",
     "Rule Name": "FD_EPAOrgID_AL",
     "Rule Description": "The EPAOrgID must be between 1 and 7 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for EPAOrgID is not between 1 and 7 characters"
   },
   {
@@ -5468,7 +5468,7 @@
     "Status": "active",
     "Rule Name": "FD_EPAOrgID_AP",
     "Rule Description": "The EPAOrgID must match the validation pattern in the ILR Specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The EPAOrgID does not match the validation pattern"
   },
   {
@@ -5477,7 +5477,7 @@
     "Status": "active",
     "Rule Name": "FD_ESMCode_AL",
     "Rule Description": "The number of digits for Employment status monitoring code must be 2 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for ESMCode is not between 1 and 2 characters"
   },
   {
@@ -5486,7 +5486,7 @@
     "Status": "active",
     "Rule Name": "FD_ESMCode_MA",
     "Rule Description": "ESMCode is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ESMCode has not been returned"
   },
   {
@@ -5495,7 +5495,7 @@
     "Status": "active",
     "Rule Name": "FD_ESMType_AL",
     "Rule Description": "The number of characters for Employment status monitoring type must be 3 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for ESMType is not between 1 and 3 characters"
   },
   {
@@ -5504,7 +5504,7 @@
     "Status": "active",
     "Rule Name": "FD_ESMType_AP",
     "Rule Description": "The ESMType must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ESMType does not match the validation pattern"
   },
   {
@@ -5513,7 +5513,7 @@
     "Status": "active",
     "Rule Name": "FD_ESMType_MA",
     "Rule Description": "ESMType is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ESMType has not been returned"
   },
   {
@@ -5522,7 +5522,7 @@
     "Status": "active",
     "Rule Name": "FD_Ethnicity_AL",
     "Rule Description": "The number of digits for Ethicity must be 2",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for Ethnicity is not between 1 and 2 characters"
   },
   {
@@ -5531,7 +5531,7 @@
     "Status": "active",
     "Rule Name": "FD_Ethnicity_MA",
     "Rule Description": "Ethnicity is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Ethnicity has not been returned"
   },
   {
@@ -5540,7 +5540,7 @@
     "Status": "active",
     "Rule Name": "FD_FamilyName_AL",
     "Rule Description": "The number of characters for Family name must be 100 or less.",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for FamilyName is not between 1 and 100 characters"
   },
   {
@@ -5549,7 +5549,7 @@
     "Status": "active",
     "Rule Name": "FD_FamilyName_AP",
     "Rule Description": "The FamilyName must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The FamilyName does not match the validation pattern"
   },
   {
@@ -5558,7 +5558,7 @@
     "Status": "active",
     "Rule Name": "FD_FINAMOUNT_AL",
     "Rule Description": "The Financial support amount must be between 1 and 6 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for FINAMOUNT is not between 1 and 6 characters"
   },
   {
@@ -5567,7 +5567,7 @@
     "Status": "active",
     "Rule Name": "FD_FINAMOUNT_AR",
     "Rule Description": "The FINAMOUNT must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The FINAMOUNT is out of range"
   },
   {
@@ -5576,7 +5576,7 @@
     "Status": "active",
     "Rule Name": "FD_FINAMOUNT_MA",
     "Rule Description": "FINAMOUNT is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The FINAMOUNT has not been returned"
   },
   {
@@ -5585,7 +5585,7 @@
     "Status": "active",
     "Rule Name": "FD_FINTYPE_AL",
     "Rule Description": "The number of digits for Financial support type must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for FINTYPE is not 1 character long"
   },
   {
@@ -5594,7 +5594,7 @@
     "Status": "active",
     "Rule Name": "FD_FINTYPE_MA",
     "Rule Description": "FINTYPE is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The FINTYPE has not been returned"
   },
   {
@@ -5603,7 +5603,7 @@
     "Status": "active",
     "Rule Name": "FD_FUNDCOMP_AL",
     "Rule Description": "The number of digits for Completion of year of instance must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for FUNDCOMP is not 1 character long"
   },
   {
@@ -5612,7 +5612,7 @@
     "Status": "active",
     "Rule Name": "FD_FUNDLEV_AL",
     "Rule Description": "The number of digits for Level applicable to Funding Council HEIFES must be 2",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for FUNDLEV is not between 1 and 2 characters"
   },
   {
@@ -5621,7 +5621,7 @@
     "Status": "active",
     "Rule Name": "FD_FundModel_AL",
     "Rule Description": "The number of digits for Funding model must be 2",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for FundModel is not between 1 and 2 characters"
   },
   {
@@ -5630,7 +5630,7 @@
     "Status": "active",
     "Rule Name": "FD_FundModel_MA",
     "Rule Description": "FUNDMODEL is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The FundModel has not been returned"
   },
   {
@@ -5639,7 +5639,7 @@
     "Status": "active",
     "Rule Name": "FD_FworkCode_AL",
     "Rule Description": "The number of digits for Framework code must be 3 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for FworkCode is not between 1 and 3 characters"
   },
   {
@@ -5648,7 +5648,7 @@
     "Status": "active",
     "Rule Name": "FD_GivenNames_AL",
     "Rule Description": "The number of characters for Given name must be 100 or less.",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for GivenNames is not between 1 and 100 characters"
   },
   {
@@ -5657,7 +5657,7 @@
     "Status": "active",
     "Rule Name": "FD_GivenNames_AP",
     "Rule Description": "The GivenNames must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The GivenNames does not match the validation pattern"
   },
   {
@@ -5666,7 +5666,7 @@
     "Status": "active",
     "Rule Name": "FD_GROSSFEE_AL",
     "Rule Description": "The Gross tuition fee must be between 1 and 6 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for GROSSFEE is not between 1 and 6 characters"
   },
   {
@@ -5675,7 +5675,7 @@
     "Status": "active",
     "Rule Name": "FD_GROSSFEE_AR",
     "Rule Description": "The GROSSFEE must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The GROSSFEE is out of range"
   },
   {
@@ -5684,7 +5684,7 @@
     "Status": "active",
     "Rule Name": "FD_HEPostCode_AL",
     "Rule Description": "The number of characters for HE centre location postcode must be 8 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for HEPostCode is not between 1 and 8 characters"
   },
   {
@@ -5693,7 +5693,7 @@
     "Status": "active",
     "Rule Name": "FD_HEPostCode_AP",
     "Rule Description": "The HEPostCode must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The HEPostCode does not match the validation pattern"
   },
   {
@@ -5702,7 +5702,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnAimRef_AL",
     "Rule Description": "The number of characters for the Learning aim reference number must be 8 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for LearnAimRef is not between 1 and 8 characters"
   },
   {
@@ -5711,7 +5711,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnAimRef_AP",
     "Rule Description": "The LearnAimRef must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnAimRef does not match the validation pattern"
   },
   {
@@ -5720,7 +5720,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnAimRef_MA",
     "Rule Description": "LearnAimRef is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Learning Aim Reference has not been returned"
   },
   {
@@ -5729,7 +5729,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnDelFAMCode_AL",
     "Rule Description": "The number of characters for the Learning delivery FAM code must be 5 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for LearnDelFAMCode is not between 1 and 5 characters"
   },
   {
@@ -5738,7 +5738,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnDelFAMCode_AP",
     "Rule Description": "The LearnDelFAMCode must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnDelFAMCode does not match the validation pattern"
   },
   {
@@ -5747,7 +5747,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnDelFAMCode_MA",
     "Rule Description": "LearnDelFAMCode is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnDelFAMCode has not been returned"
   },
   {
@@ -5756,7 +5756,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnDelFAMType_AL",
     "Rule Description": "The number of characters for the Learning delivery FAM type must be 3 characters",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for LearnDelFAMType is not between 1 and 3 characters"
   },
   {
@@ -5765,7 +5765,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnDelFAMType_AP",
     "Rule Description": "The LearnDelFAMType must match the validation in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnDelFAMType does not match the validation pattern"
   },
   {
@@ -5774,7 +5774,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnDelFAMType_MA",
     "Rule Description": "LearnDelFAMType is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnDelFAMType has not been returned"
   },
   {
@@ -5783,7 +5783,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnerFAM_EO",
     "Rule Description": "The maximum number of occurences for Learner.FAM is 15",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The number of occurrences for LearnerFAM has occurred more than the maximum allowed"
   },
   {
@@ -5792,7 +5792,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnerHE_EO",
     "Rule Description": "The maximum number of occurences for Learner.HE is 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The number of occurrences for LearnerHE has occurred more than the maximum allowed"
   },
   {
@@ -5801,7 +5801,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnerHEFinancialSupport_EO",
     "Rule Description": "The maximum number of occurences for LearnerHEFinancialSupport is 4",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The number of occurrences for LearnerHEFinancialSupport has occurred more than the maximum allowed"
   },
   {
@@ -5810,7 +5810,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnFAMCode_AL",
     "Rule Description": "The number of digits for Learner FAM code must be 3 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for LearnFAMCode is not between 1 and 3 characters"
   },
   {
@@ -5819,7 +5819,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnFAMCode_MA",
     "Rule Description": "LearnFAMCode is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnFAMCode has not been returned"
   },
   {
@@ -5828,7 +5828,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnFAMType_AL",
     "Rule Description": "The number of characters for Learner FAM type must be 3 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for LearnFAMType is not between 1 and 3 characters"
   },
   {
@@ -5837,7 +5837,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnFAMType_AP",
     "Rule Description": "The LearnFAMType must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnFAMType does not match the validation pattern"
   },
   {
@@ -5846,7 +5846,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnFAMType_MA",
     "Rule Description": "LearnFAMType is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnFAMType has not been returned"
   },
   {
@@ -5855,7 +5855,7 @@
     "Status": "active",
     "Rule Name": "FD_LearningDelivery_EO",
     "Rule Description": "The minimum occurrence for LearningDelivery must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearningDelivery has not met the minimum occurrence requirement"
   },
   {
@@ -5864,7 +5864,7 @@
     "Status": "active",
     "Rule Name": "FD_LearningDeliveryHE_EO",
     "Rule Description": "The maximum number of occurences for LearningDeliveryHE is 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The number of occurrences for LearningDeliveryHE has occurred more than the maximum allowed"
   },
   {
@@ -5873,7 +5873,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnPlanEndDate_MA",
     "Rule Description": "LearnPlanEndDate is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnPlanEndDate has not been returned"
   },
   {
@@ -5882,7 +5882,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnRefNumber_AL",
     "Rule Description": "The number of characters for Learner reference number must be 12 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for LearnRefNumber is not between 1 and 12 characters"
   },
   {
@@ -5891,7 +5891,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnRefNumber_AP",
     "Rule Description": "The LearnRefNumber must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnRefNumber does not match the validation pattern"
   },
   {
@@ -5900,7 +5900,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnRefNumber_MA",
     "Rule Description": "LearnRefNumber is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnRefNumber has not been returned"
   },
   {
@@ -5909,7 +5909,7 @@
     "Status": "active",
     "Rule Name": "FD_LearnStartDate_MA",
     "Rule Description": "LearnStartDate is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LearnStartDate has not been returned"
   },
   {
@@ -5918,7 +5918,7 @@
     "Status": "active",
     "Rule Name": "FD_LLDDandHealthProblem_EO",
     "Rule Description": "The maximum number of occurences for LLDDandHealthProblem is 22",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The number of occurrences for LLDDandHealthProblem has occurred more than the maximum allowed"
   },
   {
@@ -5927,7 +5927,7 @@
     "Status": "active",
     "Rule Name": "FD_LLDDCat_AL",
     "Rule Description": "The number of digits for LLDDCat must be 2 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for LLDDCat is not between 1 and 2 characters"
   },
   {
@@ -5936,7 +5936,7 @@
     "Status": "active",
     "Rule Name": "FD_LLDDCat_MA",
     "Rule Description": "LLDDCat is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LLDDCat has not been returned"
   },
   {
@@ -5945,7 +5945,7 @@
     "Status": "active",
     "Rule Name": "FD_LLDDHealthProb_AL",
     "Rule Description": "The number of digits for LLDD and health problem must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for LLDDHealthProb is not 1 character long"
   },
   {
@@ -5954,7 +5954,7 @@
     "Status": "active",
     "Rule Name": "FD_LLDDHealthProb_MA",
     "Rule Description": "LLDDHealthProb is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LLDDHealthProb has not been returned"
   },
   {
@@ -5963,7 +5963,7 @@
     "Status": "active",
     "Rule Name": "FD_LSDPostcode_AL",
     "Rule Description": "The LSDPostcode must be 8 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "Thelength of the value returned for  LSDPostcode is not between 1 and 8 characters long"
   },
   {
@@ -5972,7 +5972,7 @@
     "Status": "active",
     "Rule Name": "FD_LSDPostcode_AP",
     "Rule Description": "The LSDPostcode must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The LSDPostcode does not match the validation pattern"
   },
   {
@@ -5981,7 +5981,7 @@
     "Status": "active",
     "Rule Name": "FD_MathGrade_AL",
     "Rule Description": "The number of characters for MathGrade must be 4 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for MathGrade is not between 1 and 4 characters"
   },
   {
@@ -5990,7 +5990,7 @@
     "Status": "active",
     "Rule Name": "FD_MathGrade_AP",
     "Rule Description": "The MathGrade does not match the validation pattern specified in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The MathGrade does not match the validation pattern"
   },
   {
@@ -5999,7 +5999,7 @@
     "Status": "active",
     "Rule Name": "FD_MODESTUD_AL",
     "Rule Description": "The number of digits for Mode of study must be 2",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for MODESTUD is not between 1 and 2 characters"
   },
   {
@@ -6008,7 +6008,7 @@
     "Status": "active",
     "Rule Name": "FD_MODESTUD_MA",
     "Rule Description": "MODESTUD is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The MODESTUD has not been returned"
   },
   {
@@ -6017,7 +6017,7 @@
     "Status": "active",
     "Rule Name": "FD_MSTUFEE_AL",
     "Rule Description": "The number of digits for Major source of tuition fees must be 2 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for MSTUFEE is not between 1 and 2 characters"
   },
   {
@@ -6026,7 +6026,7 @@
     "Status": "active",
     "Rule Name": "FD_MSTUFEE_MA",
     "Rule Description": "MSTUFEE is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The MSTUFEE has not been returned"
   },
   {
@@ -6035,7 +6035,7 @@
     "Status": "active",
     "Rule Name": "FD_NETFEE_AL",
     "Rule Description": "The Net tuition fee must be between 1 and 6 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for NETFEE is not between 1 and 6 characters"
   },
   {
@@ -6044,7 +6044,7 @@
     "Status": "active",
     "Rule Name": "FD_NETFEE_AR",
     "Rule Description": "The NETFEE must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The NETFEE is out of range"
   },
   {
@@ -6053,7 +6053,7 @@
     "Status": "active",
     "Rule Name": "FD_NINumber_AL",
     "Rule Description": "The number of characters for NI Number must be 9 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for NINumber is not between 1 and 9 characters"
   },
   {
@@ -6062,7 +6062,7 @@
     "Status": "active",
     "Rule Name": "FD_NINumber_AP",
     "Rule Description": "The NINumber must match the validation pattern in the ILR Specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The NINumber does not match the validation pattern"
   },
   {
@@ -6071,7 +6071,7 @@
     "Status": "active",
     "Rule Name": "FD_OtherFundAdj_AL",
     "Rule Description": "If the Other funding adjustment is returned, the value must be between 1 and 3 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for OtherFundAdj is not between 1 and 3 characters"
   },
   {
@@ -6080,7 +6080,7 @@
     "Status": "active",
     "Rule Name": "FD_OtherFundAdj_AR",
     "Rule Description": "The OtherFundAdj must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The OtherFundAdj is out of range"
   },
   {
@@ -6089,7 +6089,7 @@
     "Status": "active",
     "Rule Name": "FD_OTJActHours_AL",
     "Rule Description": "If the OTJActHours is returned, the value must be between 1 and 4",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for the OTJActHours is not between 1 and 4 characters"
   },
   {
@@ -6098,7 +6098,7 @@
     "Status": "active",
     "Rule Name": "FD_OTJActHours_AR",
     "Rule Description": "The OTJActHours must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The OTJActHours is out of range"
   },
   {
@@ -6107,7 +6107,7 @@
     "Status": "active",
     "Rule Name": "FD_Outcome_AL",
     "Rule Description": "The number of digits for Outcome must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for Outcome is not 1 character long"
   },
   {
@@ -6116,7 +6116,7 @@
     "Status": "active",
     "Rule Name": "FD_OutGrade_AL",
     "Rule Description": "The number of characters for the Outcome grade must be 6 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for OutGrade is not between 1 and 6 characters"
   },
   {
@@ -6125,7 +6125,7 @@
     "Status": "active",
     "Rule Name": "FD_OutGrade_AP",
     "Rule Description": "The OutGrade must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The OutGrade does not match the validation pattern"
   },
   {
@@ -6134,7 +6134,7 @@
     "Status": "active",
     "Rule Name": "FD_PartnerUKPRN_AL",
     "Rule Description": "The number of characters for Subcontracted or partnership UKPRN must be 8 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PartnerUKPRN is not between 1 and 8 characters"
   },
   {
@@ -6143,7 +6143,7 @@
     "Status": "active",
     "Rule Name": "FD_PartnerUKPRN_AR",
     "Rule Description": "The PartnerUKPRN must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PartnerUKPRN is out of range"
   },
   {
@@ -6152,7 +6152,7 @@
     "Status": "active",
     "Rule Name": "FD_PCFLDCS_AL",
     "Rule Description": "The Percentage taught in first LDCS subject must be in the range [0 - 100.0] and not more than 1 decimal place",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PCFLDCS is not between 1 and 5 characters"
   },
   {
@@ -6161,7 +6161,7 @@
     "Status": "active",
     "Rule Name": "FD_PCFLDCS_AR",
     "Rule Description": "The PCFLDCS must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PCFLDCS is out of range"
   },
   {
@@ -6170,7 +6170,7 @@
     "Status": "active",
     "Rule Name": "FD_PCOLAB_AL",
     "Rule Description": "The Percentage not taught in this institution must be in the range [0.1-100.0] and not more than 1 decimal place",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PCOLAB is not between 1 and 5 characters"
   },
   {
@@ -6179,7 +6179,7 @@
     "Status": "active",
     "Rule Name": "FD_PCOLAB_AR",
     "Rule Description": "The PCOLAB must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PCOLAB is out of range"
   },
   {
@@ -6188,7 +6188,7 @@
     "Status": "active",
     "Rule Name": "FD_PCSLDCS_AL",
     "Rule Description": "The Percentage taught in second LDCS subject must be in the range [0 - 100.0] and not more than 1 decimal place",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PCSLDCS is not between 1 and 5 characters"
   },
   {
@@ -6197,7 +6197,7 @@
     "Status": "active",
     "Rule Name": "FD_PCSLDCS_AR",
     "Rule Description": "The PCSLDCS must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PCSLDCS is out of range"
   },
   {
@@ -6206,7 +6206,7 @@
     "Status": "active",
     "Rule Name": "FD_PCTLDCS_AL",
     "Rule Description": "The Percentage taught in third LDCS subject must be in the range [0 - 100.0] and not more than 1 decimal place",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PCTLDCS is not between 1 and 5 characters"
   },
   {
@@ -6215,7 +6215,7 @@
     "Status": "active",
     "Rule Name": "FD_PCTLDCS_AR",
     "Rule Description": "The PCTLDCS must match the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PCTLDCS is out of range"
   },
   {
@@ -6224,7 +6224,7 @@
     "Status": "active",
     "Rule Name": "FD_PHours_AL",
     "Rule Description": "The Planned hours must 4 digits or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for Planned Hours is not between 1 and 4 digits"
   },
   {
@@ -6233,7 +6233,7 @@
     "Status": "active",
     "Rule Name": "FD_PHours_AR",
     "Rule Description": "The Planned hours must match the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Planned Hours is out of range"
   },
   {
@@ -6242,7 +6242,7 @@
     "Status": "active",
     "Rule Name": "FD_PlanEEPHours_AL",
     "Rule Description": "The Planned employability, enrichment and pastoral hours must be in the range [0 - 9999]",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PlanEEPHours is not between 1 and 4 characters"
   },
   {
@@ -6251,7 +6251,7 @@
     "Status": "active",
     "Rule Name": "FD_PlanEEPHours_AR",
     "Rule Description": "The PlanEEPHours must match the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PlanEEPHours is out of range"
   },
   {
@@ -6260,7 +6260,7 @@
     "Status": "active",
     "Rule Name": "FD_PlanLearnHours_AL",
     "Rule Description": "The Planned learning hours must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PlanLearnHours is not between 1 and 4 characters"
   },
   {
@@ -6269,7 +6269,7 @@
     "Status": "active",
     "Rule Name": "FD_PlanLearnHours_AR",
     "Rule Description": "The PlanLearnHours must match the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PlanLearnHours is out of range"
   },
   {
@@ -6278,7 +6278,7 @@
     "Status": "active",
     "Rule Name": "FD_PMUKPRN_AL",
     "Rule Description": "The PMUKPRN must be 8 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PMUKPRN is not between 1 and 8 characters"
   },
   {
@@ -6287,7 +6287,7 @@
     "Status": "active",
     "Rule Name": "FD_PMUKPRN_AR",
     "Rule Description": "The PMUKPRN must match the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PMUKPRN is out of range"
   },
   {
@@ -6296,7 +6296,7 @@
     "Status": "active",
     "Rule Name": "FD_Postcode_AL",
     "Rule Description": "The number of characters for Postcode must be 8 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for Postcode is not between 1 and 8 characters"
   },
   {
@@ -6305,7 +6305,7 @@
     "Status": "active",
     "Rule Name": "FD_Postcode_AP",
     "Rule Description": "The Postcode must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Postcode does not match the validation pattern"
   },
   {
@@ -6314,7 +6314,7 @@
     "Status": "active",
     "Rule Name": "FD_Postcode_MA",
     "Rule Description": "Postcode is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Postcode has not been returned"
   },
   {
@@ -6323,7 +6323,7 @@
     "Status": "active",
     "Rule Name": "FD_PostcodePrior_AL",
     "Rule Description": "The Postcode Prior must be 8 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PostcodePrior is not between 1 and 8 characters"
   },
   {
@@ -6332,7 +6332,7 @@
     "Status": "active",
     "Rule Name": "FD_PostcodePrior_AP",
     "Rule Description": "The PostcodePrior must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PostcodePrior does not match the validation pattern"
   },
   {
@@ -6341,7 +6341,7 @@
     "Status": "active",
     "Rule Name": "FD_PostcodePrior_MA",
     "Rule Description": "PostcodePrior is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PostcodePrior has not been returned"
   },
   {
@@ -6350,7 +6350,7 @@
     "Status": "active",
     "Rule Name": "FD_PrevLearnRefNumber_AL",
     "Rule Description": "The number of characters for Learner reference number in previous year must be 12 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PrevLearnRefNumber is not between 1 and 12 characters"
   },
   {
@@ -6359,7 +6359,7 @@
     "Status": "active",
     "Rule Name": "FD_PrevLearnRefNumber_AP",
     "Rule Description": "The PrevLearnRefNumber must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PrevLearnRefNumber does not match the validation pattern"
   },
   {
@@ -6368,7 +6368,7 @@
     "Status": "active",
     "Rule Name": "FD_PrevUKPRN_AL",
     "Rule Description": "The number of characters for UKPRN in previous year must be 8 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PrevUKPRN is not between 1 and 8 characters"
   },
   {
@@ -6377,7 +6377,7 @@
     "Status": "active",
     "Rule Name": "FD_PrevUKPRN_AR",
     "Rule Description": "The PrevUKPRN must match the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PrevUKPRN is out of range"
   },
   {
@@ -6386,7 +6386,7 @@
     "Status": "active",
     "Rule Name": "FD_PrimaryLLDD_AL",
     "Rule Description": "The number of digits for PrimaryLLDD must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for PrimaryLLDD is not 1 character long"
   },
   {
@@ -6395,7 +6395,7 @@
     "Status": "active",
     "Rule Name": "FD_PriorLearnFundAdj_AL",
     "Rule Description": "If the Funding adjustment for prior learning is returned, the value must be between 1 and 2 characters long",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PriorLearnFundAdj is not between 1 and 2 characters"
   },
   {
@@ -6404,7 +6404,7 @@
     "Status": "active",
     "Rule Name": "FD_PriorLearnFundAdj_AR",
     "Rule Description": "The PriorLearnFundAdj must match the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The PriorLearnFundAdj is out of range"
   },
   {
@@ -6413,7 +6413,7 @@
     "Status": "active",
     "Rule Name": "FD_ProgType_AL",
     "Rule Description": "The number of digits for Programme type must be 2 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for ProgType is not between 1 and 2 characters"
   },
   {
@@ -6422,7 +6422,7 @@
     "Status": "active",
     "Rule Name": "FD_ProviderSpecDeliveryMonitoring_EO",
     "Rule Description": "The maximum number of occurences for ProviderSpecDeliveryMonitoring is 2",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ProviderSpecDeliveryMonitoring has occurred more than allowed"
   },
   {
@@ -6431,7 +6431,7 @@
     "Status": "active",
     "Rule Name": "FD_ProviderSpecLearnerMonitoring_EO",
     "Rule Description": "The maximum number of occurences for ProviderSpecLearnerMonitoring is 2",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ProviderSpecLearnerMonitoring has occurred more than allowed"
   },
   {
@@ -6440,7 +6440,7 @@
     "Status": "active",
     "Rule Name": "FD_ProvSpecDelMon_AL",
     "Rule Description": "The number of characters for Provider specified delivery monitoring must be 20 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for ProvSpecDelMon is not between 1 and 20 characters"
   },
   {
@@ -6449,7 +6449,7 @@
     "Status": "active",
     "Rule Name": "FD_ProvSpecDelMon_AP",
     "Rule Description": "The ProvSpecDelMon must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ProvSpecDelMon does not match the validation pattern"
   },
   {
@@ -6458,7 +6458,7 @@
     "Status": "active",
     "Rule Name": "FD_ProvSpecDelMon_MA",
     "Rule Description": "The ProvSpecDelMon is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ProvSpecDelMon has not been returned"
   },
   {
@@ -6467,7 +6467,7 @@
     "Status": "active",
     "Rule Name": "FD_ProvSpecDelMonOccur_AL",
     "Rule Description": "The number of characters for the Provider specified delivery monitoring occurrence must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for ProvSpecDelMonOccur is not 1 character long"
   },
   {
@@ -6476,7 +6476,7 @@
     "Status": "active",
     "Rule Name": "FD_ProvSpecDelMonOccur_AP",
     "Rule Description": "The ProvSpecDelMonOccur must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ProvSpecDelMonOccur does not match the validation pattern"
   },
   {
@@ -6485,7 +6485,7 @@
     "Status": "active",
     "Rule Name": "FD_ProvSpecDelMonOccur_MA",
     "Rule Description": "The ProvSpecDelMonOccur is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ProvSpecDelMonOccur has not been returned"
   },
   {
@@ -6494,7 +6494,7 @@
     "Status": "active",
     "Rule Name": "FD_ProvSpecLearnMon_AL",
     "Rule Description": "The number of characters for Provider specified learner monitoring must be 20 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for ProvSpecLearnMon is not between 1 and 20 characters"
   },
   {
@@ -6503,7 +6503,7 @@
     "Status": "active",
     "Rule Name": "FD_ProvSpecLearnMon_AP",
     "Rule Description": "The ProvSpecLearnMon must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ProvSpecLearnMon does not match the validation pattern"
   },
   {
@@ -6512,7 +6512,7 @@
     "Status": "active",
     "Rule Name": "FD_ProvSpecLearnMon_MA",
     "Rule Description": "The ProvSpecLearnMon is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ProvSpecLearnMon has not been returned"
   },
   {
@@ -6521,7 +6521,7 @@
     "Status": "active",
     "Rule Name": "FD_ProvSpecLearnMonOccur_AL",
     "Rule Description": "The number of characters for the Provider specified learner monitoring occurrence must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for ProvSpecLearnMonOccur is not 1 character long"
   },
   {
@@ -6530,7 +6530,7 @@
     "Status": "active",
     "Rule Name": "FD_ProvSpecLearnMonOccur_AP",
     "Rule Description": "The ProvSpecLearnMonOccur must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ProvSpecLearnMonOccur does not match the validation pattern"
   },
   {
@@ -6539,7 +6539,7 @@
     "Status": "active",
     "Rule Name": "FD_ProvSpecLearnMonOccur_MA",
     "Rule Description": "The ProvSpecLearnMonOccur is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ProvSpecLearnMonOccur has not been returned"
   },
   {
@@ -6548,7 +6548,7 @@
     "Status": "active",
     "Rule Name": "FD_PwayCode_AL",
     "Rule Description": "The number of digits for Pathway must be 4 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for PwayCode is not between 1 and 4 characters"
   },
   {
@@ -6557,7 +6557,7 @@
     "Status": "active",
     "Rule Name": "FD_QUALENT3_AL",
     "Rule Description": "The number of characters for Qualification on entry must be 3 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for QUALENT3 is not between 1 and 3 characters"
   },
   {
@@ -6566,7 +6566,7 @@
     "Status": "active",
     "Rule Name": "FD_QUALENT3_AP",
     "Rule Description": "The QUALENT3 must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The QUALENT3 does not match the validation pattern"
   },
   {
@@ -6575,7 +6575,7 @@
     "Status": "active",
     "Rule Name": "FD_SEC_AL",
     "Rule Description": "The number of digits for Socio-economic indicator must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for SEC is not 1 character long"
   },
   {
@@ -6584,7 +6584,7 @@
     "Status": "active",
     "Rule Name": "FD_Sex_AL",
     "Rule Description": "The number of characters for the Sex must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for Sex is not 1 character long"
   },
   {
@@ -6593,7 +6593,7 @@
     "Status": "active",
     "Rule Name": "FD_Sex_AP",
     "Rule Description": "Sex must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Sex does not match the validation pattern"
   },
   {
@@ -6602,7 +6602,7 @@
     "Status": "active",
     "Rule Name": "FD_Sex_MA",
     "Rule Description": "Sex is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The Sex has not been returned"
   },
   {
@@ -6611,7 +6611,7 @@
     "Status": "active",
     "Rule Name": "FD_SOC2000_AL",
     "Rule Description": "The number of digits for Occupation code must be 4 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for SOC2000 is not between 1 and 4 characters"
   },
   {
@@ -6620,7 +6620,7 @@
     "Status": "active",
     "Rule Name": "FD_SPECFEE_AL",
     "Rule Description": "The number of digits for Special fee indicator must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for SPECFEE is not 1 character long"
   },
   {
@@ -6629,7 +6629,7 @@
     "Status": "active",
     "Rule Name": "FD_SPECFEE_MA",
     "Rule Description": "SPECFEE is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The SPECFEE has not been returned"
   },
   {
@@ -6638,7 +6638,7 @@
     "Status": "active",
     "Rule Name": "FD_SSN_AL",
     "Rule Description": "The number of characters for  Student support number must be 13 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for SSN is not between 1 and 13 characters"
   },
   {
@@ -6647,7 +6647,7 @@
     "Status": "active",
     "Rule Name": "FD_SSN_AP",
     "Rule Description": "SSN must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The SSN does not match the validation pattern"
   },
   {
@@ -6656,7 +6656,7 @@
     "Status": "active",
     "Rule Name": "FD_StdCode_AL",
     "Rule Description": "StdCode must be 5 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for StdCode is not between 1 and 5 characters"
   },
   {
@@ -6665,7 +6665,7 @@
     "Status": "active",
     "Rule Name": "FD_STULOAD_AL",
     "Rule Description": "The Student instance FTE must be in the range [0.1 - 300] and not more than 1 decimal place",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for STULOAD is not between 1 and 5 characters"
   },
   {
@@ -6674,7 +6674,7 @@
     "Status": "active",
     "Rule Name": "FD_STULOAD_AR",
     "Rule Description": "The STULOAD must match the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The STULOAD is out of range"
   },
   {
@@ -6683,7 +6683,7 @@
     "Status": "active",
     "Rule Name": "FD_SWSupAimId_AL",
     "Rule Description": "The number of characters for the Software supplier aim identifier occurrence must be 36 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for SWSupAimId is not between 1 and 36 characters"
   },
   {
@@ -6692,7 +6692,7 @@
     "Status": "active",
     "Rule Name": "FD_SWSupAimId_AP",
     "Rule Description": "The SWSupAimId must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The SWSupAimId does not match the validation pattern"
   },
   {
@@ -6701,7 +6701,7 @@
     "Status": "active",
     "Rule Name": "FD_TelNo_AL",
     "Rule Description": "The TelNo must be 18 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for TelNo is not between 1 and 18 characters"
   },
   {
@@ -6710,7 +6710,7 @@
     "Status": "active",
     "Rule Name": "FD_TelNo_AP",
     "Rule Description": "The TelNo must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The TelNo does not match the validation pattern"
   },
   {
@@ -6719,7 +6719,7 @@
     "Status": "active",
     "Rule Name": "FD_TTACCOM_AL",
     "Rule Description": "The number of digits for Term time accommodation must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for TTACCOM is not 1 character long"
   },
   {
@@ -6728,7 +6728,7 @@
     "Status": "active",
     "Rule Name": "FD_TYPEYR_AL",
     "Rule Description": "The number of digits for Type of instance year must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for TYPEYR is not 1 character long"
   },
   {
@@ -6737,7 +6737,7 @@
     "Status": "active",
     "Rule Name": "FD_TYPEYR_MA",
     "Rule Description": "The TYPEYR is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The TYPEYR has not been returned"
   },
   {
@@ -6746,7 +6746,7 @@
     "Status": "active",
     "Rule Name": "FD_UCASAPPID_AL",
     "Rule Description": "The number of characters for UCAS application code must be 9 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for UCASAPPID is not between 1 and 9 characters"
   },
   {
@@ -6755,7 +6755,7 @@
     "Status": "active",
     "Rule Name": "FD_UCASAPPID_AP",
     "Rule Description": "The UCASAPPID must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The UCASAPPID does not match the validation pattern"
   },
   {
@@ -6764,7 +6764,7 @@
     "Status": "active",
     "Rule Name": "FD_UCASPERID_AL",
     "Rule Description": "The UCAS personal identifier must be must be 10 characters",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for UCASPERID is not between 1 and 10 characters"
   },
   {
@@ -6773,7 +6773,7 @@
     "Status": "active",
     "Rule Name": "FD_UCASPERID_AP",
     "Rule Description": "The UCASPERID must match the validation pattern in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The UCASPERID does not match the validation pattern"
   },
   {
@@ -6782,7 +6782,7 @@
     "Status": "active",
     "Rule Name": "FD_UCASPERID_AR",
     "Rule Description": "The UCASPERID must match the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The UCASPERID is out of range"
   },
   {
@@ -6791,7 +6791,7 @@
     "Status": "active",
     "Rule Name": "FD_ULN_AL",
     "Rule Description": "The number of characters for ULN must be 10 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for ULN is not between 1 and 10 characters"
   },
   {
@@ -6800,7 +6800,7 @@
     "Status": "active",
     "Rule Name": "FD_ULN_AR",
     "Rule Description": "The ULN must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ULN is out of range"
   },
   {
@@ -6809,7 +6809,7 @@
     "Status": "active",
     "Rule Name": "FD_ULN_MA",
     "Rule Description": "The ULN is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The ULN has not been returned"
   },
   {
@@ -6818,7 +6818,7 @@
     "Status": "active",
     "Rule Name": "FD_WithdrawReason_AL",
     "Rule Description": "The number of digits for Withdrawal reason must be 2 or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for WithdrawReason is not between 1 and 2 characters"
   },
   {
@@ -6827,7 +6827,7 @@
     "Status": "active",
     "Rule Name": "FD_WorkPlaceEmpId_AL",
     "Rule Description": "The number of characters for Work placement employer identifier must be must be 9 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for WorkPlaceEmpId is not between 1 and 9 characters"
   },
   {
@@ -6836,7 +6836,7 @@
     "Status": "active",
     "Rule Name": "FD_WorkPlaceHours_AL",
     "Rule Description": "The WorkPlaceHours must be 4 characters or less",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for WorkPlaceHours is not between 1 and 4 characters"
   },
   {
@@ -6845,7 +6845,7 @@
     "Status": "active",
     "Rule Name": "FD_WorkPlaceHours_AR",
     "Rule Description": "The WorkPlaceHours must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The WorkPlaceHours is out of range"
   },
   {
@@ -6854,7 +6854,7 @@
     "Status": "active",
     "Rule Name": "FD_WorkPlaceHours_MA",
     "Rule Description": "The WorkPlaceHours is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The WorkPlaceHours has not been returned"
   },
   {
@@ -6863,7 +6863,7 @@
     "Status": "active",
     "Rule Name": "FD_WorkPlaceMode_AL",
     "Rule Description": "The number of digits for the Work placement mode must be 1",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The value returned for WorkPlaceMode is not 1 character long"
   },
   {
@@ -6872,7 +6872,7 @@
     "Status": "active",
     "Rule Name": "FD_WorkPlaceMode_MA",
     "Rule Description": "The WorkPlaceMode is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The WorkPlaceMode has not been returned"
   },
   {
@@ -6881,7 +6881,7 @@
     "Status": "active",
     "Rule Name": "FD_WorkPlaceStartDate_MA",
     "Rule Description": "The WorkPlaceStartDate is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The WorkPlaceStartDate has not been returned"
   },
   {
@@ -6890,7 +6890,7 @@
     "Status": "active",
     "Rule Name": "FD_YEARSTU_AL",
     "Rule Description": "The Year of student on this instance must be in the range [1-98]",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The length of the value returned for YEARSTU is not between 1 and 2 characters"
   },
   {
@@ -6899,7 +6899,7 @@
     "Status": "active",
     "Rule Name": "FD_YEARSTU_AR",
     "Rule Description": "The YEARSTU must be in the range stated in the ILR specification",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The YEARSTU is out of range"
   },
   {
@@ -6908,7 +6908,7 @@
     "Status": "active",
     "Rule Name": "FD_YEARSTU_MA",
     "Rule Description": "The YEARSTU is mandatory",
-    "Error or Warning": "E",
+    "Error or Warning": "Error",
     "Error Message": "The YEARSTU has not been returned"
   },
   {

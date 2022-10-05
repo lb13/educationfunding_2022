@@ -38,7 +38,13 @@ fetch(ilr_request)
                 days_remaining_desc = "in " + days_remaining + " days"
             };
 
-            let displayHTML = "<p><em>Next ILR (" + days_remaining_desc + ")</em></p><p class=\"title\">" + r.return_name + " (" + r.academic_year + ")</p><p>Due date: " + r.return_date + "<br>Reference date:" + r.reference_date + "</p>"
+            let reference_date_desc = "";
+
+            if ( r.reference_date == "" ) {
+                reference_date_desc = "n/a"
+            } else { reference_date_desc = r.reference_date };
+
+            let displayHTML = "<p><em>Next ILR (" + days_remaining_desc + ")</em></p><p class=\"title\">" + r.return_name + " (" + r.academic_year + ")</p><p>Due date: <strong>" + r.return_date + "</strong><br>Reference date: <strong>" + reference_date_desc + "</strong></p>"
             next_return_div.insertAdjacentHTML("beforeend",displayHTML);
         })
 

@@ -22,9 +22,18 @@
                 </div>
 
                 <div class="column">
-                    <div class="notification is-info">
-                          Watch this space...
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                              ILR Rule Lookup
+                            </p>
+                          </header>
+                        <div class="card-content">
+                          <input type="text" id="rule-input" class="input">
+                        </div>
+                        <div id="rule-results"></div>
                       </div>
+                    <script src="/js/ilr_rule_lookup.js"></script>
                 </div>
             </div>
             
@@ -202,12 +211,14 @@
 
             </div><!-- end of columns -->
 
-            <div class="notification my-4">
-                <p>Hi! 👋 This version of the site is in development, keep checking back for updates.</p>
-                <p><strong>Latest build: {{ now }}</strong></p>
-                <br>
-                <p><a href="https://educationfunding.uk">Click here to go back to the current version.</a></p>
-            </div>
+            
         </div>
+        
+    </div>
+    <div class="notification my-4">
+        <p>Hi! 👋 This version of the site is in development, keep checking back for updates.</p>
+        <p><strong>Latest build: {{ now }}</strong></p>
+        <br>
+        <p><a href="https://educationfunding.uk">Click here to go back to the current version.</a></p>
     </div>
 {{ end }}
