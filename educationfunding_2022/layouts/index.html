@@ -3,11 +3,14 @@
         <div style="padding: 20px">
             <h1 class="is-size-1 mb-5">Education Funding v2 (beta)</h1>
 
-            
-
             <div class="columns">
                 <div class="column">
                     <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                              Upcoming Returns
+                            </p>
+                          </header>
                         <div class="card-content">
                           <div class="m-3" id="next-return">
                           </div>
@@ -25,6 +28,25 @@
                     <div class="card">
                         <header class="card-header">
                             <p class="card-header-title">
+                              Quick Links
+                            </p>
+                          </header>
+                        <div class="card-content">
+                          <a class="button mt-1" href="https://www.gov.uk/guidance/16-to-19-education-funding-guidance" target="_blank">16 to 19 Funding</a>
+                          
+                          <a class="button mt-1" href="https://www.gov.uk/government/collections/sfa-funding-rates" target="_blank">Adult Funding, Loans, and Apprenticeships</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+            <div class="columns">
+                
+
+                <div class="column">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
                               ILR Rule Lookup (22/23, version 3)
                             </p>
                           </header>
@@ -35,11 +57,35 @@
                       </div>
                     <script src="/js/ilr_rule_lookup.js"></script>
                 </div>
+
+                <div class="column">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                              Learning Aim Lookup
+                            </p>
+                          </header>
+                        <div class="card-content">
+                            <input type="text" id="aim-input" class="input" placeholder="exact learning aim, e.g. 60145754">
+                            <div class="content my-2">
+                                <a id="fala-button" class="button is-info" target="_blank" href="">FALA</a>
+                                <a id="loqaff-button" class="button is-link" target="_blank" href="">LoQAFF</a>
+                            </div>
+                            <script>
+                                document.getElementById("aim-input").addEventListener("input",function() {
+                                    let fb = document.getElementById("fala-button");
+                                    let lb = document.getElementById("loqaff-button");
+                                    let aim = document.getElementById("aim-input").value;
+
+                                    fb.href = "https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimDetails/" + aim
+                                    lb.href = "https://www.qualifications.education.gov.uk/Qualification/" + aim
+                                });
+                            </script>
+                        </div>
+                      </div>
+                </div>
             </div>
             
-
-            
-
             <style>
                 .elbi-results {
                     width: 100%;
