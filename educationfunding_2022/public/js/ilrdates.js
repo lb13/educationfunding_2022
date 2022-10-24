@@ -9,6 +9,23 @@ const today_day = ('0' + today.getDate()).slice(-2);
 const today_numberstring = today_year.concat(today_month,today_day);
 const today_number = Number(today_numberstring);
 
+function getNumberOfDays(start, end) {
+    // Start date is already JS date object for today's date
+    // but End date is string in UK format, needs converting to avoid swapping month and day
+    const date1 = new Date(start);
+    const date2 = new Date(end.split('/')[2], end.split('/')[1] - 1, end.split('/')[0]);
+
+    // One day in milliseconds
+    const oneDay = 1000 * 60 * 60 * 24;
+
+    // Calculating the time difference between two dates
+    const diffInTime = date2.getTime() - date1.getTime();
+
+    // Calculating the no. of days between two dates
+    const diffInDays = Math.round(diffInTime / oneDay);
+
+    return diffInDays;
+}
 
 fetch(ilr_request)
     .then(response => response.json())
@@ -27,7 +44,7 @@ fetch(ilr_request)
         let next_return = upcoming_returns.slice(0,1);
 
         next_return.forEach(function(r){
-            let days_remaining = r.return_date_number - today_number;
+            let days_remaining = getNumberOfDays(today,r.return_date);
             let days_remaining_desc;
 
             if( days_remaining == 1 ) {
