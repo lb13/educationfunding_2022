@@ -14,7 +14,7 @@
     data-code="myjGlUjcMVgwoSq0QvTJr7eb0Fjb0dWf"></script>
   </head>
   <body>
-    <nav class="navbar is-dark mb-5" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-dark mb-3" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         EFUK
@@ -87,8 +87,33 @@
     
     <div class="container" style="outline: 0px solid red;">
         <div style="padding: 20px">
-            <h1 class="is-size-1 mb-5">Education Funding v2 (beta)</h1>
+            
+            <style>
+                #elbi-results {
+                    width: 100%;
+                    margin-top: 20px;
+                }
+                .elbi-results-item {
+                    background-color: #FFFFFF;
+                    color: #000000;
+                    padding: 10px;
+                    border: 1px solid black;
+                    margin-bottom: 5px;
+                }
+                #elbi-input {
+                    border-radius: 30px;
+                }
+            </style>
+            
+            <div class="mb-5">
+                
+                <span class="tag is-primary is-light mb-2">237 resources (and counting!)</span>
+                <input type="search" class="input is-size-4" id="elbi-input" placeholder="Search the site..." autofocus />
 
+                <ul id="elbi-results"></ul>
+            </div>
+            
+            <script src="/js/elbisearch.js"></script>
             <div class="columns">
                 <div class="column">
                     <div class="card">
@@ -172,25 +197,7 @@
                 </div>
             </div>
             
-            <style>
-                .elbi-results {
-                    width: 100%;
-                }
-                .elbi-results-item {
-                    background-color: #FFFFFF;
-                    color: #000000;
-                    padding: 10px;
-                    border: 1px solid black;
-                }
-            </style>
             
-            <div class="my-5">
-                <span class="tag is-primary is-light mb-3">237 resources (and counting!)</span>
-                <input type="search" class="input is-size-4" id="elbi-input" placeholder="Search the site..." autofocus />
-                <ul id="elbi-results"></ul>
-            </div>
-            
-            <script src="/js/elbisearch.js"></script>
 
             <hr>
             
@@ -406,7 +413,7 @@
     </div>
     <div class="notification my-4">
         <p>Hi! 👋 This version of the site is in development, keep checking back for updates.</p>
-        <p><strong>Latest build: 2022-10-24 10:18:26.72224865 &#43;0100 BST m=&#43;0.131605908</strong></p>
+        <p><strong>Latest build: 2022-10-27 14:11:57.293891492 &#43;0100 BST m=&#43;0.133029296</strong></p>
         <br>
         <p><a href="https://educationfunding.uk">Click here to go back to the current version.</a></p>
     </div>
