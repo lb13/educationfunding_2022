@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Education Funding UK (beta)</title>
+    <link>https://beta.educationfunding.uk/site/</link>
+    <description>Recent content on Education Funding UK (beta)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language><atom:link href="https://beta.educationfunding.uk/site/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About the site</title>
+      <link>https://beta.educationfunding.uk/site/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://beta.educationfunding.uk/site/about/</guid>
+      <description>If you work in the UK education sector, particularly if you are involved in funding or data management, you will probably have struggled (at one time or another) with understanding how UK education funding works.
+My own experience, working in the MIS team of a Further Education college, was initially quite overwhelming because there was no simple, straightforward way to access and digest all the information that was out there.</description>
+    </item>
+    
+  </channel>
+</rss>

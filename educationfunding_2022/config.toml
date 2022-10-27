@@ -4,3 +4,6 @@ title = 'Education Funding UK (beta)'
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+[markup.goldmark.renderer]
+  unsafe = true

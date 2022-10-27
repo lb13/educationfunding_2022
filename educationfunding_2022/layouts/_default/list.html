@@ -1,9 +1,12 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+<div class="container" style="outline: 0px solid red;">
+  <div style="padding: 20px">
+  <h1 class="is-size-1">{{ .Title }}</h1>
   {{ range .Pages }}
     <article>
-      <h2>{{ .Title }}</h2>
-      {{ .Content }}
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
     </article>
   {{ end }}
+  </div></div>
+
 {{ end }}
