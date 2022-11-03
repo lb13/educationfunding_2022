@@ -4,6 +4,5 @@ Description = "Information for eligible academies, sixth-form colleges and volun
 Link = "https://www.gov.uk/guidance/condition-improvement-fund"
 Tags = ["capital funding", "condition improvement fund", "cif"]
 Title = "Condition Improvement Fund"
-draft = true
 
 +++
