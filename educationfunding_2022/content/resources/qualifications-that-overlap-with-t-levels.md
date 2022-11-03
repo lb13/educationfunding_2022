@@ -4,6 +4,5 @@ Description = "The final list of qualifications that will have 16 to 19 funding 
 Link = "https://www.gov.uk/government/publications/qualifications-that-overlap-with-t-levels"
 Tags = ["t levels"]
 Title = "Qualifications that overlap with T Levels"
-draft = true
 
 +++
