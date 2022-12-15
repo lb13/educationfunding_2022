@@ -3,9 +3,91 @@
   <div style="padding: 20px">
   <h1 class="is-size-1">{{ .Title }}</h1>
   <div class="content">
-    {{ .Content }}
+    <div class="item-taglist">
+      {{ range .Params.tags }}
+      <span><a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a></span>&nbsp;
+      {{ end }}
   </div>
+
+  <hr>
+
+  {{ if ( isset .Params "description" ) }}
+  <p class="has-text-black">{{ .Description }}</p>
+  {{ end }}
+
+  
+
+  <p class="is-5 pt-4">
+      <a href="{{ .Params.link }}">{{ .Params.link }}</a>
+  </p>
+
+  {{ if ( isset .Params "link" ) }}
+  <a id="reportbutton" onclick="launchreport()" class="my-5 button" style="background-color: #d4351c; color: #FFFFFF; text-decoration: none; border: none; border-radius: 0px; -webkit-box-shadow: 0 2px 0 #55150b; box-shadow: 0 2px 0 #55150b;" tabindex="0">
+      Report Broken Link
+  </a>
+  {{ end }}
+
+  <div class="content">
+      {{ .Content }}
+  </div>  </div>
   
   </div></div>
+
+  <div id="reportmodal" class="modal">
+    <div onclick="closereport()" class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Report broken link</p>
+        <button onclick="closereport()" class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+
+        <form class="form" name="report" method="POST" data-netlify="true">
+
+        <div class="field">
+            <label class="label">Your name (optional)</label>
+            <div class="control">
+              <input name="name" class="input" type="text" placeholder="Your name">
+            </div>
+          </div>
+          
+                           
+          <div class="field">
+            <label class="label">Your email (optional)</label>
+            <div class="control has-icons-left has-icons-right">
+              <input name="email" class="input" type="email" placeholder="Your email" value="">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Subject</label>
+            <div class="control">
+              <input name="subject" readonly class="input has-background-light" type="text" value="Error report: {{ .Title }}">
+            </div>
+          </div>
+          
+          <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+              <textarea name="message" required class="textarea" placeholder="Your message">This link isn't working: {{ .Params.link }}</textarea>
+            </div>
+          </div>
+          
+          <div class="field is-grouped">
+            <div class="control">
+              <button type="submit" class="button is-link">Submit</button>
+            </div>
+            <div class="control">
+              <a onclick="closereport()" class="button is-link is-light">Cancel</a>
+            </div>
+          </div>
+          
+        
+        </form>              </section>
+      </div>    
+    </div>
 
 {{ end }}

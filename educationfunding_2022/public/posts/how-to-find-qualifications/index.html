@@ -8,6 +8,24 @@
         Education Funding UK (beta)
     </title>
     <link rel="stylesheet" href="/css/bulma.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+        <link rel="manifest" href="/img/site.webmanifest">
+
+        <meta name="twitter:card" content="summary_image" />
+        <meta property="og:url" content="https://beta.educationfunding.uk/posts/how-to-find-qualifications/" />
+        <meta property="og:title" content="How to Find Qualifications" />
+
+
+        
+        <meta property="og:description" content="Education Funding UK provides links to online resources for education and training providers in the UK." />
+        <meta property="twitter:description" content="Education Funding UK provides links to online resources for education and training providers in the UK." />
+        
+        
+        <script src="https://kit.fontawesome.com/1452136d25.js" crossorigin="anonymous"></script>
+
     <script defer type="text/javascript" src="https://api.pirsch.io/pirsch.js"
     id="pirschjs"
     data-code="myjGlUjcMVgwoSq0QvTJr7eb0Fjb0dWf"></script>
@@ -84,7 +102,28 @@
   <div style="padding: 20px">
   <h1 class="is-size-1">How to Find Qualifications</h1>
   <div class="content">
-    <p>There are a few different online services that you can use to search for qualifications, find out whether they are eligible for ESFA funding, and connect with awarding bodies.</p>
+    <div class="item-taglist">
+      
+      <span><a class="tag" href="/tags/posts">posts</a></span>&nbsp;
+      
+      <span><a class="tag" href="/tags/qualifications">qualifications</a></span>&nbsp;
+      
+  </div>
+
+  <hr>
+
+  
+
+  
+
+  <p class="is-5 pt-4">
+      <a href=""></a>
+  </p>
+
+  
+
+  <div class="content">
+      <p>There are a few different online services that you can use to search for qualifications, find out whether they are eligible for ESFA funding, and connect with awarding bodies.</p>
 <p>One quick way to search for these from the front page of <a href="/">EducationFunding.UK</a> is to type <span class="code">fqs</span> - this is a shortcode for &lsquo;find qualification services&rsquo;.</p>
 <h2 id="find-a-learning-aim">Find a Learning Aim</h2>
 <p>This is a new government service which you can use to search for qualifications via their name or aim reference - in addition you can also filter results by level and awarding body.</p>
@@ -104,9 +143,66 @@
 <h2 id="which-service-to-use">Which service to use?</h2>
 <p>Depending on your goal, you could start with any of these services - but they will all offer useful information about a qualification, and should be used together where possible.</p>
 
-  </div>
+  </div>  </div>
   
   </div></div>
+
+  <div id="reportmodal" class="modal">
+    <div onclick="closereport()" class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Report broken link</p>
+        <button onclick="closereport()" class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+
+        <form class="form" name="report" method="POST" data-netlify="true">
+
+        <div class="field">
+            <label class="label">Your name (optional)</label>
+            <div class="control">
+              <input name="name" class="input" type="text" placeholder="Your name">
+            </div>
+          </div>
+          
+                           
+          <div class="field">
+            <label class="label">Your email (optional)</label>
+            <div class="control has-icons-left has-icons-right">
+              <input name="email" class="input" type="email" placeholder="Your email" value="">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Subject</label>
+            <div class="control">
+              <input name="subject" readonly class="input has-background-light" type="text" value="Error report: How to Find Qualifications">
+            </div>
+          </div>
+          
+          <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+              <textarea name="message" required class="textarea" placeholder="Your message">This link isn't working: </textarea>
+            </div>
+          </div>
+          
+          <div class="field is-grouped">
+            <div class="control">
+              <button type="submit" class="button is-link">Submit</button>
+            </div>
+            <div class="control">
+              <a onclick="closereport()" class="button is-link is-light">Cancel</a>
+            </div>
+          </div>
+          
+        
+        </form>              </section>
+      </div>    
+    </div>
 
 
 

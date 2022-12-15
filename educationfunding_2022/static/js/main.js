@@ -19,3 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
   });
+
+  function launchreport() {
+    var modal = document.getElementById("reportmodal");
+  
+    modal.classList.add("is-active");
+  }
+  
+  function closereport() {
+    var modal = document.getElementById("reportmodal");
+  
+    modal.classList.remove("is-active");
+  }
