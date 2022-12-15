@@ -4,6 +4,5 @@ Description = "Information about ESFA college and local authority accountability
 Link = "https://www.gov.uk/government/publications/esfa-college-and-local-authority-accountability-agreements"
 Tags = ["accountability agreements"]
 Title = "ESFA college and local authority accountability agreements"
-draft = true
 
 +++
