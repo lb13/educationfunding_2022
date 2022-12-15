@@ -1,6 +1,6 @@
 baseURL = 'https://beta.educationfunding.uk'
 languageCode = 'en-gb'
-title = 'Education Funding UK (beta)'
+title = 'Education Funding UK'
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

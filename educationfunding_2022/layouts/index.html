@@ -1,6 +1,90 @@
 {{ define "main" }}
     <div class="container" style="outline: 0px solid red;">
         <div style="padding: 20px">
+
+            <div class="notification has-background-info has-text-white">
+                <p>Welcome to the new-look Education Funding UK! 👋</p>
+                <p>We'd love to get your thoughts on the new layout and tools - if you have a moment please share some feedback...</p>
+                <button class="button is-small is-warning mt-2" onclick="launchreport()">Feedback</button>
+            </div>
+
+            <div id="reportmodal" class="modal">
+                <div onclick="closereport()" class="modal-background"></div>
+                <div class="modal-card">
+                  <header class="modal-card-head">
+                    <p class="modal-card-title">How did we do?</p>
+                    <button onclick="closereport()" class="delete" aria-label="close"></button>
+                  </header>
+                  <section class="modal-card-body">
+            
+                    <form class="form" name="report" method="POST" data-netlify="true">
+            
+                    <div class="field">
+                        <label class="label">Your name (optional)</label>
+                        <div class="control">
+                          <input name="name" class="input" type="text" placeholder="Your name">
+                        </div>
+                      </div>
+                      
+                                       
+                      <div class="field">
+                        <label class="label">Your email (optional)</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input name="email" class="input" type="email" placeholder="Your email" value="">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                          </span>
+                        </div>
+                      </div>
+            
+                      <div class="field">
+                        <label class="label">Subject</label>
+                        <div class="control">
+                          <input name="subject" readonly class="input has-background-light" type="text" value="Site feedback">
+                        </div>
+                      </div>
+                      
+                      <div class="field">
+                        <label class="label">What was your reason for visiting the site today?</label>
+                        <div class="control">
+                          <textarea name="reasonforvisit" required class="textarea" placeholder=""></textarea>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label class="label">Did you find everything you needed?</label>
+                        <div class="control">
+                          <textarea name="findwhatyouwant" required class="textarea" placeholder=""></textarea>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label class="label">Did you have any issues or difficulties with the site? If so, please provide details.</label>
+                        <div class="control">
+                          <textarea name="problemsfound" required class="textarea" placeholder=""></textarea>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label class="label">Any other comments?</label>
+                        <div class="control">
+                          <textarea name="message" required class="textarea" placeholder=""></textarea>
+                        </div>
+                      </div>
+                      
+                      <div class="field is-grouped">
+                        <div class="control">
+                          <button type="submit" class="button is-link">Send feedback</button>
+                        </div>
+                        <div class="control">
+                          <a onclick="closereport()" class="button is-link is-light">Cancel</a>
+                        </div>
+                      </div>
+                      
+                    
+                    </form>              </section>
+                  </div>    
+                </div>
             
             <style>
                 #elbi-results {
@@ -268,11 +352,5 @@
             
         </div>
         
-    </div>
-    <div class="notification my-4">
-        <p>Hi! 👋 This version of the site is in development, keep checking back for updates.</p>
-        <p><strong>Latest build: {{ now }}</strong></p>
-        <br>
-        <p><a href="https://educationfunding.uk">Click here to go back to the current version.</a></p>
     </div>
 {{ end }}
