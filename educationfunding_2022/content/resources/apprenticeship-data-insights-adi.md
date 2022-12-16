@@ -4,6 +4,5 @@ Description = "ADI, a free service from Nick Linford, has one aim – to help th
 Link = "https://apprenticeshipdata.co.uk/"
 Tags = ["apprenticeships"]
 Title = "Apprenticeship Data Insights (ADI)"
-draft = true
 
 +++
