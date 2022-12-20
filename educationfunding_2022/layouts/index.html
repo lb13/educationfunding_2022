@@ -176,7 +176,7 @@
                             </p>
                           </header>
                         <div class="card-content">
-                            <input type="text" id="aim-input" class="input" placeholder="exact learning aim, e.g. 60145754">
+                            <input type="text" id="aim-input" class="input" placeholder="learning aim (e.g. 60145754) or search term (e.g. GCSE English)">
                             <div class="content my-2">
                                 <a id="fala-button" class="button is-info" target="_blank" href="https://submit-learner-data.service.gov.uk/find-a-learning-aim/">FALA</a>
                                 <a id="loqaff-button" class="button is-link" target="_blank" href="https://www.qualifications.education.gov.uk/">LoQAFF</a>
@@ -189,7 +189,7 @@
                                     let fb = document.getElementById("fala-button");
                                     let lb = document.getElementById("loqaff-button");
                                     let queryText = document.getElementById("aim-input").value;
-                                    let queryTextWithoutSlashes = text.replaceAll('/','');
+                                    let queryTextWithoutSlashes = queryText.replaceAll('/','');
                                     
                                     if (regex.test(queryTextWithoutSlashes)) {
                                       fb.href = "https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimDetails/" + queryTextWithoutSlashes
