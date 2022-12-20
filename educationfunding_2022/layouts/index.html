@@ -178,17 +178,27 @@
                         <div class="card-content">
                             <input type="text" id="aim-input" class="input" placeholder="exact learning aim, e.g. 60145754">
                             <div class="content my-2">
-                                <a id="fala-button" class="button is-info" target="_blank" href="">FALA</a>
-                                <a id="loqaff-button" class="button is-link" target="_blank" href="">LoQAFF</a>
+                                <a id="fala-button" class="button is-info" target="_blank" href="https://submit-learner-data.service.gov.uk/find-a-learning-aim/">FALA</a>
+                                <a id="loqaff-button" class="button is-link" target="_blank" href="https://www.qualifications.education.gov.uk/">LoQAFF</a>
                             </div>
                             <script>
                                 document.getElementById("aim-input").addEventListener("input",function() {
+                                    // Standard format for UK learning aims (seven numbers, one number or letter)
+                                    const regex = /[0-9]{7}[A-Za-z0-9]{1}/;
+                                    
                                     let fb = document.getElementById("fala-button");
                                     let lb = document.getElementById("loqaff-button");
-                                    let aim = document.getElementById("aim-input").value;
+                                    let queryText = document.getElementById("aim-input").value;
+                                    let queryTextWithoutSlashes = text.replaceAll('/','');
+                                    
+                                    if (regex.test(queryTextWithoutSlashes)) {
+                                      fb.href = "https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimDetails/" + queryTextWithoutSlashes
+                                      lb.href = "https://www.qualifications.education.gov.uk/Qualification/" + queryTextWithoutSlashes
+                                    } else {
+                                      fb.href = "https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimSearchResult?SearchTerm=" + queryText
+                                      lb.href = "https://www.qualifications.education.gov.uk/Search?Title=" + queryText + "&Status=All"
+                                    }
 
-                                    fb.href = "https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimDetails/" + aim
-                                    lb.href = "https://www.qualifications.education.gov.uk/Qualification/" + aim
                                 });
                             </script>
                         </div>
