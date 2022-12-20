@@ -210,6 +210,7 @@
                             <div class="content my-2">
                                 <a id="fala-button" class="button is-info" target="_blank" href="https://submit-learner-data.service.gov.uk/find-a-learning-aim/">FALA</a>
                                 <a id="loqaff-button" class="button is-link" target="_blank" href="https://www.qualifications.education.gov.uk/">LoQAFF</a>
+                                <a id="ofqual-button" class="button is-warning" target="_blank" href="https://register.ofqual.gov.uk/">Ofqual</a>
                             </div>
                             <script>
                                 document.getElementById("aim-input").addEventListener("input",function() {
@@ -218,15 +219,18 @@
                                     
                                     let fb = document.getElementById("fala-button");
                                     let lb = document.getElementById("loqaff-button");
+                                    let ob = document.getElementById("ofqual-button");
                                     let queryText = document.getElementById("aim-input").value;
                                     let queryTextWithoutSlashes = queryText.replaceAll('/','');
                                     
                                     if (regex.test(queryTextWithoutSlashes)) {
                                       fb.href = "https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimDetails/" + queryTextWithoutSlashes
                                       lb.href = "https://www.qualifications.education.gov.uk/Qualification/" + queryTextWithoutSlashes
+                                      ob.href = "https://register.ofqual.gov.uk/Search?category=Qualifications&query=" + queryTextWithoutSlashes
                                     } else {
                                       fb.href = "https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimSearchResult?SearchTerm=" + queryText
                                       lb.href = "https://www.qualifications.education.gov.uk/Search?Title=" + queryText + "&Status=All"
+                                      ob.href = "https://register.ofqual.gov.uk/Search?category=Qualifications&query=" + queryTextWithoutSlashes
                                     }
 
                                 });
