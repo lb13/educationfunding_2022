@@ -4,6 +4,5 @@ Description = "This video introduces automation to the academies account return.
 Link = "https://m.youtube.com/watch?v=KJ8KqL4WfyM"
 Tags = ["academies accounts return", "video", "esfa"]
 Title = "Introduction to automating the academies account return [VIDEO]"
-draft = true
 
 +++
