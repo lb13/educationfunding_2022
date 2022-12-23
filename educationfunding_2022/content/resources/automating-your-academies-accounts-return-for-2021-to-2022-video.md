@@ -4,6 +4,5 @@ Description = "This video explains how to automate your accounts return for 2021
 Link = "https://m.youtube.com/watch?v=5-ZBCGz48q8"
 Tags = ["academies accounts return", "video", "esfa"]
 Title = "Automating your academies accounts return for 2021 to 2022 [VIDEO]"
-draft = true
 
 +++
