@@ -1,5 +1,5 @@
 ---
-Tags: [posts,apprenticeships,apprenticship funding]
+Tags: [posts,apprenticeships,apprenticeship funding]
 Title: How Does Apprenticeship Funding Work?
 Date: 2021-07-16
 Description: How does apprenticeship funding work?
