@@ -1,4 +1,4 @@
 ---
 Title: Multiply Funding
-TargetTag: "multiply funding"
+TargetTag: "multiply"
 ---

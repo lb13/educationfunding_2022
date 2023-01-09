@@ -1,4 +1,4 @@
 ---
 Title: Higher Education Funding
-TargetTag: "higher education funding"
+TargetTag: "higher education"
 ---
