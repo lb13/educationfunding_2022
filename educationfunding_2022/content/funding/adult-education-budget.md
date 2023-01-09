@@ -1,5 +1,6 @@
 ---
 Title: Adult Education Budget
+TargetTage: "adult education budget"
 ---
 
 The Adult Education Budget is split into two funding methods: Adult Skills and Community Learning.

@@ -1,6 +1,6 @@
 ---
 Title: T Level Funding
-TargetTag: "t levels"
+TargetTag: "t level funding"
 ---
 
 T Levels are a new type of vocational training programme, designed to occupy the space between A Levels and Apprenticeships.

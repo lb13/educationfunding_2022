@@ -2,12 +2,14 @@
   <div class="container" style="outline: 0px solid red;">
     <div style="padding: 20px">
     <h1 class="is-size-1">{{ .Title }}</h1>
+    <h2 class="is-size-2">Overview</h2>
     <div class="content">
       {{ .Content }}
     </div>
 
     {{ $targetTag := .Params.targettag }}
     
+    <h2 class="is-size-2">Useful Links</h2>
     {{ range .Site.Pages }}
       {{ if in .Params.tags $targetTag }}
         <article>
