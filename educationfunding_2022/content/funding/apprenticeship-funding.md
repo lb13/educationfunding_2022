@@ -1,6 +1,6 @@
 ---
 Title: Apprenticeship Funding
-TargetTage: "apprenticeship funding"
+TargetTage: "apprenticeship-funding"
 ---
 
 Each apprenticeship standard constitutes a specification for training in a particular industry and role, which should help prepare learners for employment in that area. These standards are assigned funding caps, which represents the maximum amount of money that the ESFA will release via funding.
