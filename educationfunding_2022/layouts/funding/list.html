@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <div class="container" style="outline: 0px solid red;">
+    <div style="padding: 20px">
+    <h1 class="is-size-1">{{ .Title }}</h1>
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    {{ $targetTag := .Params.targettag }}
+    
+    {{ range .Site.Pages }}
+      {{ if in .Params.tags $targetTag }}
+        <article>
+          <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        </article>
+      {{ end }}
+    {{ end }}
+    
+    </div>
+  </div>
+
+{{ end }}
