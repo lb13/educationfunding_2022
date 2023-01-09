@@ -1,0 +1,126 @@
+<div class="columns">
+    <div class="column">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                  Upcoming Returns
+                </p>
+              </header>
+            <div class="card-content">
+              <div class="m-3" id="next-return">
+              </div>
+              <button class="button" onclick="toggleUpcomingReturns()">Show/Hide Upcoming Returns</button>
+                <a class="button is-success" target="_blank" href="https://submit-learner-data.service.gov.uk/">Submit ILR</a>
+              <p class="subtitle" id="ilr-dates" style="display: none">
+
+              </p>
+            </div>
+          </div>
+        <script src="/js/ilrdates.js"></script>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                  Quick Links
+                </p>
+              </header>
+            <div class="card-content">
+              <a class="button mt-1" href="https://www.gov.uk/guidance/16-to-19-education-funding-guidance" target="_blank">16 to 19 Funding</a>
+              <a class="button mt-1" href="https://www.gov.uk/government/publications/t-level-funding" target="_blank">T Level Funding</a>
+              <a class="button mt-1" href="https://www.gov.uk/government/collections/sfa-funding-rates" target="_blank">Adult Funding, Loans, and Apprenticeships</a>
+            </div>
+          </div>
+    </div>
+</div>
+
+<div class="columns">
+    
+
+    <div class="column">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                  ILR Rule Lookup
+
+                  <div class="field is-grouped is-grouped-multiline m-2">
+                    <div class="control">
+                      <div class="tags has-addons">
+                        <span class="tag is-dark">version</span>
+                        <span class="tag is-info">2223.4</span>
+                      </div>
+                    </div>
+                  
+                    <div class="control">
+                      <div class="tags has-addons">
+                        <span class="tag is-dark">status</span>
+                        <span class="tag is-success">updated</span>
+                      </div>
+                    </div>
+                  
+                  </div>
+
+                </p>
+              </header>
+            <div class="card-content">
+              <input type="text" id="rule-input" class="input">
+            </div>
+            <div id="rule-results"></div>
+          </div>
+        <script src="/js/ilr_rule_lookup.js"></script>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                  Learning Aim Lookup
+
+                  <div class="field is-grouped is-grouped-multiline m-2">
+                                                 
+                    <div class="control">
+                      <div class="tags has-addons">
+                        <span class="tag is-dark">status</span>
+                        <span class="tag is-success">updated 2022-12-20</span>
+                      </div>
+                    </div>
+                  
+                  </div>
+
+                </p>
+              </header>
+            <div class="card-content">
+                <input type="text" id="aim-input" class="input" placeholder="learning aim (e.g. 60145754) or search term (e.g. English)">
+                <div class="content my-2">
+                    <a id="fala-button" class="button is-info" target="_blank" href="https://submit-learner-data.service.gov.uk/find-a-learning-aim/">FALA</a>
+                    <a id="loqaff-button" class="button is-link" target="_blank" href="https://www.qualifications.education.gov.uk/">LoQAFF</a>
+                    <a id="ofqual-button" class="button is-dark" target="_blank" href="https://register.ofqual.gov.uk/">Ofqual</a>
+                </div>
+                <script>
+                    document.getElementById("aim-input").addEventListener("input",function() {
+                        // Standard format for UK learning aims (seven numbers, one number or letter)
+                        const regex = /[0-9]{7}[A-Za-z0-9]{1}/;
+                        
+                        let fb = document.getElementById("fala-button");
+                        let lb = document.getElementById("loqaff-button");
+                        let ob = document.getElementById("ofqual-button");
+                        let queryText = document.getElementById("aim-input").value;
+                        let queryTextWithoutSlashes = queryText.replaceAll('/','');
+                        
+                        if (regex.test(queryTextWithoutSlashes)) {
+                          fb.href = "https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimDetails/" + queryTextWithoutSlashes
+                          lb.href = "https://www.qualifications.education.gov.uk/Qualification/" + queryTextWithoutSlashes
+                          ob.href = "https://register.ofqual.gov.uk/Search?category=Qualifications&query=" + queryTextWithoutSlashes
+                        } else {
+                          fb.href = "https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimSearchResult?SearchTerm=" + queryText
+                          lb.href = "https://www.qualifications.education.gov.uk/Search?Title=" + queryText + "&Status=All"
+                          ob.href = "https://register.ofqual.gov.uk/Search?category=Qualifications&query=" + queryTextWithoutSlashes
+                        }
+
+                    });
+                </script>
+            </div>
+          </div>
+    </div>
+</div>

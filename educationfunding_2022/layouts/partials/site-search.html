@@ -1,0 +1,26 @@
+<style>
+    #elbi-results {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .elbi-results-item {
+        background-color: #FFFFFF;
+        color: #000000;
+        padding: 10px;
+        border: 1px solid #dadada;
+        border-radius: 10px;;
+        margin-bottom: 5px;
+    }
+    #elbi-input {
+        border-radius: 30px;
+    }
+</style>
+
+<div class="mb-5">
+    <span class="tag is-primary is-light mb-2">{{ len (where .Site.RegularPages "Section" "==" "resources") }} resources (and counting!)</span>
+    <input type="search" class="input is-size-6" id="elbi-input" placeholder="Search the site..." autofocus />
+
+    <ul id="elbi-results"></ul>
+</div>
+
+<script src="/js/elbisearch.js"></script>
