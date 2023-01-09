@@ -1,6 +1,6 @@
 ---
 Title: 14-16 Funding
-TargetTage: "14-16 funding"
+TargetTag: "14-16 funding"
 ---
 Colleges are able to claim direct funding for learners who are aged 14 or 15 on 31st August if they are studying full time with the provider.
 
