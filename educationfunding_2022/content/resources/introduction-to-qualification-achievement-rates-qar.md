@@ -4,6 +4,5 @@ Description = "A comprehensive set of QAR resources to offer information and sup
 Link = "https://www.gov.uk/guidance/introduction-to-qualification-achievement-rates-qars"
 Tags = ["achievement rates", "qar"]
 Title = "Introduction to Qualification Achievement Rates (QARs)"
-draft = true
 
 +++
