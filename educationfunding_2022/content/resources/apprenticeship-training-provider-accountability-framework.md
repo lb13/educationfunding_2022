@@ -4,6 +4,5 @@ Description = "The framework and specification DfE will use to review the qualit
 Link = "https://www.gov.uk/government/publications/apprenticeship-training-provider-accountability-framework"
 Tags = ["apprenticeships"]
 Title = "Apprenticeship training provider accountability framework"
-draft = true
 
 +++
