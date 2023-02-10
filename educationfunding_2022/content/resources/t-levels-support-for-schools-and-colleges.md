@@ -4,6 +4,5 @@ Description = "From registration to results, find out how to deliver T Levels at
 Link = "https://support.tlevels.gov.uk/hc/en-gb"
 Tags = ["t levels"]
 Title = "T Levels support for schools and colleges"
-draft = true
 
 +++
