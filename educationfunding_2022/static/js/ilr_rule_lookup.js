@@ -32,7 +32,7 @@ fetch(ruleRequest)
                             // let description = page.title;
                             // or you could combine fields, for example page title and tags:
                             // let description = page.title + ' ' + JSON.stringify(page.tags)
-                            let description = rule["Rule Name"];
+                            let description = rule["Rule Name"] + ' ' + rule["Rule Description"];
                             return description.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().indexOf(term) !== -1;
                         });
                     }
@@ -47,6 +47,11 @@ fetch(ruleRequest)
                             // Assign 3 points for search term in title
                             if (rule["Rule Name"].normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().includes(term)) {
                                 rule.score += 3
+                            };
+                            
+                            // Assign 1 point for search term in rule description
+                            if (rule["Rule Description"].normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().includes(term)) {
+                                rule.score += 1
                             };
 
                         })
