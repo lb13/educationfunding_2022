@@ -21,8 +21,22 @@ fetch(ruleRequest)
 
                 // Create array of search terms, split by space character
                 // Normalize and replace diacritics
-                // let splitRegex = /[^\s"']+|"([^"]*)"+|'([^']*)'/gmi // spaces or double-quotes around word groups
-                let searchterms = ruleInput.value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().split(" ");
+                let myRegexp = /[^\s"]+|"([^"]*)"/gi;
+                let myString = ruleInput.value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+                let myArray = [];
+
+                do {
+                    //Each call to exec returns the next regex match as an array
+                    var match = myRegexp.exec(myString);
+                    if (match != null)
+                    {
+                        //Index 1 in the array is the captured group if it exists
+                        //Index 0 is the matched text, which we use if no captured group exists
+                        myArray.push(match[1] ? match[1] : match[0]);
+                    }
+                } while (match != null);
+                
+                let searchterms = myArray;
 
                 // Apply a filter to the array of pages for each search term
                 searchterms.forEach(function(term) {
