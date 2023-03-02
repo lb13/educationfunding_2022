@@ -26,6 +26,7 @@ fields:
     export_format: YYYY-MM-DD
   default: now
 pages:
+- educationfunding_2022/content/resources/16-to-19-funding-additional-hours-in-study-programmes-for-2023-to-2024.md
 - educationfunding_2022/content/resources/16-to-19-funding-additional-hours-in-study-programmes.md
 - educationfunding_2022/content/resources/16-to-19-funding-allocations-supporting-documents-for-2023-to-2024.md
 - educationfunding_2022/content/resources/16-to-19-funding-information-for-2023-to-2024.md
