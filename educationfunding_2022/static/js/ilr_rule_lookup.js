@@ -98,8 +98,8 @@ fetch(ruleRequest)
                     return b.score - a.score;
                 });
 
-                // Limit to top 3 matching results
-                filteredRules = filteredRules.slice(0,3);
+                // Limit to top 10 matching results
+                filteredRules = filteredRules.slice(0,10);
 
                 // For each of the pages in the final filtered list, insert into the results list
                 filteredRules.forEach(function(rule) {
