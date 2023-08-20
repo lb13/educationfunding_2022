@@ -21,7 +21,22 @@ fetch(ruleRequest)
 
                 // Create array of search terms, split by space character
                 // Normalize and replace diacritics
-                let searchterms = ruleInput.value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().split(" ");
+                let myRegexp = /[^\s"]+|"([^"]*)"/gi;
+                let myString = ruleInput.value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+                let myArray = [];
+
+                do {
+                    //Each call to exec returns the next regex match as an array
+                    var match = myRegexp.exec(myString);
+                    if (match != null)
+                    {
+                        //Index 1 in the array is the captured group if it exists
+                        //Index 0 is the matched text, which we use if no captured group exists
+                        myArray.push(match[1] ? match[1] : match[0]);
+                    }
+                } while (match != null);
+                
+                let searchterms = myArray;
 
                 // Apply a filter to the array of pages for each search term
                 searchterms.forEach(function(term) {
@@ -32,7 +47,7 @@ fetch(ruleRequest)
                             // let description = page.title;
                             // or you could combine fields, for example page title and tags:
                             // let description = page.title + ' ' + JSON.stringify(page.tags)
-                            let description = rule["Rule Name"];
+                            let description = rule["Rule Name"] + ' ' + rule["Rule Description"];
                             return description.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().indexOf(term) !== -1;
                         });
                     }
@@ -47,6 +62,11 @@ fetch(ruleRequest)
                             // Assign 3 points for search term in title
                             if (rule["Rule Name"].normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().includes(term)) {
                                 rule.score += 3
+                            };
+                            
+                            // Assign 1 point for search term in rule description
+                            if (rule["Rule Description"].normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().includes(term)) {
+                                rule.score += 1
                             };
 
                         })
@@ -78,8 +98,8 @@ fetch(ruleRequest)
                     return b.score - a.score;
                 });
 
-                // Limit to top 3 matching results
-                filteredRules = filteredRules.slice(0,3);
+                // Limit to top 10 matching results
+                filteredRules = filteredRules.slice(0,10);
 
                 // For each of the pages in the final filtered list, insert into the results list
                 filteredRules.forEach(function(rule) {
