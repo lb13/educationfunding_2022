@@ -9,8 +9,8 @@
       {{ end }}
   </div>
 
-    {{ if ( isset .Params "dateadded" ) }}
-    <p class="pt-4">Resource added: {{ .Params.DateAdded.Format "2 January 2006" }}</p>
+    {{ with .Params.dateadded  }}
+    <p class="pt-4">Resource added: {{ dateFormat "2 January 2006" . }}</p>
     {{ end }}
 
   <hr>
