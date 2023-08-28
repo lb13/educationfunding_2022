@@ -1,0 +1,63 @@
+<div id="registermodal" class="modal">
+    <div onclick="closemodal('registermodal')" class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Early Access: Funding Assessment</p>
+        <button onclick="closemodal('registermodal')" class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+          <p class="mb-4">In 2024 we'll be launching our new funding assessment service for training providers in Further Education - register your interest here to join the early-access group and trial the system free of charge!</p>
+
+        <form class="form" name="register-interest" method="POST" data-netlify="true">
+
+        <div class="field">
+            <label class="label">First Name</label>
+            <div class="control">
+              <input name="name" class="input" type="text" placeholder="Your first name" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Last Name</label>
+            <div class="control">
+              <input name="name" class="input" type="text" placeholder="Your last name" required>
+            </div>
+          </div>
+          
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left has-icons-right">
+              <input name="email" class="input" type="email" placeholder="Your email" value="" required>
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Job title (optional)</label>
+            <div class="control">
+              <input name="name" class="input" type="text" placeholder="Your job title">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Employer (optional)</label>
+            <div class="control">
+              <input name="name" class="input" type="text" placeholder="Your employer">
+            </div>
+          </div>
+          
+          <div class="field is-grouped">
+            <div class="control">
+              <button type="submit" class="button is-success">Sign me up, Scotty</button>
+            </div>
+            <div class="control">
+              <a onclick="closemodal('registermodal')" class="button is-light">Cancel</a>
+            </div>
+          </div>
+          
+        
+        </form>              </section>
+      </div>    
+    </div>

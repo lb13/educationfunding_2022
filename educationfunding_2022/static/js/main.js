@@ -20,14 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
   
   });
 
-  function launchreport() {
-    var modal = document.getElementById("reportmodal");
-  
-    modal.classList.add("is-active");
-  }
-  
-  function closereport() {
-    var modal = document.getElementById("reportmodal");
-  
-    modal.classList.remove("is-active");
-  }
+function launchreport() {
+  var modal = document.getElementById("reportmodal");
+
+  modal.classList.add("is-active");
+};
+
+function closereport() {
+  var modal = document.getElementById("reportmodal");
+
+  modal.classList.remove("is-active");
+};
+
+function launchmodal(e) {
+  var modal = document.getElementById(e);
+
+  modal.classList.add("is-active");
+};
+
+function closemodal(e) {
+  var modal = document.getElementById(e);
+
+  modal.classList.remove("is-active");
+};

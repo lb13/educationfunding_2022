@@ -2,10 +2,12 @@
     <div class="container">
         <div style="padding: 20px">
 
-            <div class="notification has-background-info has-text-white">
-                <p>Welcome to the new-look Education Funding UK! 👋</p>
-                <p>We'd love to get your thoughts on the new layout and tools - if you have a moment please share some feedback...</p>
-                <button class="button is-small is-warning mt-2" onclick="launchreport()">Feedback</button>
+            <div class="notification">
+                <p>New things are coming...</p>
+                
+                <p>If you'd like to be ahead of the curve, register your details here.</p>
+                
+                <button class="button is-small is-warning mt-2" onclick="launchmodal('registermodal')">Register Interest</button>
             </div>
 
             <!-- site search -->
@@ -15,6 +17,8 @@
             <!-- tool cards -->
             {{ partial "tool-cards.html" . }}
             <!-- end of tool card -->
+
+            <button class="button is-small is-warning mt-2" onclick="launchreport()">Submit Feedback</button>
             
             <hr>
             
@@ -28,9 +32,12 @@
             {{ partial "resources-by-funding-type.html" . }}
             <!-- end of resources by funding type -->
 
-            <!-- feedback form -->
+            <!-- modal form partials -->
             {{ partial "feedback-form.html" . }}
-            <!-- end of feedback form -->
+            {{ partial "registerinterest-form.html" . }}
+            <!-- end of forms -->
+
+            
             
         </div>
         <!-- end of padding div -->
