@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.92.2" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -18,8 +17,8 @@
         <link rel="manifest" href="/img/site.webmanifest">
 
         <meta name="twitter:card" content="summary_image" />
-        <meta property="og:url" content="https://educationfunding.uk/" />
-        <meta property="og:title" content="Education Funding UK" />
+        <meta property="og:url" content="https://educationfunding.uk/england/further-education/" />
+        <meta property="og:title" content="Further Education Funding in England" />
 
 
         
@@ -113,6 +112,24 @@
     <div class="container">
         <div style="padding: 20px">
 
+            <div class="columns">
+                <div class="column">
+                    <h1 class="is-size-1">Further Education Funding in England</h1>
+                </div>
+                <div class="column">
+                    <div class="notification is-warning">
+                        <p>New things are coming...</p>
+                        
+                        <p>If you'd like to be ahead of the curve, register your details here.</p>
+                        
+                        <button class="button is-small is-black mt-2" onclick="launchmodal('registermodal')">Register Interest</button>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+
             
             <style>
     #elbi-results {
@@ -143,61 +160,116 @@
             
 
             
-            <h2 class="is-size-3 p-3 mb-4" style="border-left: 10px solid #31537E; border-bottom: 2px solid #31537E;">Select your nation</h2>
-<div class="columns is-multiline">
-
-    <div class="column is-one-third">
-        <a href="/england/">
-            <div class="card">
-                <div class="card-content">
-                    <div class="content">
-                        <h1>England 🏴󠁧󠁢󠁥󠁮󠁧󠁿</h1>
-                        <p>Information for training providers based in England.</p>
-                    </div>
-                </div>
+            <div class="columns">
+    <div class="column">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                  Upcoming Returns
+                </p>
+              </header>
+            <div class="card-content">
+              <div class="m-3" id="next-return">
+              </div>
+              <button class="button mt-1" onclick="toggleUpcomingReturns()">Show/Hide Upcoming Returns</button>
+              <a class="button is-success mt-1" target="_blank" href="https://submit-learner-data.service.gov.uk/">Submit ILR</a>
+              
+              <p class="subtitle" id="ilr-dates" style="display: none"></p>
             </div>
-        </a>
+          </div>
+        <script src="/js/ilrdates.js"></script>
     </div>
 
-    <div class="column is-one-third">
-        <a href="/">
-            <div class="card has-background-light">
-                <div class="card-content">
-                    <div class="content">
-                        <h1>Northern Ireland 🇬🇧</h1>
-                        <p>Information for training providers based in Northern Ireland.</p>
-                    </div>
-                </div>
+    <div class="column">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                  Quick Links
+                </p>
+              </header>
+            <div class="card-content">
+              <a class="button mt-1" href="https://www.gov.uk/guidance/16-to-19-education-funding-guidance" target="_blank">16 to 19 Funding</a>
+              <a class="button mt-1" href="https://www.gov.uk/government/publications/t-level-funding" target="_blank">T Level Funding</a>
+              <a class="button mt-1" href="https://www.gov.uk/government/collections/sfa-funding-rates" target="_blank">Adult Funding, Loans, and Apprenticeships</a>
             </div>
-        </a>
+          </div>
+    </div>
+</div>
+
+<div class="columns">
+    
+
+    <div class="column">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                  ILR Rule Lookup
+
+                  <div class="field is-grouped is-grouped-multiline m-2">
+                    <div class="control">
+                      <div class="tags has-addons">
+                        <span class="tag is-dark">version</span>
+                        <span class="tag is-info">2223.4</span>
+                      </div>
+                    </div>
+                  
+                  </div>
+
+                </p>
+              </header>
+            <div class="card-content">
+              <input type="text" id="rule-input" class="input">
+            </div>
+            <div id="rule-results"></div>
+          </div>
+        <script src="/js/ilr_rule_lookup.js"></script>
     </div>
 
-    <div class="column is-one-third">
-        <a href="/">
-            <div class="card has-background-light">
-                <div class="card-content">
-                    <div class="content">
-                        <h1>Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿</h1>
-                        <p>Information for training providers based in Scotland.</p>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
+    <div class="column">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                  Learning Aim Lookup
 
-    <div class="column is-one-third">
-        <a href="/">
-            <div class="card has-background-light">
-                <div class="card-content">
-                    <div class="content">
-                        <h1>Wales 🏴󠁧󠁢󠁷󠁬󠁳󠁿</h1>
-                        <p>Information for training providers based in Wales.</p>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
+                  <div class="field is-grouped is-grouped-multiline m-2">
+                  
+                  </div>
 
+                </p>
+              </header>
+            <div class="card-content">
+                <input type="text" id="aim-input" class="input" placeholder="learning aim (e.g. 60145754) or search term (e.g. English)">
+                <div class="content my-2">
+                    <a id="fala-button" class="button is-info" target="_blank" href="https://submit-learner-data.service.gov.uk/find-a-learning-aim/">FALA</a>
+                    <a id="loqaff-button" class="button is-link" target="_blank" href="https://www.qualifications.education.gov.uk/">LoQAFF</a>
+                    <a id="ofqual-button" class="button is-dark" target="_blank" href="https://register.ofqual.gov.uk/">Ofqual</a>
+                </div>
+                <script>
+                    document.getElementById("aim-input").addEventListener("input",function() {
+                        
+                        const regex = /[0-9]{7}[A-Za-z0-9]{1}/;
+                        
+                        let fb = document.getElementById("fala-button");
+                        let lb = document.getElementById("loqaff-button");
+                        let ob = document.getElementById("ofqual-button");
+                        let queryText = document.getElementById("aim-input").value;
+                        let queryTextWithoutSlashes = queryText.replaceAll('/','');
+                        
+                        if (regex.test(queryTextWithoutSlashes)) {
+                          fb.href = "https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimDetails/" + queryTextWithoutSlashes
+                          lb.href = "https://www.qualifications.education.gov.uk/Qualification/" + queryTextWithoutSlashes
+                          ob.href = "https://register.ofqual.gov.uk/Search?category=Qualifications&query=" + queryTextWithoutSlashes
+                        } else {
+                          fb.href = "https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimSearchResult?SearchTerm=" + queryText
+                          lb.href = "https://www.qualifications.education.gov.uk/Search?Title=" + queryText + "&Status=All"
+                          ob.href = "https://register.ofqual.gov.uk/Search?category=Qualifications&query=" + queryTextWithoutSlashes
+                        }
+
+                    });
+                </script>
+            </div>
+          </div>
+    </div>
 </div>
             
 
