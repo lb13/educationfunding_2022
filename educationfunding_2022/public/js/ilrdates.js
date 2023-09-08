@@ -3,11 +3,6 @@ const next_return_div = document.getElementById("next-return");
 
 const ilr_request = new Request("/data/ilrdates.json");
 const today = new Date();
-const today_year = today.getFullYear().toString();
-const today_month = ('0' + (today.getMonth()+1)).slice(-2);
-const today_day = ('0' + today.getDate()).slice(-2);
-const today_numberstring = today_year.concat(today_month,today_day);
-const today_number = Number(today_numberstring);
 
 function getNumberOfDays(start, end) {
     // Start date is already JS date object for today's date
