@@ -5,9 +5,13 @@
 <div id="markdown-editor-container" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important; height: 600px !important; display: flex !important; flex-direction: column !important; background: #f5f5f5 !important; border: 1px solid #e2e8f0 !important; border-radius: 8px !important; overflow: hidden !important; margin: 1rem 0 !important; box-sizing: border-box !important;">
     <div class="md-editor-header" style="background: #2d3748 !important; color: white !important; padding: 1rem !important; display: flex !important; justify-content: space-between !important; align-items: center !important; box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important; flex-shrink: 0 !important; box-sizing: border-box !important;">
         <h2 class="md-editor-title" style="font-size: 1.25rem !important; font-weight: 600 !important; margin: 0 !important; color: white !important; box-sizing: border-box !important;">Markdown Editor</h2>
-        <div class="md-view-toggle" style="display: flex !important; background: #4a5568 !important; border-radius: 6px !important; overflow: hidden !important; box-sizing: border-box !important;">
-            <button class="md-toggle-btn md-toggle-active" data-view="rich" style="padding: 0.5rem 1rem !important; background: #667eea !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; box-sizing: border-box !important;">Rich Text</button>
-            <button class="md-toggle-btn" data-view="html" style="padding: 0.5rem 1rem !important; background: transparent !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; box-sizing: border-box !important;">HTML Source</button>
+        <div style="display: flex !important; gap: 0.5rem !important; align-items: center !important; flex-wrap: wrap !important;">
+            <button id="md-deai-btn" style="padding: 0.5rem 1rem !important; background: #ed8936 !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; border-radius: 6px !important; box-sizing: border-box !important; font-weight: 500 !important;">De-AI Text</button>
+            <div class="md-view-toggle" style="display: flex !important; background: #4a5568 !important; border-radius: 6px !important; overflow: hidden !important; box-sizing: border-box !important;">
+                <button class="md-toggle-btn md-toggle-active" data-view="rich" style="padding: 0.5rem 1rem !important; background: #667eea !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; box-sizing: border-box !important;">Rich Text</button>
+                <button class="md-toggle-btn" data-view="html" style="padding: 0.5rem 1rem !important; background: transparent !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; box-sizing: border-box !important;">HTML Source</button>
+            </div>
+            <button id="md-copy-html-btn" style="padding: 0.5rem 1rem !important; background: #48bb78 !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; border-radius: 6px !important; box-sizing: border-box !important; font-weight: 500 !important;">Copy HTML</button>
         </div>
     </div>
     
@@ -52,6 +56,22 @@ function hello() {
 /* Fallback CSS with maximum specificity */
 #markdown-editor-container .md-toggle-btn:hover {
     background: #718096 !important;
+}
+
+#md-copy-html-btn:hover {
+    background: #38a169 !important;
+}
+
+#md-copy-html-btn:active {
+    background: #2f855a !important;
+}
+
+#md-deai-btn:hover {
+    background: #dd6b20 !important;
+}
+
+#md-deai-btn:active {
+    background: #c05621 !important;
 }
  
 #markdown-editor-container .md-preview h1, 
@@ -185,8 +205,11 @@ function hello() {
     const editor = container.querySelector('.md-editor');
     const preview = container.querySelector('#md-preview');
     const toggleBtns = container.querySelectorAll('.md-toggle-btn');
+    const copyHtmlBtn = document.getElementById('md-copy-html-btn');
+    const deAiBtn = document.getElementById('md-deai-btn');
     
     let currentView = 'rich';
+    let currentHtml = '';
     
     // Configure marked options
     if (typeof marked !== 'undefined') {
@@ -195,7 +218,7 @@ function hello() {
             gfm: true,
             headerIds: false,
             sanitize: false,
-            mangle: false  // Disable email address encoding
+            mangle: false
         });
     }
     
@@ -206,11 +229,182 @@ function hello() {
         });
     }
     
+    // Function to de-AI text by replacing fancy punctuation
+    function deAiText(text) {
+        return text
+            .replace(/—/g, '-')              // Em dash to hyphen
+            .replace(/–/g, '-')              // En dash to hyphen
+            .replace(/'/g, "'")              // Left single quote
+            .replace(/'/g, "'")              // Right single quote
+            .replace(/"/g, '"')              // Left double quote
+            .replace(/"/g, '"')              // Right double quote
+            .replace(/…/g, '...')            // Ellipsis to three dots
+            .replace(/•/g, '*')              // Bullet to asterisk
+            .replace(/™/g, '(TM)')           // Trademark symbol
+            .replace(/©/g, '(C)')            // Copyright symbol
+            .replace(/®/g, '(R)')            // Registered symbol
+            .replace(/\u00A0/g, ' ')         // Non-breaking space to regular space
+            .replace(/\u2011/g, '-')         // Non-breaking hyphen
+            .replace(/\u2013/g, '-')         // En dash (another variant)
+            .replace(/\u2014/g, '-');        // Em dash (another variant)
+    }
+    
+    // Function to convert HTML to markdown while preserving basic formatting
+    function htmlToMarkdown(html) {
+        // Create a temporary container
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        
+        // Helper to process a node recursively
+        function processNode(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                return node.textContent;
+            }
+            
+            if (node.nodeType !== Node.ELEMENT_NODE) {
+                return '';
+            }
+            
+            const tag = node.tagName.toLowerCase();
+            let result = '';
+            let childContent = '';
+            
+            // Process children first
+            for (let child of node.childNodes) {
+                childContent += processNode(child);
+            }
+            
+            // Apply markdown based on tag
+            switch (tag) {
+                case 'h1':
+                    result = '# ' + childContent + '\n\n';
+                    break;
+                case 'h2':
+                    result = '## ' + childContent + '\n\n';
+                    break;
+                case 'h3':
+                    result = '### ' + childContent + '\n\n';
+                    break;
+                case 'h4':
+                    result = '#### ' + childContent + '\n\n';
+                    break;
+                case 'h5':
+                    result = '##### ' + childContent + '\n\n';
+                    break;
+                case 'h6':
+                    result = '###### ' + childContent + '\n\n';
+                    break;
+                case 'strong':
+                case 'b':
+                    result = '**' + childContent + '**';
+                    break;
+                case 'em':
+                case 'i':
+                    result = '*' + childContent + '*';
+                    break;
+                case 'u':
+                    // Check if this is a link styled as underline
+                    const parent = node.parentElement;
+                    if (parent && parent.tagName.toLowerCase() === 'a') {
+                        result = childContent;
+                    } else {
+                        result = '<u>' + childContent + '</u>';
+                    }
+                    break;
+                case 'a':
+                    const href = node.getAttribute('href') || '';
+                    // Remove underline styling from link text if present
+                    const cleanContent = childContent.replace(/<\/?u>/g, '');
+                    result = '[' + cleanContent + '](' + href + ')';
+                    break;
+                case 'p':
+                    result = childContent + '\n\n';
+                    break;
+                case 'br':
+                    result = '\n';
+                    break;
+                case 'ul':
+                case 'ol':
+                    result = '\n' + childContent + '\n';
+                    break;
+                case 'li':
+                    const listParent = node.parentElement;
+                    const prefix = listParent && listParent.tagName.toLowerCase() === 'ol' ? '1. ' : '- ';
+                    result = prefix + childContent + '\n';
+                    break;
+                case 'table':
+                    result = processTable(node) + '\n\n';
+                    break;
+                case 'blockquote':
+                    result = '> ' + childContent.replace(/\n/g, '\n> ') + '\n\n';
+                    break;
+                case 'code':
+                    result = '`' + childContent + '`';
+                    break;
+                case 'pre':
+                    result = '```\n' + childContent + '\n```\n\n';
+                    break;
+                case 'span':
+                case 'font':
+                    // Check for color or other styling
+                    const style = node.getAttribute('style') || '';
+                    const color = node.getAttribute('color') || '';
+                    
+                    if (style.includes('color') || color) {
+                        // Extract color value
+                        let colorValue = color;
+                        if (!colorValue && style.includes('color')) {
+                            const colorMatch = style.match(/color:\s*([^;]+)/);
+                            if (colorMatch) colorValue = colorMatch[1].trim();
+                        }
+                        if (colorValue) {
+                            result = '<span style="color:' + colorValue + '">' + childContent + '</span>';
+                        } else {
+                            result = childContent;
+                        }
+                    } else {
+                        result = childContent;
+                    }
+                    break;
+                default:
+                    result = childContent;
+            }
+            
+            return result;
+        }
+        
+        function processTable(tableNode) {
+            const rows = [];
+            const tableRows = tableNode.querySelectorAll('tr');
+            
+            tableRows.forEach((tr, rowIndex) => {
+                const cells = tr.querySelectorAll('th, td');
+                const rowData = [];
+                
+                cells.forEach(cell => {
+                    rowData.push(processNode(cell).trim());
+                });
+                
+                rows.push('| ' + rowData.join(' | ') + ' |');
+                
+                // Add separator after header row
+                if (rowIndex === 0) {
+                    rows.push('| ' + rowData.map(() => '---').join(' | ') + ' |');
+                }
+            });
+            
+            return rows.join('\n');
+        }
+        
+        return processNode(temp).trim();
+    }
+    
     function updatePreview() {
         if (!editor || !preview || typeof marked === 'undefined') return;
         
         const markdown = editor.value;
         const html = marked.parse(markdown);
+        currentHtml = html;
         
         if (currentView === 'rich') {
             preview.innerHTML = html;
@@ -224,7 +418,6 @@ function hello() {
     function switchView(view) {
         currentView = view;
         
-        // Update button states with inline styles to override everything
         toggleBtns.forEach(btn => {
             if (btn.dataset.view === view) {
                 btn.style.background = '#667eea';
@@ -233,40 +426,64 @@ function hello() {
             }
         });
         
-        // Update preview
         updatePreview();
     }
     
     // Event listeners
     if (editor) {
-        // Handle paste events to convert emojis
+        // Handle paste events
         editor.addEventListener('paste', (e) => {
-            e.preventDefault();
+            const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+            let htmlContent = null;
+            let textContent = null;
             
-            // Get pasted text
-            const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+            // Check if HTML content is available
+            for (let item of items) {
+                if (item.type === 'text/html') {
+                    e.preventDefault();
+                    item.getAsString((html) => {
+                        // Convert HTML to markdown
+                        const markdown = htmlToMarkdown(html);
+                        // Convert emojis in the markdown
+                        const convertedMarkdown = convertEmojisToEntities(markdown);
+                        
+                        // Insert at cursor position
+                        const start = editor.selectionStart;
+                        const end = editor.selectionEnd;
+                        const currentValue = editor.value;
+                        
+                        editor.value = currentValue.substring(0, start) + convertedMarkdown + currentValue.substring(end);
+                        editor.selectionStart = editor.selectionEnd = start + convertedMarkdown.length;
+                        
+                        updatePreview();
+                    });
+                    return;
+                } else if (item.type === 'text/plain') {
+                    textContent = true;
+                }
+            }
             
-            // Convert emojis to HTML entities
-            const convertedText = convertEmojisToEntities(pastedText);
-            
-            // Insert the converted text at cursor position
-            const start = editor.selectionStart;
-            const end = editor.selectionEnd;
-            const currentValue = editor.value;
-            
-            editor.value = currentValue.substring(0, start) + convertedText + currentValue.substring(end);
-            
-            // Set cursor position after inserted text
-            editor.selectionStart = editor.selectionEnd = start + convertedText.length;
-            
-            // Update preview
-            updatePreview();
+            // If no HTML, handle as plain text with emoji conversion
+            if (textContent) {
+                e.preventDefault();
+                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                const convertedText = convertEmojisToEntities(pastedText);
+                
+                const start = editor.selectionStart;
+                const end = editor.selectionEnd;
+                const currentValue = editor.value;
+                
+                editor.value = currentValue.substring(0, start) + convertedText + currentValue.substring(end);
+                editor.selectionStart = editor.selectionEnd = start + convertedText.length;
+                
+                updatePreview();
+            }
         });
         
         editor.addEventListener('input', updatePreview);
+        
         editor.addEventListener('scroll', () => {
             if (!preview) return;
-            // Sync scroll position
             const scrollPercent = editor.scrollTop / (editor.scrollHeight - editor.clientHeight);
             preview.scrollTop = scrollPercent * (preview.scrollHeight - preview.clientHeight);
         });
@@ -290,7 +507,7 @@ function hello() {
                 }
             }
             
-            // Tab handling for indentation
+            // Tab handling
             if (e.key === 'Tab') {
                 e.preventDefault();
                 const start = editor.selectionStart;
@@ -299,6 +516,46 @@ function hello() {
                 editor.selectionStart = editor.selectionEnd = start + 4;
                 updatePreview();
             }
+        });
+    }
+    
+    // Copy HTML button
+    if (copyHtmlBtn) {
+        copyHtmlBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(currentHtml);
+                const originalText = copyHtmlBtn.textContent;
+                copyHtmlBtn.textContent = 'Copied!';
+                copyHtmlBtn.style.background = '#38a169';
+                setTimeout(() => {
+                    copyHtmlBtn.textContent = originalText;
+                    copyHtmlBtn.style.background = '#48bb78';
+                }, 2000);
+            } catch (err) {
+                alert('Failed to copy HTML. Please try again.');
+            }
+        });
+    }
+    
+    // De-AI button
+    if (deAiBtn) {
+        deAiBtn.addEventListener('click', () => {
+            const start = editor.selectionStart;
+            const end = editor.selectionEnd;
+            const deAied = deAiText(editor.value);
+            const lengthDiff = deAied.length - editor.value.length;
+            
+            editor.value = deAied;
+            editor.selectionStart = start + (start > end ? lengthDiff : 0);
+            editor.selectionEnd = end + lengthDiff;
+            
+            updatePreview();
+            
+            const originalText = deAiBtn.textContent;
+            deAiBtn.textContent = 'De-AI\'d!';
+            setTimeout(() => {
+                deAiBtn.textContent = originalText;
+            }, 2000);
         });
     }
     
@@ -323,7 +580,7 @@ function hello() {
         updatePreview();
     }
     
-    // Initialize with default content
+    // Initialize
     setTimeout(() => {
         updatePreview();
     }, 100);
