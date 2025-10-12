@@ -3,299 +3,330 @@
     <div class="container is-fluid">
     <!-- Markdown Editor - Aggressive CSS Override Version -->
 <div id="markdown-editor-container" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important; height: 600px !important; display: flex !important; flex-direction: column !important; background: #f5f5f5 !important; border: 1px solid #e2e8f0 !important; border-radius: 8px !important; overflow: hidden !important; margin: 1rem 0 !important; box-sizing: border-box !important;">
-    <div class="md-editor-header" style="background: #2d3748 !important; color: white !important; padding: 1rem !important; display: flex !important; justify-content: space-between !important; align-items: center !important; box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important; flex-shrink: 0 !important; box-sizing: border-box !important;">
-        <h2 class="md-editor-title" style="font-size: 1.25rem !important; font-weight: 600 !important; margin: 0 !important; color: white !important; box-sizing: border-box !important;">Markdown Editor</h2>
-        <div class="md-view-toggle" style="display: flex !important; background: #4a5568 !important; border-radius: 6px !important; overflow: hidden !important; box-sizing: border-box !important;">
-            <button class="md-toggle-btn md-toggle-active" data-view="rich" style="padding: 0.5rem 1rem !important; background: #667eea !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; box-sizing: border-box !important;">Rich Text</button>
-            <button class="md-toggle-btn" data-view="html" style="padding: 0.5rem 1rem !important; background: transparent !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; box-sizing: border-box !important;">HTML Source</button>
-        </div>
-    </div>
-    
-    <div class="md-editor-container" style="display: flex !important; flex: 1 !important; gap: 1px !important; background: #e2e8f0 !important; min-height: 0 !important; box-sizing: border-box !important;">
-        <div class="md-editor-panel" style="flex: 1 !important; display: flex !important; flex-direction: column !important; background: white !important; min-width: 0 !important; box-sizing: border-box !important;">
-            <div class="md-panel-header" style="background: #edf2f7 !important; padding: 0.75rem 1rem !important; border-bottom: 1px solid #e2e8f0 !important; font-weight: 600 !important; color: #4a5568 !important; font-size: 0.875rem !important; flex-shrink: 0 !important; box-sizing: border-box !important;">Markdown Input</div>
-            <textarea class="md-editor" placeholder="Type your markdown here...
- 
+    <div class="md-editor-header" style="background: #2d3748 !important; color: white !important; padding: 1rem !important; display: flex !important; justify-content: space-between !important; align-items: center !important; box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important; flex-shrink: 0 !important; box-sizing: border-box !important;">
+        <h2 class="md-editor-title" style="font-size: 1.25rem !important; font-weight: 600 !important; margin: 0 !important; color: white !important; box-sizing: border-box !important;">Markdown Editor</h2>
+        <div class="md-view-toggle" style="display: flex !important; background: #4a5568 !important; border-radius: 6px !important; overflow: hidden !important; box-sizing: border-box !important;">
+            <button class="md-toggle-btn md-toggle-active" data-view="rich" style="padding: 0.5rem 1rem !important; background: #667eea !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; box-sizing: border-box !important;">Rich Text</button>
+            <button class="md-toggle-btn" data-view="html" style="padding: 0.5rem 1rem !important; background: transparent !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; box-sizing: border-box !important;">HTML Source</button>
+        </div>
+    </div>
+    
+    <div class="md-editor-container" style="display: flex !important; flex: 1 !important; gap: 1px !important; background: #e2e8f0 !important; min-height: 0 !important; box-sizing: border-box !important;">
+        <div class="md-editor-panel" style="flex: 1 !important; display: flex !important; flex-direction: column !important; background: white !important; min-width: 0 !important; box-sizing: border-box !important;">
+            <div class="md-panel-header" style="background: #edf2f7 !important; padding: 0.75rem 1rem !important; border-bottom: 1px solid #e2e8f0 !important; font-weight: 600 !important; color: #4a5568 !important; font-size: 0.875rem !important; flex-shrink: 0 !important; box-sizing: border-box !important;">Markdown Input</div>
+            <textarea class="md-editor" placeholder="Type your markdown here...
+ 
 # Welcome to Markdown Editor
- 
+ 
 This is a **live preview** markdown editor. Try writing some markdown:
- 
+ 
 ## Features
 - Real-time preview
 - Switch between rich text and HTML view
 - Clean, responsive design
- 
+ 
 ### Code Example
 ```javascript
 function hello() {
-    console.log('Hello, World!');
+    console.log('Hello, World!');
 }
 ```
- 
+ 
 > This is a blockquote. You can use it for emphasis.
- 
+ 
 | Feature | Status |
 |---------|--------|
 | Live Preview | ? |
 | HTML View | ? |
 | Mobile Friendly | ? |" style="flex: 1 !important; border: none !important; outline: none !important; padding: 1rem !important; font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important; font-size: 14px !important; line-height: 1.5 !important; resize: none !important; background: #fafafa !important; margin: 0 !important; box-sizing: border-box !important;"></textarea>
-        </div>
-        
-        <div class="md-preview-panel" style="flex: 1 !important; display: flex !important; flex-direction: column !important; background: white !important; min-width: 0 !important; box-sizing: border-box !important;">
-            <div class="md-panel-header" style="background: #edf2f7 !important; padding: 0.75rem 1rem !important; border-bottom: 1px solid #e2e8f0 !important; font-weight: 600 !important; color: #4a5568 !important; font-size: 0.875rem !important; flex-shrink: 0 !important; box-sizing: border-box !important;">Preview</div>
-            <div class="md-preview" id="md-preview" style="flex: 1 !important; padding: 1rem !important; overflow-y: auto !important; background: white !important; box-sizing: border-box !important;"></div>
-        </div>
-    </div>
+        </div>
+        
+        <div class="md-preview-panel" style="flex: 1 !important; display: flex !important; flex-direction: column !important; background: white !important; min-width: 0 !important; box-sizing: border-box !important;">
+            <div class="md-panel-header" style="background: #edf2f7 !important; padding: 0.75rem 1rem !important; border-bottom: 1px solid #e2e8f0 !important; font-weight: 600 !important; color: #4a5568 !important; font-size: 0.875rem !important; flex-shrink: 0 !important; box-sizing: border-box !important;">Preview</div>
+            <div class="md-preview" id="md-preview" style="flex: 1 !important; padding: 1rem !important; overflow-y: auto !important; background: white !important; box-sizing: border-box !important;"></div>
+        </div>
+    </div>
 </div>
- 
+ 
 <style>
 /* Fallback CSS with maximum specificity */
 #markdown-editor-container .md-toggle-btn:hover {
-    background: #718096 !important;
+    background: #718096 !important;
 }
- 
-#markdown-editor-container .md-preview h1, 
-#markdown-editor-container .md-preview h2, 
-#markdown-editor-container .md-preview h3, 
-#markdown-editor-container .md-preview h4, 
-#markdown-editor-container .md-preview h5, 
+ 
+#markdown-editor-container .md-preview h1, 
+#markdown-editor-container .md-preview h2, 
+#markdown-editor-container .md-preview h3, 
+#markdown-editor-container .md-preview h4, 
+#markdown-editor-container .md-preview h5, 
 #markdown-editor-container .md-preview h6 {
-    margin: 1rem 0 0.5rem !important;
-    color: #2d3748 !important;
-    font-weight: bold !important;
+    margin: 1rem 0 0.5rem !important;
+    color: #2d3748 !important;
+    font-weight: bold !important;
 }
- 
-#markdown-editor-container .md-preview h1 { 
-    font-size: 2rem !important; 
-    border-bottom: 2px solid #e2e8f0 !important; 
-    padding-bottom: 0.5rem !important; 
+ 
+#markdown-editor-container .md-preview h1 { 
+    font-size: 2rem !important; 
+    border-bottom: 2px solid #e2e8f0 !important; 
+    padding-bottom: 0.5rem !important; 
 }
 #markdown-editor-container .md-preview h2 { font-size: 1.5rem !important; }
 #markdown-editor-container .md-preview h3 { font-size: 1.25rem !important; }
- 
+ 
 #markdown-editor-container .md-preview p {
-    margin: 0.5rem 0 !important;
-    line-height: 1.6 !important;
-    color: #4a5568 !important;
+    margin: 0.5rem 0 !important;
+    line-height: 1.6 !important;
+    color: #4a5568 !important;
 }
- 
-#markdown-editor-container .md-preview ul, 
+ 
+#markdown-editor-container .md-preview ul, 
 #markdown-editor-container .md-preview ol {
-    margin: 0.5rem 0 0.5rem 2rem !important;
-    padding: 0 !important;
+    margin: 0.5rem 0 0.5rem 2rem !important;
+    padding: 0 !important;
 }
- 
+ 
 #markdown-editor-container .md-preview li {
-    margin: 0.25rem 0 !important;
-    line-height: 1.5 !important;
-    list-style-position: outside !important;
+    margin: 0.25rem 0 !important;
+    line-height: 1.5 !important;
+    list-style-position: outside !important;
 }
- 
+ 
 #markdown-editor-container .md-preview blockquote {
-    border-left: 4px solid #667eea !important;
-    margin: 1rem 0 !important;
-    padding: 0.5rem 1rem !important;
-    background: #f7fafc !important;
-    color: #4a5568 !important;
-    font-style: italic !important;
+    border-left: 4px solid #667eea !important;
+    margin: 1rem 0 !important;
+    padding: 0.5rem 1rem !important;
+    background: #f7fafc !important;
+    color: #4a5568 !important;
+    font-style: italic !important;
 }
- 
+ 
 #markdown-editor-container .md-preview code {
-    background: #edf2f7 !important;
-    padding: 0.2rem 0.4rem !important;
-    border-radius: 3px !important;
-    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
-    font-size: 0.875rem !important;
-    color: #e53e3e !important;
+    background: #edf2f7 !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 3px !important;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+    font-size: 0.875rem !important;
+    color: #e53e3e !important;
 }
- 
+ 
 #markdown-editor-container .md-preview pre {
-    background: #2d3748 !important;
-    color: #e2e8f0 !important;
-    padding: 1rem !important;
-    border-radius: 6px !important;
-    overflow-x: auto !important;
-    margin: 1rem 0 !important;
+    background: #2d3748 !important;
+    color: #e2e8f0 !important;
+    padding: 1rem !important;
+    border-radius: 6px !important;
+    overflow-x: auto !important;
+    margin: 1rem 0 !important;
 }
- 
+ 
 #markdown-editor-container .md-preview pre code {
-    background: none !important;
-    color: inherit !important;
-    padding: 0 !important;
+    background: none !important;
+    color: inherit !important;
+    padding: 0 !important;
 }
- 
+ 
 #markdown-editor-container .md-preview table {
-    border-collapse: collapse !important;
-    width: 100% !important;
-    margin: 1rem 0 !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 1rem 0 !important;
 }
- 
-#markdown-editor-container .md-preview th, 
+ 
+#markdown-editor-container .md-preview th, 
 #markdown-editor-container .md-preview td {
-    border: 1px solid #e2e8f0 !important;
-    padding: 0.5rem !important;
-    text-align: left !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 0.5rem !important;
+    text-align: left !important;
 }
- 
+ 
 #markdown-editor-container .md-preview th {
-    background: #edf2f7 !important;
-    font-weight: 600 !important;
+    background: #edf2f7 !important;
+    font-weight: 600 !important;
 }
- 
+ 
 #markdown-editor-container .md-preview a {
-    color: #667eea !important;
-    text-decoration: none !important;
+    color: #667eea !important;
+    text-decoration: none !important;
 }
- 
+ 
 #markdown-editor-container .md-preview a:hover {
-    text-decoration: underline !important;
+    text-decoration: underline !important;
 }
- 
+ 
 #markdown-editor-container .md-html-preview {
-    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
-    font-size: 13px !important;
-    line-height: 1.4 !important;
-    color: #2d3748 !important;
-    white-space: pre-wrap !important;
-    background: #f7fafc !important;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    color: #2d3748 !important;
+    white-space: pre-wrap !important;
+    background: #f7fafc !important;
 }
- 
+ 
 @media (max-width: 768px) {
-    #markdown-editor-container .md-editor-container {
-        flex-direction: column !important;
-    }
-    
-    #markdown-editor-container .md-editor-header {
-        flex-direction: column !important;
-        gap: 1rem !important;
-        text-align: center !important;
-    }
-    
-    #markdown-editor-container {
-        height: 800px !important;
-    }
+    #markdown-editor-container .md-editor-container {
+        flex-direction: column !important;
+    }
+    
+    #markdown-editor-container .md-editor-header {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
+    }
+    
+    #markdown-editor-container {
+        height: 800px !important;
+    }
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
 <script>
 (function() {
-    const container = document.getElementById('markdown-editor-container');
-    if (!container) return;
-    
-    const editor = container.querySelector('.md-editor');
-    const preview = container.querySelector('#md-preview');
-    const toggleBtns = container.querySelectorAll('.md-toggle-btn');
-    
-    let currentView = 'rich';
-    
-    // Configure marked options
-    if (typeof marked !== 'undefined') {
-        marked.setOptions({
-            breaks: true,
-            gfm: true,
-            headerIds: false,
-            sanitize: false,
-            mangle: false  // Disable email address encoding
-        });
-    }
-    
-    function updatePreview() {
-        if (!editor || !preview || typeof marked === 'undefined') return;
-        
-        const markdown = editor.value;
-        const html = marked.parse(markdown);
-        
-        if (currentView === 'rich') {
-            preview.innerHTML = html;
-            preview.className = 'md-preview';
-        } else {
-            preview.textContent = html;
-            preview.className = 'md-preview md-html-preview';
-        }
-    }
-    
-    function switchView(view) {
-        currentView = view;
-        
-        // Update button states with inline styles to override everything
-        toggleBtns.forEach(btn => {
-            if (btn.dataset.view === view) {
-                btn.style.background = '#667eea';
-            } else {
-                btn.style.background = 'transparent';
-            }
-        });
-        
-        // Update preview
-        updatePreview();
-    }
-    
-    // Event listeners
-    if (editor) {
-        editor.addEventListener('input', updatePreview);
-        editor.addEventListener('scroll', () => {
-            if (!preview) return;
-            // Sync scroll position
-            const scrollPercent = editor.scrollTop / (editor.scrollHeight - editor.clientHeight);
-            preview.scrollTop = scrollPercent * (preview.scrollHeight - preview.clientHeight);
-        });
-        
-        // Keyboard shortcuts
-        editor.addEventListener('keydown', (e) => {
-            if (e.ctrlKey || e.metaKey) {
-                switch(e.key) {
-                    case 'b':
-                        e.preventDefault();
-                        insertMarkdown('**', '**');
-                        break;
-                    case 'i':
-                        e.preventDefault();
-                        insertMarkdown('*', '*');
-                        break;
-                    case 'k':
-                        e.preventDefault();
-                        insertMarkdown('[', '](url)');
-                        break;
-                }
-            }
-            
-            // Tab handling for indentation
-            if (e.key === 'Tab') {
-                e.preventDefault();
-                const start = editor.selectionStart;
-                const end = editor.selectionEnd;
-                editor.value = editor.value.substring(0, start) + '    ' + editor.value.substring(end);
-                editor.selectionStart = editor.selectionEnd = start + 4;
-                updatePreview();
-            }
-        });
-    }
-    
-    toggleBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            switchView(btn.dataset.view);
-        });
-    });
-    
-    function insertMarkdown(before, after) {
-        if (!editor) return;
-        
-        const start = editor.selectionStart;
-        const end = editor.selectionEnd;
-        const selected = editor.value.substring(start, end);
-        const replacement = before + selected + after;
-        
-        editor.value = editor.value.substring(0, start) + replacement + editor.value.substring(end);
-        editor.selectionStart = start + before.length;
-        editor.selectionEnd = start + before.length + selected.length;
-        editor.focus();
-        updatePreview();
-    }
-    
-    // Initialize with default content
-    setTimeout(() => {
-        updatePreview();
-    }, 100);
+    const container = document.getElementById('markdown-editor-container');
+    if (!container) return;
+    
+    const editor = container.querySelector('.md-editor');
+    const preview = container.querySelector('#md-preview');
+    const toggleBtns = container.querySelectorAll('.md-toggle-btn');
+    
+    let currentView = 'rich';
+    
+    // Configure marked options
+    if (typeof marked !== 'undefined') {
+        marked.setOptions({
+            breaks: true,
+            gfm: true,
+            headerIds: false,
+            sanitize: false,
+            mangle: false  // Disable email address encoding
+        });
+    }
+    
+    // Function to convert emojis to HTML entities
+    function convertEmojisToEntities(text) {
+        return text.replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|[\u{1F000}-\u{1F02F}]|[\u{1F0A0}-\u{1F0FF}]|[\u{1F100}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]|[\u{1F900}-\u{1F9FF}]|[\u{1FA00}-\u{1FA6F}]|[\u{1FA70}-\u{1FAFF}]|[\u{FE00}-\u{FE0F}]|[\u{200D}]|[\u{20E3}]|[\u{E0020}-\u{E007F}]/gu, function(char) {
+            return '&#' + char.codePointAt(0) + ';';
+        });
+    }
+    
+    function updatePreview() {
+        if (!editor || !preview || typeof marked === 'undefined') return;
+        
+        const markdown = editor.value;
+        const html = marked.parse(markdown);
+        
+        if (currentView === 'rich') {
+            preview.innerHTML = html;
+            preview.className = 'md-preview';
+        } else {
+            preview.textContent = html;
+            preview.className = 'md-preview md-html-preview';
+        }
+    }
+    
+    function switchView(view) {
+        currentView = view;
+        
+        // Update button states with inline styles to override everything
+        toggleBtns.forEach(btn => {
+            if (btn.dataset.view === view) {
+                btn.style.background = '#667eea';
+            } else {
+                btn.style.background = 'transparent';
+            }
+        });
+        
+        // Update preview
+        updatePreview();
+    }
+    
+    // Event listeners
+    if (editor) {
+        // Handle paste events to convert emojis
+        editor.addEventListener('paste', (e) => {
+            e.preventDefault();
+            
+            // Get pasted text
+            const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+            
+            // Convert emojis to HTML entities
+            const convertedText = convertEmojisToEntities(pastedText);
+            
+            // Insert the converted text at cursor position
+            const start = editor.selectionStart;
+            const end = editor.selectionEnd;
+            const currentValue = editor.value;
+            
+            editor.value = currentValue.substring(0, start) + convertedText + currentValue.substring(end);
+            
+            // Set cursor position after inserted text
+            editor.selectionStart = editor.selectionEnd = start + convertedText.length;
+            
+            // Update preview
+            updatePreview();
+        });
+        
+        editor.addEventListener('input', updatePreview);
+        editor.addEventListener('scroll', () => {
+            if (!preview) return;
+            // Sync scroll position
+            const scrollPercent = editor.scrollTop / (editor.scrollHeight - editor.clientHeight);
+            preview.scrollTop = scrollPercent * (preview.scrollHeight - preview.clientHeight);
+        });
+        
+        // Keyboard shortcuts
+        editor.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 'b':
+                        e.preventDefault();
+                        insertMarkdown('**', '**');
+                        break;
+                    case 'i':
+                        e.preventDefault();
+                        insertMarkdown('*', '*');
+                        break;
+                    case 'k':
+                        e.preventDefault();
+                        insertMarkdown('[', '](url)');
+                        break;
+                }
+            }
+            
+            // Tab handling for indentation
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                const start = editor.selectionStart;
+                const end = editor.selectionEnd;
+                editor.value = editor.value.substring(0, start) + '    ' + editor.value.substring(end);
+                editor.selectionStart = editor.selectionEnd = start + 4;
+                updatePreview();
+            }
+        });
+    }
+    
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            switchView(btn.dataset.view);
+        });
+    });
+    
+    function insertMarkdown(before, after) {
+        if (!editor) return;
+        
+        const start = editor.selectionStart;
+        const end = editor.selectionEnd;
+        const selected = editor.value.substring(start, end);
+        const replacement = before + selected + after;
+        
+        editor.value = editor.value.substring(0, start) + replacement + editor.value.substring(end);
+        editor.selectionStart = start + before.length;
+        editor.selectionEnd = start + before.length + selected.length;
+        editor.focus();
+        updatePreview();
+    }
+    
+    // Initialize with default content
+    setTimeout(() => {
+        updatePreview();
+    }, 100);
 })();
 </script>
     </div>
