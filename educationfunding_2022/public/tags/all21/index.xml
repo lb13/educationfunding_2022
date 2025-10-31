@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>all21 on Education Funding UK</title>
+    <title>All21 on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/all21/</link>
-    <description>Recent content in all21 on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/tags/all21/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in All21 on Education Funding UK</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/tags/all21/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Advanced learner loans funding rules 2021 to 2022</title>
       <link>https://educationfunding.uk/resources/advanced-learner-loans-funding-rules-2021-to-2022/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/advanced-learner-loans-funding-rules-2021-to-2022/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

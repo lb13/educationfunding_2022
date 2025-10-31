@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Education Funding UK
+    </title>
+    <link rel="stylesheet" href="/css/bulma.css">
+
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+        <link rel="manifest" href="/img/site.webmanifest">
+
+        <meta name="twitter:card" content="summary_image" />
+        <meta property="og:url" content="https://educationfunding.uk/markdown-editor/" />
+        <meta property="og:title" content="Markdown Editor" />
+
+
+        
+        <meta property="og:description" content="Education Funding UK provides links to online resources for education and training providers in the UK." />
+        <meta property="twitter:description" content="Education Funding UK provides links to online resources for education and training providers in the UK." />
+        
+        
+        <script src="https://kit.fontawesome.com/1452136d25.js" crossorigin="anonymous"></script>
+
+    <script defer type="text/javascript" src="https://api.pirsch.io/pirsch.js"
+    id="pirschjs"
+    data-code="6Cpfw7iSjfF1KxKXav2HGUXJtMtQGZaj"></script>
+  </head>
+  <body>
+    <nav class="navbar is-dark mb-3" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        EFUK
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">
+          Home
+        </a>
+  
+        <a class="navbar-item" href="/posts/">
+          Posts
+        </a>
+
+        <a class="navbar-item" href="/funding-assessment/">
+            Funding Assessment
+        </a>
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
+          </a>
+  
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/site/about/">
+              About
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Report an issue
+            </a>
+          </div>
+        </div>
+          
+          <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Third Party Tools
+          </a>
+  
+          <div class="navbar-dropdown">
+            <a href="https://md-ed.netlify.app" target="_blank" class="navbar-item">
+              Markdown Editor
+            </a>
+            <a href="https://textedit.tools/slugify" target="_blank" class="navbar-item">
+              Slugify Text
+            </a>
+            <a href="https://delim.co/" target="_blank" class="navbar-item">
+              Comma Separating Tool 
+            </a>
+            <a href="https://skillspostcodecheck.com/" target="_blank" class="navbar-item">
+              Postcode Check Tool 
+            </a>
+            <a href="https://regex101.com/" target="_blank" class="navbar-item">
+              Regex101 
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="https://www.buymeacoffee.com/lukeburns" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/arial-yellow.png" alt="Buy Me A Coffee" style="" ></a>
+        </div>
+      </div>
+  
+    </div>
+  </nav>
+
+    
+<div class="container">
+    <div class="container is-fluid">
+    
+<div id="markdown-editor-container" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important; height: 600px !important; display: flex !important; flex-direction: column !important; background: #f5f5f5 !important; border: 1px solid #e2e8f0 !important; border-radius: 8px !important; overflow: hidden !important; margin: 1rem 0 !important; box-sizing: border-box !important;">
+    <div class="md-editor-header" style="background: #2d3748 !important; color: white !important; padding: 1rem !important; display: flex !important; justify-content: space-between !important; align-items: center !important; box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important; flex-shrink: 0 !important; box-sizing: border-box !important;">
+        <h2 class="md-editor-title" style="font-size: 1.25rem !important; font-weight: 600 !important; margin: 0 !important; color: white !important; box-sizing: border-box !important;">Markdown Editor</h2>
+        <div style="display: flex !important; gap: 0.5rem !important; align-items: center !important; flex-wrap: wrap !important;">
+            <button id="md-deai-btn" style="padding: 0.5rem 1rem !important; background: #ed8936 !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; border-radius: 6px !important; box-sizing: border-box !important; font-weight: 500 !important;">De-AI Text</button>
+            <div class="md-view-toggle" style="display: flex !important; background: #4a5568 !important; border-radius: 6px !important; overflow: hidden !important; box-sizing: border-box !important;">
+                <button class="md-toggle-btn md-toggle-active" data-view="rich" style="padding: 0.5rem 1rem !important; background: #667eea !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; box-sizing: border-box !important;">Rich Text</button>
+                <button class="md-toggle-btn" data-view="html" style="padding: 0.5rem 1rem !important; background: transparent !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; box-sizing: border-box !important;">HTML Source</button>
+            </div>
+            <button id="md-copy-html-btn" style="padding: 0.5rem 1rem !important; background: #48bb78 !important; border: none !important; color: white !important; cursor: pointer !important; transition: background-color 0.2s !important; font-size: 0.875rem !important; font-family: inherit !important; border-radius: 6px !important; box-sizing: border-box !important; font-weight: 500 !important;">Copy HTML</button>
+        </div>
+    </div>
+    
+    <div class="md-editor-container" style="display: flex !important; flex: 1 !important; gap: 1px !important; background: #e2e8f0 !important; min-height: 0 !important; box-sizing: border-box !important;">
+        <div class="md-editor-panel" style="flex: 1 !important; display: flex !important; flex-direction: column !important; background: white !important; min-width: 0 !important; box-sizing: border-box !important;">
+            <div class="md-panel-header" style="background: #edf2f7 !important; padding: 0.75rem 1rem !important; border-bottom: 1px solid #e2e8f0 !important; font-weight: 600 !important; color: #4a5568 !important; font-size: 0.875rem !important; flex-shrink: 0 !important; box-sizing: border-box !important;">Markdown Input</div>
+            <textarea class="md-editor" placeholder="Type your markdown here...
+ 
+# Welcome to Markdown Editor
+ 
+This is a **live preview** markdown editor. Try writing some markdown:
+ 
+## Features
+- Real-time preview
+- Switch between rich text and HTML view
+- Clean, responsive design
+ 
+### Code Example
+```javascript
+function hello() {
+    console.log('Hello, World!');
+}
+```
+ 
+> This is a blockquote. You can use it for emphasis.
+ 
+| Feature | Status |
+|---------|--------|
+| Live Preview | ? |
+| HTML View | ? |
+| Mobile Friendly | ? |" style="flex: 1 !important; border: none !important; outline: none !important; padding: 1rem !important; font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important; font-size: 14px !important; line-height: 1.5 !important; resize: none !important; background: #fafafa !important; margin: 0 !important; box-sizing: border-box !important;"></textarea>
+        </div>
+        
+        <div class="md-preview-panel" style="flex: 1 !important; display: flex !important; flex-direction: column !important; background: white !important; min-width: 0 !important; box-sizing: border-box !important;">
+            <div class="md-panel-header" style="background: #edf2f7 !important; padding: 0.75rem 1rem !important; border-bottom: 1px solid #e2e8f0 !important; font-weight: 600 !important; color: #4a5568 !important; font-size: 0.875rem !important; flex-shrink: 0 !important; box-sizing: border-box !important;">Preview</div>
+            <div class="md-preview" id="md-preview" style="flex: 1 !important; padding: 1rem !important; overflow-y: auto !important; background: white !important; box-sizing: border-box !important;"></div>
+        </div>
+    </div>
+</div>
+ 
+<style>
+ 
+#markdown-editor-container .md-toggle-btn:hover {
+    background: #718096 !important;
+}
+
+#md-copy-html-btn:hover {
+    background: #38a169 !important;
+}
+
+#md-copy-html-btn:active {
+    background: #2f855a !important;
+}
+
+#md-deai-btn:hover {
+    background: #dd6b20 !important;
+}
+
+#md-deai-btn:active {
+    background: #c05621 !important;
+}
+ 
+#markdown-editor-container .md-preview h1, 
+#markdown-editor-container .md-preview h2, 
+#markdown-editor-container .md-preview h3, 
+#markdown-editor-container .md-preview h4, 
+#markdown-editor-container .md-preview h5, 
+#markdown-editor-container .md-preview h6 {
+    margin: 1rem 0 0.5rem !important;
+    color: #2d3748 !important;
+    font-weight: bold !important;
+}
+ 
+#markdown-editor-container .md-preview h1 { 
+    font-size: 2rem !important; 
+    border-bottom: 2px solid #e2e8f0 !important; 
+    padding-bottom: 0.5rem !important; 
+}
+#markdown-editor-container .md-preview h2 { font-size: 1.5rem !important; }
+#markdown-editor-container .md-preview h3 { font-size: 1.25rem !important; }
+ 
+#markdown-editor-container .md-preview p {
+    margin: 0.5rem 0 !important;
+    line-height: 1.6 !important;
+    color: #4a5568 !important;
+}
+ 
+#markdown-editor-container .md-preview ul, 
+#markdown-editor-container .md-preview ol {
+    margin: 0.5rem 0 0.5rem 2rem !important;
+    padding: 0 !important;
+}
+ 
+#markdown-editor-container .md-preview li {
+    margin: 0.25rem 0 !important;
+    line-height: 1.5 !important;
+    list-style-position: outside !important;
+}
+ 
+#markdown-editor-container .md-preview blockquote {
+    border-left: 4px solid #667eea !important;
+    margin: 1rem 0 !important;
+    padding: 0.5rem 1rem !important;
+    background: #f7fafc !important;
+    color: #4a5568 !important;
+    font-style: italic !important;
+}
+ 
+#markdown-editor-container .md-preview code {
+    background: #edf2f7 !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 3px !important;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+    font-size: 0.875rem !important;
+    color: #e53e3e !important;
+}
+ 
+#markdown-editor-container .md-preview pre {
+    background: #2d3748 !important;
+    color: #e2e8f0 !important;
+    padding: 1rem !important;
+    border-radius: 6px !important;
+    overflow-x: auto !important;
+    margin: 1rem 0 !important;
+}
+ 
+#markdown-editor-container .md-preview pre code {
+    background: none !important;
+    color: inherit !important;
+    padding: 0 !important;
+}
+ 
+#markdown-editor-container .md-preview table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 1rem 0 !important;
+}
+ 
+#markdown-editor-container .md-preview th, 
+#markdown-editor-container .md-preview td {
+    border: 1px solid #e2e8f0 !important;
+    padding: 0.5rem !important;
+    text-align: left !important;
+}
+ 
+#markdown-editor-container .md-preview th {
+    background: #edf2f7 !important;
+    font-weight: 600 !important;
+}
+ 
+#markdown-editor-container .md-preview a {
+    color: #667eea !important;
+    text-decoration: none !important;
+}
+ 
+#markdown-editor-container .md-preview a:hover {
+    text-decoration: underline !important;
+}
+ 
+#markdown-editor-container .md-html-preview {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    color: #2d3748 !important;
+    white-space: pre-wrap !important;
+    background: #f7fafc !important;
+}
+ 
+@media (max-width: 768px) {
+    #markdown-editor-container .md-editor-container {
+        flex-direction: column !important;
+    }
+    
+    #markdown-editor-container .md-editor-header {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
+    }
+    
+    #markdown-editor-container {
+        height: 800px !important;
+    }
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+<script>
+(function() {
+    const container = document.getElementById('markdown-editor-container');
+    if (!container) return;
+    
+    const editor = container.querySelector('.md-editor');
+    const preview = container.querySelector('#md-preview');
+    const toggleBtns = container.querySelectorAll('.md-toggle-btn');
+    const copyHtmlBtn = document.getElementById('md-copy-html-btn');
+    const deAiBtn = document.getElementById('md-deai-btn');
+    
+    let currentView = 'rich';
+    let currentHtml = '';
+    
+    
+    if (typeof marked !== 'undefined') {
+        marked.setOptions({
+            breaks: true,
+            gfm: true,
+            headerIds: false,
+            sanitize: false,
+            mangle: false
+        });
+    }
+    
+    
+    function convertEmojisToEntities(text) {
+        return text.replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|[\u{1F000}-\u{1F02F}]|[\u{1F0A0}-\u{1F0FF}]|[\u{1F100}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]|[\u{1F900}-\u{1F9FF}]|[\u{1FA00}-\u{1FA6F}]|[\u{1FA70}-\u{1FAFF}]|[\u{FE00}-\u{FE0F}]|[\u{200D}]|[\u{20E3}]|[\u{E0020}-\u{E007F}]/gu, function(char) {
+            return '&#' + char.codePointAt(0) + ';';
+        });
+    }
+    
+    
+    function deAiText(text) {
+        return text
+            .replace(/—/g, '-')              
+            .replace(/–/g, '-')              
+            .replace(/'/g, "'")              
+            .replace(/'/g, "'")              
+            .replace(/"/g, '"')              
+            .replace(/"/g, '"')              
+            .replace(/…/g, '...')            
+            .replace(/•/g, '*')              
+            .replace(/™/g, '(TM)')           
+            .replace(/©/g, '(C)')            
+            .replace(/®/g, '(R)')            
+            .replace(/\u00A0/g, ' ')         
+            .replace(/\u2011/g, '-')         
+            .replace(/\u2013/g, '-')         
+            .replace(/\u2014/g, '-');        
+    }
+    
+    
+    function htmlToMarkdown(html) {
+        
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        
+        
+        function processNode(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                return node.textContent;
+            }
+            
+            if (node.nodeType !== Node.ELEMENT_NODE) {
+                return '';
+            }
+            
+            const tag = node.tagName.toLowerCase();
+            let result = '';
+            let childContent = '';
+            
+            
+            for (let child of node.childNodes) {
+                childContent += processNode(child);
+            }
+            
+            
+            switch (tag) {
+                case 'h1':
+                    result = '# ' + childContent + '\n\n';
+                    break;
+                case 'h2':
+                    result = '## ' + childContent + '\n\n';
+                    break;
+                case 'h3':
+                    result = '### ' + childContent + '\n\n';
+                    break;
+                case 'h4':
+                    result = '#### ' + childContent + '\n\n';
+                    break;
+                case 'h5':
+                    result = '##### ' + childContent + '\n\n';
+                    break;
+                case 'h6':
+                    result = '###### ' + childContent + '\n\n';
+                    break;
+                case 'strong':
+                case 'b':
+                    result = '**' + childContent + '**';
+                    break;
+                case 'em':
+                case 'i':
+                    result = '*' + childContent + '*';
+                    break;
+                case 'u':
+                    
+                    const parent = node.parentElement;
+                    if (parent && parent.tagName.toLowerCase() === 'a') {
+                        result = childContent;
+                    } else {
+                        result = '<u>' + childContent + '</u>';
+                    }
+                    break;
+                case 'a':
+                    const href = node.getAttribute('href') || '';
+                    
+                    const cleanContent = childContent.replace(/<\/?u>/g, '');
+                    result = '[' + cleanContent + '](' + href + ')';
+                    break;
+                case 'p':
+                    result = childContent + '\n\n';
+                    break;
+                case 'br':
+                    result = '\n';
+                    break;
+                case 'ul':
+                case 'ol':
+                    result = '\n' + childContent + '\n';
+                    break;
+                case 'li':
+                    const listParent = node.parentElement;
+                    const prefix = listParent && listParent.tagName.toLowerCase() === 'ol' ? '1. ' : '- ';
+                    result = prefix + childContent + '\n';
+                    break;
+                case 'table':
+                    result = processTable(node) + '\n\n';
+                    break;
+                case 'blockquote':
+                    result = '> ' + childContent.replace(/\n/g, '\n> ') + '\n\n';
+                    break;
+                case 'code':
+                    result = '`' + childContent + '`';
+                    break;
+                case 'pre':
+                    result = '```\n' + childContent + '\n```\n\n';
+                    break;
+                case 'span':
+                case 'font':
+                    
+                    const style = node.getAttribute('style') || '';
+                    const color = node.getAttribute('color') || '';
+                    
+                    if (style.includes('color') || color) {
+                        
+                        let colorValue = color;
+                        if (!colorValue && style.includes('color')) {
+                            const colorMatch = style.match(/color:\s*([^;]+)/);
+                            if (colorMatch) colorValue = colorMatch[1].trim();
+                        }
+                        if (colorValue) {
+                            result = '<span style="color:' + colorValue + '">' + childContent + '</span>';
+                        } else {
+                            result = childContent;
+                        }
+                    } else {
+                        result = childContent;
+                    }
+                    break;
+                default:
+                    result = childContent;
+            }
+            
+            return result;
+        }
+        
+        function processTable(tableNode) {
+            const rows = [];
+            const tableRows = tableNode.querySelectorAll('tr');
+            
+            tableRows.forEach((tr, rowIndex) => {
+                const cells = tr.querySelectorAll('th, td');
+                const rowData = [];
+                
+                cells.forEach(cell => {
+                    rowData.push(processNode(cell).trim());
+                });
+                
+                rows.push('| ' + rowData.join(' | ') + ' |');
+                
+                
+                if (rowIndex === 0) {
+                    rows.push('| ' + rowData.map(() => '---').join(' | ') + ' |');
+                }
+            });
+            
+            return rows.join('\n');
+        }
+        
+        return processNode(temp).trim();
+    }
+    
+    function updatePreview() {
+        if (!editor || !preview || typeof marked === 'undefined') return;
+        
+        const markdown = editor.value;
+        const html = marked.parse(markdown);
+        currentHtml = html;
+        
+        if (currentView === 'rich') {
+            preview.innerHTML = html;
+            preview.className = 'md-preview';
+        } else {
+            preview.textContent = html;
+            preview.className = 'md-preview md-html-preview';
+        }
+    }
+    
+    function switchView(view) {
+        currentView = view;
+        
+        toggleBtns.forEach(btn => {
+            if (btn.dataset.view === view) {
+                btn.style.background = '#667eea';
+            } else {
+                btn.style.background = 'transparent';
+            }
+        });
+        
+        updatePreview();
+    }
+    
+    
+    if (editor) {
+        
+        editor.addEventListener('paste', (e) => {
+            const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+            let htmlContent = null;
+            let textContent = null;
+            
+            
+            for (let item of items) {
+                if (item.type === 'text/html') {
+                    e.preventDefault();
+                    item.getAsString((html) => {
+                        
+                        const markdown = htmlToMarkdown(html);
+                        
+                        const convertedMarkdown = convertEmojisToEntities(markdown);
+                        
+                        
+                        const start = editor.selectionStart;
+                        const end = editor.selectionEnd;
+                        const currentValue = editor.value;
+                        
+                        editor.value = currentValue.substring(0, start) + convertedMarkdown + currentValue.substring(end);
+                        editor.selectionStart = editor.selectionEnd = start + convertedMarkdown.length;
+                        
+                        updatePreview();
+                    });
+                    return;
+                } else if (item.type === 'text/plain') {
+                    textContent = true;
+                }
+            }
+            
+            
+            if (textContent) {
+                e.preventDefault();
+                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                const convertedText = convertEmojisToEntities(pastedText);
+                
+                const start = editor.selectionStart;
+                const end = editor.selectionEnd;
+                const currentValue = editor.value;
+                
+                editor.value = currentValue.substring(0, start) + convertedText + currentValue.substring(end);
+                editor.selectionStart = editor.selectionEnd = start + convertedText.length;
+                
+                updatePreview();
+            }
+        });
+        
+        editor.addEventListener('input', updatePreview);
+        
+        editor.addEventListener('scroll', () => {
+            if (!preview) return;
+            const scrollPercent = editor.scrollTop / (editor.scrollHeight - editor.clientHeight);
+            preview.scrollTop = scrollPercent * (preview.scrollHeight - preview.clientHeight);
+        });
+        
+        
+        editor.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 'b':
+                        e.preventDefault();
+                        insertMarkdown('**', '**');
+                        break;
+                    case 'i':
+                        e.preventDefault();
+                        insertMarkdown('*', '*');
+                        break;
+                    case 'k':
+                        e.preventDefault();
+                        insertMarkdown('[', '](url)');
+                        break;
+                }
+            }
+            
+            
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                const start = editor.selectionStart;
+                const end = editor.selectionEnd;
+                editor.value = editor.value.substring(0, start) + '    ' + editor.value.substring(end);
+                editor.selectionStart = editor.selectionEnd = start + 4;
+                updatePreview();
+            }
+        });
+    }
+    
+    
+    if (copyHtmlBtn) {
+        copyHtmlBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(currentHtml);
+                const originalText = copyHtmlBtn.textContent;
+                copyHtmlBtn.textContent = 'Copied!';
+                copyHtmlBtn.style.background = '#38a169';
+                setTimeout(() => {
+                    copyHtmlBtn.textContent = originalText;
+                    copyHtmlBtn.style.background = '#48bb78';
+                }, 2000);
+            } catch (err) {
+                alert('Failed to copy HTML. Please try again.');
+            }
+        });
+    }
+    
+    
+    if (deAiBtn) {
+        deAiBtn.addEventListener('click', () => {
+            const start = editor.selectionStart;
+            const end = editor.selectionEnd;
+            const deAied = deAiText(editor.value);
+            const lengthDiff = deAied.length - editor.value.length;
+            
+            editor.value = deAied;
+            editor.selectionStart = start + (start > end ? lengthDiff : 0);
+            editor.selectionEnd = end + lengthDiff;
+            
+            updatePreview();
+            
+            const originalText = deAiBtn.textContent;
+            deAiBtn.textContent = 'De-AI\'d!';
+            setTimeout(() => {
+                deAiBtn.textContent = originalText;
+            }, 2000);
+        });
+    }
+    
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            switchView(btn.dataset.view);
+        });
+    });
+    
+    function insertMarkdown(before, after) {
+        if (!editor) return;
+        
+        const start = editor.selectionStart;
+        const end = editor.selectionEnd;
+        const selected = editor.value.substring(start, end);
+        const replacement = before + selected + after;
+        
+        editor.value = editor.value.substring(0, start) + replacement + editor.value.substring(end);
+        editor.selectionStart = start + before.length;
+        editor.selectionEnd = start + before.length + selected.length;
+        editor.focus();
+        updatePreview();
+    }
+    
+    
+    setTimeout(() => {
+        updatePreview();
+    }, 100);
+})();
+</script>
+    </div>
+</div>
+
+
+    
+    
+    <script src="/js/main.js"></script>
+
+    <script src="https://app.stammer.ai/static/chatbot/js/chatbubble.js" data-id="a54efc13-583d-43cc-9992-e59c83194b38" data-domain="https://app.stammer.ai" ></script>
+  </body>
+</html>

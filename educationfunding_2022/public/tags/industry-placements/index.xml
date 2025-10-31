@@ -1,91 +1,74 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>industry placements on Education Funding UK</title>
+    <title>Industry Placements on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/industry-placements/</link>
-    <description>Recent content in industry placements on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/tags/industry-placements/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Industry Placements on Education Funding UK</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/tags/industry-placements/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Applying for and delivering industry placements: Capacity and Delivery Fund (CDF) for the 2021 to 2022 academic year</title>
       <link>https://educationfunding.uk/resources/applying-for-and-delivering-industry-placements-capacity-and-delivery-fund-cdf-for-the-2021-to-2022-academic-year/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/applying-for-and-delivering-industry-placements-capacity-and-delivery-fund-cdf-for-the-2021-to-2022-academic-year/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Connect with employers interested in T Levels</title>
       <link>https://educationfunding.uk/resources/connect-with-employers-interested-in-t-levels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/connect-with-employers-interested-in-t-levels/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Industry placements capacity and delivery fund 2023 to 2024</title>
       <link>https://educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-2023-to-2024/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-2023-to-2024/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Industry placements: capacity and delivery fund (CDF) for 2019 to 2020 for providers in receipt of CDF in academic year 2018 to 2019</title>
       <link>https://educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-2019-to-2020/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-2019-to-2020/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Industry placements: capacity and delivery fund (CDF) for providers delivering in 2020 to 2021 academic year</title>
       <link>https://educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-2020-to-2021/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-2020-to-2021/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Industry placements: capacity and delivery fund (CDF) for providers delivering in the 2022 to 2023 academic year</title>
       <link>https://educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-providers-delivering-in-the-2022-to-2023-academic-year/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/industry-placements-capacity-and-delivery-fund-cdf-for-providers-delivering-in-the-2022-to-2023-academic-year/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Student guide: preparing for industry placements</title>
       <link>https://educationfunding.uk/resources/student-guide-preparing-for-industry-placements/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/student-guide-preparing-for-industry-placements/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>T Level industry placements delivery guidance</title>
       <link>https://educationfunding.uk/resources/t-level-industry-placements-delivery-guidance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/t-level-industry-placements-delivery-guidance/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>T Levels and industry placement support for employers</title>
       <link>https://educationfunding.uk/resources/t-levels-and-industry-placement-support-for-employers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/t-levels-and-industry-placement-support-for-employers/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

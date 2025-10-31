@@ -1,103 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>qualifications on Education Funding UK</title>
+    <title>Qualifications on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/qualifications/</link>
-    <description>Recent content in qualifications on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Qualifications on Education Funding UK</description>
+    <generator>Hugo</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://educationfunding.uk/tags/qualifications/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://educationfunding.uk/tags/qualifications/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Find Qualifications</title>
       <link>https://educationfunding.uk/posts/how-to-find-qualifications/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/posts/how-to-find-qualifications/</guid>
-      <description>There are a few different online services that you can use to search for qualifications, find out whether they are eligible for ESFA funding, and connect with awarding bodies.
-One quick way to search for these from the front page of EducationFunding.UK is to type fqs - this is a shortcode for &amp;lsquo;find qualification services&amp;rsquo;.
-Find a Learning Aim This is a new government service which you can use to search for qualifications via their name or aim reference - in addition you can also filter results by level and awarding body.</description>
+      <description>&lt;p&gt;There are a few different online services that you can use to search for qualifications, find out whether they are eligible for ESFA funding, and connect with awarding bodies.&lt;/p&gt;&#xA;&lt;p&gt;One quick way to search for these from the front page of &lt;a href=&#34;https://educationfunding.uk/&#34;&gt;EducationFunding.UK&lt;/a&gt; is to type &lt;span class=&#34;code&#34;&gt;fqs&lt;/span&gt; - this is a shortcode for &amp;lsquo;find qualification services&amp;rsquo;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;find-a-learning-aim&#34;&gt;Find a Learning Aim&lt;/h2&gt;&#xA;&lt;p&gt;This is a new government service which you can use to search for qualifications via their name or aim reference - in addition you can also filter results by level and awarding body.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ESFA List of Qualifications approved for funding</title>
       <link>https://educationfunding.uk/resources/esfa-list-of-qualifications-approved-for-funding/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/esfa-list-of-qualifications-approved-for-funding/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ESFA list of qualifications approved for funding 14 to 19</title>
       <link>https://educationfunding.uk/resources/esfa-list-of-qualifications-approved-for-funding-14-to-19/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/esfa-list-of-qualifications-approved-for-funding-14-to-19/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Find a course (National Careers Service)</title>
       <link>https://educationfunding.uk/resources/find-a-course-national-careers-service/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/find-a-course-national-careers-service/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Find a Learning Aim</title>
       <link>https://educationfunding.uk/resources/find-a-learning-aim/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/find-a-learning-aim/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Learning aim class codes</title>
       <link>https://educationfunding.uk/resources/learning-aim-class-codes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/learning-aim-class-codes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Learning Aims Reference Service (LARS)</title>
       <link>https://educationfunding.uk/resources/learning-aims-reference-service-lars/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/learning-aims-reference-service-lars/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Qualifications and public funding</title>
       <link>https://educationfunding.uk/resources/qualifications-and-public-funding/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/qualifications-and-public-funding/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Register of Regulated Qualifications</title>
       <link>https://educationfunding.uk/resources/register-of-regulated-qualifications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/register-of-regulated-qualifications/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Withdrawal of funding approval from qualifications with no publicly funded enrolments for the funding year 2021 to 2022</title>
       <link>https://educationfunding.uk/resources/withdrawal-of-funding-approval-from-qualifications-with-no-publicly-funded-enrolments-for-the-funding-year-2021-to-2022/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/withdrawal-of-funding-approval-from-qualifications-with-no-publicly-funded-enrolments-for-the-funding-year-2021-to-2022/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

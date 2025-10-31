@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>quality on Education Funding UK</title>
+    <title>Quality on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/quality/</link>
-    <description>Recent content in quality on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/tags/quality/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Quality on Education Funding UK</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/tags/quality/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How the ESFA measures the performance of FE providers it funds</title>
       <link>https://educationfunding.uk/resources/how-the-esfa-measures-the-performance-of-fe-providers-it-funds/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/how-the-esfa-measures-the-performance-of-fe-providers-it-funds/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Qualification achievement rates and minimum standards</title>
       <link>https://educationfunding.uk/resources/qualification-achievement-rates-and-minimum-standards/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/qualification-achievement-rates-and-minimum-standards/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

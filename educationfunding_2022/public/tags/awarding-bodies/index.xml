@@ -1,118 +1,95 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>awarding bodies on Education Funding UK</title>
+    <title>Awarding Bodies on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/awarding-bodies/</link>
-    <description>Recent content in awarding bodies on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/tags/awarding-bodies/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Awarding Bodies on Education Funding UK</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/tags/awarding-bodies/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AAT</title>
       <link>https://educationfunding.uk/resources/aat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/aat/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ACCA (the Association of Chartered Certified Accountants)</title>
       <link>https://educationfunding.uk/resources/acca-the-association-of-chartered-certified-accountants/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/acca-the-association-of-chartered-certified-accountants/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>AIM Qualifications and Assessment Group</title>
       <link>https://educationfunding.uk/resources/aim-qualifications-and-assessment-group/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/aim-qualifications-and-assessment-group/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>AQA</title>
       <link>https://educationfunding.uk/resources/aqa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/aqa/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Ascentis</title>
       <link>https://educationfunding.uk/resources/ascentis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/ascentis/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>City and Guilds</title>
       <link>https://educationfunding.uk/resources/city-and-guilds/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/city-and-guilds/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>EAL</title>
       <link>https://educationfunding.uk/resources/eal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/eal/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Highfield Qualifications</title>
       <link>https://educationfunding.uk/resources/highfield-qualifications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/highfield-qualifications/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>OCR (Oxford Cambridge and RSA)</title>
       <link>https://educationfunding.uk/resources/ocr-oxford-cambridge-and-rsa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/ocr-oxford-cambridge-and-rsa/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Pearson</title>
       <link>https://educationfunding.uk/resources/pearson/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/pearson/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>UAL Awarding Body</title>
       <link>https://educationfunding.uk/resources/ual-awarding-body/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/ual-awarding-body/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>VTCT</title>
       <link>https://educationfunding.uk/resources/vtct/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/vtct/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -4,17 +4,15 @@
     <title>Education Funding UK</title>
     <link>https://educationfunding.uk/site/</link>
     <description>Recent content on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/site/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/site/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About the site</title>
       <link>https://educationfunding.uk/site/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/site/about/</guid>
-      <description>If you work in the UK education sector, particularly if you are involved in funding or data management, you will probably have struggled (at one time or another) with understanding how UK education funding works.
-My own experience, working in the MIS team of a Further Education college, was initially quite overwhelming because there was no simple, straightforward way to access and digest all the information that was out there.</description>
+      <description>&lt;p&gt;If you work in the UK education sector, particularly if you are involved in funding or data management, you will probably have struggled (at one time or another) with understanding how UK education funding works.&lt;/p&gt;&#xA;&lt;p&gt;My own experience, working in the MIS team of a Further Education college, was initially quite overwhelming because there was no simple, straightforward way to access and digest all the information that was out there.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

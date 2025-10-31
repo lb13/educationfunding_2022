@@ -4,7 +4,8 @@
     <title>Funding Assessment on Education Funding UK</title>
     <link>https://educationfunding.uk/funding-assessment/</link>
     <description>Recent content in Funding Assessment on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/funding-assessment/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/funding-assessment/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

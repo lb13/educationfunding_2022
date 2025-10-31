@@ -1,73 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>esf on Education Funding UK</title>
+    <title>Esf on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/esf/</link>
-    <description>Recent content in esf on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/tags/esf/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Esf on Education Funding UK</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/tags/esf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ESF funding rules</title>
       <link>https://educationfunding.uk/resources/esf-funding-rules/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/esf-funding-rules/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ESFA: European Social Fund (ESF) round 2 supplementary data collection</title>
       <link>https://educationfunding.uk/resources/esfa-european-social-fund-esf-round-2-supplementary-data-collection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/esfa-european-social-fund-esf-round-2-supplementary-data-collection/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ESFA: European Social Fund (ESF) supplementary data collection</title>
       <link>https://educationfunding.uk/resources/esfa-european-social-fund-esf-supplementary-data-collection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/esfa-european-social-fund-esf-supplementary-data-collection/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>European Social Fund (ESF) funding rates for training and skills provision</title>
       <link>https://educationfunding.uk/resources/european-social-fund-esf-funding-rates-for-training-and-skills-provision/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/european-social-fund-esf-funding-rates-for-training-and-skills-provision/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>European Social Fund document retention guidance</title>
       <link>https://educationfunding.uk/resources/european-social-fund-document-retention-guidance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/european-social-fund-document-retention-guidance/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>European Social Fund: eligibility documents</title>
       <link>https://educationfunding.uk/resources/european-social-fund-eligibility-documents/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/european-social-fund-eligibility-documents/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>European Structural and Investment Funds programme guidance</title>
       <link>https://educationfunding.uk/resources/european-structural-and-investment-funds-programme-guidance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/european-structural-and-investment-funds-programme-guidance/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

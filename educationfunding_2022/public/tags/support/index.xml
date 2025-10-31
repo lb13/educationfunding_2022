@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>support on Education Funding UK</title>
+    <title>Support on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/support/</link>
-    <description>Recent content in support on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/tags/support/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Support on Education Funding UK</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/tags/support/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ESFA Communities</title>
       <link>https://educationfunding.uk/resources/esfa-communities/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/esfa-communities/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Find a further education service</title>
       <link>https://educationfunding.uk/resources/find-a-further-education-service/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/find-a-further-education-service/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Get help with Education and Skills Funding Agency services</title>
+      <link>https://educationfunding.uk/resources/get-help-with-education-and-skills-funding-agency-services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://educationfunding.uk/resources/get-help-with-education-and-skills-funding-agency-services/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

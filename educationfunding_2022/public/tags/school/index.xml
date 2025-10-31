@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>school on Education Funding UK</title>
+    <title>School on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/school/</link>
-    <description>Recent content in school on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/tags/school/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in School on Education Funding UK</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/tags/school/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Common transfer file (CTF) and co-ordinated admissions data</title>
       <link>https://educationfunding.uk/resources/common-transfer-file-ctf-and-co-ordinated-admissions-data/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/common-transfer-file-ctf-and-co-ordinated-admissions-data/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

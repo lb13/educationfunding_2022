@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>abf19 on Education Funding UK</title>
+    <title>Abf19 on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/abf19/</link>
-    <description>Recent content in abf19 on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/tags/abf19/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Abf19 on Education Funding UK</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/tags/abf19/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adult education budget (AEB): funding rates and formula 2019 to 2020</title>
       <link>https://educationfunding.uk/resources/adult-education-budget-aeb-funding-rates-and-formula-2019-to-2020/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/adult-education-budget-aeb-funding-rates-and-formula-2019-to-2020/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -57,10 +57,8 @@
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://educationfunding.uk/funding/</loc>
-    <priority>0</priority>
   </url><url>
     <loc>https://educationfunding.uk/site/</loc>
-    <priority>0</priority>
   </url><url>
     <loc>https://educationfunding.uk/funding/14-16-funding/</loc>
   </url><url>
@@ -166,6 +164,8 @@
   </url><url>
     <loc>https://educationfunding.uk/resources/acca-the-association-of-chartered-certified-accountants/</loc>
   </url><url>
+    <loc>https://educationfunding.uk/tags/accommodation/</loc>
+  </url><url>
     <loc>https://educationfunding.uk/tags/accountability-agreements/</loc>
   </url><url>
     <loc>https://educationfunding.uk/tags/achievement-rates/</loc>
@@ -248,9 +248,9 @@
   </url><url>
     <loc>https://educationfunding.uk/resources/apprenticeship-data-insights-adi/</loc>
   </url><url>
-    <loc>https://educationfunding.uk/funding/apprenticeship-funding/</loc>
-  </url><url>
     <loc>https://educationfunding.uk/resources/apprenticeship-funding/</loc>
+  </url><url>
+    <loc>https://educationfunding.uk/funding/apprenticeship-funding/</loc>
   </url><url>
     <loc>https://educationfunding.uk/resources/apprenticeship-funding-bands/</loc>
   </url><url>
@@ -323,6 +323,10 @@
     <loc>https://educationfunding.uk/resources/common-basic-data-set-cbds-database/</loc>
   </url><url>
     <loc>https://educationfunding.uk/resources/common-transfer-file-ctf-and-co-ordinated-admissions-data/</loc>
+  </url><url>
+    <loc>https://educationfunding.uk/tags/community-learning/</loc>
+  </url><url>
+    <loc>https://educationfunding.uk/resources/community-learning-new-learning-aim-class-codes-from-the-2023-to-2024-academic-year/</loc>
   </url><url>
     <loc>https://educationfunding.uk/resources/companies-house-register/</loc>
   </url><url>
@@ -470,6 +474,8 @@
   </url><url>
     <loc>https://educationfunding.uk/resources/financial-assurance-monitoring-post-16-funding/</loc>
   </url><url>
+    <loc>https://educationfunding.uk/tags/financial-data/</loc>
+  </url><url>
     <loc>https://educationfunding.uk/tags/financial-support/</loc>
   </url><url>
     <loc>https://educationfunding.uk/resources/find-a-course-national-careers-service/</loc>
@@ -495,6 +501,8 @@
     <loc>https://educationfunding.uk/resources/flexi-job-apprenticeships/</loc>
   </url><url>
     <loc>https://educationfunding.uk/tags/flexi-job-apprenticeships/</loc>
+  </url><url>
+    <loc>https://educationfunding.uk/tags/fm10/</loc>
   </url><url>
     <loc>https://educationfunding.uk/tags/fqs/</loc>
   </url><url>
@@ -536,11 +544,11 @@
   </url><url>
     <loc>https://educationfunding.uk/england/further-education/</loc>
   </url><url>
-    <loc>https://educationfunding.uk/england/further-education/</loc>
-  </url><url>
     <loc>https://educationfunding.uk/resources/further-education-workforce-data-collection/</loc>
   </url><url>
     <loc>https://educationfunding.uk/tags/gateway/</loc>
+  </url><url>
+    <loc>https://educationfunding.uk/resources/get-help-with-education-and-skills-funding-agency-services/</loc>
   </url><url>
     <loc>https://educationfunding.uk/resources/get-help-with-the-apprenticeship-service/</loc>
   </url><url>
@@ -714,6 +722,8 @@
   </url><url>
     <loc>https://educationfunding.uk/tags/management/</loc>
   </url><url>
+    <loc>https://educationfunding.uk/markdown-editor/</loc>
+  </url><url>
     <loc>https://educationfunding.uk/tags/maths/</loc>
   </url><url>
     <loc>https://educationfunding.uk/resources/maximum-loan-amounts-for-advanced-learner-loans-designated-qualifications-2023-to-2024/</loc>
@@ -846,6 +856,8 @@
   </url><url>
     <loc>https://educationfunding.uk/resources/register-of-regulated-qualifications/</loc>
   </url><url>
+    <loc>https://educationfunding.uk/resources/residential-support-scheme-2023-to-2024-academic-year/</loc>
+  </url><url>
     <loc>https://educationfunding.uk/resources/</loc>
   </url><url>
     <loc>https://educationfunding.uk/tags/school/</loc>
@@ -900,13 +912,17 @@
   </url><url>
     <loc>https://educationfunding.uk/resources/subcontracting-funding-rules-for-esfa-funded-post-16-funding-excluding-apprenticeships/</loc>
   </url><url>
+    <loc>https://educationfunding.uk/resources/submit-college-financial-data/</loc>
+  </url><url>
     <loc>https://educationfunding.uk/resources/submit-learner-data/</loc>
   </url><url>
     <loc>https://educationfunding.uk/tags/support/</loc>
   </url><url>
-    <loc>https://educationfunding.uk/funding/supported-internships/</loc>
+    <loc>https://educationfunding.uk/tags/support-funding/</loc>
   </url><url>
     <loc>https://educationfunding.uk/resources/supported-internships/</loc>
+  </url><url>
+    <loc>https://educationfunding.uk/funding/supported-internships/</loc>
   </url><url>
     <loc>https://educationfunding.uk/tags/supported-internships/</loc>
   </url><url>
@@ -931,6 +947,8 @@
     <loc>https://educationfunding.uk/resources/t-levels-and-industry-placement-support-for-employers/</loc>
   </url><url>
     <loc>https://educationfunding.uk/resources/t-levels-funding-guide-for-2022-to-2023/</loc>
+  </url><url>
+    <loc>https://educationfunding.uk/resources/t-levels-funding-guide-for-2023-to-2024/</loc>
   </url><url>
     <loc>https://educationfunding.uk/resources/t-levels-support-for-schools-and-colleges/</loc>
   </url><url>

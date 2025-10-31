@@ -1,311 +1,243 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>apprenticeships on Education Funding UK</title>
+    <title>Apprenticeships on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/apprenticeships/</link>
-    <description>Recent content in apprenticeships on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Apprenticeships on Education Funding UK</description>
+    <generator>Hugo</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 16 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://educationfunding.uk/tags/apprenticeships/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://educationfunding.uk/tags/apprenticeships/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Does Apprenticeship Funding Work?</title>
       <link>https://educationfunding.uk/posts/how-does-apprenticeship-funding-work/</link>
       <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/posts/how-does-apprenticeship-funding-work/</guid>
-      <description>Oh boy, apprenticeship funding is confusing.
-Here&amp;rsquo;s the basic idea, which I stole from the technical funding guide that the ESFA published.
-The scenario Let&amp;rsquo;s imagine we have a 12 month apprenticeship with a funding cap of £12,000. That cap is there because the ESFA don&amp;rsquo;t think it should cost any more than that to deliver the apprenticeship.
-The training provider agrees a TNP (Total Negotiated Price) of £15,000 with the employer because&amp;hellip; well sometimes that&amp;rsquo;s the way things go.</description>
+      <description>&lt;p&gt;Oh boy, apprenticeship funding is confusing.&lt;/p&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s the basic idea, which I stole from the technical funding guide that the ESFA published.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-scenario&#34;&gt;The scenario&lt;/h2&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s imagine we have a &lt;strong&gt;12 month&lt;/strong&gt; apprenticeship with a funding cap of &lt;strong&gt;£12,000&lt;/strong&gt;. That cap is there because the ESFA don&amp;rsquo;t think it should cost any more than that to deliver the apprenticeship.&lt;/p&gt;&#xA;&lt;p&gt;The training provider agrees a TNP (Total Negotiated Price) of &lt;strong&gt;£15,000&lt;/strong&gt; with the employer because&amp;hellip; well sometimes that&amp;rsquo;s the way things go.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Amazing Apprenticeships</title>
       <link>https://educationfunding.uk/resources/amazing-apprenticeships/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/amazing-apprenticeships/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apprenticeship agreement: template</title>
       <link>https://educationfunding.uk/resources/apprenticeship-agreement-template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/apprenticeship-agreement-template/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apprenticeship Data Insights (ADI)</title>
       <link>https://educationfunding.uk/resources/apprenticeship-data-insights-adi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/apprenticeship-data-insights-adi/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apprenticeship funding</title>
       <link>https://educationfunding.uk/resources/apprenticeship-funding/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/apprenticeship-funding/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apprenticeship funding bands</title>
       <link>https://educationfunding.uk/resources/apprenticeship-funding-bands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/apprenticeship-funding-bands/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apprenticeship funding rules</title>
       <link>https://educationfunding.uk/resources/apprenticeship-funding-rules/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/apprenticeship-funding-rules/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apprenticeship gateway and resits for end-point assessment (EPA)</title>
       <link>https://educationfunding.uk/resources/apprenticeship-gateway-and-resits-for-end-point-assessment-epa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/apprenticeship-gateway-and-resits-for-end-point-assessment-epa/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apprenticeship Service</title>
       <link>https://educationfunding.uk/resources/apprenticeship-service/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/apprenticeship-service/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apprenticeship technical funding guide</title>
       <link>https://educationfunding.uk/resources/apprenticeship-technical-funding-guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/apprenticeship-technical-funding-guide/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apprenticeship training provider accountability framework</title>
       <link>https://educationfunding.uk/resources/apprenticeship-training-provider-accountability-framework/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/apprenticeship-training-provider-accountability-framework/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apprenticeships (GOV.UK)</title>
       <link>https://educationfunding.uk/resources/apprenticeships-gov.uk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/apprenticeships-gov.uk/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apprenticeships and Technical Education&#39;s (IFATE) revisions status report</title>
       <link>https://educationfunding.uk/resources/apprenticeships-and-technical-educations-ifate-revisions-status-report/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/apprenticeships-and-technical-educations-ifate-revisions-status-report/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apprenticeships: off-the-job training</title>
       <link>https://educationfunding.uk/resources/apprenticeships-off-the-job-training/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/apprenticeships-off-the-job-training/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Creating an apprenticeship vacancy as a training provider</title>
       <link>https://educationfunding.uk/resources/creating-an-apprenticeship-vacancy-as-a-training-provider/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/creating-an-apprenticeship-vacancy-as-a-training-provider/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Employer Data Service</title>
       <link>https://educationfunding.uk/resources/employer-data-service/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/employer-data-service/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>English and maths requirements in apprenticeship standards at level 2 and above</title>
       <link>https://educationfunding.uk/resources/english-and-maths-requirements-in-apprenticeship-standards-at-level-2-and-above/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/english-and-maths-requirements-in-apprenticeship-standards-at-level-2-and-above/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Find an Apprenticeship</title>
       <link>https://educationfunding.uk/resources/find-an-apprenticeship/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/find-an-apprenticeship/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Find an end-point assessment organisation for your apprentice</title>
       <link>https://educationfunding.uk/resources/find-an-end-point-assessment-organisation-for-your-apprentice/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/find-an-end-point-assessment-organisation-for-your-apprentice/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Flexi-Job Apprenticeships</title>
       <link>https://educationfunding.uk/resources/flexi-job-apprenticeships/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/flexi-job-apprenticeships/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Get help with the apprenticeship service</title>
       <link>https://educationfunding.uk/resources/get-help-with-the-apprenticeship-service/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/get-help-with-the-apprenticeship-service/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>How to register and use the apprenticeship service as an employer</title>
       <link>https://educationfunding.uk/resources/how-to-register-and-use-the-apprenticeship-service-as-an-employer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/how-to-register-and-use-the-apprenticeship-service-as-an-employer/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>How to take on an apprentice</title>
       <link>https://educationfunding.uk/resources/how-to-take-on-an-apprentice/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/how-to-take-on-an-apprentice/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>How to use the apprenticeships standards revision status report</title>
       <link>https://educationfunding.uk/resources/how-to-use-the-apprenticeships-standards-revision-status-report/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/how-to-use-the-apprenticeships-standards-revision-status-report/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Institute for Apprenticeships and Technical Education</title>
       <link>https://educationfunding.uk/resources/institute-for-apprenticeships-and-technical-education/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/institute-for-apprenticeships-and-technical-education/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Pay Apprenticeship Levy</title>
       <link>https://educationfunding.uk/resources/pay-apprenticeship-levy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/pay-apprenticeship-levy/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Payments for hiring a young apprentice</title>
       <link>https://educationfunding.uk/resources/payments-for-hiring-a-young-apprentice/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/payments-for-hiring-a-young-apprentice/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Receive a levy transfer from another business to fund an apprenticeship</title>
       <link>https://educationfunding.uk/resources/receive-a-levy-transfer-from-another-business-to-fund-an-apprenticeship/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/receive-a-levy-transfer-from-another-business-to-fund-an-apprenticeship/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Recruit an apprentice</title>
       <link>https://educationfunding.uk/resources/recruit-an-apprentice/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/recruit-an-apprentice/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Recruit an apprentice (guidance)</title>
       <link>https://educationfunding.uk/resources/recruit-an-apprentice-guidance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/recruit-an-apprentice-guidance/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Register of apprenticeship training providers</title>
       <link>https://educationfunding.uk/resources/register-of-apprenticeship-training-providers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/register-of-apprenticeship-training-providers/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Register of Flexi-Job Apprenticeship Agencies</title>
       <link>https://educationfunding.uk/resources/register-of-flexi-job-apprenticeship-agencies/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/register-of-flexi-job-apprenticeship-agencies/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Transferring your apprenticeship levy to another business</title>
       <link>https://educationfunding.uk/resources/transferring-your-apprenticeship-levy-to-another-business/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/transferring-your-apprenticeship-levy-to-another-business/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

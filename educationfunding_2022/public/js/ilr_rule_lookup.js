@@ -1,6 +1,6 @@
 const ruleInput = document.getElementById("rule-input");
 const ruleResults = document.getElementById("rule-results");
-const ruleRequest = new Request("/data/ilr_rules_2223_v4.json");
+const ruleRequest = new Request("/data/ilr_rules_2526_v3.json");
 
 fetch(ruleRequest)
     .then(response => response.json())

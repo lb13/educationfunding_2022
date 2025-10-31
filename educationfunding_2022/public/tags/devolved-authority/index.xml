@@ -1,109 +1,88 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>devolved authority on Education Funding UK</title>
+    <title>Devolved Authority on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/devolved-authority/</link>
-    <description>Recent content in devolved authority on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/tags/devolved-authority/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Devolved Authority on Education Funding UK</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/tags/devolved-authority/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cambridgeshire and Peterborough Combined Authority (CPCA)</title>
       <link>https://educationfunding.uk/resources/cambridgeshire-and-peterborough-combined-authority-cpca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/cambridgeshire-and-peterborough-combined-authority-cpca/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>GLA Open Project System</title>
       <link>https://educationfunding.uk/resources/gla-open-project-system/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/gla-open-project-system/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Greater London Authority (GLA)</title>
       <link>https://educationfunding.uk/resources/greater-london-authority-gla/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/greater-london-authority-gla/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Greater Manchester Combined Authority (GMCA)</title>
       <link>https://educationfunding.uk/resources/greater-manchester-combined-authority-gmca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/greater-manchester-combined-authority-gmca/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Liverpool City Region Combined Authority (LCRCA)</title>
       <link>https://educationfunding.uk/resources/liverpool-city-region-combined-authority-lcrca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/liverpool-city-region-combined-authority-lcrca/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>North of Tyne Combined Authority (NTCA)</title>
       <link>https://educationfunding.uk/resources/north-of-tyne-combined-authority-ntca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/north-of-tyne-combined-authority-ntca/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>South Yorkshire Mayoral Combined Authority</title>
       <link>https://educationfunding.uk/resources/south-yorkshire-mayoral-combined-authority/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/south-yorkshire-mayoral-combined-authority/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Tees Valley Combined Authority (TVCA)</title>
       <link>https://educationfunding.uk/resources/tees-valley-combined-authority-tvca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/tees-valley-combined-authority-tvca/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>West Midlands Combined Authority (WMCA)</title>
       <link>https://educationfunding.uk/resources/west-midlands-combined-authority-wmca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/west-midlands-combined-authority-wmca/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>West of England Combined Authority (WECA)</title>
       <link>https://educationfunding.uk/resources/west-of-england-combined-authority-weca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/west-of-england-combined-authority-weca/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>West Yorkshire Combined Authority (WYCA)</title>
       <link>https://educationfunding.uk/resources/west-yorkshire-combined-authority-wyca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/west-yorkshire-combined-authority-wyca/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

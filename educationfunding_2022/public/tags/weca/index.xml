@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>weca on Education Funding UK</title>
+    <title>Weca on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/weca/</link>
-    <description>Recent content in weca on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/tags/weca/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Weca on Education Funding UK</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/tags/weca/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WECA Funding Policies and Guidance</title>
       <link>https://educationfunding.uk/resources/weca-funding-policies-and-guidance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/weca-funding-policies-and-guidance/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>West of England Combined Authority (WECA)</title>
       <link>https://educationfunding.uk/resources/west-of-england-combined-authority-weca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/west-of-england-combined-authority-weca/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

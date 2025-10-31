@@ -1,37 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>subcontracting on Education Funding UK</title>
+    <title>Subcontracting on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/subcontracting/</link>
-    <description>Recent content in subcontracting on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/tags/subcontracting/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Subcontracting on Education Funding UK</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/tags/subcontracting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Declaring subcontracting arrangements to Education and Skills Funding Agency</title>
       <link>https://educationfunding.uk/resources/declaring-subcontracting-arrangements-to-education-and-skills-funding-agency/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/declaring-subcontracting-arrangements-to-education-and-skills-funding-agency/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Funding guidance for young people: subcontracting controls</title>
       <link>https://educationfunding.uk/resources/funding-guidance-for-young-people-subcontracting-controls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/funding-guidance-for-young-people-subcontracting-controls/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Subcontracting funding rules for ESFA funded post-16 funding (excluding apprenticeships)</title>
       <link>https://educationfunding.uk/resources/subcontracting-funding-rules-for-esfa-funded-post-16-funding-excluding-apprenticeships/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/subcontracting-funding-rules-for-esfa-funded-post-16-funding-excluding-apprenticeships/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

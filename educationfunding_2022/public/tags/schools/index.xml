@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>schools on Education Funding UK</title>
+    <title>Schools on Education Funding UK</title>
     <link>https://educationfunding.uk/tags/schools/</link>
-    <description>Recent content in schools on Education Funding UK</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://educationfunding.uk/tags/schools/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Schools on Education Funding UK</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <atom:link href="https://educationfunding.uk/tags/schools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Common basic data set (CBDS): database</title>
       <link>https://educationfunding.uk/resources/common-basic-data-set-cbds-database/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/common-basic-data-set-cbds-database/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Complete the school census</title>
       <link>https://educationfunding.uk/resources/complete-the-school-census/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://educationfunding.uk/resources/complete-the-school-census/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
