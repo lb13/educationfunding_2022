@@ -3,85 +3,57 @@ const next_return_div = document.getElementById("next-return");
 
 const ilr_request = new Request("/data/ilrdates.json");
 const today = new Date();
-const today_year = today.getFullYear().toString();
-const today_month = ('0' + (today.getMonth()+1)).slice(-2);
-const today_day = ('0' + today.getDate()).slice(-2);
-const today_numberstring = today_year.concat(today_month,today_day);
-const today_number = Number(today_numberstring);
+const today_number = Number(
+  `${today.getFullYear()}${('0' + (today.getMonth() + 1)).slice(-2)}${('0' + today.getDate()).slice(-2)}`
+);
 
 function getNumberOfDays(start, end) {
-    // Start date is already JS date object for today's date
-    // but End date is string in UK format, needs converting to avoid swapping month and day
-    const date1 = new Date(start);
-    const date2 = new Date(end.split('/')[2], end.split('/')[1] - 1, end.split('/')[0]);
-
-    // One day in milliseconds
-    const oneDay = 1000 * 60 * 60 * 24;
-
-    // Calculating the time difference between two dates
-    const diffInTime = date2.getTime() - date1.getTime();
-
-    // Calculating the no. of days between two dates
-    const diffInDays = Math.round(diffInTime / oneDay);
-
-    return diffInDays;
+  const [day, month, year] = end.trim().split('/').map(Number);
+  const date1 = new Date(start);
+  const date2 = new Date(year, month - 1, day);
+  const oneDay = 1000 * 60 * 60 * 24;
+  return Math.floor((date2 - date1) / oneDay);
 }
 
 fetch(ilr_request)
-    .then(response => response.json())
-    .then(data => {
-        let returns = data;
+  .then(response => response.json())
+  .then(data => {
+    const returns = data.sort((a, b) => a.return_date_number - b.return_date_number);
+    const upcoming_returns = returns.filter(r => r.return_date_number >= today_number);
 
-        // sort by submission date
-        returns = returns.sort(function(a, b) {
-            return a.return_date_number - b.return_date_number;
-        });
+    const next_return = upcoming_returns[0];
+    if (!next_return) return;
 
-        let upcoming_returns = returns.filter(function(r) {
-            return r.return_date_number >= today_number;
-        });
+    const days_remaining = getNumberOfDays(today, next_return.return_date);
+    let days_remaining_desc =
+      days_remaining === 0
+        ? "today"
+        : days_remaining === 1
+        ? "tomorrow"
+        : `in ${days_remaining} days`;
 
-        let next_return = upcoming_returns.slice(0,1);
+    const reference_date_desc = next_return.reference_date || "n/a";
 
-        next_return.forEach(function(r){
-            let days_remaining = getNumberOfDays(today,r.return_date);
-            let days_remaining_desc;
+    next_return_div.innerHTML = `
+      <p><em>Next ILR (${days_remaining_desc})</em></p>
+      <p class="title">${next_return.return_name} (${next_return.academic_year})</p>
+      <p>Due date: <strong>${next_return.return_date}</strong><br>
+      Reference date: <strong>${reference_date_desc}</strong></p>
+    `;
 
-            if( days_remaining == 1 ) {
-                days_remaining_desc = "tomorrow"
-            } else if (days_remaining == 0 ) {
-                days_remaining_desc = "today"
-            } else {
-                days_remaining_desc = "in " + days_remaining + " days"
-            };
+    let displayHTML = upcoming_returns
+      .slice(1)
+      .map(r => `<li><strong>${r.academic_year}</strong> - ${r.return_name} (due on ${r.return_date})</li>`)
+      .join("");
 
-            let reference_date_desc = "";
-
-            if ( r.reference_date == "" ) {
-                reference_date_desc = "n/a"
-            } else { reference_date_desc = r.reference_date };
-
-            let displayHTML = "<p><em>Next ILR (" + days_remaining_desc + ")</em></p><p class=\"title\">" + r.return_name + " (" + r.academic_year + ")</p><p>Due date: <strong>" + r.return_date + "</strong><br>Reference date: <strong>" + reference_date_desc + "</strong></p>"
-            next_return_div.insertAdjacentHTML("beforeend",displayHTML);
-        })
-
-        let upcoming_returns_afternext = upcoming_returns.slice(1,99);
-
-        let displayHTML = "";
-
-        upcoming_returns_afternext.forEach(function(r){
-            displayHTML += "<li><strong>" + r.academic_year + "</strong> - " + r.return_name + " (due on " + r.return_date + ")</li>";
-        })
-
-        upcoming_returns_div.insertAdjacentHTML("beforeend","<div class=\"content\"><ul>" + displayHTML + "</ul></div>");
-
-    });
+    upcoming_returns_div.innerHTML = `<div class="content"><ul>${displayHTML}</ul></div>`;
+  })
+  .catch(err => {
+    next_return_div.textContent = "Error loading ILR dates.";
+    console.error(err);
+  });
 
 function toggleUpcomingReturns() {
-    var x = document.getElementById("ilr-dates");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-    }
+  const x = document.getElementById("ilr-dates");
+  x.style.display = x.style.display === "none" ? "block" : "none";
+}

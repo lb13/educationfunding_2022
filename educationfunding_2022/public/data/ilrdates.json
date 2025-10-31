@@ -446,5 +446,117 @@
         "return_date": "23/10/2025",
         "return_date_number": 20251023,
         "reference_date": "31/07/2025"
-    }
+    },
+  {
+    "academic_year": "25/26",
+    "return_number": 1,
+    "return_name": "R01",
+    "return_date": "04/09/2025",
+    "return_date_number": 20250904,
+    "reference_date": null
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 2,
+    "return_name": "R02",
+    "return_date": "06/10/2025",
+    "return_date_number": 20251006,
+    "reference_date": null
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 3,
+    "return_name": "R03",
+    "return_date": "06/11/2025",
+    "return_date_number": 20251106,
+    "reference_date": null
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 4,
+    "return_name": "R04",
+    "return_date": "04/12/2025",
+    "return_date_number": 20251204,
+    "reference_date": "01/11/2025"
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 5,
+    "return_name": "R05",
+    "return_date": "07/01/2026",
+    "return_date_number": 20260107,
+    "reference_date": null
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 6,
+    "return_name": "R06",
+    "return_date": "05/02/2026",
+    "return_date_number": 20260205,
+    "reference_date": "01/01/2026"
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 7,
+    "return_name": "R07",
+    "return_date": "05/03/2026",
+    "return_date_number": 20260305,
+    "reference_date": null
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 8,
+    "return_name": "R08",
+    "return_date": "08/04/2026",
+    "return_date_number": 20260408,
+    "reference_date": null
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 9,
+    "return_name": "R09",
+    "return_date": "07/05/2026",
+    "return_date_number": 20260507,
+    "reference_date": null
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 10,
+    "return_name": "R10",
+    "return_date": "04/06/2026",
+    "return_date_number": 20260604,
+    "reference_date": "01/05/2026"
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 11,
+    "return_name": "R11",
+    "return_date": "06/07/2026",
+    "return_date_number": 20260706,
+    "reference_date": null
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 12,
+    "return_name": "R12",
+    "return_date": "06/08/2026",
+    "return_date_number": 20260806,
+    "reference_date": null
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 13,
+    "return_name": "R13",
+    "return_date": "14/09/2026",
+    "return_date_number": 20260914,
+    "reference_date": "31/07/2026"
+  },
+  {
+    "academic_year": "25/26",
+    "return_number": 14,
+    "return_name": "R14",
+    "return_date": "22/10/2026",
+    "return_date_number": 20261022,
+    "reference_date": "31/07/2026"
+  }
 ]
