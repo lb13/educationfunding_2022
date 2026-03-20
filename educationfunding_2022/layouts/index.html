@@ -1,49 +1,326 @@
+{{ define "title" }}Further Education Funding — England | EF·UK{{ end }}
+
+{{ define "styles" }}
+<link rel="stylesheet" href="/css/main.css">
+{{ end }}
+
 {{ define "main" }}
-    <div class="container">
-        <div style="padding: 20px">
 
-            <div class="columns">
-                <div class="column">
-                    <div class="notification is-warning">
-                        <p>New things are coming...</p>
-                        
-                        <p>If you'd like to be ahead of the curve, register your details here.</p>
-                        
-                        <button class="button is-small is-black mt-2" onclick="launchmodal('registermodal')">Register Interest</button>
-                    </div>
-                </div>
-            </div>
+  <!-- ============================================================
+       HERO — search is the primary feature
+  ============================================================ -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-inner">
 
-            <!-- site search -->
-            {{ partial "site-search.html" . }}
-            <!-- end of site search -->
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        Professional guidance · Further Education · England
+      </div>
 
-            <!-- nation list -->
-            {{ partial "nations.html" . }}
-            <!-- end of nation list -->
+      <h1 id="hero-heading">Find <em>funding guidance</em><br>in seconds</h1>
 
-            <button class="button is-small is-warning mt-2" onclick="launchreport()">Submit Feedback</button>
-            
-            <hr>
-            
-            <!-- recent sources -->
-            {{ partial "recent-sources.html" . }}
-            <!-- end of recent sources -->
+      <p class="hero-sub">
+        Search ILR rules, funding documents, and guidance across the full EF·UK library.
+      </p>
 
-            <hr>
-
-            
-
-            <!-- modal form partials -->
-            {{ partial "feedback-form.html" . }}
-            {{ partial "registerinterest-form.html" . }}
-            <!-- end of forms -->
-
-            
-            
+      <!-- PRIMARY SEARCH -->
+      <div class="hero-search" role="search" aria-label="Search funding resources">
+        <div class="search-box">
+          <span class="search-box-icon" aria-hidden="true">🔍</span>
+          <input
+            type="search"
+            id="elbi-input"
+            placeholder="Search rules, funding codes, qualifications…"
+            aria-label="Search funding resources"
+            autofocus
+          >
+          <button class="search-box-btn" type="button">Search</button>
         </div>
-        <!-- end of padding div -->
-        
+        <div class="search-hints">
+          <span class="search-hint-label">Try:</span>
+          <a class="search-hint-chip" data-search="AEB" role="button">AEB 2023/24</a>
+          <a class="search-hint-chip" data-search="R01 validation" role="button">R01 validation</a>
+          <a class="search-hint-chip" data-search="advanced learner loan" role="button">Advanced learner loan</a>
+          <a class="search-hint-chip" data-search="T Level" role="button">T Level funding</a>
+        </div>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">{{ len (where .Site.RegularPages "Section" "==" "resources") }}+</div>
+          <div class="hero-stat-label">Resources</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">25/26</div>
+          <div class="hero-stat-label">ILR Spec</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">Free</div>
+          <div class="hero-stat-label">Always</div>
+        </div>
+      </div>
+
     </div>
-    <!-- end of container -->
+  </section>
+
+  <!-- Search results rendered below the hero by elbisearch.js -->
+  <div class="page-wrap" style="padding-top:1rem; padding-bottom:0;">
+    <ul id="elbi-results"></ul>
+  </div>
+
+  <!-- ============================================================
+       MAIN CONTENT — two-column layout
+  ============================================================ -->
+  <main class="page-wrap">
+    <div class="two-col">
+
+      <!-- LEFT COLUMN -->
+      <div class="stack">
+
+        <!-- ILR Rule Lookup -->
+        <section aria-labelledby="ilr-lookup-heading">
+          <div class="section-header">
+            <h2 class="section-title" id="ilr-lookup-heading">ILR Rule Lookup</h2>
+          </div>
+          <div class="card card-padded">
+            <div class="ilr-lookup-meta">
+              <p class="ilr-lookup-desc">Search validation rules for the current ILR specification.</p>
+              <div class="version-pill">
+                <span class="version-dot" aria-hidden="true"></span>
+                Version 2526.3 — Live
+              </div>
+            </div>
+            <div class="inline-search" role="search" aria-label="ILR rule search">
+              <input
+                type="search"
+                id="ilr-rule-input"
+                placeholder="e.g. R01, funding model, aim type…"
+                aria-label="Search ILR rules"
+              >
+              <button class="inline-search-btn" type="button">Search Rules</button>
+            </div>
+            <div id="ilr-rule-results"></div>
+          </div>
+        </section>
+
+        <!-- Learning Aim Lookup -->
+        <section aria-labelledby="aim-lookup-heading">
+          <div class="section-header">
+            <h2 class="section-title" id="aim-lookup-heading">Learning Aim Lookup</h2>
+          </div>
+          <div class="card card-padded">
+            <p class="ilr-lookup-desc aim-lookup-intro">
+              Search for a qualification or learning aim across all three registers using a single query.
+            </p>
+            <div class="aim-search-row">
+              <input
+                type="search"
+                id="aim-search-input"
+                placeholder="Qualification name or aim reference…"
+                aria-label="Learning aim search query"
+                class="aim-search-input"
+              >
+            </div>
+            <div class="aim-btn-list">
+              <a id="fala-btn" href="https://submit-learner-data.service.gov.uk/find-a-learning-aim/" class="aim-search-btn" target="_blank" rel="noopener">
+                <div class="aim-link-icon icon-blue" aria-hidden="true">🔎</div>
+                <div>
+                  <div class="aim-link-name">FALA</div>
+                  <div class="aim-link-sub">Find a Learning Aim</div>
+                </div>
+                <span class="aim-link-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a id="loqaff-btn" href="https://www.qualifications.education.gov.uk/" class="aim-search-btn" target="_blank" rel="noopener">
+                <div class="aim-link-icon icon-purple" aria-hidden="true">📚</div>
+                <div>
+                  <div class="aim-link-name">LoQAFF</div>
+                  <div class="aim-link-sub">Qualifications Approved for Funding</div>
+                </div>
+                <span class="aim-link-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a id="ofqual-btn" href="https://register.ofqual.gov.uk/" class="aim-search-btn" target="_blank" rel="noopener">
+                <div class="aim-link-icon icon-green" aria-hidden="true">✅</div>
+                <div>
+                  <div class="aim-link-name">Ofqual</div>
+                  <div class="aim-link-sub">Register of Regulated Qualifications</div>
+                </div>
+                <span class="aim-link-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Upcoming ILR Returns -->
+        <section aria-labelledby="ilr-returns-heading" id="ilr-returns">
+          <div class="section-header">
+            <h2 class="section-title" id="ilr-returns-heading">Upcoming ILR Returns</h2>
+            <a href="https://submit-learner-data.service.gov.uk/" class="section-link" target="_blank" rel="noopener">Submit ILR →</a>
+          </div>
+          <div class="card card-padded">
+            <div id="ilr-academic-year" class="ilr-year-badge" style="display:none;"></div>
+            <div id="ilr-returns-list"></div>
+          </div>
+        </section>
+
+        <!-- Recently Added Resources -->
+        <section aria-labelledby="resources-heading" id="resources">
+          <div class="section-header">
+            <h2 class="section-title" id="resources-heading">Recently Added Resources</h2>
+            <a href="/resources/" class="section-link">View all {{ len (where .Site.RegularPages "Section" "==" "resources") }} →</a>
+          </div>
+
+          <div class="stack">
+            {{ range first 3 (sort (where .Site.RegularPages "Section" "resources") ".Params.DateAdded" "desc") }}
+            <article class="card card-padded resource-card">
+              <div class="resource-card-top">
+                <div class="resource-icon" aria-hidden="true">📋</div>
+                <h3 class="resource-card-title">{{ .Title }}</h3>
+              </div>
+              {{ with .Params.description }}
+              <p class="resource-card-desc">{{ . }}</p>
+              {{ end }}
+              {{ if (isset .Params "tags") }}
+              <div class="tag-list" aria-label="Tags">
+                {{ range .Params.tags }}
+                <a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a>
+                {{ end }}
+              </div>
+              {{ end }}
+              <div class="resource-card-footer">
+                {{ with .Params.link }}
+                <a href="{{ . }}" class="link-btn link-btn-primary" target="_blank" rel="noopener">Go to Resource ↗</a>
+                {{ end }}
+                <a href="{{ .Permalink }}" class="link-btn">More Details</a>
+              </div>
+            </article>
+            {{ end }}
+          </div>
+        </section>
+
+      </div><!-- /left column -->
+
+      <!-- RIGHT SIDEBAR -->
+      <aside class="sidebar stack" aria-label="Quick links and support">
+
+        <div class="card card-padded">
+          <p class="sidebar-label">Quick Links</p>
+
+          <a href="https://providers.apprenticeships.education.gov.uk/account" class="quick-link" target="_blank" rel="noopener">
+            <span class="quick-link-icon icon-blue" aria-hidden="true">🔗</span>
+            Apprenticeship Service
+          </a>
+          <a href="https://guidance.submit-learner-data.service.gov.uk/25-26/ilr/overview" class="quick-link" target="_blank" rel="noopener">
+            <span class="quick-link-icon icon-green" aria-hidden="true">📄</span>
+            ILR Spec 25/26
+          </a>
+          <a href="https://guidance.submit-learner-data.service.gov.uk/provider-support-manual" class="quick-link" target="_blank" rel="noopener">
+            <span class="quick-link-icon icon-purple" aria-hidden="true">📖</span>
+            Provider Support Manual
+          </a>
+
+          <hr class="card-divider">
+
+          <a href="https://www.gov.uk/guidance/16-to-19-education-funding-guidance" class="quick-link" target="_blank" rel="noopener">
+            <span class="quick-link-icon icon-amber" aria-hidden="true">🏫</span>
+            16 to 19 Funding
+          </a>
+          <a href="https://www.gov.uk/government/publications/t-level-funding" class="quick-link" target="_blank" rel="noopener">
+            <span class="quick-link-icon icon-blue" aria-hidden="true">🎯</span>
+            T Level Funding
+          </a>
+          <a href="https://www.gov.uk/government/collections/sfa-funding-rates" class="quick-link" target="_blank" rel="noopener">
+            <span class="quick-link-icon icon-green" aria-hidden="true">💼</span>
+            Adult Funding &amp; Loans
+          </a>
+          <a href="https://customerhelpportal.education.gov.uk/" class="quick-link" target="_blank" rel="noopener">
+            <span class="quick-link-icon icon-purple" aria-hidden="true">📞</span>
+            Contact ESFA
+          </a>
+        </div>
+
+        <div class="card card-padded support-card">
+          <p class="support-heading">Support This Site</p>
+          <p class="support-body">This resource is independently maintained. If it saves you time, consider buying a coffee.</p>
+          <a href="https://www.buymeacoffee.com/lukeburns" class="support-btn" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+        </div>
+
+      </aside>
+
+    </div><!-- /two-col -->
+
+    <!-- Registration Banner -->
+    <section class="reg-banner" id="register" aria-labelledby="reg-heading">
+      <div>
+        <p class="reg-banner-eyebrow">Early Access</p>
+        <h2 class="reg-banner-title" id="reg-heading">Funding Assessment<br>for Training Providers</h2>
+        <p class="reg-banner-desc">
+          We're launching a new funding assessment service for FE providers. Register now to join the early-access group and trial the system completely free of charge.
+        </p>
+      </div>
+      <div class="reg-form">
+        <span class="reg-form-heading">Register Interest</span>
+        <form class="reg-form-grid" name="register-interest" method="POST" data-netlify="true">
+          <div class="reg-form-row">
+            <input class="reg-input" type="text" name="firstName" placeholder="First name" autocomplete="given-name" required>
+            <input class="reg-input" type="text" name="lastName" placeholder="Last name" autocomplete="family-name" required>
+          </div>
+          <input class="reg-input" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+          <input class="reg-input" type="text" name="jobTitle" placeholder="Job title (optional)" autocomplete="organization-title">
+          <button class="reg-submit" type="submit">Sign Me Up →</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="/js/elbisearch.js"></script>
+  <script src="/js/ilrdates.js"></script>
+  <script src="/js/ilr_rule_lookup.js"></script>
+
+  <script>
+    // Search hint chips — populate the search input and trigger search
+    document.querySelectorAll('.search-hint-chip[data-search]').forEach(function(chip) {
+      chip.addEventListener('click', function(e) {
+        e.preventDefault();
+        var input = document.getElementById('elbi-input');
+        if (input) {
+          input.value = chip.getAttribute('data-search');
+          input.dispatchEvent(new Event('input'));
+          input.focus();
+        }
+      });
+    });
+
+    // Learning Aim Lookup — preserve original URL-building logic.
+    // Detects UK aim reference format (7 digits + 1 alphanumeric) and builds
+    // direct detail-page URLs; otherwise falls back to search queries.
+    (function() {
+      var input    = document.getElementById('aim-search-input');
+      var falaBtn  = document.getElementById('fala-btn');
+      var loqaffBtn = document.getElementById('loqaff-btn');
+      var ofqualBtn = document.getElementById('ofqual-btn');
+      var aimRegex = /[0-9]{7}[A-Za-z0-9]{1}/;
+
+      function updateAimLinks() {
+        if (!input) return;
+        var query = input.value;
+        var queryClean = query.replaceAll('/', '');
+
+        if (aimRegex.test(queryClean)) {
+          if (falaBtn)   falaBtn.href   = 'https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimDetails/' + queryClean;
+          if (loqaffBtn) loqaffBtn.href = 'https://www.qualifications.education.gov.uk/Qualification/' + queryClean;
+          if (ofqualBtn) ofqualBtn.href = 'https://register.ofqual.gov.uk/Search?category=Qualifications&query=' + queryClean;
+        } else {
+          if (falaBtn)   falaBtn.href   = 'https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimSearchResult?SearchTerm=' + encodeURIComponent(query);
+          if (loqaffBtn) loqaffBtn.href = 'https://www.qualifications.education.gov.uk/Search?Title=' + encodeURIComponent(query) + '&Status=All';
+          if (ofqualBtn) ofqualBtn.href = 'https://register.ofqual.gov.uk/Search?category=Qualifications&query=' + encodeURIComponent(queryClean);
+        }
+      }
+
+      if (input) input.addEventListener('input', updateAimLinks);
+    })();
+  </script>
+
 {{ end }}

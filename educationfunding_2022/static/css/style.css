@@ -1,4 +1,112 @@
-* {
+/* ============================================================
+   GLOBAL STYLES — loaded on every page
+   Component styles specific to the homepage live in main.css.
+============================================================ */
+
+*, *::before, *::after {
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
+
+/* ---- Design tokens (nav-specific subset) ---- */
+:root {
+    --navy:              #0e1e3d;
+    --navy-dark:         #07111f;
+    --navy-mid:          #1a3260;
+    --blue:              #1d5fad;
+    --sky:               #3b8fe8;
+    --accent:            #e8a020;
+    --accent-dark:       #c4841a;
+    --text-on-dark:      #ffffff;
+    --text-on-dark-soft: rgba(255,255,255,0.82);
+    --font-body:         'DM Sans', system-ui, sans-serif;
+    --font-display:      'DM Serif Display', Georgia, serif;
+    --nav-height:        64px;
+    --sp-2:   0.5rem;
+    --sp-3:   0.75rem;
+    --sp-4:   1rem;
+    --sp-5:   1.25rem;
+    --r-sm:   8px;
+    --r-pill: 999px;
+}
+
+/* Push content below the fixed nav on all non-homepage pages.
+   The homepage overrides this to 0 in main.css (hero handles offset). */
+body {
+    padding-top: var(--nav-height);
+    font-family: var(--font-body);
+}
+
+/* ============================================================
+   FIXED NAV
+============================================================ */
+.nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 200;
+    height: var(--nav-height);
+    background: rgba(7,17,31,0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--sp-5);
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: 0.02em;
+    color: var(--text-on-dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo-dot {
+    color: var(--accent);
+    margin: 0 0.05em;
+    font-style: normal;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--sp-5);
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-on-dark-soft);
+    text-decoration: none;
+    transition: color 0.18s;
+}
+.nav-links a:hover { color: var(--text-on-dark); }
+
+.nav-cta {
+    background: var(--accent) !important;
+    color: var(--navy) !important;
+    font-weight: 700 !important;
+    padding: var(--sp-2) var(--sp-5) !important;
+    border-radius: var(--r-sm) !important;
+    transition: background 0.18s !important;
+}
+.nav-cta:hover { background: var(--accent-dark) !important; }
+
+@media (max-width: 560px) {
+    .nav-links { display: none; }
+}
+
+/* ============================================================
+   NON-HOMEPAGE PAGE CONTENT — give pages a sensible base
+============================================================ */
+/* Ensure Bulma-based pages have readable typography with the new fonts */
+body { font-family: var(--font-body); }
