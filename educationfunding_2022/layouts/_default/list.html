@@ -1,12 +1,93 @@
-{{ define "main" }}
-<div class="container" style="outline: 0px solid red;">
-  <div style="padding: 20px">
-  <h1 class="is-size-1">{{ .Title }}</h1>
-  {{ range .Pages }}
-    <article>
-      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    </article>
-  {{ end }}
-  </div></div>
+{{ define "title" }}{{ .Title }} | EF·UK{{ end }}
 
+{{ define "styles" }}
+<link rel="stylesheet" href="/css/main.css">
+{{ end }}
+
+{{ define "main" }}
+<div class="page-wrap" style="padding-top: var(--sp-8);">
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" style="font-size:0.82rem; color:var(--text-muted); margin-bottom:var(--sp-6);">
+    <a href="/" style="color:var(--blue); text-decoration:none;">Home</a>
+    {{ if eq .Kind "term" }}
+    <span style="margin:0 var(--sp-2);">›</span>
+    <a href="{{ .Parent.Permalink }}" style="color:var(--blue); text-decoration:none; text-transform:capitalize;">{{ .Parent.Title }}</a>
+    {{ end }}
+  </nav>
+
+  <!-- Section header -->
+  <div class="section-header" style="margin-bottom:var(--sp-8);">
+    <h1 class="section-title" style="font-size:clamp(1.6rem, 4vw, 2.4rem); text-transform:capitalize;">{{ .Title }}</h1>
+    {{ with .Pages }}
+    <span style="font-size:0.82rem; color:var(--text-muted);">
+      {{ len . }} {{ if eq (len .) 1 }}item{{ else }}items{{ end }}
+    </span>
+    {{ end }}
+  </div>
+
+  {{ if eq .Kind "taxonomy" }}
+
+  <!-- Taxonomy index (e.g. /tags/) — show all terms as chips -->
+  <div class="tag-list" style="gap:var(--sp-3);">
+    {{ range .Data.Terms.Alphabetical }}
+    <a href="{{ .Page.Permalink }}" class="tag" style="font-size:0.875rem; padding:var(--sp-2) var(--sp-4);">
+      {{ .Page.Title }}
+      <span style="opacity:0.55; margin-left:2px;">({{ .Count }})</span>
+    </a>
+    {{ end }}
+  </div>
+
+  {{ else }}
+
+  <!-- Section or term list — resource/post cards -->
+  <div class="stack">
+    {{ range .Pages }}
+    <article class="card card-padded resource-card">
+
+      <div class="resource-card-top">
+        <div class="resource-icon{{ if eq .Section "posts" }} resource-icon-green{{ end }}" aria-hidden="true">
+          {{ if eq .Section "posts" }}📝{{ else }}📋{{ end }}
+        </div>
+        <h2 class="resource-card-title">{{ .Title }}</h2>
+      </div>
+
+      {{ if .Params.description }}
+      <p class="resource-card-desc">{{ .Params.description }}</p>
+      {{ end }}
+
+      {{ if not .Date.IsZero }}
+      <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:var(--sp-3);">
+        {{ .Date.Format "2 January 2006" }}
+      </p>
+      {{ end }}
+
+      {{ if isset .Params "tags" }}
+      <div class="tag-list" style="margin-bottom:var(--sp-3);">
+        {{ range .Params.tags }}
+        <a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      <div class="resource-card-footer">
+        {{ if isset .Params "link" }}
+        <a href="{{ .Params.link }}" class="link-btn link-btn-primary" target="_blank" rel="noopener">
+          Go to Resource ↗
+        </a>
+        <a href="{{ .Permalink }}" class="link-btn">More Details</a>
+        {{ else }}
+        <a href="{{ .Permalink }}" class="link-btn link-btn-primary">
+          {{ if eq .Section "posts" }}Read Post{{ else }}View Page{{ end }}
+        </a>
+        {{ end }}
+      </div>
+
+    </article>
+    {{ end }}
+  </div>
+
+  {{ end }}
+
+</div>
 {{ end }}

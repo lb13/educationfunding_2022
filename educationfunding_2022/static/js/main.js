@@ -1,45 +1,59 @@
-document.addEventListener('DOMContentLoaded', () => {
+// ============================================================
+// Hamburger menu
+// ============================================================
+document.addEventListener('DOMContentLoaded', function () {
+  var burger     = document.getElementById('nav-burger');
+  var mobileMenu = document.getElementById('nav-mobile-menu');
 
-    // Get all "navbar-burger" elements
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-  
-    // Add a click event on each of them
-    $navbarBurgers.forEach( el => {
-      el.addEventListener('click', () => {
-  
-        // Get the target from the "data-target" attribute
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
-  
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-  
-      });
-    });
-  
+  if (!burger || !mobileMenu) return;
+
+  burger.addEventListener('click', function () {
+    var isOpen = mobileMenu.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', String(isOpen));
+    mobileMenu.setAttribute('aria-hidden', String(!isOpen));
   });
 
-function launchreport() {
-  var modal = document.getElementById("reportmodal");
+  // Close when any link inside the menu is clicked
+  mobileMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      mobileMenu.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    });
+  });
 
-  modal.classList.add("is-active");
-};
+  // Close when clicking anywhere outside nav + menu
+  document.addEventListener('click', function (e) {
+    if (!burger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      mobileMenu.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    }
+  });
+});
+
+// ============================================================
+// Report broken link modal — CSS-based (display:flex/none)
+// ============================================================
+function launchreport() {
+  var modal = document.getElementById('reportmodal');
+  if (modal) modal.style.display = 'flex';
+}
 
 function closereport() {
-  var modal = document.getElementById("reportmodal");
+  var modal = document.getElementById('reportmodal');
+  if (modal) modal.style.display = 'none';
+}
 
-  modal.classList.remove("is-active");
-};
+// ============================================================
+// Generic modal — Bulma is-active class (legacy pages)
+// ============================================================
+function launchmodal(id) {
+  var modal = document.getElementById(id);
+  if (modal) modal.classList.add('is-active');
+}
 
-function launchmodal(e) {
-  var modal = document.getElementById(e);
-
-  modal.classList.add("is-active");
-};
-
-function closemodal(e) {
-  var modal = document.getElementById(e);
-
-  modal.classList.remove("is-active");
-};
+function closemodal(id) {
+  var modal = document.getElementById(id);
+  if (modal) modal.classList.remove('is-active');
+}

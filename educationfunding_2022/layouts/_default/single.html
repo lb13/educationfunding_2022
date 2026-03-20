@@ -1,97 +1,166 @@
+{{ define "title" }}{{ .Title }} | EF·UK{{ end }}
+
+{{ define "styles" }}
+<link rel="stylesheet" href="/css/main.css">
+{{ end }}
+
 {{ define "main" }}
-<div class="container" style="outline: 0px solid red;">
-  <div style="padding: 20px">
-  <h1 class="is-size-1">{{ .Title }}</h1>
-  <div class="content">
-    <div class="item-taglist">
-      {{ range .Params.tags }}
-      <span><a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a></span>&nbsp;
+<div class="page-wrap" style="padding-top: var(--sp-8);">
+  <div style="max-width: 780px;">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" style="font-size:0.82rem; color:var(--text-muted); margin-bottom:var(--sp-6);">
+      <a href="/" style="color:var(--blue); text-decoration:none;">Home</a>
+      {{ if .Section }}
+      <span style="margin:0 var(--sp-2);">›</span>
+      <a href="/{{ .Section }}/" style="color:var(--blue); text-decoration:none; text-transform:capitalize;">{{ .Section }}</a>
       {{ end }}
+    </nav>
+
+    <!-- Main content card -->
+    <article class="card card-padded">
+
+      <!-- Icon + title -->
+      <div class="resource-card-top">
+        <div class="resource-icon{{ if eq .Section "posts" }} resource-icon-green{{ end }}" aria-hidden="true">
+          {{ if eq .Section "posts" }}📝{{ else }}📋{{ end }}
+        </div>
+        <h1 style="font-family:var(--font-display); font-size:clamp(1.3rem, 3vw, 1.9rem); color:var(--navy); line-height:1.25;">
+          {{ .Title }}
+        </h1>
+      </div>
+
+      <!-- Tags -->
+      {{ if isset .Params "tags" }}
+      <div class="tag-list" style="margin-bottom:var(--sp-4);">
+        {{ range .Params.tags }}
+        <a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      <!-- Date: resource DateAdded or post date -->
+      {{ with .Params.dateadded }}
+      <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:var(--sp-3);">
+        Added {{ dateFormat "2 January 2006" . }}
+      </p>
+      {{ else }}
+        {{ if not .Date.IsZero }}
+        <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:var(--sp-3);">
+          {{ .Date.Format "2 January 2006" }}
+        </p>
+        {{ end }}
+      {{ end }}
+
+      <hr class="card-divider">
+
+      <!-- Description -->
+      {{ if isset .Params "description" }}
+      <p style="color:var(--text-secondary); line-height:1.75; margin-bottom:var(--sp-5); font-size:1rem;">
+        {{ .Description }}
+      </p>
+      {{ end }}
+
+      <!-- Body content (rendered markdown) -->
+      {{ with .Content }}
+      <div style="color:var(--text-secondary); line-height:1.75; margin-bottom:var(--sp-5);">
+        {{ . }}
+      </div>
+      {{ end }}
+
+      <!-- Action buttons -->
+      <div class="resource-card-footer">
+        {{ with .Params.link }}
+        <a href="{{ . }}" class="link-btn link-btn-primary" target="_blank" rel="noopener">
+          Go to Resource ↗
+        </a>
+        {{ end }}
+        {{ if isset .Params "link" }}
+        <button
+          onclick="launchreport()"
+          class="link-btn"
+          type="button"
+          style="cursor:pointer; background:#fee2e2; border-color:#fca5a5; color:#991b1b; font-family:inherit;"
+        >
+          Report Broken Link
+        </button>
+        {{ end }}
+      </div>
+
+    </article>
   </div>
+</div>
 
-    {{ with .Params.dateadded  }}
-    <p class="pt-4">Resource added: {{ dateFormat "2 January 2006" . }}</p>
-    {{ end }}
+<!-- Report broken link modal — only rendered when page has an external link -->
+{{ if isset .Params "link" }}
+<div
+  id="reportmodal"
+  style="display:none; position:fixed; inset:0; z-index:400; align-items:center; justify-content:center; padding:var(--sp-4);"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="report-modal-title"
+>
+  <!-- Backdrop -->
+  <div
+    onclick="closereport()"
+    style="position:absolute; inset:0; background:rgba(0,0,0,0.55);"
+    aria-hidden="true"
+  ></div>
 
-  <hr>
+  <!-- Dialog -->
+  <div style="position:relative; z-index:1; background:#ffffff; border-radius:var(--r-lg); padding:var(--sp-8); max-width:480px; width:100%; box-shadow:0 8px 32px rgba(0,0,0,0.25);">
 
-  {{ if ( isset .Params "description" ) }}
-  <p class="has-text-black">{{ .Description }}</p>
-  {{ end }}
+    <h2 id="report-modal-title" style="font-family:var(--font-display); font-size:1.35rem; color:var(--navy); margin-bottom:var(--sp-5);">
+      Report broken link
+    </h2>
 
-  
+    <form name="report" method="POST" data-netlify="true" style="display:flex; flex-direction:column; gap:var(--sp-3);">
+      <input name="subject" type="hidden" value="Error report: {{ .Title }}">
 
-  <p class="is-5 pt-4">
-      <a href="{{ .Params.link }}">{{ .Params.link }}</a>
-  </p>
+      <div>
+        <label style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:var(--sp-2);">
+          Your name (optional)
+        </label>
+        <input
+          name="name"
+          type="text"
+          placeholder="Your name"
+          style="width:100%; padding:var(--sp-3) var(--sp-4); border:1.5px solid var(--border); border-radius:var(--r-sm); font-family:var(--font-body); font-size:0.9rem; color:var(--text-primary); background:var(--surface-alt); outline:none; box-sizing:border-box;"
+        >
+      </div>
 
-  {{ if ( isset .Params "link" ) }}
-  <a id="reportbutton" onclick="launchreport()" class="my-5 button" style="background-color: #d4351c; color: #FFFFFF; text-decoration: none; border: none; border-radius: 0px; -webkit-box-shadow: 0 2px 0 #55150b; box-shadow: 0 2px 0 #55150b;" tabindex="0">
-      Report Broken Link
-  </a>
-  {{ end }}
+      <div>
+        <label style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:var(--sp-2);">
+          Your email (optional)
+        </label>
+        <input
+          name="email"
+          type="email"
+          placeholder="Your email"
+          style="width:100%; padding:var(--sp-3) var(--sp-4); border:1.5px solid var(--border); border-radius:var(--r-sm); font-family:var(--font-body); font-size:0.9rem; color:var(--text-primary); background:var(--surface-alt); outline:none; box-sizing:border-box;"
+        >
+      </div>
 
-  <div class="content">
-      {{ .Content }}
-  </div>  </div>
-  
-  </div></div>
+      <div>
+        <label style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:var(--sp-2);">
+          Message
+        </label>
+        <textarea
+          name="message"
+          required
+          rows="4"
+          style="width:100%; padding:var(--sp-3) var(--sp-4); border:1.5px solid var(--border); border-radius:var(--r-sm); font-family:var(--font-body); font-size:0.9rem; color:var(--text-primary); background:var(--surface-alt); outline:none; resize:vertical; box-sizing:border-box;"
+        >This link isn't working: {{ .Params.link }}</textarea>
+      </div>
 
-  <div id="reportmodal" class="modal">
-    <div onclick="closereport()" class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Report broken link</p>
-        <button onclick="closereport()" class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
+      <div style="display:flex; gap:var(--sp-3); margin-top:var(--sp-2);">
+        <button type="submit" class="link-btn link-btn-primary">Submit</button>
+        <button type="button" onclick="closereport()" class="link-btn">Cancel</button>
+      </div>
+    </form>
 
-        <form class="form" name="report" method="POST" data-netlify="true">
-
-        <div class="field">
-            <label class="label">Your name (optional)</label>
-            <div class="control">
-              <input name="name" class="input" type="text" placeholder="Your name">
-            </div>
-          </div>
-          
-                           
-          <div class="field">
-            <label class="label">Your email (optional)</label>
-            <div class="control has-icons-left has-icons-right">
-              <input name="email" class="input" type="email" placeholder="Your email" value="">
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Subject</label>
-            <div class="control">
-              <input name="subject" readonly class="input has-background-light" type="text" value="Error report: {{ .Title }}">
-            </div>
-          </div>
-          
-          <div class="field">
-            <label class="label">Message</label>
-            <div class="control">
-              <textarea name="message" required class="textarea" placeholder="Your message">This link isn't working: {{ .Params.link }}</textarea>
-            </div>
-          </div>
-          
-          <div class="field is-grouped">
-            <div class="control">
-              <button type="submit" class="button is-link">Submit</button>
-            </div>
-            <div class="control">
-              <a onclick="closereport()" class="button is-link is-light">Cancel</a>
-            </div>
-          </div>
-          
-        
-        </form>              </section>
-      </div>    
-    </div>
+  </div>
+</div>
+{{ end }}
 
 {{ end }}

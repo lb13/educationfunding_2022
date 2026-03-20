@@ -1,4 +1,5 @@
 {{ define "title" }}Further Education Funding — England | EF·UK{{ end }}
+{{ define "body-class" }}page-home{{ end }}
 
 {{ define "styles" }}
 <link rel="stylesheet" href="/css/main.css">
@@ -248,29 +249,6 @@
       </aside>
 
     </div><!-- /two-col -->
-
-    <!-- Registration Banner -->
-    <section class="reg-banner" id="register" aria-labelledby="reg-heading">
-      <div>
-        <p class="reg-banner-eyebrow">Early Access</p>
-        <h2 class="reg-banner-title" id="reg-heading">Funding Assessment<br>for Training Providers</h2>
-        <p class="reg-banner-desc">
-          We're launching a new funding assessment service for FE providers. Register now to join the early-access group and trial the system completely free of charge.
-        </p>
-      </div>
-      <div class="reg-form">
-        <span class="reg-form-heading">Register Interest</span>
-        <form class="reg-form-grid" name="register-interest" method="POST" data-netlify="true">
-          <div class="reg-form-row">
-            <input class="reg-input" type="text" name="firstName" placeholder="First name" autocomplete="given-name" required>
-            <input class="reg-input" type="text" name="lastName" placeholder="Last name" autocomplete="family-name" required>
-          </div>
-          <input class="reg-input" type="email" name="email" placeholder="Email address" autocomplete="email" required>
-          <input class="reg-input" type="text" name="jobTitle" placeholder="Job title (optional)" autocomplete="organization-title">
-          <button class="reg-submit" type="submit">Sign Me Up →</button>
-        </form>
-      </div>
-    </section>
 
   </main>
 
