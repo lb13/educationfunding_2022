@@ -44,6 +44,8 @@
           <a class="search-hint-chip" data-search="advanced learner loan" role="button">Advanced learner loan</a>
           <a class="search-hint-chip" data-search="T Level" role="button">T Level funding</a>
         </div>
+        <!-- Floating results panel — populated by elbisearch.js; hidden via CSS :empty -->
+        <ul id="elbi-results" aria-live="polite" aria-label="Search results"></ul>
       </div>
 
       <!-- Stats strip -->
@@ -64,11 +66,6 @@
 
     </div>
   </section>
-
-  <!-- Search results rendered below the hero by elbisearch.js -->
-  <div class="page-wrap" style="padding-top:1rem; padding-bottom:0;">
-    <ul id="elbi-results"></ul>
-  </div>
 
   <!-- ============================================================
        MAIN CONTENT — two-column layout
@@ -269,6 +266,15 @@
           input.focus();
         }
       });
+    });
+
+    // Close the floating results panel when clicking outside the search area
+    document.addEventListener('click', function(e) {
+      var heroSearch = document.querySelector('.hero-search');
+      var results = document.getElementById('elbi-results');
+      if (heroSearch && results && !heroSearch.contains(e.target)) {
+        results.innerHTML = '';
+      }
     });
 
     // Learning Aim Lookup — preserve original URL-building logic.
