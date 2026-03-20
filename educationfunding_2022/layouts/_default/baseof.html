@@ -43,7 +43,7 @@
     id="pirschjs"
     data-code="6Cpfw7iSjfF1KxKXav2HGUXJtMtQGZaj"></script>
   </head>
-  <body>
+  <body class="{{ block "body-class" . }}{{ end }}">
     {{ partial "navbar.html" . }}
 
     {{ block "main" . }}
@@ -52,6 +52,7 @@
     {{ partial "footer.html" . }}
 
     <script src="/js/main.js"></script>
+    {{ block "scripts" . }}{{ end }}
 
     <script src="https://app.stammer.ai/static/chatbot/js/chatbubble.js" data-id="a54efc13-583d-43cc-9992-e59c83194b38" data-domain="https://app.stammer.ai"></script>
   </body>

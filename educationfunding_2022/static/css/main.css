@@ -5,8 +5,8 @@
    also updating those scripts.
 ============================================================ */
 
-/* Override global body padding — the hero handles the nav offset */
-body { padding-top: 0; }
+/* Override global body padding on the homepage only — the hero handles the nav offset */
+body.page-home { padding-top: 0 !important; }
 
 /* ============================================================
    DESIGN TOKENS (superset of those in style.css)

@@ -3,11 +3,44 @@
     <a href="/" class="nav-logo">
       EF<span class="nav-logo-dot">·</span>UK
     </a>
+
+    <!-- Desktop links (hidden below 720px) -->
     <ul class="nav-links" role="list">
       <li><a href="/">Home</a></li>
       <li><a href="/resources/">Resources</a></li>
+      <li><a href="/posts/">Posts</a></li>
       <li><a href="/#ilr-returns">ILR Returns</a></li>
-      <li><a href="/#register" class="nav-cta">Register Interest</a></li>
     </ul>
+
+    <!-- Hamburger button (visible below 720px) -->
+    <button
+      class="nav-burger"
+      id="nav-burger"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="nav-mobile-menu"
+      type="button"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <!-- Mobile dropdown menu -->
+  <div class="nav-mobile-menu" id="nav-mobile-menu" aria-hidden="true" role="navigation" aria-label="Mobile navigation">
+    <a href="/">Home</a>
+    <a href="/resources/">Resources</a>
+    <a href="/posts/">Posts</a>
+    <a href="/#ilr-returns">ILR Returns</a>
+    <div class="nav-mobile-divider"></div>
+    <a href="/site/about/">About</a>
+    <div class="nav-mobile-divider"></div>
+    <p class="nav-mobile-label">Third Party Tools</p>
+    <a href="https://md-ed.netlify.app" target="_blank" rel="noopener">Markdown Editor ↗</a>
+    <a href="https://textedit.tools/slugify" target="_blank" rel="noopener">Slugify Text ↗</a>
+    <a href="https://delim.co/" target="_blank" rel="noopener">Comma Separating Tool ↗</a>
+    <a href="https://skillspostcodecheck.com/" target="_blank" rel="noopener">Postcode Check Tool ↗</a>
+    <a href="https://regex101.com/" target="_blank" rel="noopener">Regex101 ↗</a>
+  </div>
 </header>

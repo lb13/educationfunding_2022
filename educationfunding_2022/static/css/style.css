@@ -22,18 +22,20 @@
     --font-body:         'DM Sans', system-ui, sans-serif;
     --font-display:      'DM Serif Display', Georgia, serif;
     --nav-height:        64px;
-    --sp-2:   0.5rem;
-    --sp-3:   0.75rem;
-    --sp-4:   1rem;
-    --sp-5:   1.25rem;
-    --r-sm:   8px;
+    --sp-1:  0.25rem;
+    --sp-2:  0.5rem;
+    --sp-3:  0.75rem;
+    --sp-4:  1rem;
+    --sp-5:  1.25rem;
+    --sp-6:  1.5rem;
+    --r-sm:  8px;
     --r-pill: 999px;
 }
 
-/* Push content below the fixed nav on all non-homepage pages.
-   The homepage overrides this to 0 in main.css (hero handles offset). */
+/* Push content below the fixed nav on all pages.
+   .page-home overrides this to 0 in main.css (hero handles the offset). */
 body {
-    padding-top: var(--nav-height);
+    padding-top: var(--nav-height) !important;
     font-family: var(--font-body);
 }
 
@@ -91,22 +93,90 @@ body {
 }
 .nav-links a:hover { color: var(--text-on-dark); }
 
-.nav-cta {
-    background: var(--accent) !important;
-    color: var(--navy) !important;
-    font-weight: 700 !important;
-    padding: var(--sp-2) var(--sp-5) !important;
-    border-radius: var(--r-sm) !important;
-    transition: background 0.18s !important;
+/* ---- Hamburger button ---- */
+.nav-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--sp-2);
+    border-radius: var(--r-sm);
+    flex-shrink: 0;
+    transition: background 0.15s;
 }
-.nav-cta:hover { background: var(--accent-dark) !important; }
+.nav-burger:hover { background: rgba(255,255,255,0.08); }
 
-@media (max-width: 560px) {
-    .nav-links { display: none; }
+.nav-burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-on-dark-soft);
+    border-radius: 2px;
+    transition: transform 0.22s ease, opacity 0.22s ease, background 0.18s;
 }
 
-/* ============================================================
-   NON-HOMEPAGE PAGE CONTENT — give pages a sensible base
-============================================================ */
-/* Ensure Bulma-based pages have readable typography with the new fonts */
-body { font-family: var(--font-body); }
+/* Animate burger → X when open */
+.nav-burger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-burger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.nav-burger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---- Mobile dropdown ---- */
+.nav-mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(7,17,31,0.98);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: var(--sp-3) var(--sp-5) var(--sp-5);
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    z-index: 199;
+    max-height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
+}
+
+.nav-mobile-menu.is-open { display: flex; }
+
+.nav-mobile-menu a {
+    color: var(--text-on-dark-soft);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: var(--sp-3) 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: color 0.15s;
+}
+.nav-mobile-menu a:last-child { border-bottom: none; }
+.nav-mobile-menu a:hover { color: var(--text-on-dark); }
+
+.nav-mobile-divider {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    margin: var(--sp-2) 0;
+}
+
+.nav-mobile-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: rgba(255,255,255,0.35);
+    padding: var(--sp-3) 0 var(--sp-1);
+    margin: 0;
+}
+
+/* ---- Responsive: collapse to burger below 720px ---- */
+@media (max-width: 720px) {
+    .nav-links  { display: none; }
+    .nav-burger { display: flex; }
+}
