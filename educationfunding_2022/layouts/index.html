@@ -35,7 +35,6 @@
             aria-label="Search funding resources"
             autofocus
           >
-          <button class="search-box-btn" type="button">Search</button>
         </div>
         <div class="search-hints">
           <span class="search-hint-label">Try:</span>
@@ -179,7 +178,13 @@
             <article class="card card-padded resource-card">
               <div class="resource-card-top">
                 <div class="resource-icon" aria-hidden="true">📋</div>
-                <h3 class="resource-card-title">{{ .Title }}</h3>
+                <h3 class="resource-card-title">
+                  {{ if isset .Params "link" }}
+                  <a href="{{ .Params.link }}" target="_blank" rel="noopener">{{ .Title }}</a>
+                  {{ else }}
+                  <a href="{{ .Permalink }}">{{ .Title }}</a>
+                  {{ end }}
+                </h3>
               </div>
               {{ with .Params.description }}
               <p class="resource-card-desc">{{ . }}</p>

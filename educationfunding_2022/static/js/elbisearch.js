@@ -95,37 +95,34 @@ fetch(request)
 
                 // For each of the pages in the final filtered list, insert into the results list
                 filteredPages.forEach(function(page) {
-                    
+
+                    let linkAddress = page.link ? page.link : page.permalink;
+                    let isExternal  = !!page.link;
+
+                    let mainBtnText = page.section === 'posts' ? 'Read Post' : 'Go to Resource ↗';
+                    let mainBtnHTML = '<a class="link-btn link-btn-primary"' +
+                        (isExternal ? ' target="_blank" rel="noopener"' : '') +
+                        ' href="' + linkAddress + '">' + mainBtnText + '</a>';
+
+                    let detailsBtnHTML = page.section === 'resources'
+                        ? '<a class="link-btn" href="' + page.permalink + '">More Details</a>'
+                        : '';
+
+                    let sectionPill = '<span class="elbi-section-pill elbi-section-pill-' + page.section + '">' +
+                        page.section + '</span>';
+
                     let tagsHTML = '';
                     page.tags.forEach(function(tag){
-                        tagsHTML += "<a href=\"/tags/" + tag.replace(/ /g,'-') + "\" class=\"tag mr-2\">" + tag + "</a>";
-                    })
+                        tagsHTML += '<a href="/tags/' + tag.replace(/ /g, '-') + '" class="tag">' + tag + '</a>';
+                    });
 
-                    let linkAddress = '';
-                    if ( page.link == null ) { linkAddress = page.permalink } else { linkAddress = page.link };
-
-                    let flagColour = '';
-                    let flagBgColour = '';
-                    if ( page.section == 'resources') {
-                        flagBgColour = '#FFC300'; flagColour = '#403100'
-                    } else if ( page.section == 'posts' ) {
-                        flagBgColour = '#0A7E8C'; flagColour = '#FFFFFF'
-                    };
-
-                    let moreDetailsButtonHTML = '';
-                    if ( page.section == 'resources' ) {
-                        moreDetailsButtonHTML = "<a class=\"button is-dark my-2 mr-2\" href=\"" + page.permalink + "\">More Details</a>"
-                    }
-
-                    let editButtonHTML = '';
-                    if ( page.section == 'resources' ) {
-                        editButtonHTML = "<a target=\"_blank\" class=\"button is-info is-inverted my-2\" href=\"https://app.forestry.io/sites/ppqfmkwrf0fh4a/#/pages/educationfunding_2022-content-resources-" + page.filename.replace(".md","-md").replaceAll(",","") + "\">Edit Record</a>"
-                    }
-                    
-                    // Capitalise first letter of section name, depluralise
-                    let buttonText = "Go to " + page.section.charAt(0).toUpperCase() + page.section.slice(1,page.section.length - 1);
-
-                    let resultHTML = "<li class='elbi-results-item'><span style=\"display: inline-block; background-color: " + flagBgColour + "; color: " + flagColour + "; padding: 10px; margin-top: 5px; margin-bottom: 10px;\"><a style=\"color: inherit\" href=\"/" + page.section + "\">" + page.section + "</a></span><h2 style='font-size: 1.5rem; font-weight: 800;'>" + page.title + "</h2><p>" + page.description + "</p><a class=\"button my-2 mr-2\" target=\"_blank\" href='" + linkAddress + "'>" + buttonText + "</a>" + moreDetailsButtonHTML + editButtonHTML + "<p style='margin-top: 5px'>" + tagsHTML + "</p></li>";
+                    let resultHTML = '<li class="elbi-results-item">' +
+                        sectionPill +
+                        '<h2>' + page.title + '</h2>' +
+                        '<p>' + page.description + '</p>' +
+                        '<div class="elbi-result-actions">' + mainBtnHTML + detailsBtnHTML + '</div>' +
+                        (tagsHTML ? '<div class="tag-list" style="margin-top:var(--sp-3);">' + tagsHTML + '</div>' : '') +
+                        '</li>';
                     results.insertAdjacentHTML("beforeend",resultHTML);
 
                     if (display_score == true) {
