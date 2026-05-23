@@ -175,9 +175,14 @@
 
           <div class="stack">
             {{ $allResources := where .Site.RegularPages "Section" "resources" }}
-            {{ $dated   := sort (where $allResources ".Params.dateadded" "ne" nil) ".Params.dateadded" "desc" }}
-            {{ $undated := sort (where $allResources ".Params.dateadded" "eq" nil) ".Lastmod" "desc" }}
-            {{ range first 3 ($dated | append $undated) }}
+            {{ $out := slice }}
+            {{ range sort $allResources ".Params.dateadded" "desc" }}
+              {{ if .Params.dateadded }}{{ $out = $out | append . }}{{ end }}
+            {{ end }}
+            {{ range sort $allResources ".Lastmod" "desc" }}
+              {{ if not .Params.dateadded }}{{ $out = $out | append . }}{{ end }}
+            {{ end }}
+            {{ range first 3 $out }}
             <article class="card card-padded resource-card">
               <div class="resource-card-top">
                 <div class="resource-icon" aria-hidden="true">📋</div>
