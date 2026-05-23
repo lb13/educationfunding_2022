@@ -1,6 +1,7 @@
 baseURL = 'https://educationfunding.uk'
 languageCode = 'en-gb'
 title = 'Education Funding UK'
+enableGitInfo = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
