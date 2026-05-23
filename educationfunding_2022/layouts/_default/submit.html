@@ -94,18 +94,34 @@
           </div>
 
           <div class="submit-field">
-            <label class="submit-label" for="sub-tags">
+            <label class="submit-label">
               Tags <span class="submit-optional">(optional)</span>
             </label>
-            <input
-              class="submit-input"
-              type="text"
-              id="sub-tags"
-              name="tags"
-              placeholder="aeb, adult education, funding rules"
-              autocomplete="off"
-            >
-            <span class="submit-hint">Comma-separated. Helps users find the resource by topic.</span>
+
+            <!-- Smart suggestions — populated by JS as other fields are filled -->
+            <div id="tag-suggestions" class="tag-suggestions" style="display:none;">
+              <span class="tag-suggestion-label">Suggested:</span>
+              <span id="tag-suggestion-pills"></span>
+            </div>
+
+            <!-- Pill tag input -->
+            <div style="position:relative;">
+              <div class="tag-input-wrap" id="tag-wrap">
+                <input
+                  type="text"
+                  id="tag-text"
+                  class="tag-text-input"
+                  placeholder="Type a tag…"
+                  autocomplete="off"
+                >
+              </div>
+              <!-- Autocomplete dropdown -->
+              <div id="tag-ac" class="tag-ac" style="display:none;" role="listbox"></div>
+            </div>
+
+            <!-- Hidden field actually submitted with the form -->
+            <input type="hidden" id="sub-tags" name="tags">
+            <span class="submit-hint">Comma, Tab, or Enter confirms each tag. Helps users find the resource by topic.</span>
           </div>
 
           <hr class="card-divider" style="margin: var(--sp-6) 0;">
@@ -190,32 +206,246 @@
 </div>
 
 <script>
-  document.getElementById('resource-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var form  = this;
-    var btn   = document.getElementById('submit-btn');
-    var errEl = document.getElementById('submit-error');
+/* ── Existing tags from Hugo taxonomy (for autocomplete) ─────────────── */
+const SITE_TAGS = [...new Set([
+  {{ range (where .Site.RegularPages "Section" "resources") -}}
+    {{ range .Params.tags -}}{{ . | jsonify }},{{ end -}}
+  {{ end -}}
+])].sort();
 
-    btn.disabled    = true;
-    btn.textContent = 'Submitting…';
-    errEl.style.display = 'none';
+/* ── Elements ───────────────────────────────────────────────────────── */
+const tagWrap      = document.getElementById('tag-wrap');
+const tagText      = document.getElementById('tag-text');
+const tagAC        = document.getElementById('tag-ac');
+const tagHidden    = document.getElementById('sub-tags');
+const suggestBox   = document.getElementById('tag-suggestions');
+const suggestPills = document.getElementById('tag-suggestion-pills');
 
-    fetch('/', {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body:    new URLSearchParams(new FormData(form)).toString(),
-    })
-      .then(function (res) {
-        if (!res.ok) throw new Error('bad response');
-        document.getElementById('submit-card').style.display    = 'none';
-        document.getElementById('submit-success').style.display = '';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      })
-      .catch(function () {
-        errEl.style.display = '';
-        btn.disabled        = false;
-        btn.textContent     = 'Submit for review →';
-      });
+/* ── State ──────────────────────────────────────────────────────────── */
+let selectedTags = [];
+let acActiveIdx  = -1;
+
+/* ── Pill management ────────────────────────────────────────────────── */
+function renderPills() {
+  tagWrap.querySelectorAll('.tag-pill').forEach(p => p.remove());
+  selectedTags.forEach(tag => {
+    const pill = document.createElement('span');
+    pill.className = 'tag-pill';
+    const label = document.createTextNode(tag);
+    const btn   = document.createElement('button');
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Remove ' + tag);
+    btn.innerHTML = '&times;';
+    btn.addEventListener('click', () => { removeTag(tag); tagText.focus(); });
+    pill.appendChild(label);
+    pill.appendChild(btn);
+    tagWrap.insertBefore(pill, tagText);
   });
+  tagHidden.value = selectedTags.join(', ');
+}
+
+function addTag(raw) {
+  const tag = raw.replace(/,$/, '').trim().toLowerCase();
+  if (!tag || selectedTags.includes(tag)) { tagText.value = ''; return; }
+  selectedTags.push(tag);
+  renderPills();
+  tagText.value = '';
+  hideAC();
+  refreshSuggestions();
+}
+
+function removeTag(tag) {
+  selectedTags = selectedTags.filter(t => t !== tag);
+  renderPills();
+  refreshSuggestions();
+}
+
+tagWrap.addEventListener('click', e => {
+  if (!e.target.closest('.tag-pill')) tagText.focus();
+});
+
+/* ── Autocomplete ───────────────────────────────────────────────────── */
+function showAC(items) {
+  if (!items.length) { hideAC(); return; }
+  acActiveIdx = -1;
+  tagAC.innerHTML = '';
+  items.forEach(t => {
+    const item = document.createElement('div');
+    item.className = 'tag-ac-item';
+    item.setAttribute('role', 'option');
+    item.textContent = t;
+    item.addEventListener('mousedown', e => { e.preventDefault(); addTag(t); });
+    tagAC.appendChild(item);
+  });
+  tagAC.style.display = '';
+}
+
+function hideAC() {
+  tagAC.style.display = 'none';
+  tagAC.innerHTML = '';
+  acActiveIdx = -1;
+}
+
+function setACActive(idx) {
+  acActiveIdx = idx;
+  tagAC.querySelectorAll('.tag-ac-item').forEach((el, i) => el.classList.toggle('active', i === idx));
+}
+
+tagText.addEventListener('input', () => {
+  const q = tagText.value.trim().toLowerCase();
+  if (!q) { hideAC(); return; }
+  const matches = SITE_TAGS.filter(t => t.includes(q) && !selectedTags.includes(t)).slice(0, 8);
+  showAC(matches);
+});
+
+tagText.addEventListener('keydown', e => {
+  const items = tagAC.querySelectorAll('.tag-ac-item');
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    setACActive(Math.min(acActiveIdx + 1, items.length - 1));
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    setACActive(Math.max(acActiveIdx - 1, -1));
+  } else if (e.key === 'Escape') {
+    hideAC();
+  } else if (e.key === 'Enter' || e.key === 'Tab' || e.key === ',') {
+    if (!tagText.value.trim()) return;
+    e.preventDefault();
+    addTag(acActiveIdx >= 0 && items[acActiveIdx] ? items[acActiveIdx].textContent : tagText.value);
+  } else if (e.key === 'Backspace' && !tagText.value && selectedTags.length) {
+    removeTag(selectedTags[selectedTags.length - 1]);
+    tagText.focus();
+  }
+});
+
+document.addEventListener('click', e => {
+  if (!tagWrap.parentElement.contains(e.target)) hideAC();
+});
+
+/* ── Smart suggestions ──────────────────────────────────────────────── */
+const DOMAIN_RULES = [
+  [/officeforstudents\.org\.uk/,                         ['office for students', 'ofs']],
+  [/apprenticeships\.education\.gov\.uk/,                ['apprenticeships', 'esfa']],
+  [/submit-learner-data\.service\.gov\.uk/,              ['ilr']],
+  [/qualifications\.education\.gov\.uk/,                 ['qualifications', 'loqaff']],
+  [/register\.ofqual\.gov\.uk/,                          ['ofqual', 'qualifications']],
+  [/ofsted\.gov\.uk/,                                    ['ofsted']],
+  [/aoc\.co\.uk/,                                        ['association of colleges', 'aoc']],
+  [/onlinecollections\.des\.fasst\.org\.uk/,             ['esfa']],
+  [/nationalcareers\.service\.gov\.uk/,                  ['national careers service']],
+  [/jisc\.ac\.uk/,                                       ['jisc']],
+  [/ucea\.ac\.uk/,                                       ['ucea']],
+];
+
+const KEYWORD_RULES = [
+  [/\baeb\b|adult education budget/i,             ['aeb', 'adult education budget']],
+  [/\bilr\b/,                                     ['ilr']],
+  [/\bt[\s\-]?levels?\b/i,                        ['t levels']],
+  [/16[\s\-]?to[\s\-]?19|16-19/i,                ['16-19 funding']],
+  [/\bapprenticeship/i,                           ['apprenticeships']],
+  [/advanced learner loan/i,                      ['advanced learner loans']],
+  [/\besfa\b/i,                                   ['esfa']],
+  [/\bofsted\b/i,                                 ['ofsted']],
+  [/\bofqual\b/i,                                 ['ofqual']],
+  [/\btraineeship/i,                              ['traineeships']],
+  [/funding rules?/i,                             ['funding rules']],
+  [/\ballocation/i,                               ['allocation']],
+  [/\bqualification/i,                            ['qualifications']],
+  [/functional skills/i,                          ['functional skills']],
+  [/\bmultiply\b/i,                               ['multiply']],
+  [/skills bootcamp/i,                            ['skills bootcamps']],
+  [/free courses for jobs/i,                      ['free courses for jobs']],
+  [/community learning/i,                         ['community learning', 'fm10']],
+  [/\bhtq\b|higher technical qualification/i,     ['htq', 'higher technical qualifications']],
+  [/\blsif\b|local skills improvement/i,          ['lsif']],
+  [/maths? and english|english and maths?/i,      ['maths and english', 'condition of funding']],
+  [/\bdevolved\b/i,                               ['devolved']],
+  [/\bfm\s?\d+\b/i,                              ['funding model']],
+];
+
+function detectAcademicYears(text) {
+  const years = new Set();
+  [...text.matchAll(/\b(20\d{2})\s*(?:to|-|\/)\s*(20\d{2})\b/gi)].forEach(m => {
+    const y1 = parseInt(m[1]), y2 = parseInt(m[2]);
+    if (y2 === y1 + 1 && y1 >= 2015 && y1 <= 2035) years.add(m[1] + ' to ' + m[2]);
+  });
+  [...text.matchAll(/\b(20\d{2})[\/\-](\d{2})\b/g)].forEach(m => {
+    const y1 = parseInt(m[1]), y2 = 2000 + parseInt(m[2]);
+    if (y2 === y1 + 1 && y1 >= 2015 && y1 <= 2035) years.add(m[1] + ' to ' + y2);
+  });
+  return [...years];
+}
+
+let suggestTimer;
+function refreshSuggestions() {
+  clearTimeout(suggestTimer);
+  suggestTimer = setTimeout(() => {
+    const title   = document.getElementById('sub-title').value || '';
+    const url     = document.getElementById('sub-link').value  || '';
+    const desc    = document.getElementById('sub-desc').value  || '';
+    const allText = title + ' ' + url + ' ' + desc;
+
+    const suggested = new Set();
+
+    try {
+      const host = new URL(url).hostname;
+      DOMAIN_RULES.forEach(([pat, tags]) => { if (pat.test(host)) tags.forEach(t => suggested.add(t)); });
+    } catch (_) {}
+
+    KEYWORD_RULES.forEach(([pat, tags]) => { if (pat.test(allText)) tags.forEach(t => suggested.add(t)); });
+    detectAcademicYears(allText).forEach(y => suggested.add(y));
+
+    const toShow = [...suggested].filter(t => !selectedTags.includes(t));
+
+    suggestPills.innerHTML = '';
+    if (toShow.length) {
+      toShow.forEach(tag => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'tag-suggestion-pill';
+        btn.textContent = tag;
+        btn.addEventListener('click', () => { addTag(tag); tagText.focus(); });
+        suggestPills.appendChild(btn);
+      });
+      suggestBox.style.display = '';
+    } else {
+      suggestBox.style.display = 'none';
+    }
+  }, 300);
+}
+
+['sub-title', 'sub-link', 'sub-desc'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', refreshSuggestions);
+});
+
+/* ── Form submission ────────────────────────────────────────────────── */
+document.getElementById('resource-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form  = this;
+  const btn   = document.getElementById('submit-btn');
+  const errEl = document.getElementById('submit-error');
+
+  btn.disabled    = true;
+  btn.textContent = 'Submitting…';
+  errEl.style.display = 'none';
+
+  fetch('/', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body:    new URLSearchParams(new FormData(form)).toString(),
+  })
+    .then(res => {
+      if (!res.ok) throw new Error('bad response');
+      document.getElementById('submit-card').style.display    = 'none';
+      document.getElementById('submit-success').style.display = '';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
+    .catch(() => {
+      errEl.style.display = '';
+      btn.disabled        = false;
+      btn.textContent     = 'Submit for review →';
+    });
+});
 </script>
 {{ end }}
