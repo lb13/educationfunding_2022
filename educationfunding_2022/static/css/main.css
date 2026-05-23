@@ -286,6 +286,27 @@ a { color: inherit; }
 }
 .search-hint-chip:hover { background: rgba(255,255,255,0.20); }
 
+.hero-search-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--sp-4);
+}
+
+.hero-submit-btn {
+  text-decoration: none;
+  color: var(--text-on-dark-soft);
+  border: 1px solid rgba(255,255,255,0.30);
+  padding: var(--sp-2) var(--sp-5);
+  border-radius: var(--r-pill);
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  transition: background 0.15s, border-color 0.15s;
+}
+.hero-submit-btn:hover {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.50);
+}
+
 .hero-stats {
   display: flex;
   justify-content: center;
