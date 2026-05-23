@@ -43,6 +43,9 @@
           <a class="search-hint-chip" data-search="advanced learner loan" role="button">Advanced learner loan</a>
           <a class="search-hint-chip" data-search="T Level" role="button">T Level funding</a>
         </div>
+        <div class="hero-search-actions">
+          <a href="/submit/" class="hero-submit-btn">+ Add New Resource</a>
+        </div>
         <!-- Floating results panel — populated by elbisearch.js; hidden via CSS :empty -->
         <ul id="elbi-results" aria-live="polite" aria-label="Search results"></ul>
       </div>
@@ -52,14 +55,6 @@
         <div>
           <div class="hero-stat-num">{{ len (where .Site.RegularPages "Section" "==" "resources") }}+</div>
           <div class="hero-stat-label">Resources</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">25/26</div>
-          <div class="hero-stat-label">ILR Spec</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">Free</div>
-          <div class="hero-stat-label">Always</div>
         </div>
       </div>
 
