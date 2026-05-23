@@ -1,0 +1,221 @@
+{{ define "title" }}Submit a Resource | EF·UK{{ end }}
+
+{{ define "styles" }}
+<link rel="stylesheet" href="/css/main.css">
+{{ end }}
+
+{{ define "main" }}
+<div class="page-wrap" style="padding-top: var(--sp-8);">
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" style="font-size:0.82rem; color:var(--text-muted); margin-bottom:var(--sp-6);">
+    <a href="/" style="color:var(--blue); text-decoration:none;">Home</a>
+    <span style="margin:0 var(--sp-2);">›</span>
+    Submit a Resource
+  </nav>
+
+  <div class="section-header" style="margin-bottom:var(--sp-8);">
+    <h1 class="section-title" style="font-size:clamp(1.6rem, 4vw, 2.4rem);">Submit a Resource</h1>
+  </div>
+
+  <div class="two-col">
+
+    <!-- ── FORM COLUMN ── -->
+    <div>
+
+      <!-- Success state (shown after AJAX submission) -->
+      <div id="submit-success" class="card card-padded" style="display:none; border-left:4px solid var(--green);">
+        <p style="font-weight:600; color:var(--green); margin-bottom:var(--sp-2);">Submission received — thank you!</p>
+        <p style="font-size:0.875rem; color:var(--text-secondary);">
+          Your suggestion has been queued for review. Once approved it will appear in the resource library automatically.
+          <a href="/submit/" style="color:var(--blue); text-decoration:none; margin-left:var(--sp-2);">Submit another →</a>
+        </p>
+      </div>
+
+      <div class="card card-padded" id="submit-card">
+        <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:var(--sp-6);">
+          Know a resource that should be here? Fill in the form below and it will be queued for review. Nothing goes live without a check first.
+        </p>
+
+        <form
+          name="resource-submission"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          id="resource-form"
+          novalidate
+        >
+          <input type="hidden" name="form-name" value="resource-submission">
+
+          <!-- Honeypot — hidden from real users, catches bots -->
+          <p style="display:none;" aria-hidden="true">
+            <label>Leave blank: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+
+          <div class="submit-field">
+            <label class="submit-label" for="sub-title">
+              Resource title <span class="submit-required" aria-label="required">*</span>
+            </label>
+            <input
+              class="submit-input"
+              type="text"
+              id="sub-title"
+              name="title"
+              required
+              placeholder="e.g. AEB Funding Rules 2025 to 2026"
+              autocomplete="off"
+            >
+          </div>
+
+          <div class="submit-field">
+            <label class="submit-label" for="sub-link">
+              URL <span class="submit-required" aria-label="required">*</span>
+            </label>
+            <input
+              class="submit-input"
+              type="url"
+              id="sub-link"
+              name="link"
+              required
+              placeholder="https://www.gov.uk/..."
+            >
+          </div>
+
+          <div class="submit-field">
+            <label class="submit-label" for="sub-desc">
+              Short description <span class="submit-optional">(optional)</span>
+            </label>
+            <textarea
+              class="submit-input submit-textarea"
+              id="sub-desc"
+              name="description"
+              placeholder="One or two sentences about what the resource covers."
+            ></textarea>
+          </div>
+
+          <div class="submit-field">
+            <label class="submit-label" for="sub-tags">
+              Tags <span class="submit-optional">(optional)</span>
+            </label>
+            <input
+              class="submit-input"
+              type="text"
+              id="sub-tags"
+              name="tags"
+              placeholder="aeb, adult education, funding rules"
+              autocomplete="off"
+            >
+            <span class="submit-hint">Comma-separated. Helps users find the resource by topic.</span>
+          </div>
+
+          <hr class="card-divider" style="margin: var(--sp-6) 0;">
+
+          <div class="submit-field">
+            <label class="submit-label" for="sub-name">
+              Your name <span class="submit-optional">(optional)</span>
+            </label>
+            <input
+              class="submit-input"
+              type="text"
+              id="sub-name"
+              name="submitter_name"
+              placeholder="Jane Smith"
+              autocomplete="name"
+            >
+          </div>
+
+          <div class="submit-field" style="margin-bottom:0;">
+            <label class="submit-label" for="sub-email">
+              Your email <span class="submit-optional">(optional)</span>
+            </label>
+            <input
+              class="submit-input"
+              type="email"
+              id="sub-email"
+              name="submitter_email"
+              placeholder="jane@example.com"
+              autocomplete="email"
+            >
+            <span class="submit-hint">Only used to follow up if there is a question about your submission. Never shared.</span>
+          </div>
+
+          <!-- Inline error message -->
+          <div
+            id="submit-error"
+            role="alert"
+            style="display:none; margin-top:var(--sp-5); padding:var(--sp-3) var(--sp-4); background:#fee2e2; border-radius:var(--r-sm); font-size:0.875rem; color:#b91c1c;"
+          >
+            Something went wrong — please try again in a moment.
+          </div>
+
+          <div style="margin-top:var(--sp-6);">
+            <button
+              class="link-btn link-btn-primary"
+              type="submit"
+              id="submit-btn"
+              style="padding:var(--sp-3) var(--sp-6); font-size:0.9rem;"
+            >
+              Submit for review →
+            </button>
+          </div>
+        </form>
+      </div>
+    </div><!-- /form column -->
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar stack">
+
+      <div class="card card-padded">
+        <p class="sidebar-label">How it works</p>
+        <ol style="padding-left:var(--sp-5); color:var(--text-secondary); font-size:0.875rem; line-height:2.1;">
+          <li>You fill in the form</li>
+          <li>A draft pull request is opened automatically</li>
+          <li>The site owner reviews it</li>
+          <li>Merging the PR publishes the resource</li>
+        </ol>
+      </div>
+
+      <div class="card card-padded">
+        <p class="sidebar-label">Good submissions</p>
+        <ul style="padding-left:var(--sp-5); color:var(--text-secondary); font-size:0.875rem; line-height:2.1; list-style-type:disc;">
+          <li>Published by DfE, ESFA, Ofsted, or a recognised body</li>
+          <li>Relevant to FE providers in England</li>
+          <li>A direct link to the document or guidance page</li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </div><!-- /two-col -->
+</div>
+
+<script>
+  document.getElementById('resource-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form  = this;
+    var btn   = document.getElementById('submit-btn');
+    var errEl = document.getElementById('submit-error');
+
+    btn.disabled    = true;
+    btn.textContent = 'Submitting…';
+    errEl.style.display = 'none';
+
+    fetch('/', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body:    new URLSearchParams(new FormData(form)).toString(),
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error('bad response');
+        document.getElementById('submit-card').style.display    = 'none';
+        document.getElementById('submit-success').style.display = '';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      })
+      .catch(function () {
+        errEl.style.display = '';
+        btn.disabled        = false;
+        btn.textContent     = 'Submit for review →';
+      });
+  });
+</script>
+{{ end }}
