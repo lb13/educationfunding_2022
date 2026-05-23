@@ -61,9 +61,8 @@ fetch(ilr_request)
       var days  = getNumberOfDays(today, r.return_date);
       var cls   = countdownClass(days);
       var label = countdownLabel(days);
-      var note  = r.reference_date
-        ? 'Covers period to ' + formatDate(r.reference_date)
-        : 'Due: ' + formatDate(r.return_date);
+      var note = 'Due: ' + formatDate(r.return_date) +
+        (r.reference_date ? '<br>Covers period to ' + formatDate(r.reference_date) : '');
 
       var row = document.createElement('div');
       row.className = 'return-row';
