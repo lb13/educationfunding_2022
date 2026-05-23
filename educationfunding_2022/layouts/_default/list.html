@@ -26,7 +26,7 @@
     {{ end }}
   </div>
 
-  {{ if eq .Kind "taxonomy" }}
+  {{ if .Data.Terms }}
 
   <!-- Taxonomy index (e.g. /tags/) — show all terms as chips -->
   <div class="tag-list" style="gap:var(--sp-3);">

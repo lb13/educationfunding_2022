@@ -1,6 +1,12 @@
 [functions]
   directory = "netlify/functions"
 
+[[redirects]]
+  from   = "/england/further-education/"
+  to     = "/"
+  status = 301
+  force  = true
+
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
   for = "/*"
