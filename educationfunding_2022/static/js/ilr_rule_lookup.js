@@ -72,6 +72,13 @@ fetch(ruleRequest)
                     ? "ilr-badge ilr-badge-error"
                     : "ilr-badge ilr-badge-warning";
 
+                // R-prefixed cross-record rules are not yet published on the DfE
+                // guidance site (beta rollout), so only link named field rules.
+                var isRRule = /^R\d+$/.test(rule["Rule Name"]);
+                var specUrl = isRRule
+                    ? null
+                    : 'https://guidance.submit-learner-data.service.gov.uk/25-26/validation-rules/rule/' + encodeURIComponent(rule["Rule Name"]);
+
                 var resultEl = document.createElement('div');
                 resultEl.className = 'ilr-rule-result';
                 resultEl.innerHTML =
@@ -82,8 +89,9 @@ fetch(ruleRequest)
                     '<div class="ilr-rule-result-msg">' + rule["Error Message"] + '</div>' +
                     '<div class="ilr-rule-result-detail">' +
                         'Version: <strong>' + rule["Version"] + '</strong> &nbsp;·&nbsp; ' +
-                        'Status: <strong>' + rule["Status"] + '</strong><br>' +
-                        rule["Rule Description"].replaceAll("\n", "<br>") +
+                        'Status: <strong>' + rule["Status"] + '</strong>' +
+                        (specUrl ? ' &nbsp;·&nbsp; <a href="' + specUrl + '" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;">View on DfE ↗</a>' : '') +
+                        '<br>' + rule["Rule Description"].replaceAll("\n", "<br>") +
                     '</div>';
 
                 ruleResults.appendChild(resultEl);

@@ -361,29 +361,34 @@ a { color: inherit; }
   color: var(--navy);
 }
 
-/* Basic button styles for elbisearch.js-generated buttons */
-.button {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.4em 0.9em;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-decoration: none;
-  color: var(--text-primary);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-sm);
-  cursor: pointer;
-  transition: background 0.15s;
+/* Section pill badge inside search results */
+.elbi-section-pill {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 2px var(--sp-3);
+  border-radius: var(--r-pill);
+  margin-bottom: var(--sp-2);
 }
-.button:hover { background: var(--surface-alt); }
-.button.is-dark { background: var(--navy); color: var(--text-on-dark); border-color: var(--navy); }
-.button.is-dark:hover { background: var(--navy-mid); color: var(--text-on-dark); }
-.button.is-info { background: var(--blue); color: var(--text-on-dark); border-color: var(--blue); }
-.button.is-inverted { background: transparent; color: var(--blue); border-color: var(--blue); }
-.my-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
-.mr-2 { margin-right: 0.5rem; }
+.elbi-section-pill-resources { background: #fef3c7; color: #92400e; }
+.elbi-section-pill-posts     { background: #d1fae5; color: #065f46; }
+
+/* Action buttons row inside search results */
+.elbi-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+}
+
+/* Resource card title as a link */
+.resource-card-title a {
+  text-decoration: none;
+  color: inherit;
+}
+.resource-card-title a:hover { text-decoration: underline; }
 
 /* ============================================================
    CARDS
@@ -882,6 +887,64 @@ a.tag:hover { background: var(--border); }
   transition: background 0.18s;
 }
 .reg-submit:hover { background: var(--accent-dark); }
+
+/* ============================================================
+   RESOURCE SUBMISSION FORM
+============================================================ */
+.submit-field {
+  margin-bottom: var(--sp-5);
+}
+
+.submit-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--sp-2);
+}
+
+.submit-required {
+  color: #dc2626;
+  margin-left: 2px;
+}
+
+.submit-optional {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.submit-input {
+  display: block;
+  width: 100%;
+  padding: var(--sp-3) var(--sp-4);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-sm);
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.submit-input:focus {
+  border-color: var(--sky);
+  box-shadow: 0 0 0 3px rgba(59,143,232,0.12);
+}
+.submit-input::placeholder { color: var(--text-muted); }
+
+.submit-textarea {
+  min-height: 90px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.submit-hint {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: var(--sp-1);
+}
 
 /* ============================================================
    RESPONSIVE
