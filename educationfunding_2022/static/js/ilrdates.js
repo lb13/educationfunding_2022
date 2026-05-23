@@ -62,7 +62,7 @@ fetch(ilr_request)
       var cls   = countdownClass(days);
       var label = countdownLabel(days);
       var note = 'Due: ' + formatDate(r.return_date) +
-        (r.reference_date ? '<br>Covers period to ' + formatDate(r.reference_date) : '');
+        (r.reference_date ? '<br>Includes starts prior to ' + formatDate(r.reference_date) : '');
 
       var row = document.createElement('div');
       row.className = 'return-row';

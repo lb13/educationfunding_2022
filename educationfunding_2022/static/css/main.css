@@ -206,6 +206,7 @@ a { color: inherit; }
 .hero-search {
   animation: fade-up 0.5s ease 0.24s both;
   position: relative; /* establishes containing block for the floating results panel */
+  z-index: 1;         /* ensure results panel layers above .hero-stats stacking context */
 }
 
 .search-box {
