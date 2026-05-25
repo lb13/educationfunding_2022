@@ -1,8 +1,7 @@
 // ILR Returns — populates the homepage returns list with upcoming ILR return dates.
-// Targets: #ilr-returns-list and #ilr-academic-year (both in layouts/index.html)
+// Target: #ilr-returns-list in layouts/index.html
 
 const ilrReturnsList   = document.getElementById("ilr-returns-list");
-const ilrAcademicYear  = document.getElementById("ilr-academic-year");
 
 const ilr_request = new Request("/data/ilrdates.json");
 const today = new Date();
@@ -49,12 +48,6 @@ fetch(ilr_request)
 
     if (!upcoming.length || !ilrReturnsList) return;
 
-    // Show the academic year of the nearest upcoming return
-    if (ilrAcademicYear) {
-      ilrAcademicYear.textContent = '🗓 ' + upcoming[0].academic_year + ' Academic Year';
-      ilrAcademicYear.style.display = '';
-    }
-
     // Show up to 5 upcoming returns as styled rows
     var toShow = upcoming.slice(0, 5);
     toShow.forEach(function(r) {
@@ -62,7 +55,7 @@ fetch(ilr_request)
       var cls   = countdownClass(days);
       var label = countdownLabel(days);
       var note = 'Due: ' + formatDate(r.return_date) +
-        (r.reference_date ? '<br>Includes starts prior to ' + formatDate(r.reference_date) : '');
+        (r.reference_date ? '<br>Includes starts up to and including ' + formatDate(r.reference_date) : '');
 
       var row = document.createElement('div');
       row.className = 'return-row';
