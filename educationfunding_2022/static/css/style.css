@@ -216,6 +216,16 @@ body {
     backdrop-filter: blur(14px);
     z-index: 300;
 }
+/* Transparent bridge fills the gap between the nav item and the dropdown
+   so hover state isn't lost as the cursor moves downward */
+.nav-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -14px;
+    left: 0;
+    right: 0;
+    height: 14px;
+}
 .nav-has-dropdown:hover .nav-dropdown { display: block; }
 
 .nav-dropdown li a {
