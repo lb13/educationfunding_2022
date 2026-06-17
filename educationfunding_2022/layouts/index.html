@@ -62,6 +62,32 @@
   </section>
 
   <!-- ============================================================
+       NEWS TICKER — DfE FE Update headlines
+  ============================================================ -->
+  {{- $items := .Site.Data.newsticker -}}
+  {{- if $items }}
+  <div class="news-ticker" role="marquee" aria-label="DfE FE Update headlines">
+    {{/* Duplicate items so the scroll loops seamlessly */}}
+    <div class="news-ticker-inner">
+      <span class="news-ticker-label">DfE Update</span>
+      {{- range $items }}
+      <span class="news-ticker-item">
+        <a href="{{ .url }}" target="_blank" rel="noopener">{{ .headline }}</a>
+      </span>
+      <span class="news-ticker-sep" aria-hidden="true">·</span>
+      {{- end }}
+      {{/* Duplicate for seamless loop */}}
+      {{- range $items }}
+      <span class="news-ticker-item">
+        <a href="{{ .url }}" target="_blank" rel="noopener">{{ .headline }}</a>
+      </span>
+      <span class="news-ticker-sep" aria-hidden="true">·</span>
+      {{- end }}
+    </div>
+  </div>
+  {{- end }}
+
+  <!-- ============================================================
        MAIN CONTENT — two-column layout
   ============================================================ -->
   <main class="page-wrap">
