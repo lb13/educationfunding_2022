@@ -121,6 +121,27 @@
           </div>
         </section>
 
+        <!-- ILR Spec Search -->
+        <section aria-labelledby="ilr-spec-search-heading">
+          <div class="section-header">
+            <h2 class="section-title" id="ilr-spec-search-heading">ILR Spec Search</h2>
+            <a href="https://guidance.submit-learner-data.service.gov.uk/" class="section-link" target="_blank" rel="noopener">Guidance portal →</a>
+          </div>
+          <div class="card card-padded">
+            <p class="ilr-lookup-desc">Search across validation rules, fields, entities, and the Provider Support Manual for both 25/26 and 26/27.</p>
+            <form class="ilr-spec-form inline-search" id="ilr-spec-form" role="search" aria-label="ILR spec search">
+              <input
+                type="search"
+                id="ilr-spec-input"
+                placeholder="e.g. progtype, LearnActEndDate, R04…"
+                aria-label="Search ILR spec"
+                autocomplete="off"
+              >
+              <button type="submit" class="inline-search-btn">Search ↗</button>
+            </form>
+          </div>
+        </section>
+
         <!-- Learning Aim Lookup -->
         <section aria-labelledby="aim-lookup-heading">
           <div class="section-header">
@@ -334,6 +355,24 @@
       }
 
       if (input) input.addEventListener('input', updateAimLinks);
+    })();
+
+    // ILR Spec Search — opens the guidance portal search in a new tab
+    (function() {
+      var form  = document.getElementById('ilr-spec-form');
+      var input = document.getElementById('ilr-spec-input');
+      if (!form || !input) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var term = input.value.trim();
+        if (!term) return;
+        var url = 'https://guidance.submit-learner-data.service.gov.uk/search'
+          + '?SearchTerm=' + encodeURIComponent(term)
+          + '&TypeFilters=ValidationRule&TypeFilters=PSM&TypeFilters=AttributeField'
+          + '&TypeFilters=Entity&TypeFilters=Field'
+          + '&YearFilters=25-26&YearFilters=26-27&Page=1';
+        window.open(url, '_blank', 'noopener');
+      });
     })();
   </script>
 
