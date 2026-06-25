@@ -1245,16 +1245,9 @@ a.tag:hover { background: var(--border); }
 .news-ticker-inner {
   display: inline-flex;
   gap: 0;
-  animation: ticker-scroll 40s linear infinite;
-}
-
-.news-ticker-scroll:hover .news-ticker-inner {
-  animation-play-state: paused;
-}
-
-@keyframes ticker-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  /* Animation driven by JS (ticker-init in index.html) to keep hit-testing
+     on the main thread — CSS transform animations run on the compositor
+     thread, causing a position mismatch that breaks first-click on links. */
 }
 
 /* Pinned amber label on the left */
@@ -1397,4 +1390,32 @@ a.tag:hover { background: var(--border); }
 .news-feed-item:hover {
   color: var(--navy);
   text-decoration: underline;
+}
+
+/* ILR Spec Search — filter checkboxes */
+.ilr-spec-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-5);
+  margin-top: var(--sp-3);
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--border);
+}
+
+.ilr-spec-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.ilr-spec-filter input[type="checkbox"] {
+  accent-color: var(--blue);
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+  flex-shrink: 0;
 }
