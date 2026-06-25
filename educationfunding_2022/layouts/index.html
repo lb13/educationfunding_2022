@@ -64,37 +64,38 @@
   <!-- ============================================================
        NEWS TICKER — DfE FE Update headlines + expandable panel
   ============================================================ -->
-  {{- $items := .Site.Data.newsticker -}}
-  {{- $feed  := .Site.Data.newsfeed -}}
-  {{- if $items }}
+  {{- $feed := .Site.Data.newsfeed -}}
+  {{- /* Collect ticker items from whichever edition(s) have ticker: true */ -}}
+  {{- $tickerItems := slice -}}
+  {{- range $feed }}{{- if .ticker }}{{- range .items }}{{- $tickerItems = $tickerItems | append . }}{{- end }}{{- end }}{{- end -}}
+  {{- if $feed }}
   <div class="news-ticker-wrap">
+    {{- if $tickerItems }}
     <div class="news-ticker">
       <span class="news-ticker-label" aria-hidden="true">DfE Update</span>
       <div class="news-ticker-scroll" role="marquee" aria-label="DfE FE Update headlines">
         <div class="news-ticker-inner">
-          {{- range $items }}
+          {{- range $tickerItems }}
           <span class="news-ticker-item">
-            <a href="{{ .url }}" target="_blank" rel="noopener">{{ .headline }}</a>
+            <a href="{{ .url }}" target="_blank" rel="noopener">{{ or .ticker_headline .headline }}</a>
           </span>
           <span class="news-ticker-sep" aria-hidden="true">·</span>
           {{- end }}
           {{/* Duplicate for seamless loop */}}
-          {{- range $items }}
+          {{- range $tickerItems }}
           <span class="news-ticker-item">
-            <a href="{{ .url }}" target="_blank" rel="noopener">{{ .headline }}</a>
+            <a href="{{ .url }}" target="_blank" rel="noopener">{{ or .ticker_headline .headline }}</a>
           </span>
           <span class="news-ticker-sep" aria-hidden="true">·</span>
           {{- end }}
         </div>
       </div>
-      {{- if $feed }}
       <button class="news-ticker-toggle" id="news-feed-toggle" aria-expanded="false" aria-controls="news-feed-panel">
         All headlines <span class="news-ticker-caret" aria-hidden="true">▾</span>
       </button>
-      {{- end }}
     </div>
+    {{- end }}
 
-    {{- if $feed }}
     <div class="news-feed-panel" id="news-feed-panel" hidden>
       <div class="news-feed-inner">
         <input
@@ -119,7 +120,6 @@
         </div>
       </div>
     </div>
-    {{- end }}
   </div>
   {{- end }}
 

@@ -2,21 +2,26 @@
   {
     "edition": "17 June 2026",
     "page_url": "https://www.gov.uk/government/publications/dfe-update-17-june-2026/dfe-update-further-education-17-june-2026",
+    "ticker": true,
     "items": [
       {
         "headline": "Free school meal rate uplifts for academic year 2026 to 2027",
+        "ticker_headline": "FSM Rate Uplifts for 2026 to 2027",
         "url": "https://www.gov.uk/government/publications/dfe-update-17-june-2026/dfe-update-further-education-17-june-2026#information-free-school-meal-rate-uplifts-for-academic-year-2026-to-2027"
       },
       {
         "headline": "Adult skills funding postcode updates",
+        "ticker_headline": "Adult Skills Funding Postcode Updates",
         "url": "https://www.gov.uk/government/publications/dfe-update-17-june-2026/dfe-update-further-education-17-june-2026#information-adult-skills-funding-postcode-updates"
       },
       {
         "headline": "Submit your post-16 subcontracting standard report by Monday 31 August 2026",
+        "ticker_headline": "Post-16 Subcontracting Report due 31 August 2026",
         "url": "https://www.gov.uk/government/publications/dfe-update-17-june-2026/dfe-update-further-education-17-june-2026#reminder-submit-your-post-16-subcontracting-standard-report-by-monday-31-august-2026"
       },
       {
         "headline": "Take part in a FE Direct Practitioners roundtable on sustainability",
+        "ticker_headline": "FE Direct Practitioners Roundtable on Sustainability",
         "url": "https://www.gov.uk/government/publications/dfe-update-17-june-2026/dfe-update-further-education-17-june-2026"
       }
     ]
@@ -24,6 +29,7 @@
   {
     "edition": "10 June 2026",
     "page_url": "https://www.gov.uk/government/publications/dfe-update-10-june-2026/dfe-update-further-education-10-june-2026",
+    "ticker": false,
     "items": [
       {
         "headline": "Adult skills fund: funding rules, rates and formula guidance for 2026 to 2027",
@@ -70,6 +76,7 @@
   {
     "edition": "27 May 2026",
     "page_url": "https://www.gov.uk/government/publications/dfe-update-27-may-2026/dfe-update-further-education-27-may-2026",
+    "ticker": false,
     "items": [
       {
         "headline": "Transfer adult skills core funding to free courses for jobs for 2026 to 2027",
