@@ -77,14 +77,14 @@
         <div class="news-ticker-inner">
           {{- range $tickerItems }}
           <span class="news-ticker-item">
-            <a href="{{ .url }}" target="_blank" rel="noopener">{{ or .ticker_headline .headline }}</a>
+            <a href="{{ .url }}" target="_blank" rel="noopener" data-pirsch-ignore>{{ or .ticker_headline .headline }}</a>
           </span>
           <span class="news-ticker-sep" aria-hidden="true">·</span>
           {{- end }}
           {{/* Duplicate for seamless loop */}}
           {{- range $tickerItems }}
           <span class="news-ticker-item">
-            <a href="{{ .url }}" target="_blank" rel="noopener">{{ or .ticker_headline .headline }}</a>
+            <a href="{{ .url }}" target="_blank" rel="noopener" data-pirsch-ignore>{{ or .ticker_headline .headline }}</a>
           </span>
           <span class="news-ticker-sep" aria-hidden="true">·</span>
           {{- end }}
