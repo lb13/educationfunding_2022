@@ -1,27 +1,72 @@
 [
   {
-    "edition": "17 June 2026",
-    "page_url": "https://www.gov.uk/government/publications/dfe-update-17-june-2026/dfe-update-further-education-17-june-2026",
+    "edition": "24 June 2026",
+    "page_url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026",
     "ticker": true,
     "items": [
       {
+        "headline": "College financial data service portal now available",
+        "ticker_headline": "College Financial Data Service Portal — now live",
+        "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#action-college-financial-data-service-portal-now-available"
+      },
+      {
+        "headline": "Register for Taking Teaching Further 2026 by Monday 6 July 2026",
+        "ticker_headline": "Taking Teaching Further 2026 — register by 6 July",
+        "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#action-register-for-taking-teaching-further-2026-by-monday-6-july-2026-"
+      },
+      {
+        "headline": "Submit Care to Learn and 16 to 19 Bursary Fund for defined vulnerable groups funding claims",
+        "ticker_headline": "Care to Learn & Bursary Fund claims now open",
+        "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#action-submitcare-to-learn-and-16-to-19-bursary-fundfordefined-vulnerable-groups-funding-claims"
+      },
+      {
+        "headline": "Adult funding allocations for 2025 to 2026",
+        "ticker_headline": "Adult Funding Allocations 2025 to 2026 published",
+        "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#information-adult-funding-allocations-for-2025-to-2026"
+      },
+      {
+        "headline": "Year-end forecast funding claim for 2025 to 2026 — indicative reconciliation statements",
+        "ticker_headline": "Year-end Forecast Funding Claim 2025 to 2026",
+        "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#information-year-end-forecast-funding-claim-for-funding-year-2025-to-2026--indicative-reconciliation-statements"
+      },
+      {
+        "headline": "Updated subcontracting funding rules for post-16 education and training 2026 to 2027",
+        "ticker_headline": "Updated Post-16 Subcontracting Funding Rules 2026/27",
+        "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#information-updated-subcontracting-funding-rules-for-post-16-education-and-training-2026-to-2027-guidance"
+      },
+      {
+        "headline": "16 to 19 education (non-apprenticeship) market entry guidance",
+        "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#information-16-to-19-education-non-apprenticeship-market-entry-guidance"
+      },
+      {
+        "headline": "Help us improve the 16 to 19 business case process",
+        "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#feedback-help-us-improve-the-16-to-19-business-case-process"
+      },
+      {
+        "headline": "Tell us about your experience of our funding service",
+        "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#feedback-tell-us-about-your-experience-of-our-funding-service"
+      }
+    ]
+  },
+  {
+    "edition": "17 June 2026",
+    "page_url": "https://www.gov.uk/government/publications/dfe-update-17-june-2026/dfe-update-further-education-17-june-2026",
+    "ticker": false,
+    "items": [
+      {
         "headline": "Free school meal rate uplifts for academic year 2026 to 2027",
-        "ticker_headline": "FSM Rate Uplifts for 2026 to 2027",
         "url": "https://www.gov.uk/government/publications/dfe-update-17-june-2026/dfe-update-further-education-17-june-2026#information-free-school-meal-rate-uplifts-for-academic-year-2026-to-2027"
       },
       {
         "headline": "Adult skills funding postcode updates",
-        "ticker_headline": "Adult Skills Funding Postcode Updates",
         "url": "https://www.gov.uk/government/publications/dfe-update-17-june-2026/dfe-update-further-education-17-june-2026#information-adult-skills-funding-postcode-updates"
       },
       {
         "headline": "Submit your post-16 subcontracting standard report by Monday 31 August 2026",
-        "ticker_headline": "Post-16 Subcontracting Report due 31 August 2026",
         "url": "https://www.gov.uk/government/publications/dfe-update-17-june-2026/dfe-update-further-education-17-june-2026#reminder-submit-your-post-16-subcontracting-standard-report-by-monday-31-august-2026"
       },
       {
         "headline": "Take part in a FE Direct Practitioners roundtable on sustainability",
-        "ticker_headline": "FE Direct Practitioners Roundtable on Sustainability",
         "url": "https://www.gov.uk/government/publications/dfe-update-17-june-2026/dfe-update-further-education-17-june-2026"
       }
     ]
