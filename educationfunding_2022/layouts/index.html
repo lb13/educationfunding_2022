@@ -62,27 +62,63 @@
   </section>
 
   <!-- ============================================================
-       NEWS TICKER — DfE FE Update headlines
+       NEWS TICKER — DfE FE Update headlines + expandable panel
   ============================================================ -->
-  {{- $items := .Site.Data.newsticker -}}
-  {{- if $items }}
-  <div class="news-ticker" role="marquee" aria-label="DfE FE Update headlines">
-    {{/* Duplicate items so the scroll loops seamlessly */}}
-    <div class="news-ticker-inner">
-      <span class="news-ticker-label">DfE Update</span>
-      {{- range $items }}
-      <span class="news-ticker-item">
-        <a href="{{ .url }}" target="_blank" rel="noopener">{{ .headline }}</a>
-      </span>
-      <span class="news-ticker-sep" aria-hidden="true">·</span>
-      {{- end }}
-      {{/* Duplicate for seamless loop */}}
-      {{- range $items }}
-      <span class="news-ticker-item">
-        <a href="{{ .url }}" target="_blank" rel="noopener">{{ .headline }}</a>
-      </span>
-      <span class="news-ticker-sep" aria-hidden="true">·</span>
-      {{- end }}
+  {{- $feed := .Site.Data.newsfeed -}}
+  {{- /* Collect ticker items from whichever edition(s) have ticker: true */ -}}
+  {{- $tickerItems := slice -}}
+  {{- range $feed }}{{- if .ticker }}{{- range .items }}{{- $tickerItems = $tickerItems | append . }}{{- end }}{{- end }}{{- end -}}
+  {{- if $feed }}
+  <div class="news-ticker-wrap">
+    {{- if $tickerItems }}
+    <div class="news-ticker">
+      <span class="news-ticker-label" aria-hidden="true">DfE Update</span>
+      <div class="news-ticker-scroll" role="marquee" aria-label="DfE FE Update headlines">
+        <div class="news-ticker-inner">
+          {{- range $tickerItems }}
+          <span class="news-ticker-item">
+            <a href="{{ .url }}" target="_blank" rel="noopener">{{ or .ticker_headline .headline }}</a>
+          </span>
+          <span class="news-ticker-sep" aria-hidden="true">·</span>
+          {{- end }}
+          {{/* Duplicate for seamless loop */}}
+          {{- range $tickerItems }}
+          <span class="news-ticker-item">
+            <a href="{{ .url }}" target="_blank" rel="noopener">{{ or .ticker_headline .headline }}</a>
+          </span>
+          <span class="news-ticker-sep" aria-hidden="true">·</span>
+          {{- end }}
+        </div>
+      </div>
+      <button class="news-ticker-toggle" id="news-feed-toggle" aria-expanded="false" aria-controls="news-feed-panel">
+        All headlines <span class="news-ticker-caret" aria-hidden="true">▾</span>
+      </button>
+    </div>
+    {{- end }}
+
+    <div class="news-feed-panel" id="news-feed-panel" hidden>
+      <div class="news-feed-inner">
+        <input
+          type="search"
+          id="news-feed-search"
+          class="news-feed-search"
+          placeholder="Filter headlines…"
+          aria-label="Filter DfE Update headlines"
+          autocomplete="off"
+        >
+        <div class="news-feed-list" id="news-feed-list">
+          {{- range $feed }}
+          <div class="news-feed-edition" data-edition="{{ .edition }}">
+            <div class="news-feed-edition-label">
+              <a href="{{ .page_url }}" target="_blank" rel="noopener">{{ .edition }} ↗</a>
+            </div>
+            {{- range .items }}
+            <a href="{{ .url }}" class="news-feed-item" target="_blank" rel="noopener">{{ .headline }}</a>
+            {{- end }}
+          </div>
+          {{- end }}
+        </div>
+      </div>
     </div>
   </div>
   {{- end }}
@@ -373,6 +409,40 @@
           + '&YearFilters=25-26&YearFilters=26-27&Page=1';
         window.open(url, '_blank', 'noopener');
       });
+    })();
+
+    // DfE Update headlines panel — toggle + search filter
+    (function() {
+      var toggle = document.getElementById('news-feed-toggle');
+      var panel  = document.getElementById('news-feed-panel');
+      var search = document.getElementById('news-feed-search');
+      if (!toggle || !panel) return;
+
+      toggle.addEventListener('click', function() {
+        var open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        var caret = toggle.querySelector('.news-ticker-caret');
+        if (caret) caret.textContent = open ? '▾' : '▴';
+        panel.hidden = open;
+        if (!open && search) { search.value = ''; search.focus(); filterItems(''); }
+      });
+
+      function filterItems(q) {
+        var items    = panel.querySelectorAll('.news-feed-item');
+        var editions = panel.querySelectorAll('.news-feed-edition');
+        items.forEach(function(item) {
+          item.hidden = q && !item.textContent.toLowerCase().includes(q);
+        });
+        editions.forEach(function(ed) {
+          ed.hidden = Array.from(ed.querySelectorAll('.news-feed-item')).every(function(it) { return it.hidden; });
+        });
+      }
+
+      if (search) {
+        search.addEventListener('input', function() {
+          filterItems(search.value.toLowerCase().trim());
+        });
+      }
     })();
   </script>
 
