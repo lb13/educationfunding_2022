@@ -164,7 +164,7 @@
             <a href="https://guidance.submit-learner-data.service.gov.uk/" class="section-link" target="_blank" rel="noopener">Guidance portal →</a>
           </div>
           <div class="card card-padded">
-            <p class="ilr-lookup-desc">Search across validation rules, fields, entities, and the Provider Support Manual for both 25/26 and 26/27.</p>
+            <p class="ilr-lookup-desc">Search the 26/27 ILR specification on the DfE guidance portal. Tick record types to narrow results — leave all unchecked to search everything.</p>
             <form class="ilr-spec-form inline-search" id="ilr-spec-form" role="search" aria-label="ILR spec search">
               <input
                 type="search"
@@ -175,6 +175,13 @@
               >
               <button type="submit" class="inline-search-btn">Search ↗</button>
             </form>
+            <div class="ilr-spec-filters" role="group" aria-label="Filter by record type">
+              <label class="ilr-spec-filter"><input type="checkbox" value="ValidationRule"> Validation Rules</label>
+              <label class="ilr-spec-filter"><input type="checkbox" value="PSM"> PSM</label>
+              <label class="ilr-spec-filter"><input type="checkbox" value="AttributeField"> Attribute Fields</label>
+              <label class="ilr-spec-filter"><input type="checkbox" value="Entity"> Entities</label>
+              <label class="ilr-spec-filter"><input type="checkbox" value="Field"> Fields</label>
+            </div>
           </div>
         </section>
 
@@ -393,7 +400,7 @@
       if (input) input.addEventListener('input', updateAimLinks);
     })();
 
-    // ILR Spec Search — opens the guidance portal search in a new tab
+    // ILR Spec Search — builds URL from input + optional type-filter checkboxes
     (function() {
       var form  = document.getElementById('ilr-spec-form');
       var input = document.getElementById('ilr-spec-input');
@@ -403,12 +410,42 @@
         var term = input.value.trim();
         if (!term) return;
         var url = 'https://guidance.submit-learner-data.service.gov.uk/search'
-          + '?SearchTerm=' + encodeURIComponent(term)
-          + '&TypeFilters=ValidationRule&TypeFilters=PSM&TypeFilters=AttributeField'
-          + '&TypeFilters=Entity&TypeFilters=Field'
-          + '&YearFilters=25-26&YearFilters=26-27&Page=1';
+          + '?SearchTerm=' + encodeURIComponent(term);
+        document.querySelectorAll('.ilr-spec-filters input:checked').forEach(function(cb) {
+          url += '&TypeFilters=' + encodeURIComponent(cb.value);
+        });
+        url += '&YearFilters=26-27&Page=1';
         window.open(url, '_blank', 'noopener');
       });
+    })();
+
+    // News ticker — JS-driven RAF animation so hit-testing stays on the main
+    // thread (CSS transform animations run on the compositor thread, creating
+    // a position mismatch that causes first-click on links to miss the target).
+    (function() {
+      var scroll = document.querySelector('.news-ticker-scroll');
+      var inner  = document.querySelector('.news-ticker-inner');
+      if (!scroll || !inner) return;
+      var offset   = 0;
+      var paused   = false;
+      var lastTime = null;
+      var DURATION = 40000; // ms for one full content pass (matches old 40s CSS)
+
+      scroll.addEventListener('mouseenter', function() { paused = true; });
+      scroll.addEventListener('mouseleave', function() { paused = false; });
+
+      function tick(ts) {
+        if (lastTime !== null && !paused) {
+          var half = inner.scrollWidth / 2;
+          if (half > 0) {
+            offset = (offset + half * (ts - lastTime) / DURATION) % half;
+            inner.style.transform = 'translateX(-' + offset.toFixed(2) + 'px)';
+          }
+        }
+        lastTime = ts;
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
     })();
 
     // DfE Update headlines panel — toggle + search filter
