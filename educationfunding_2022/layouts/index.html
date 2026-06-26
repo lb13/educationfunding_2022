@@ -138,7 +138,7 @@
             <h2 class="section-title" id="guidance-search-heading">Guidance Search</h2>
           </div>
           <div class="card card-padded">
-            <p class="ilr-lookup-desc">Type a query and choose a destination — all open in a new tab.</p>
+            <p class="ilr-lookup-desc">Type a query and choose a destination - all open in a new tab.</p>
             <div class="inline-search" role="search" aria-label="Guidance search">
               <input
                 type="search"
@@ -148,16 +148,10 @@
                 autocomplete="off"
               >
             </div>
-            <div class="dfe-search-filter-label">ILR Spec filters <span class="dfe-search-filter-note">(applies to ILR Specification only — leave unchecked to search all types)</span></div>
-            <div class="ilr-spec-filters" role="group" aria-label="Filter ILR spec by record type">
-              <label class="ilr-spec-filter"><input type="checkbox" value="ValidationRule"> Validation Rules</label>
-              <label class="ilr-spec-filter"><input type="checkbox" value="PSM"> PSM</label>
-              <label class="ilr-spec-filter"><input type="checkbox" value="AttributeField"> Monitoring Type</label>
-              <label class="ilr-spec-filter"><input type="checkbox" value="Entity"> Entities</label>
-              <label class="ilr-spec-filter"><input type="checkbox" value="Field"> Fields</label>
-            </div>
             <hr class="card-divider">
-            <div class="aim-btn-list">
+
+            <!-- ILR Spec — button and filters grouped as one visual object -->
+            <div class="ilr-btn-group">
               <a id="dfe-ilr-btn" href="https://guidance.submit-learner-data.service.gov.uk/" class="aim-search-btn" target="_blank" rel="noopener">
                 <div class="aim-link-icon icon-blue" aria-hidden="true">📋</div>
                 <div>
@@ -166,10 +160,21 @@
                 </div>
                 <span class="aim-link-arrow" aria-hidden="true">↗</span>
               </a>
+              <div class="ilr-spec-filters" role="group" aria-label="Filter ILR spec by record type">
+                <label class="ilr-spec-filter"><input type="checkbox" value="ValidationRule"> Validation Rules</label>
+                <label class="ilr-spec-filter"><input type="checkbox" value="PSM"> PSM</label>
+                <label class="ilr-spec-filter"><input type="checkbox" value="AttributeField"> Monitoring Type</label>
+                <label class="ilr-spec-filter"><input type="checkbox" value="Entity"> Entities</label>
+                <label class="ilr-spec-filter"><input type="checkbox" value="Field"> Fields</label>
+              </div>
+            </div>
+
+            <!-- Other services — 2-column grid -->
+            <div class="aim-btn-grid">
               <a id="dfe-kb-btn" href="https://customerhelp.education.gov.uk/hc/en-gb" class="aim-search-btn" target="_blank" rel="noopener">
                 <div class="aim-link-icon icon-green" aria-hidden="true">📖</div>
                 <div>
-                  <div class="aim-link-name">DfE Help — Knowledge Base</div>
+                  <div class="aim-link-name">DfE Help - Knowledge Base</div>
                   <div class="aim-link-sub">Get help with DfE services</div>
                 </div>
                 <span class="aim-link-arrow" aria-hidden="true">↗</span>
@@ -177,7 +182,7 @@
               <a id="dfe-community-btn" href="https://customerhelp.education.gov.uk/hc/en-gb" class="aim-search-btn" target="_blank" rel="noopener">
                 <div class="aim-link-icon icon-purple" aria-hidden="true">💬</div>
                 <div>
-                  <div class="aim-link-name">DfE Help — Community</div>
+                  <div class="aim-link-name">DfE Help - Community</div>
                   <div class="aim-link-sub">Forum posts &amp; discussions</div>
                 </div>
                 <span class="aim-link-arrow" aria-hidden="true">↗</span>
