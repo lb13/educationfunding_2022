@@ -132,55 +132,72 @@
       <!-- LEFT COLUMN -->
       <div class="stack">
 
-        <!-- ILR Rule Lookup -->
-        <section aria-labelledby="ilr-lookup-heading">
+        <!-- Guidance Search -->
+        <section aria-labelledby="guidance-search-heading">
           <div class="section-header">
-            <h2 class="section-title" id="ilr-lookup-heading">ILR Rule Lookup</h2>
+            <h2 class="section-title" id="guidance-search-heading">Guidance Search</h2>
           </div>
           <div class="card card-padded">
-            <div class="ilr-lookup-meta">
-              <p class="ilr-lookup-desc">Search validation rules for the current ILR specification.</p>
-              <div class="version-pill">
-                <span class="version-dot" aria-hidden="true"></span>
-                Version 2526.3 — Live
-              </div>
-            </div>
-            <div class="inline-search" role="search" aria-label="ILR rule search">
+            <p class="ilr-lookup-desc">Type a query and choose a destination — all open in a new tab.</p>
+            <div class="inline-search" role="search" aria-label="Guidance search">
               <input
                 type="search"
-                id="ilr-rule-input"
-                placeholder="e.g. R01, funding model, aim type…"
-                aria-label="Search ILR rules"
-              >
-            </div>
-            <div id="ilr-rule-results"></div>
-          </div>
-        </section>
-
-        <!-- ILR Spec Search -->
-        <section aria-labelledby="ilr-spec-search-heading">
-          <div class="section-header">
-            <h2 class="section-title" id="ilr-spec-search-heading">ILR Spec Search</h2>
-            <a href="https://guidance.submit-learner-data.service.gov.uk/" class="section-link" target="_blank" rel="noopener">Guidance portal →</a>
-          </div>
-          <div class="card card-padded">
-            <p class="ilr-lookup-desc">Search the 26/27 ILR specification on the DfE guidance portal. Tick record types to narrow results — leave all unchecked to search everything.</p>
-            <form class="ilr-spec-form inline-search" id="ilr-spec-form" role="search" aria-label="ILR spec search">
-              <input
-                type="search"
-                id="ilr-spec-input"
-                placeholder="e.g. progtype, LearnActEndDate, R04…"
-                aria-label="Search ILR spec"
+                id="dfe-search-input"
+                placeholder="e.g. progtype, T Level, EPA, funding model…"
+                aria-label="Search query"
                 autocomplete="off"
               >
-              <button type="submit" class="inline-search-btn">Search ↗</button>
-            </form>
-            <div class="ilr-spec-filters" role="group" aria-label="Filter by record type">
+            </div>
+            <div class="dfe-search-filter-label">ILR Spec filters <span class="dfe-search-filter-note">(applies to ILR Specification only — leave unchecked to search all types)</span></div>
+            <div class="ilr-spec-filters" role="group" aria-label="Filter ILR spec by record type">
               <label class="ilr-spec-filter"><input type="checkbox" value="ValidationRule"> Validation Rules</label>
               <label class="ilr-spec-filter"><input type="checkbox" value="PSM"> PSM</label>
               <label class="ilr-spec-filter"><input type="checkbox" value="AttributeField"> Monitoring Type</label>
               <label class="ilr-spec-filter"><input type="checkbox" value="Entity"> Entities</label>
               <label class="ilr-spec-filter"><input type="checkbox" value="Field"> Fields</label>
+            </div>
+            <hr class="card-divider">
+            <div class="aim-btn-list">
+              <a id="dfe-ilr-btn" href="https://guidance.submit-learner-data.service.gov.uk/" class="aim-search-btn" target="_blank" rel="noopener">
+                <div class="aim-link-icon icon-blue" aria-hidden="true">📋</div>
+                <div>
+                  <div class="aim-link-name">ILR Specification</div>
+                  <div class="aim-link-sub">Guidance portal · 26/27</div>
+                </div>
+                <span class="aim-link-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a id="dfe-kb-btn" href="https://customerhelp.education.gov.uk/hc/en-gb" class="aim-search-btn" target="_blank" rel="noopener">
+                <div class="aim-link-icon icon-green" aria-hidden="true">📖</div>
+                <div>
+                  <div class="aim-link-name">DfE Help — Knowledge Base</div>
+                  <div class="aim-link-sub">Get help with DfE services</div>
+                </div>
+                <span class="aim-link-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a id="dfe-community-btn" href="https://customerhelp.education.gov.uk/hc/en-gb" class="aim-search-btn" target="_blank" rel="noopener">
+                <div class="aim-link-icon icon-purple" aria-hidden="true">💬</div>
+                <div>
+                  <div class="aim-link-name">DfE Help — Community</div>
+                  <div class="aim-link-sub">Forum posts &amp; discussions</div>
+                </div>
+                <span class="aim-link-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a id="dfe-app-btn" href="https://help.apprenticeships.education.gov.uk/hc/en-gb" class="aim-search-btn" target="_blank" rel="noopener">
+                <div class="aim-link-icon icon-amber" aria-hidden="true">🎓</div>
+                <div>
+                  <div class="aim-link-name">Apprenticeship Service</div>
+                  <div class="aim-link-sub">Help &amp; guidance</div>
+                </div>
+                <span class="aim-link-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a id="dfe-tlevels-btn" href="https://support.tlevels.gov.uk/hc/en-gb" class="aim-search-btn" target="_blank" rel="noopener">
+                <div class="aim-link-icon icon-blue" aria-hidden="true">🎯</div>
+                <div>
+                  <div class="aim-link-name">T Levels Support</div>
+                  <div class="aim-link-sub">For schools &amp; colleges</div>
+                </div>
+                <span class="aim-link-arrow" aria-hidden="true">↗</span>
+              </a>
             </div>
           </div>
         </section>
@@ -346,7 +363,6 @@
   <!-- Scripts -->
   <script src="/js/elbisearch.js"></script>
   <script src="/js/ilrdates.js"></script>
-  <script src="/js/ilr_rule_lookup.js"></script>
 
   <script>
     // Search hint chips — populate the search input and trigger search
@@ -400,22 +416,41 @@
       if (input) input.addEventListener('input', updateAimLinks);
     })();
 
-    // ILR Spec Search — builds URL from input + optional type-filter checkboxes
+    // Guidance Search — single input drives all DfE service buttons
     (function() {
-      var form  = document.getElementById('ilr-spec-form');
-      var input = document.getElementById('ilr-spec-input');
-      if (!form || !input) return;
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var term = input.value.trim();
-        if (!term) return;
-        var url = 'https://guidance.submit-learner-data.service.gov.uk/search'
-          + '?SearchTerm=' + encodeURIComponent(term);
-        document.querySelectorAll('.ilr-spec-filters input:checked').forEach(function(cb) {
-          url += '&TypeFilters=' + encodeURIComponent(cb.value);
+      var input        = document.getElementById('dfe-search-input');
+      var ilrBtn       = document.getElementById('dfe-ilr-btn');
+      var kbBtn        = document.getElementById('dfe-kb-btn');
+      var communityBtn = document.getElementById('dfe-community-btn');
+      var appBtn       = document.getElementById('dfe-app-btn');
+      var tlevelsBtn   = document.getElementById('dfe-tlevels-btn');
+      var checkboxes   = document.querySelectorAll('.ilr-spec-filters input[type="checkbox"]');
+      if (!input) return;
+
+      function buildIlrUrl(q) {
+        if (!q) return 'https://guidance.submit-learner-data.service.gov.uk/';
+        var url = 'https://guidance.submit-learner-data.service.gov.uk/search?SearchTerm=' + encodeURIComponent(q);
+        checkboxes.forEach(function(cb) {
+          if (cb.checked) url += '&TypeFilters=' + encodeURIComponent(cb.value);
         });
-        url += '&YearFilters=26-27&Page=1';
-        window.open(url, '_blank', 'noopener');
+        return url + '&YearFilters=26-27&Page=1';
+      }
+
+      function updateAll() {
+        var q   = input.value.trim();
+        var enc = encodeURIComponent(q);
+        if (ilrBtn)       ilrBtn.href       = buildIlrUrl(q);
+        if (kbBtn)        kbBtn.href        = q ? 'https://customerhelp.education.gov.uk/hc/en-gb/search?filter_by=knowledge_base&query=' + enc + '&utf8=%E2%9C%93&articles=true' : 'https://customerhelp.education.gov.uk/hc/en-gb';
+        if (communityBtn) communityBtn.href = q ? 'https://customerhelp.education.gov.uk/hc/en-gb/search?filter_by=community&query=' + enc + '&utf8=%E2%9C%93' : 'https://customerhelp.education.gov.uk/hc/en-gb';
+        if (appBtn)       appBtn.href       = q ? 'https://help.apprenticeships.education.gov.uk/hc/en-gb/search?utf8=%E2%9C%93&query=' + enc : 'https://help.apprenticeships.education.gov.uk/hc/en-gb';
+        if (tlevelsBtn)   tlevelsBtn.href   = q ? 'https://support.tlevels.gov.uk/hc/en-gb/search?utf8=%E2%9C%93&query=' + enc + '&filter_by=knowledge_base' : 'https://support.tlevels.gov.uk/hc/en-gb';
+      }
+
+      input.addEventListener('input', updateAll);
+      checkboxes.forEach(function(cb) {
+        cb.addEventListener('change', function() {
+          if (ilrBtn) ilrBtn.href = buildIlrUrl(input.value.trim());
+        });
       });
     })();
 
