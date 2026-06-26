@@ -1392,6 +1392,25 @@ a.tag:hover { background: var(--border); }
   text-decoration: underline;
 }
 
+/* Guidance Search — filter section label */
+.dfe-search-filter-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-2);
+}
+
+.dfe-search-filter-note {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
 /* ILR Spec Search — filter checkboxes */
 .ilr-spec-filters {
   display: flex;
