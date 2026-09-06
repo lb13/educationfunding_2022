@@ -44,18 +44,23 @@ Rules:
 
 ## 4. Identify resources to add
 
-Not every item needs a resource entry. Add one when the item announces or links to:
-- A new or updated **guidance document** (funding rules, handbooks, technical guides)
-- A new **tool or service** with a stable gov.uk URL
-- A new **published dataset** or reference file
+Every outbound link within a DfE Update edition is worth evaluating independently — not just the primary publication a section headline refers to. A section may link several useful documents in passing, any of which could be missing from the index.
 
-Skip:
-- Pure news/announcements with no standalone publication (e.g. "AoC to deliver X from autumn")
-- Feedback/survey requests
-- Deadline reminders that don't link to a new document
-- Items that duplicate an existing resource (check `content/resources/` first)
+**How to sweep for links:**
+For each edition page, fetch the full HTML and extract **all** outbound `href` values that point to `gov.uk`, `education.gov.uk`, or other authoritative sources. For each link, check whether we already have a resource for it (search `content/resources/` by URL or keyword). If not, evaluate it:
 
-For each candidate, fetch the **DfE Update edition page** and find the link to the **underlying gov.uk publication** — the resource URL is that destination, not the DfE Update anchor.
+**Add a resource when the link points to:**
+- A guidance document (funding rules, handbooks, technical guides)
+- A tool or service with a stable URL (portals, data collection systems)
+- A published dataset or reference file
+- Updated/new year-specific versions of existing guidance
+
+**Skip when the link points to:**
+- The DfE Update page itself or its anchors
+- Feedback surveys or consultation forms with no lasting value
+- External non-gov sites (e.g. AoC, NCFE) unless they are primary reference sources
+- Something we already have indexed at the same or equivalent URL
+- Pure news/announcements with no standalone publication artefact
 
 ---
 
