@@ -475,27 +475,6 @@ a { color: inherit; }
 .icon-amber  { background: #fef3c7; }
 .icon-purple { background: #ede9fe; }
 
-/* Collapsible quick-link group (details/summary) */
-.ql-group { border: none; }
-.ql-group summary { list-style: none; }
-.ql-group summary::-webkit-details-marker { display: none; }
-.ql-group-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
-  padding: var(--sp-2) 0;
-  cursor: pointer;
-  user-select: none;
-}
-.ql-group-header:hover { color: var(--text-primary); }
-.ql-group-caret { font-size: 0.8em; transition: transform 0.2s; }
-.ql-group[open] .ql-group-caret { transform: rotate(180deg); }
-.ql-group-body { margin-top: var(--sp-1); }
 
 .support-card {
   background: #fffbef;
