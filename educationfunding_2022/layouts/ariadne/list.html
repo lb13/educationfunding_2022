@@ -1,0 +1,598 @@
+{{ define "title" }}Ariadne - List &amp; Delimiter Converter{{ end }}
+
+{{ define "styles" }}
+<style>
+/* ============================================================
+   Ariadne tool — adapted to EF·UK design tokens
+============================================================ */
+
+:root {
+  --ar-bg:           #f3f4f8;
+  --ar-surface:      #ffffff;
+  --ar-surface-alt:  #f7f8fb;
+  --ar-border:       #dde1ea;
+  --ar-text:         #111827;
+  --ar-text-dim:     #4b5563;
+  --ar-text-faint:   #6b7280;
+  --ar-blue:         #1d5fad;
+  --ar-blue-soft:    rgba(29, 95, 173, 0.08);
+  --ar-blue-border:  rgba(29, 95, 173, 0.18);
+  --ar-green:        #1a9e6a;
+  --ar-sky:          #3b8fe8;
+  --ar-amber:        #e8a020;
+  --ar-mono:         ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+body.page-ariadne {
+  background: var(--ar-bg);
+}
+
+.ar-wrap {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2.5rem 1.75rem 5rem;
+}
+
+/* Page header */
+.ar-page-header {
+  margin-bottom: 1.75rem;
+}
+.ar-page-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-optical-sizing: auto;
+  color: var(--ar-text);
+  margin: 0 0 0.3rem;
+}
+.ar-page-desc {
+  color: var(--ar-text-dim);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+/* Mode tabs */
+.ar-tabs {
+  display: inline-flex;
+  background: var(--ar-surface);
+  border: 1.5px solid var(--ar-border);
+  border-radius: 999px;
+  padding: 4px;
+  margin-bottom: 1.5rem;
+  gap: 3px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.ar-tab {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ar-text-dim);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.ar-tab.active {
+  background: var(--navy);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(14,30,61,0.22);
+}
+.ar-tab:hover:not(.active) {
+  color: var(--ar-text);
+  background: var(--ar-surface-alt);
+}
+
+/* Preset label + row */
+.ar-presets-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ar-text-faint);
+  margin: 0 0 0.5rem 0.125rem;
+}
+.ar-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.ar-preset-btn {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.76rem;
+  color: var(--ar-blue);
+  background: var(--ar-blue-soft);
+  border: 1.5px solid var(--ar-blue-border);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.12s ease, box-shadow 0.12s ease;
+  white-space: nowrap;
+}
+.ar-preset-btn:hover {
+  background: var(--ar-blue);
+  color: #fff;
+  border-color: var(--ar-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(29,95,173,0.22);
+}
+.ar-preset-btn:active { transform: translateY(0); }
+
+/* Panel title */
+.ar-panel-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--ar-text);
+  margin: 0 0 0.6rem 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.ar-count {
+  color: var(--ar-text-faint);
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+
+/* 2-col I/O grid */
+.ar-io-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.375rem;
+  margin-bottom: 1.625rem;
+}
+@media (max-width: 860px) {
+  .ar-io-grid { grid-template-columns: 1fr; }
+}
+
+/* Textareas */
+textarea.ar-ta {
+  width: 100%;
+  height: 280px;
+  background: var(--ar-surface);
+  border: 1.5px solid var(--ar-border);
+  border-radius: 12px;
+  color: var(--ar-text);
+  font-family: var(--ar-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 1rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  box-sizing: border-box;
+}
+textarea.ar-ta:focus {
+  border-color: var(--ar-blue);
+  box-shadow: 0 0 0 3px rgba(29,95,173,0.1);
+}
+textarea.ar-ta::placeholder {
+  color: var(--ar-text-faint);
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+textarea.ar-ta[readonly] {
+  background: var(--ar-surface-alt);
+}
+
+/* Output wrap + copy button */
+.ar-output-wrap { position: relative; }
+.ar-copy-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.74rem;
+  background: var(--ar-green);
+  border: none;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(26,158,106,0.28);
+  transition: transform 0.1s ease, background 0.12s ease;
+}
+.ar-copy-btn:hover { transform: translateY(-1px); background: #158a5a; }
+.ar-copy-btn.copied { background: var(--ar-sky); }
+.ar-copy-btn.copy-failed {
+  background: var(--ar-amber);
+  color: var(--ar-text);
+  font-size: 0.65rem;
+}
+
+/* Fieldset */
+fieldset.ar-fieldset {
+  border: 1.5px solid var(--ar-border);
+  border-radius: 16px;
+  padding: 1.25rem 1.375rem 1.375rem;
+  margin: 0 0 1.5rem;
+  background: var(--ar-surface);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+legend.ar-legend {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+  color: var(--ar-blue);
+  background: var(--ar-blue-soft);
+  border: 1px solid var(--ar-blue-border);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* Controls grid inside fieldset */
+.ar-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem 1.25rem;
+}
+.ar-field label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.73rem;
+  color: var(--ar-text-dim);
+  margin-bottom: 0.375rem;
+}
+.ar-field input[type="text"] {
+  width: 100%;
+  background: var(--ar-bg);
+  border: 1.5px solid var(--ar-border);
+  border-radius: 8px;
+  color: var(--ar-text);
+  font-family: var(--ar-mono);
+  font-size: 0.8rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+.ar-field input[type="text"]:focus {
+  border-color: var(--ar-blue);
+  box-shadow: 0 0 0 3px rgba(29,95,173,0.1);
+}
+
+/* Toggles */
+.ar-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.375rem;
+  margin-top: 1rem;
+}
+.ar-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--ar-text-dim);
+  cursor: pointer;
+  user-select: none;
+}
+.ar-toggle input[type="checkbox"] {
+  accent-color: var(--ar-blue);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.ar-toggle:hover { color: var(--ar-text); }
+
+.ar-hidden { display: none !important; }
+</style>
+{{ end }}
+
+{{ define "body-class" }}page-ariadne{{ end }}
+
+{{ define "main" }}
+<div class="ar-wrap">
+
+  <div class="ar-page-header">
+    <h1 class="ar-page-title">Ariadne</h1>
+    <p class="ar-page-desc">Join a list into a delimited string, or split a string back into a list. All processing happens in your browser.</p>
+  </div>
+
+  <div class="ar-tabs">
+    <button class="ar-tab active" data-mode="join">Join List</button>
+    <button class="ar-tab" data-mode="split">Split String</button>
+  </div>
+
+  <!-- JOIN MODE -->
+  <div id="join-mode">
+    <div class="ar-presets-label">Quick formats</div>
+    <div class="ar-presets" id="join-presets"></div>
+
+    <fieldset class="ar-fieldset">
+      <legend class="ar-legend">Format</legend>
+      <div class="ar-controls">
+        <div class="ar-field">
+          <label for="j-prefix">Prefix (each item)</label>
+          <input type="text" id="j-prefix" placeholder="e.g. '">
+        </div>
+        <div class="ar-field">
+          <label for="j-suffix">Suffix (each item)</label>
+          <input type="text" id="j-suffix" placeholder="e.g. '">
+        </div>
+        <div class="ar-field">
+          <label for="j-delim">Delimiter (between items)</label>
+          <input type="text" id="j-delim" value=", ">
+        </div>
+        <div class="ar-field">
+          <label for="j-wrap-prefix">Wrap whole result - before</label>
+          <input type="text" id="j-wrap-prefix" placeholder="e.g. (">
+        </div>
+        <div class="ar-field">
+          <label for="j-wrap-suffix">Wrap whole result - after</label>
+          <input type="text" id="j-wrap-suffix" placeholder="e.g. )">
+        </div>
+      </div>
+      <div class="ar-toggles">
+        <label class="ar-toggle"><input type="checkbox" id="j-trim" checked> Trim whitespace</label>
+        <label class="ar-toggle"><input type="checkbox" id="j-empty" checked> Remove empty lines</label>
+        <label class="ar-toggle"><input type="checkbox" id="j-dupes"> Remove duplicates</label>
+        <label class="ar-toggle"><input type="checkbox" id="j-sort"> Sort alphabetically</label>
+      </div>
+    </fieldset>
+
+    <div class="ar-io-grid">
+      <div>
+        <div class="ar-panel-title">
+          <span>Input - one item per line</span>
+          <span class="ar-count" id="j-in-count">0 lines</span>
+        </div>
+        <textarea class="ar-ta" id="j-input" placeholder="Paste your list here, one item per line…"></textarea>
+      </div>
+      <div>
+        <div class="ar-panel-title">
+          <span>Output</span>
+          <span class="ar-count" id="j-out-count">0 characters</span>
+        </div>
+        <div class="ar-output-wrap">
+          <textarea class="ar-ta" id="j-output" readonly placeholder="Result appears here…"></textarea>
+          <button class="ar-copy-btn" id="j-copy">copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPLIT MODE -->
+  <div id="split-mode" class="ar-hidden">
+    <div class="ar-presets-label">Quick formats</div>
+    <div class="ar-presets" id="split-presets"></div>
+
+    <fieldset class="ar-fieldset">
+      <legend class="ar-legend">Format</legend>
+      <div class="ar-controls">
+        <div class="ar-field">
+          <label for="s-delim">Split on</label>
+          <input type="text" id="s-delim" value=",">
+        </div>
+        <div class="ar-field">
+          <label for="s-strip">Strip from each item</label>
+          <input type="text" id="s-strip" placeholder="e.g. quote marks">
+        </div>
+      </div>
+      <div class="ar-toggles">
+        <label class="ar-toggle"><input type="checkbox" id="s-trim" checked> Trim whitespace</label>
+        <label class="ar-toggle"><input type="checkbox" id="s-empty" checked> Remove empty items</label>
+        <label class="ar-toggle"><input type="checkbox" id="s-dupes"> Remove duplicates</label>
+        <label class="ar-toggle"><input type="checkbox" id="s-sort"> Sort alphabetically</label>
+      </div>
+    </fieldset>
+
+    <div class="ar-io-grid">
+      <div>
+        <div class="ar-panel-title">
+          <span>Input - delimited string</span>
+          <span class="ar-count" id="s-in-count">0 characters</span>
+        </div>
+        <textarea class="ar-ta" id="s-input" placeholder="Paste a delimited string here, e.g. apple, banana, cherry"></textarea>
+      </div>
+      <div>
+        <div class="ar-panel-title">
+          <span>Output - one item per line</span>
+          <span class="ar-count" id="s-out-count">0 lines</span>
+        </div>
+        <div class="ar-output-wrap">
+          <textarea class="ar-ta" id="s-output" readonly placeholder="Result appears here…"></textarea>
+          <button class="ar-copy-btn" id="s-copy">copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+
+  // tab switching
+  const tabs = document.querySelectorAll('.ar-tab');
+  const joinMode = $('join-mode');
+  const splitMode = $('split-mode');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    if (t.dataset.mode === 'join') {
+      joinMode.classList.remove('ar-hidden');
+      splitMode.classList.add('ar-hidden');
+    } else {
+      splitMode.classList.remove('ar-hidden');
+      joinMode.classList.add('ar-hidden');
+    }
+  }));
+
+  function escapeRegExp(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  // ===== JOIN MODE =====
+  const jInput = $('j-input'), jOutput = $('j-output');
+  const jPrefix = $('j-prefix'), jSuffix = $('j-suffix'), jDelim = $('j-delim');
+  const jWrapPrefix = $('j-wrap-prefix'), jWrapSuffix = $('j-wrap-suffix');
+  const jTrim = $('j-trim'), jEmpty = $('j-empty'), jDupes = $('j-dupes'), jSort = $('j-sort');
+  const jInCount = $('j-in-count'), jOutCount = $('j-out-count');
+
+  const joinPresets = [
+    {label: 'Comma list',      apply: () => setVals({prefix:'',   suffix:'',  delim:', ',  wp:'',  ws:''})},
+    {label: 'Quoted CSV',      apply: () => setVals({prefix:'"',  suffix:'"', delim:', ',  wp:'',  ws:''})},
+    {label: 'SQL IN clause',   apply: () => setVals({prefix:"'",  suffix:"'", delim:', ',  wp:'(', ws:')'})},
+    {label: 'JSON array',      apply: () => setVals({prefix:'"',  suffix:'"', delim:', ',  wp:'[', ws:']'})},
+    {label: 'Markdown list',   apply: () => setVals({prefix:'- ', suffix:'',  delim:'\n',  wp:'',  ws:''})},
+    {label: 'Newline',         apply: () => setVals({prefix:'',   suffix:'',  delim:'\n',  wp:'',  ws:''})},
+    {label: 'Space separated', apply: () => setVals({prefix:'',   suffix:'',  delim:' ',   wp:'',  ws:''})},
+    {label: 'Tab separated',   apply: () => setVals({prefix:'',   suffix:'',  delim:'\t',  wp:'',  ws:''})},
+  ];
+
+  function setVals({prefix, suffix, delim, wp, ws}) {
+    jPrefix.value = prefix; jSuffix.value = suffix; jDelim.value = delim;
+    jWrapPrefix.value = wp; jWrapSuffix.value = ws;
+    runJoin();
+  }
+
+  const joinPresetContainer = $('join-presets');
+  joinPresets.forEach(p => {
+    const btn = document.createElement('button');
+    btn.className = 'ar-preset-btn';
+    btn.textContent = p.label;
+    btn.addEventListener('click', p.apply);
+    joinPresetContainer.appendChild(btn);
+  });
+
+  function runJoin() {
+    let lines = jInput.value.split('\n');
+    if (jTrim.checked)  lines = lines.map(l => l.trim());
+    if (jEmpty.checked) lines = lines.filter(l => l.length > 0);
+    if (jDupes.checked) lines = [...new Set(lines)];
+    if (jSort.checked)  lines = [...lines].sort((a,b) => a.localeCompare(b));
+
+    const prefix = jPrefix.value, suffix = jSuffix.value;
+    const delim = jDelim.value.replace(/\\n/g, '\n').replace(/\\t/g, '\t');
+    const wrapped = lines.map(l => prefix + l + suffix);
+    const joined = jWrapPrefix.value + wrapped.join(delim) + jWrapSuffix.value;
+
+    jOutput.value = joined;
+    jInCount.textContent = lines.length + (lines.length === 1 ? ' line' : ' lines');
+    jOutCount.textContent = joined.length + ' characters';
+  }
+
+  [jInput, jPrefix, jSuffix, jDelim, jWrapPrefix, jWrapSuffix, jTrim, jEmpty, jDupes, jSort]
+    .forEach(el => el.addEventListener('input', runJoin));
+
+  $('j-copy').addEventListener('click', () => copyText(jOutput, $('j-copy')));
+
+  // ===== SPLIT MODE =====
+  const sInput = $('s-input'), sOutput = $('s-output');
+  const sDelim = $('s-delim'), sStrip = $('s-strip');
+  const sTrim = $('s-trim'), sEmpty = $('s-empty'), sDupes = $('s-dupes'), sSort = $('s-sort');
+  const sInCount = $('s-in-count'), sOutCount = $('s-out-count');
+
+  const splitPresets = [
+    {label: 'Split on comma',       apply: () => { sDelim.value = ',';   sStrip.value = ''; runSplit(); }},
+    {label: 'Split on comma+space', apply: () => { sDelim.value = ', ';  sStrip.value = ''; runSplit(); }},
+    {label: 'Unquote CSV',          apply: () => { sDelim.value = ',';   sStrip.value = '"'; runSplit(); }},
+    {label: 'Split on newline',     apply: () => { sDelim.value = '\\n'; sStrip.value = ''; runSplit(); }},
+    {label: 'Split on space',       apply: () => { sDelim.value = ' ';   sStrip.value = ''; runSplit(); }},
+    {label: 'Split on tab',         apply: () => { sDelim.value = '\\t'; sStrip.value = ''; runSplit(); }},
+    {label: 'Split on pipe',        apply: () => { sDelim.value = '|';   sStrip.value = ''; runSplit(); }},
+    {label: 'Split on semicolon',   apply: () => { sDelim.value = ';';   sStrip.value = ''; runSplit(); }},
+  ];
+
+  const splitPresetContainer = $('split-presets');
+  splitPresets.forEach(p => {
+    const btn = document.createElement('button');
+    btn.className = 'ar-preset-btn';
+    btn.textContent = p.label;
+    btn.addEventListener('click', p.apply);
+    splitPresetContainer.appendChild(btn);
+  });
+
+  function runSplit() {
+    const raw = sInput.value;
+    let delim = sDelim.value.replace(/\\n/g, '\n').replace(/\\t/g, '\t');
+    let items = delim.length === 0 ? [raw] : raw.split(delim);
+
+    const stripChars = sStrip.value;
+    if (stripChars.length) {
+      const escaped = escapeRegExp(stripChars);
+      const re = new RegExp('^' + escaped + '+|' + escaped + '+$', 'g');
+      items = items.map(i => i.replace(re, ''));
+    }
+
+    if (sTrim.checked)  items = items.map(i => i.trim());
+    if (sEmpty.checked) items = items.filter(i => i.length > 0);
+    if (sDupes.checked) items = [...new Set(items)];
+    if (sSort.checked)  items = [...items].sort((a,b) => a.localeCompare(b));
+
+    const result = items.join('\n');
+    sOutput.value = result;
+    sInCount.textContent = raw.length + ' characters';
+    sOutCount.textContent = items.length + (items.length === 1 ? ' line' : ' lines');
+  }
+
+  [sInput, sDelim, sStrip, sTrim, sEmpty, sDupes, sSort]
+    .forEach(el => el.addEventListener('input', runSplit));
+
+  $('s-copy').addEventListener('click', () => copyText(sOutput, $('s-copy')));
+
+  // copy helper
+  function flashButton(btn, label, isError) {
+    btn.textContent = label;
+    btn.classList.toggle('copied', !isError);
+    btn.classList.toggle('copy-failed', !!isError);
+    setTimeout(() => {
+      btn.textContent = 'copy';
+      btn.classList.remove('copied', 'copy-failed');
+    }, isError ? 2200 : 1200);
+  }
+
+  function legacyCopy(textarea) {
+    const wasReadOnly = textarea.hasAttribute('readonly');
+    textarea.removeAttribute('readonly');
+    textarea.focus();
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch(e) { ok = false; }
+    if (wasReadOnly) textarea.setAttribute('readonly', '');
+    return ok;
+  }
+
+  function copyText(textarea, btn) {
+    const text = textarea.value;
+    if (!text) return;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(() => {
+        flashButton(btn, 'copied ✓', false);
+      }).catch(() => {
+        const ok = legacyCopy(textarea);
+        flashButton(btn, ok ? 'copied ✓' : 'select — press ⌘/Ctrl+C', !ok);
+      });
+    } else {
+      const ok = legacyCopy(textarea);
+      flashButton(btn, ok ? 'copied ✓' : 'select — press ⌘/Ctrl+C', !ok);
+    }
+  }
+
+  // seed examples on first load
+  jInput.value = 'Bath\nWeston\nFrome\nMidsomer Norton';
+  runJoin();
+  sInput.value = "'Bath', 'Weston', 'Frome', 'Midsomer Norton'";
+  runSplit();
+})();
+</script>
+{{ end }}
