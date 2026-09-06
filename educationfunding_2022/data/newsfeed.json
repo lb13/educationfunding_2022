@@ -1,37 +1,267 @@
 [
   {
-    "edition": "24 June 2026",
-    "page_url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026",
+    "edition": "2 September 2026",
+    "page_url": "https://www.gov.uk/government/publications/dfe-update-2-september-2026/dfe-update-further-education-2-september-2026",
     "ticker": true,
     "items": [
       {
+        "headline": "How to claim exceptional learning support for funding year 2026 to 2027",
+        "ticker_headline": "Exceptional Learning Support - how to claim for 2026/27",
+        "url": "https://www.gov.uk/government/publications/dfe-update-2-september-2026/dfe-update-further-education-2-september-2026#action-how-to-claim-exceptional-learning-support-for-funding-year-2026-to-2027"
+      },
+      {
+        "headline": "Help us recruit participants for early years qualifications research",
+        "url": "https://www.gov.uk/government/publications/dfe-update-2-september-2026/dfe-update-further-education-2-september-2026#action-help-us-recruit-participants-for-early-years-qualifications-research"
+      },
+      {
+        "headline": "Adult skills fund funding calculation rule-base for funding year 2025 to 2026",
+        "ticker_headline": "ASF Funding Calculation Rule-base for 2025/26 published",
+        "url": "https://www.gov.uk/government/publications/dfe-update-2-september-2026/dfe-update-further-education-2-september-2026#information-adult-skills-fund-for-funding-calculation-rule-base-for-funding-year-2025-to-2026"
+      },
+      {
+        "headline": "Young people from households receiving Universal Credit can now receive FE free meals, regardless of household earnings",
+        "ticker_headline": "Universal Credit households now eligible for FE free meals",
+        "url": "https://www.gov.uk/government/publications/dfe-update-2-september-2026/dfe-update-further-education-2-september-2026#information-young-people-from-households-receiving-universal-credit-can-now-receive-fe-free-meals-regardless-of-household-earnings"
+      }
+    ]
+  },
+  {
+    "edition": "19 August 2026",
+    "page_url": "https://www.gov.uk/government/publications/dfe-update-19-august-2026/dfe-update-further-education-19-august-2026",
+    "ticker": false,
+    "items": [
+      {
+        "headline": "Further education workforce data collection for 2025 to 2026 is now open",
+        "url": "https://www.gov.uk/government/publications/dfe-update-19-august-2026/dfe-update-further-education-19-august-2026#action-further-education-workforce-data-collection-for-2025-to-2026-is-now-open"
+      },
+      {
+        "headline": "16 to 19 in-year growth funding for 2026 to 2027 academic year",
+        "url": "https://www.gov.uk/government/publications/dfe-update-19-august-2026/dfe-update-further-education-19-august-2026#information-16-to-19-in-year-growth-funding-for-2026-to-2027-academic-year"
+      },
+      {
+        "headline": "Earnings adjustment statement",
+        "url": "https://www.gov.uk/government/publications/dfe-update-19-august-2026/dfe-update-further-education-19-august-2026#information-earnings-adjustment-statement"
+      },
+      {
+        "headline": "Understand your funding dashboards updated for 2026 to 2027",
+        "url": "https://www.gov.uk/government/publications/dfe-update-19-august-2026/dfe-update-further-education-19-august-2026#information-understand-your-funding-dashboards-updated-for-2026-to-2027"
+      },
+      {
+        "headline": "Updated guidance for colleges on streamlined energy and carbon reporting",
+        "url": "https://www.gov.uk/government/publications/dfe-update-19-august-2026/dfe-update-further-education-19-august-2026#information-updated-guidance-for-colleges-on-streamlined-energy-and-carbon-reporting"
+      },
+      {
+        "headline": "New DfE newsletter for directors of children's services from September 2026",
+        "url": "https://www.gov.uk/government/publications/dfe-update-19-august-2026/dfe-update-further-education-19-august-2026#information-new-dfe-newsletter-for-directors-of-childrens-services-from-september-2026"
+      }
+    ]
+  },
+  {
+    "edition": "5 August 2026",
+    "page_url": "https://www.gov.uk/government/publications/dfe-update-5-august-2026/dfe-update-further-education-5-august-2026",
+    "ticker": false,
+    "items": [
+      {
+        "headline": "Submit your estimated 16 to 19 participation data",
+        "url": "https://www.gov.uk/government/publications/dfe-update-5-august-2026/dfe-update-further-education-5-august-2026#action-submit-your-estimated-16-to-19-participation-data"
+      },
+      {
+        "headline": "Download your post-16 monitoring reports",
+        "url": "https://www.gov.uk/government/publications/dfe-update-5-august-2026/dfe-update-further-education-5-august-2026#action-download-your-post-16-monitoring-reports"
+      },
+      {
+        "headline": "Essential digital skills standards published",
+        "url": "https://www.gov.uk/government/publications/dfe-update-5-august-2026/dfe-update-further-education-5-august-2026#information-essential-digital-skills-standards-published"
+      },
+      {
+        "headline": "New funding models added to enter learning data",
+        "url": "https://www.gov.uk/government/publications/dfe-update-5-august-2026/dfe-update-further-education-5-august-2026#information-new-funding-models-added-to-enter-learning-data"
+      },
+      {
+        "headline": "Apprenticeships and apprenticeship unit documents published for August 2026",
+        "url": "https://www.gov.uk/government/publications/dfe-update-5-august-2026/dfe-update-further-education-5-august-2026#information-apprenticeships-and-apprenticeship-unit-documents-published-for-august-2026"
+      },
+      {
+        "headline": "Growth and Skills Levy funds financial support for hiring young apprentices",
+        "url": "https://www.gov.uk/government/publications/dfe-update-5-august-2026/dfe-update-further-education-5-august-2026#information-growth-and-skills-levy-funds-financial-support-for-hiring-young-apprentices"
+      },
+      {
+        "headline": "Apprenticeship guidance and templates updates",
+        "url": "https://www.gov.uk/government/publications/dfe-update-5-august-2026/dfe-update-further-education-5-august-2026#information-apprenticeship-guidance-and-templates-updates"
+      },
+      {
+        "headline": "Further education sector financial data collection dry run - Q1 submission deadline",
+        "url": "https://www.gov.uk/government/publications/dfe-update-5-august-2026/dfe-update-further-education-5-august-2026#reminders-further-education-sector-financial-data-collection-dry-run--q1-submission-deadline"
+      }
+    ]
+  },
+  {
+    "edition": "22 July 2026",
+    "page_url": "https://www.gov.uk/government/publications/dfe-update-22-july-2026/dfe-update-further-education-22-july-2026",
+    "ticker": false,
+    "items": [
+      {
+        "headline": "Final request to upload your subcontracting standard evidence by Monday 31 August 2026",
+        "url": "https://www.gov.uk/government/publications/dfe-update-22-july-2026/dfe-update-further-education-22-july-2026#action-final-request-to-upload-your-subcontracting-standard-evidence-by-monday-31-august-2026"
+      },
+      {
+        "headline": "2025 to 2026 qualification achievement rates guidance published",
+        "url": "https://www.gov.uk/government/publications/dfe-update-22-july-2026/dfe-update-further-education-22-july-2026#information-2025-to-2026-qualification-achievement-rates-guidance-published"
+      },
+      {
+        "headline": "Update to college financial planning handbook",
+        "url": "https://www.gov.uk/government/publications/dfe-update-22-july-2026/dfe-update-further-education-22-july-2026#information-update-to-college-financial-planning-handbook"
+      },
+      {
+        "headline": "Apprenticeship funding rules for 2026 to 2027",
+        "url": "https://www.gov.uk/government/publications/dfe-update-22-july-2026/dfe-update-further-education-22-july-2026#information-apprenticeship-funding-rules-for-2026-to-2027"
+      },
+      {
+        "headline": "Apprenticeship unit funding rules for 2026 to 2027",
+        "url": "https://www.gov.uk/government/publications/dfe-update-22-july-2026/dfe-update-further-education-22-july-2026#information-apprenticeship-unit-funding-rules-for-2026-to-2027"
+      },
+      {
+        "headline": "Apprenticeship unit technical funding guide from August 2026",
+        "url": "https://www.gov.uk/government/publications/dfe-update-22-july-2026/dfe-update-further-education-22-july-2026#information-apprenticeship-unit-technical-funding-guide-from-august-2026"
+      },
+      {
+        "headline": "Apprenticeship workforce development resources",
+        "url": "https://www.gov.uk/government/publications/dfe-update-22-july-2026/dfe-update-further-education-22-july-2026#information-apprenticeship-workforce-development-resources"
+      },
+      {
+        "headline": "Skills Bootcamp eligibility extended for young people",
+        "url": "https://www.gov.uk/government/publications/dfe-update-22-july-2026/dfe-update-further-education-22-july-2026#information-skills-bootcamp-eligibility-extended-for-young-people"
+      }
+    ]
+  },
+  {
+    "edition": "15 July 2026",
+    "page_url": "https://www.gov.uk/government/publications/dfe-update-15-july-2026/dfe-update-further-education-15-july-2026",
+    "ticker": false,
+    "items": [
+      {
+        "headline": "Continue providing free school meals and free meals in further education where eligibility checks are outstanding",
+        "url": "https://www.gov.uk/government/publications/dfe-update-15-july-2026/dfe-update-further-education-15-july-2026#action-continue-providing-free-school-meals-and-free-meals-in-further-education-where-eligibility-checks-are-outstanding"
+      },
+      {
+        "headline": "Further Education Workforce Data Collection opens on Friday 31 July",
+        "url": "https://www.gov.uk/government/publications/dfe-update-15-july-2026/dfe-update-further-education-15-july-2026#information-further-education-workforce-data-collection-opens-on-friday-31-july"
+      },
+      {
+        "headline": "Free courses for jobs engineering and manufacturing package",
+        "url": "https://www.gov.uk/government/publications/dfe-update-15-july-2026/dfe-update-further-education-15-july-2026#information-free-courses-for-jobs-engineering-and-manufacturing-package"
+      },
+      {
+        "headline": "Further education estate management standards publication",
+        "url": "https://www.gov.uk/government/publications/dfe-update-15-july-2026/dfe-update-further-education-15-july-2026#information-further-educationestate-management-standards-publication"
+      },
+      {
+        "headline": "Register now on the new Teachers' Pensions Employer Portal",
+        "url": "https://www.gov.uk/government/publications/dfe-update-15-july-2026/dfe-update-further-education-15-july-2026#reminder-register-now-on-the-new-teachers-pensions-employer-portal"
+      },
+      {
+        "headline": "Tell us about your experience of our funding service",
+        "url": "https://www.gov.uk/government/publications/dfe-update-15-july-2026/dfe-update-further-education-15-july-2026#feedback-tell-us-about-your-experience-of-our-funding-service"
+      }
+    ]
+  },
+  {
+    "edition": "8 July 2026",
+    "page_url": "https://www.gov.uk/government/publications/dfe-update-8-july-2026/dfe-update-further-education-8-july-2026",
+    "ticker": false,
+    "items": [
+      {
+        "headline": "DfE education and skills agreements and accountability agreements for 2026 to 2027 funding year",
+        "url": "https://www.gov.uk/government/publications/dfe-update-8-july-2026/dfe-update-further-education-8-july-2026#action-dfe-education-and-skills-agreements-and-accountability-agreements-for-2026-to-2027-funding-year"
+      },
+      {
+        "headline": "Download your post-16 monitoring reports",
+        "url": "https://www.gov.uk/government/publications/dfe-update-8-july-2026/dfe-update-further-education-8-july-2026#action-download-your-post-16-monitoring-reports"
+      },
+      {
+        "headline": "FE funding update for 2026 to 2027 and 2027 to 2028 financial years",
+        "url": "https://www.gov.uk/government/publications/dfe-update-8-july-2026/dfe-update-further-education-8-july-2026#information-fe-funding-update-for-2026-to-2027-and-2027-to-2028-financial-years"
+      },
+      {
+        "headline": "Publication of the college financial handbook",
+        "url": "https://www.gov.uk/government/publications/dfe-update-8-july-2026/dfe-update-further-education-8-july-2026#information-publication-of-the-college-financial-handbook"
+      },
+      {
+        "headline": "Help us improve the 16 to 19 business case process",
+        "url": "https://www.gov.uk/government/publications/dfe-update-8-july-2026/dfe-update-further-education-8-july-2026#feedback-help-us-improve-the-16-to-19-business-case-process"
+      },
+      {
+        "headline": "Take part in our further education data and enrolment research",
+        "url": "https://www.gov.uk/government/publications/dfe-update-8-july-2026/dfe-update-further-education-8-july-2026#feedback-take-part-in-our-further-education-data-and-enrolment-research"
+      },
+      {
+        "headline": "Tell us about your experience of our funding service",
+        "url": "https://www.gov.uk/government/publications/dfe-update-8-july-2026/dfe-update-further-education-8-july-2026#feedback-tell-us-about-your-experience-of-our-funding-service"
+      }
+    ]
+  },
+  {
+    "edition": "1 July 2026",
+    "page_url": "https://www.gov.uk/government/publications/dfe-update-1-july-2026/dfe-update-further-education-1-july-2026",
+    "ticker": false,
+    "items": [
+      {
+        "headline": "Financial data for further education - dry run 2026 to 2027 now live",
+        "url": "https://www.gov.uk/government/publications/dfe-update-1-july-2026/dfe-update-further-education-1-july-2026#action-financial-data-for-further-education--dry-run-2026-to-2027-now-live"
+      },
+      {
+        "headline": "Apprenticeship funding rules",
+        "url": "https://www.gov.uk/government/publications/dfe-update-1-july-2026/dfe-update-further-education-1-july-2026#information-apprenticeship-funding-rules"
+      },
+      {
+        "headline": "Individualised learner record returns for 2026 to 2027 academic year",
+        "url": "https://www.gov.uk/government/publications/dfe-update-1-july-2026/dfe-update-further-education-1-july-2026#information-individualised-learner-record-returns-for-2026-to-2027-academic-year"
+      },
+      {
+        "headline": "Free meals in further education expansion - additional resources",
+        "url": "https://www.gov.uk/government/publications/dfe-update-1-july-2026/dfe-update-further-education-1-july-2026#information-free-meals-in-further-education-expansion--additional-resources"
+      },
+      {
+        "headline": "Association of Colleges to deliver technical and vocational professional development from autumn 2026",
+        "url": "https://www.gov.uk/government/publications/dfe-update-1-july-2026/dfe-update-further-education-1-july-2026#information-association-of-colleges-to-deliver-technical-and-vocational-professional-development-from-autumn-2026"
+      },
+      {
+        "headline": "Expressions of interest for Mayoral Strategic Authorities Apprenticeship pilot are now open",
+        "url": "https://www.gov.uk/government/publications/dfe-update-1-july-2026/dfe-update-further-education-1-july-2026#information-expressions-of-interest-for-mayoral-strategic-authorities-apprenticeship-pilot-are-now-open"
+      },
+      {
+        "headline": "Vocational qualifications reform from 2027 - Strategic Transition Planning Statement due by 6 July 2026",
+        "url": "https://www.gov.uk/government/publications/dfe-update-1-july-2026/dfe-update-further-education-1-july-2026#reminder-vocational-qualifications-reform-from-2027--strategic-transition-planning-statement-due-by-6-july-2026"
+      }
+    ]
+  },
+  {
+    "edition": "24 June 2026",
+    "page_url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026",
+    "ticker": false,
+    "items": [
+      {
         "headline": "College financial data service portal now available",
-        "ticker_headline": "College Financial Data Service Portal — now live",
         "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#action-college-financial-data-service-portal-now-available"
       },
       {
         "headline": "Register for Taking Teaching Further 2026 by Monday 6 July 2026",
-        "ticker_headline": "Taking Teaching Further 2026 — register by 6 July",
         "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#action-register-for-taking-teaching-further-2026-by-monday-6-july-2026-"
       },
       {
         "headline": "Submit Care to Learn and 16 to 19 Bursary Fund for defined vulnerable groups funding claims",
-        "ticker_headline": "Care to Learn & Bursary Fund claims now open",
         "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#action-submitcare-to-learn-and-16-to-19-bursary-fundfordefined-vulnerable-groups-funding-claims"
       },
       {
         "headline": "Adult funding allocations for 2025 to 2026",
-        "ticker_headline": "Adult Funding Allocations 2025 to 2026 published",
         "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#information-adult-funding-allocations-for-2025-to-2026"
       },
       {
-        "headline": "Year-end forecast funding claim for 2025 to 2026 — indicative reconciliation statements",
-        "ticker_headline": "Year-end Forecast Funding Claim 2025 to 2026",
+        "headline": "Year-end forecast funding claim for 2025 to 2026 - indicative reconciliation statements",
         "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#information-year-end-forecast-funding-claim-for-funding-year-2025-to-2026--indicative-reconciliation-statements"
       },
       {
         "headline": "Updated subcontracting funding rules for post-16 education and training 2026 to 2027",
-        "ticker_headline": "Updated Post-16 Subcontracting Funding Rules 2026/27",
         "url": "https://www.gov.uk/government/publications/dfe-update-24-june-2026/dfe-update-further-education-24-june-2026#information-updated-subcontracting-funding-rules-for-post-16-education-and-training-2026-to-2027-guidance"
       },
       {
