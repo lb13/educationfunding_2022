@@ -450,7 +450,8 @@ legend.ar-legend {
   const joinPresets = [
     {label: 'Comma list',      apply: () => setVals({prefix:'',   suffix:'',  delim:', ',  wp:'',  ws:''})},
     {label: 'Quoted CSV',      apply: () => setVals({prefix:'"',  suffix:'"', delim:', ',  wp:'',  ws:''})},
-    {label: 'SQL IN clause',   apply: () => setVals({prefix:"'",  suffix:"'", delim:', ',  wp:'(', ws:')'})},
+    {label: 'SQL (value list)', apply: () => setVals({prefix:'',   suffix:'',  delim:', ',  wp:'(', ws:')'})},
+    {label: 'SQL (string list)', apply: () => setVals({prefix:"'", suffix:"'", delim:', ',  wp:'(', ws:')'})},
     {label: 'JSON array',      apply: () => setVals({prefix:'"',  suffix:'"', delim:', ',  wp:'[', ws:']'})},
     {label: 'Markdown list',   apply: () => setVals({prefix:'- ', suffix:'',  delim:'\n',  wp:'',  ws:''})},
     {label: 'Newline',         apply: () => setVals({prefix:'',   suffix:'',  delim:'\n',  wp:'',  ws:''})},
