@@ -1,8 +1,42 @@
 [
   {
+    "edition": "9 September 2026",
+    "page_url": "https://www.gov.uk/government/publications/dfe-update-9-september-2026/dfe-update-further-education-9-september-2026",
+    "ticker": true,
+    "items": [
+      {
+        "headline": "Care to learn and 16 to 19 Bursary Fund, defined vulnerable groups element, funding claim forms",
+        "ticker_headline": "Care to Learn and 16-19 Bursary Fund - claim forms",
+        "url": "https://www.gov.uk/government/publications/dfe-update-9-september-2026/dfe-update-further-education-9-september-2026#action-care-to-learn-and-16-to-19-bursary-fund-defined-vulnerable-groups-element-funding-claim-forms"
+      },
+      {
+        "headline": "Revised 16 to 19 funding allocations for 2026 to 2027",
+        "ticker_headline": "Revised 16 to 19 funding allocations for 2026 to 2027",
+        "url": "https://www.gov.uk/government/publications/dfe-update-9-september-2026/dfe-update-further-education-9-september-2026#information-revised-16-to-19-funding-allocations-for-2026-to-2027"
+      },
+      {
+        "headline": "R12 in-year qualification achievement rates 2025 to 2026",
+        "url": "https://www.gov.uk/government/publications/dfe-update-9-september-2026/dfe-update-further-education-9-september-2026#information-r12-in-year-qualification-achievement-rates-2025-to-2026"
+      },
+      {
+        "headline": "Financial assurance monitoring post-16 funding guidance for 2026 to 2027",
+        "ticker_headline": "Financial assurance: monitoring post-16 funding 2026-27",
+        "url": "https://www.gov.uk/government/publications/dfe-update-9-september-2026/dfe-update-further-education-9-september-2026#information-financial-assurancemonitoringpost-16-funding-guidance-for-2026-to-2027"
+      },
+      {
+        "headline": "Update on the review of apprenticeship subcontracting rules",
+        "url": "https://www.gov.uk/government/publications/dfe-update-9-september-2026/dfe-update-further-education-9-september-2026#information-update-on-the-review-of-apprenticeship-subcontracting-rules"
+      },
+      {
+        "headline": "Applications remain open for Cohort 8 of the Teacher Mentoring Programme in Further Education",
+        "url": "https://www.gov.uk/government/publications/dfe-update-9-september-2026/dfe-update-further-education-9-september-2026#reminder-applications-remain-open-for-cohort-8-of-the-teacher-mentoring-programme-in-further-education"
+      }
+    ]
+  },
+  {
     "edition": "2 September 2026",
     "page_url": "https://www.gov.uk/government/publications/dfe-update-2-september-2026/dfe-update-further-education-2-september-2026",
-    "ticker": true,
+    "ticker": false,
     "items": [
       {
         "headline": "How to claim exceptional learning support for funding year 2026 to 2027",
