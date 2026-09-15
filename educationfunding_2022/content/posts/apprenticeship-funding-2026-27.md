@@ -53,13 +53,27 @@ This is still early days and the details are settling. The DWP is the place to w
 
 Foundation apprenticeships are a shorter introductory route aimed at 16-24 year olds, designed to provide a pathway into full apprenticeship standards. They're included in the 100% government funding and the £2,000 hiring payment rules above. Guidance on the specifics is available in the 2026-27 funding rules.
 
-## Two things for MIS
+## Off-the-job training
 
-A couple of changes worth noting if you're recording in the ILR:
+Minimum OTJ hours are no longer set by a fixed rule in the funding guidance. Instead, the minimum volume for each standard is now published individually on the Skills England website. Annex C, which previously listed minimum volumes, has been removed.
+
+In practice this means checking the standard's page on the Skills England site to confirm the minimum hours for a given programme, rather than applying a single across-the-board figure.
+
+The rules also clarify that only *eligible* OTJ training counts toward actual hours - this has always been the case, but the wording is now more explicit (paragraph 85 of the 2026-27 funding rules).
+
+### Recording OTJ and RPL in the ILR
+
+From 2026-27, providers record planned OTJ hours and Recognition of Prior Learning (RPL) using new Hours records in the ILR. [*Luke: I couldn't confirm the specific field references from the funding rules summary - the ILR spec will have the detail here. Happy to fill this in once you point me to the right section.*]
+
+## ILR changes
+
+A few changes worth noting:
 
 **Planned end date**: the originally-submitted planned end date can no longer be changed after submission, unless there's a formal break or a restart. This isn't a new concept, but it's now a harder rule. Worth double-checking that your enrolment process captures the right date the first time - correcting it later is now more difficult.
 
-**Completion payments**: better news here. The completion payment is no longer withheld if co-investment hasn't been collected from the employer. Previously, uncollected employer contributions could hold up the completion payment at the end of an apprenticeship. That friction has been removed.
+**Completion payments**: the completion payment is no longer withheld if co-investment hasn't been collected from the employer. Previously, the funding rules required employer co-investment to be collected *and recorded on the ILR* before the completion payment could be released. That requirement has been removed (paragraph 190 of the 2026-27 funding rules). The exact change: *"Removed reference to the employer co-investment having to be collected and recorded on the ILR in order for the completion payment to be released."*
+
+This is a meaningful change for providers who've had completion payments held up by an employer's failure to pay their contribution. The apprentice completing is now sufficient.
 
 ## Official sources
 
