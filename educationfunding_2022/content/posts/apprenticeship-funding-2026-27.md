@@ -23,7 +23,7 @@ This removes a genuine barrier for smaller employers taking on younger apprentic
 
 ### The hiring payment
 
-There's also a new **£2,000 apprenticeship hiring payment** for non-levy employers who take on an apprentice aged 16-24, starting from October 2026. It's paid in two instalments, with the first landing after 90 days of employment. Foundation apprenticeships are included.
+There's also a new **£2,000 apprenticeship hiring payment** for non-levy employers who take on an apprentice aged 16-24, starting from October 2026. It's paid in two equal instalments: the first after 90 days of employment, the second after 365 days (or 242 days for apprenticeships with a typical duration under 12 months). Foundation apprenticeships are included.
 
 ## Levy employers who run low
 
@@ -35,11 +35,13 @@ Levy employers with insufficient account funds are now on a **25% employer / 75%
 
 If you have employers on your books who are levy-payers but regularly running their account down to zero, it's worth flagging this to them before it becomes a surprise invoice.
 
-## The top-up is gone
+## August 2026: two changes to levy accounts
 
-From August 2026, the government no longer adds a 10% top-up on funds entering levy accounts. This affects new levy funds going in from that point - existing balances weren't touched.
+Two things changed in August 2026 for levy-paying employers.
 
-In practice, employers who pay steadily into their levy account will find it grows a bit more slowly than before. For providers it's mostly background noise, but it's worth knowing if an employer asks why their projections look slightly off.
+The government stopped adding a 10% top-up on new funds entering levy accounts. This affects funds going in from August 2026 onwards - existing balances weren't touched. Accounts grow a bit more slowly than before.
+
+The expiry window for new funds was also shortened from 24 months to 12 months. Funds entering accounts from August 2026 will expire after 12 months if unused. For most employers with predictable spend this won't matter, but for those who accumulate funds without a clear delivery plan it's worth reviewing.
 
 ## Apprenticeship units
 
@@ -63,7 +65,13 @@ The rules also clarify that only *eligible* OTJ training counts toward actual ho
 
 ### Recording OTJ and RPL in the ILR
 
-From 2026-27, providers record planned OTJ hours and Recognition of Prior Learning (RPL) using new Hours records in the ILR. [*Luke: I couldn't confirm the specific field references from the funding rules summary - the ILR spec will have the detail here. Happy to fill this in once you point me to the right section.*]
+From 2026-27, providers use a new HRSRecord entity in the ILR to record hours relating to apprenticeship programmes. Three HRSType codes apply to apprenticeships:
+
+- **HRSType 1** — planned OTJ hours for the programme
+- **HRSType 3** — actual OTJ hours delivered
+- **HRSType 4** — planned OTJ hours reduced due to Recognition of Prior Learning (RPL)
+
+This replaces the previous approach of recording these figures elsewhere in the return. The [ILR 2026-27 specification](https://guidance.submit-learner-data.service.gov.uk/26-27/ilr/entity/HRSRecord/) has the full field-level detail.
 
 ## ILR changes
 
@@ -71,7 +79,9 @@ A few changes worth noting:
 
 **Planned end date**: the originally-submitted planned end date can no longer be changed after submission, unless there's a formal break or a restart. This isn't a new concept, but it's now a harder rule. Worth double-checking that your enrolment process captures the right date the first time - correcting it later is now more difficult.
 
-**Completion payments**: the completion payment is no longer withheld if co-investment hasn't been collected from the employer. Previously, the funding rules required employer co-investment to be collected *and recorded on the ILR* before the completion payment could be released. That requirement has been removed (paragraph 190 of the 2026-27 funding rules). The exact change: *"Removed reference to the employer co-investment having to be collected and recorded on the ILR in order for the completion payment to be released."*
+**Completion payments**: the completion payment is no longer withheld if co-investment hasn't been collected from the employer. Previously, the funding rules required employer co-investment to be collected and recorded on the ILR before the completion payment could be released. That requirement has been removed (paragraph 190 of the 2026-27 funding rules):
+
+> Removed reference to the employer co-investment having to be collected and recorded on the ILR in order for the completion payment to be released.
 
 This is a meaningful change for providers who've had completion payments held up by an employer's failure to pay their contribution. The apprentice completing is now sufficient.
 
@@ -79,3 +89,5 @@ This is a meaningful change for providers who've had completion payments held up
 
 - [Apprenticeship funding rules: 2026 to 2027](https://www.gov.uk/government/publications/apprenticeship-funding-rules-and-assessment-plan-guidance-2026-to-2027)
 - [Apprenticeship funding rules: summary of changes](https://www.gov.uk/government/publications/apprenticeship-funding-rules-and-assessment-plan-guidance-2026-to-2027/apprenticeship-funding-rules-summary-of-changes-version-1)
+- [Apprenticeship technical funding guide (from August 2026)](https://www.gov.uk/government/publications/apprenticeship-technical-funding-guide/apprenticeship-technical-funding-guide-from-august-2026)
+- [ILR 2026-27 specification: HRSRecord](https://guidance.submit-learner-data.service.gov.uk/26-27/ilr/entity/HRSRecord/)
