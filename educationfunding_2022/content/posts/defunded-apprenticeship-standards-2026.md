@@ -11,15 +11,26 @@ Existing learners on any of the affected standards continue to receive funding t
 
 ## Which standards are affected
 
-The government hasn't published the full list of 16 in a single place, but confirmed withdrawals include standards that have grown significantly as continuing professional development for workers aged 25 and over rather than as pathways into skilled employment. The most widely delivered affected standards are:
+The full list of 16 standards is published in the DfE Update article linked below. All 16 are:
 
-- **Team Leader / Supervisor** (Level 3) — 12,670 starts in 2024-25, delivered by around 450 providers; only 80 were under age 19
-- **Operations / Departmental Manager** (Level 5) — 12,530 starts in 2024-25 across 398 providers
-- **Coaching Professional** (Level 5)
-- **Lead Practitioner in Adult Care** (Level 4)
-- **Chartered Manager (Degree Apprenticeship)** (Level 6)
+- Chartered Manager (degree) — Level 6
+- Cleaning Hygiene Operative — Level 2
+- Coaching Professional — Level 5
+- Custody and Detention Professional — Level 3
+- Facilities Management Supervisor — Level 3
+- Improvement Leader — Level 6
+- Improvement Practitioner — Level 4
+- Lead Practitioner in Adult Care — Level 4
+- Learning and Skills Assessor — Level 3
+- Learning and Skills Mentor — Level 4
+- Operations Manager — Level 5
+- Outdoor Learning Specialist — Level 5
+- Professional Security Operative — Level 2
+- Public Sector Compliance Investigator and Officer — Level 3
+- Security First Line Manager — Level 3
+- Team Leader / Supervisor — Level 3
 
-The remaining 11 standards have not been publicly named in detail. The current status of any specific standard can be checked on the [Skills England standard search](https://skillsengland.education.gov.uk/apprenticeship-standards/).
+The two largest by volume are Team Leader (12,670 starts in 2024-25, around 450 providers) and Operations Manager (12,530 starts, 398 providers) — together over 25,000 starts a year. The current status of any standard can also be checked on the [Skills England standard search](https://skillsengland.education.gov.uk/apprenticeship-standards/).
 
 ## Start caps for current providers
 
@@ -43,8 +54,6 @@ See [Privately Funded Apprenticeships](/posts/privately-funded-apprenticeships/)
 ## Why these standards
 
 The government's stated reason is that these programmes have primarily served as employer-funded CPD for workers aged 25 and over, rather than creating new career pathways — which is the stated purpose of the Growth and Skills Levy. Minister Jacqui Smith described these as "not only not what people would traditionally think of as apprenticeships" and indicated they should be employer-funded going forward.
-
-The Team Leader and Operations Manager standards are by far the largest — together they account for over 25,000 starts a year. Providers for whom these are a significant proportion of their apprenticeship portfolio should treat this as material.
 
 ## Official sources
 
