@@ -1,6 +1,6 @@
 ---
 Tags: [posts,apprenticeships,apprenticeship funding,financial assurance,subcontracting]
-Title: September 2026 Provider Updates: FAM Changes and Subcontracting Review Delay
+Title: "September 2026 Provider Updates: FAM Changes and Subcontracting Review Delay"
 Date: 2026-09-19
 Description: Two items from the DfE's 9 September Further Education Update that providers may have missed — changes to the financial assurance monitoring guidance and a delay to the apprenticeship subcontracting rules review.
 ---
