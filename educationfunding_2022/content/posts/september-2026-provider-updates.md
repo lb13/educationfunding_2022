@@ -11,9 +11,11 @@ The DfE's Further Education Update published on 9 September 2026 contained two i
 
 The [financial assurance monitoring (FAM) post-16 guidance for 2026 to 2027](https://www.gov.uk/government/publications/financial-assurance-monitoring-post-16-funding) is now live. Three changes from last year:
 
-**FRM37 removed.** 'Apprenticeship off-the-job training hours below the minimum' has been removed from the monitoring framework. The reason given is that FRM37 only applied to apprentices who started before 1 August 2025. With all such learners now either completing or having left, there's no longer a population to monitor against.
+**FRM37 removed.** 'Apprenticeship off-the-job training hours below the minimum' has been removed from the monitoring framework. The guidance explains that FRM37 only ever covered apprentices who started before 1 August 2025. Apprentices who started on or after 1 August 2025 are subject to different off-the-job training requirements, which are monitored through the provider data self-assessment toolkit (PDSAT) rather than through an FRM report.
 
-If you have been tracking OTJ compliance specifically to manage your FRM37 risk, this check will no longer appear in your dashboard. It's not that the OTJ minimum no longer exists — it still does, and it still applies to all current apprentices — but this particular financial monitoring report is gone.
+What this means in practice: DfE has decided not to carry FRM37 forward to cover the pre-August 2025 cohort who remain in-programme. Those learners — and there will be some; apprenticeships can run for several years — are still subject to the OTJ minimum, but this particular financial assurance check is gone from the dashboard. The guidance does not explain what, if anything, now covers financial assurance monitoring for that residual group.
+
+If you have apprentices who started before 1 August 2025 and are still on-programme, the OTJ requirements for their standard still apply. FRM37 simply won't flag compliance gaps to you or to ESFA through the monitoring dashboard.
 
 **FRM01 updated.** 'Learners repeating a previously achieved learning aim' has been updated to reduce duplication with another report. The substance is unchanged — learners who have already achieved an aim shouldn't be re-funded for it — but the mechanics have been refined.
 
