@@ -1,0 +1,600 @@
+{{ define "title" }}Grid → JSON | EF·UK{{ end }}
+
+{{ define "styles" }}
+<style>
+/* ============================================================
+   Grid → JSON tool — adapted to EF·UK design tokens
+============================================================ */
+
+:root {
+  --gj-bg:           #f3f4f8;
+  --gj-surface:      #ffffff;
+  --gj-surface-alt:  #f7f8fb;
+  --gj-border:       #dde1ea;
+  --gj-text:         #111827;
+  --gj-text-dim:     #4b5563;
+  --gj-text-faint:   #6b7280;
+  --gj-blue:         #1d5fad;
+  --gj-blue-soft:    rgba(29, 95, 173, 0.08);
+  --gj-blue-border:  rgba(29, 95, 173, 0.18);
+  --gj-green:        #1a9e6a;
+  --gj-warn:         #c2410c;
+  --gj-warn-bg:      #fff7ed;
+  --gj-ok-bg:        #ecfdf5;
+  --gj-mono:         ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+body.page-gridjson {
+  background: var(--gj-bg);
+}
+
+.gj-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2.5rem 1.75rem 5rem;
+}
+
+.gj-header {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--gj-border);
+}
+.gj-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-optical-sizing: auto;
+  color: var(--gj-text);
+  margin: 0 0 0.3rem;
+}
+.gj-title span { color: var(--blue); }
+.gj-desc {
+  color: var(--gj-text-dim);
+  font-size: 0.88rem;
+  margin: 0;
+  max-width: 70ch;
+  line-height: 1.5;
+}
+.gj-desc code {
+  font-family: var(--gj-mono);
+  font-size: 0.82rem;
+  background: var(--gj-surface);
+  border: 1px solid var(--gj-border);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+
+.gj-step {
+  background: var(--gj-surface);
+  border: 1.5px solid var(--gj-border);
+  border-radius: 16px;
+  padding: 1.375rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.gj-step-label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--gj-text-faint);
+  margin-bottom: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.gj-step-n {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+textarea.gj-ta {
+  width: 100%;
+  background: var(--gj-surface-alt);
+  border: 1.5px solid var(--gj-border);
+  border-radius: 10px;
+  color: var(--gj-text);
+  font-family: var(--gj-mono);
+  font-size: 12.5px;
+  line-height: 1.55;
+  padding: 0.75rem;
+  resize: vertical;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+textarea.gj-ta:focus {
+  border-color: var(--gj-blue);
+  box-shadow: 0 0 0 3px rgba(29,95,173,0.1);
+}
+textarea.gj-ta[readonly] { background: var(--gj-bg); }
+#gj-input  { min-height: 160px; }
+#gj-output { min-height: 220px; }
+
+.gj-row {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.gj-label-inline {
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--gj-text-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+select.gj-select {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.4rem 0.625rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--gj-border);
+  background: var(--gj-surface);
+  color: var(--gj-text);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+select.gj-select:focus { border-color: var(--gj-blue); }
+
+.gj-spacer { flex: 1; }
+
+.gj-btn {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--gj-border);
+  background: var(--gj-surface);
+  color: var(--gj-text);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.gj-btn:hover:not(:disabled) { border-color: var(--gj-text-dim); }
+.gj-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.gj-btn-primary {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(14,30,61,0.2);
+}
+.gj-btn-primary:hover:not(:disabled) { background: #162b57; border-color: #162b57; }
+
+.gj-btn-copy {
+  background: var(--gj-green);
+  border-color: var(--gj-green);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(26,158,106,0.25);
+}
+.gj-btn-copy:hover:not(:disabled) { background: #158a5a; border-color: #158a5a; }
+
+.gj-hint {
+  font-size: 0.78rem;
+  color: var(--gj-text-faint);
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+.gj-hint code {
+  font-family: var(--gj-mono);
+  font-size: 0.74rem;
+  background: var(--gj-surface-alt);
+  border: 1px solid var(--gj-border);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+
+/* Column chips */
+#gj-columns {
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+.gj-col-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gj-bg);
+  border: 1.5px solid var(--gj-border);
+  border-radius: 10px;
+  padding: 0.375rem 0.375rem 0.375rem 0.75rem;
+}
+.gj-col-name {
+  font-family: var(--gj-mono);
+  font-size: 0.75rem;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--gj-text);
+}
+.gj-type-toggle {
+  display: flex;
+  border: 1.5px solid var(--gj-border);
+  border-radius: 7px;
+  overflow: hidden;
+}
+.gj-type-btn {
+  border: none;
+  border-radius: 0;
+  padding: 0.25rem 0.625rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: transparent;
+  color: var(--gj-text-dim);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.gj-type-btn.active { background: var(--gj-blue); color: #fff; }
+.gj-type-btn:hover:not(.active) { background: var(--gj-surface-alt); }
+
+.gj-label-check {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gj-text-dim);
+  cursor: pointer;
+}
+.gj-label-check input { accent-color: var(--gj-blue); cursor: pointer; }
+
+.gj-status {
+  font-family: var(--gj-mono);
+  font-size: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 8px;
+  margin-top: 0.75rem;
+  display: none;
+}
+.gj-status.ok   { display: block; background: var(--gj-ok-bg);   color: var(--gj-green); }
+.gj-status.warn { display: block; background: var(--gj-warn-bg); color: var(--gj-warn);  }
+
+footer.gj-footer {
+  text-align: center;
+  color: var(--gj-text-faint);
+  font-size: 0.72rem;
+  margin-top: 2rem;
+}
+</style>
+{{ end }}
+
+{{ define "body-class" }}page-gridjson{{ end }}
+
+{{ define "main" }}
+<div class="gj-wrap">
+
+  <div class="gj-header">
+    <h1 class="gj-title">Grid <span>&#8594;</span> JSON</h1>
+    <p class="gj-desc">Paste SQL query results and get the same array-of-objects JSON that <code>FOR JSON PATH</code> produces — without SSMS truncating it. Runs entirely in your browser.</p>
+  </div>
+
+  <!-- STEP 1: Paste data -->
+  <div class="gj-step">
+    <div class="gj-step-label"><span class="gj-step-n">1</span> Paste data (include the header row)</div>
+    <textarea id="gj-input" class="gj-ta" placeholder="Run your SELECT without FOR JSON PATH, copy the grid results (headers + rows) and paste here…" spellcheck="false"></textarea>
+    <div class="gj-row">
+      <label class="gj-label-inline">Delimiter
+        <select id="gj-delimiter" class="gj-select">
+          <option value="auto" selected>Auto-detect</option>
+          <option value="&#9;">Tab (grid copy)</option>
+          <option value=",">Comma (CSV export)</option>
+        </select>
+      </label>
+      <div class="gj-spacer"></div>
+      <button class="gj-btn gj-btn-primary" id="gj-parseBtn">Parse columns</button>
+    </div>
+    <p class="gj-hint">Tip: if any column contains multi-line text (like HTML in an <code>InformationText</code> field), use <em>Save Results As → CSV</em> in SSMS rather than copying the grid — grid copy strips embedded line breaks, CSV export keeps them quoted correctly.</p>
+  </div>
+
+  <!-- STEP 2: Set column types -->
+  <div class="gj-step" id="gj-columnsStep" style="display:none;">
+    <div class="gj-step-label"><span class="gj-step-n">2</span> Set column types — everything defaults to string, which matches most varchar columns</div>
+    <div id="gj-columns"></div>
+    <p class="gj-hint">Only mark a column <strong>Number</strong> if its underlying SQL type is actually numeric (e.g. an int ID). A digits-only varchar like a funding code should stay <strong>String</strong> — that's what <code>FOR JSON PATH</code> would do too.</p>
+    <div class="gj-row">
+      <div class="gj-spacer"></div>
+      <button class="gj-btn gj-btn-primary" id="gj-generateBtn">Generate JSON</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: Output -->
+  <div class="gj-step" id="gj-outputStep" style="display:none;">
+    <div class="gj-step-label"><span class="gj-step-n">3</span> Output</div>
+    <textarea id="gj-output" class="gj-ta" readonly spellcheck="false"></textarea>
+    <div class="gj-row">
+      <label class="gj-label-check"><input type="checkbox" id="gj-pretty"> Pretty-print</label>
+      <div class="gj-spacer"></div>
+      <button class="gj-btn" id="gj-copyBtn">Copy</button>
+      <button class="gj-btn" id="gj-downloadBtn">Download .json</button>
+    </div>
+    <div class="gj-status" id="gj-status"></div>
+  </div>
+
+  <footer class="gj-footer">Runs entirely in your browser — nothing is sent anywhere.</footer>
+
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+(function () {
+  const $ = id => document.getElementById(id);
+
+  const inputEl      = $('gj-input');
+  const delimiterEl  = $('gj-delimiter');
+  const parseBtn     = $('gj-parseBtn');
+  const columnsStep  = $('gj-columnsStep');
+  const columnsEl    = $('gj-columns');
+  const generateBtn  = $('gj-generateBtn');
+  const outputStep   = $('gj-outputStep');
+  const outputEl     = $('gj-output');
+  const prettyEl     = $('gj-pretty');
+  const copyBtn      = $('gj-copyBtn');
+  const downloadBtn  = $('gj-downloadBtn');
+  const statusEl     = $('gj-status');
+
+  let headers     = [];
+  let rows        = [];
+  let columnTypes = [];
+
+  // RFC4180-ish delimited-text parser. Handles quoted fields, embedded
+  // delimiters/newlines inside quotes, and "" as an escaped quote.
+  function parseDelimited(text, delim) {
+    const records = [];
+    let field = '', record = [];
+    let inQuotes = false;
+    let i = 0;
+    const len = text.length;
+
+    while (i < len) {
+      const ch = text[i];
+      if (inQuotes) {
+        if (ch === '"') {
+          if (text[i + 1] === '"') { field += '"'; i += 2; continue; }
+          inQuotes = false; i++; continue;
+        }
+        field += ch; i++; continue;
+      }
+      if (ch === '"' && field === '') { inQuotes = true; i++; continue; }
+      if (ch === delim) { record.push(field); field = ''; i++; continue; }
+      if (ch === '\r') {
+        if (text[i + 1] === '\n') i++;
+        record.push(field); field = '';
+        records.push(record); record = [];
+        i++; continue;
+      }
+      if (ch === '\n') {
+        record.push(field); field = '';
+        records.push(record); record = [];
+        i++; continue;
+      }
+      field += ch; i++;
+    }
+    if (field.length > 0 || record.length > 0) {
+      record.push(field);
+      records.push(record);
+    }
+    return records.filter(r => !(r.length === 1 && r[0] === ''));
+  }
+
+  function detectDelimiter(text) {
+    const firstLine = text.split(/\r\n|\r|\n/, 1)[0] || '';
+    const tabs   = (firstLine.match(/\t/g) || []).length;
+    const commas = (firstLine.match(/,/g)  || []).length;
+    return tabs >= commas ? '\t' : ',';
+  }
+
+  function setStatus(msg, kind) {
+    statusEl.textContent = msg;
+    statusEl.className = 'gj-status ' + kind;
+  }
+
+  parseBtn.addEventListener('click', function () {
+    const text = inputEl.value.replace(/^﻿/, '');
+    if (!text.trim()) return;
+
+    const choice = delimiterEl.value;
+    const delim  = choice === 'auto' ? detectDelimiter(text) : choice;
+    const records = parseDelimited(text, delim);
+
+    if (records.length < 2) {
+      outputStep.style.display = 'block';
+      columnsStep.style.display = 'none';
+      setStatus('Need a header row plus at least one data row.', 'warn');
+      return;
+    }
+
+    headers     = records[0].map(h => h.trim());
+    rows        = records.slice(1);
+    columnTypes = headers.map(() => 'string');
+
+    columnsEl.innerHTML = '';
+    headers.forEach((h, idx) => {
+      const chip = document.createElement('div');
+      chip.className = 'gj-col-chip';
+
+      const name = document.createElement('span');
+      name.className = 'gj-col-name';
+      name.textContent = h || '(column ' + (idx + 1) + ')';
+      name.title = h;
+
+      const toggle = document.createElement('div');
+      toggle.className = 'gj-type-toggle';
+
+      const strBtn = document.createElement('button');
+      strBtn.type = 'button';
+      strBtn.textContent = 'String';
+      strBtn.className = 'gj-type-btn active';
+
+      const numBtn = document.createElement('button');
+      numBtn.type = 'button';
+      numBtn.textContent = 'Number';
+      numBtn.className = 'gj-type-btn';
+
+      strBtn.addEventListener('click', () => {
+        columnTypes[idx] = 'string';
+        strBtn.classList.add('active');
+        numBtn.classList.remove('active');
+      });
+      numBtn.addEventListener('click', () => {
+        columnTypes[idx] = 'number';
+        numBtn.classList.add('active');
+        strBtn.classList.remove('active');
+      });
+
+      toggle.appendChild(strBtn);
+      toggle.appendChild(numBtn);
+      chip.appendChild(name);
+      chip.appendChild(toggle);
+      columnsEl.appendChild(chip);
+    });
+
+    columnsEl.style.display = 'flex';
+    columnsStep.style.display = 'block';
+    outputStep.style.display = 'none';
+    statusEl.className = 'gj-status';
+
+    const delimLabel = delim === '\t' ? 'tab' : delim;
+    setStatus(
+      'Parsed ' + rows.length + ' row' + (rows.length === 1 ? '' : 's') +
+      ' across ' + headers.length + ' column' + (headers.length === 1 ? '' : 's') +
+      ' using "' + delimLabel + '" as the delimiter.', 'ok'
+    );
+    outputStep.style.display = 'block';
+  });
+
+  // Escapes a string the way SQL Server's FOR JSON PATH does.
+  function escapeJsonString(str) {
+    let out = '';
+    for (let i = 0; i < str.length; i++) {
+      const ch = str[i], code = str.charCodeAt(i);
+      if      (ch === '\\') out += '\\\\';
+      else if (ch === '"')  out += '\\"';
+      else if (ch === '/')  out += '\\/';
+      else if (ch === '\n') out += '\\n';
+      else if (ch === '\r') out += '\\r';
+      else if (ch === '\t') out += '\\t';
+      else if (ch === '\b') out += '\\b';
+      else if (ch === '\f') out += '\\f';
+      else if (code < 0x20) out += '\\u' + code.toString(16).padStart(4, '0');
+      else out += ch;
+    }
+    return out;
+  }
+
+  const NUMERIC_RE = /^-?\d+(\.\d+)?$/;
+
+  function buildObjects() {
+    return rows.map(cells => {
+      const obj = {};
+      headers.forEach((h, idx) => {
+        const raw     = cells[idx] === undefined ? '' : cells[idx];
+        const isEmpty = raw === '' || raw.toUpperCase() === 'NULL';
+        if (columnTypes[idx] === 'number') {
+          obj[h] = isEmpty ? null : (NUMERIC_RE.test(raw.trim()) ? Number(raw.trim()) : null);
+        } else {
+          obj[h] = isEmpty ? '' : raw;
+        }
+      });
+      return obj;
+    });
+  }
+
+  function toCompactJson(objects) {
+    const parts = objects.map(obj => {
+      const entries = headers.map(h => {
+        const v = obj[h];
+        let valStr;
+        if (v === null)             valStr = 'null';
+        else if (typeof v === 'number') valStr = String(v);
+        else                        valStr = '"' + escapeJsonString(String(v)) + '"';
+        return '"' + escapeJsonString(h) + '":' + valStr;
+      });
+      return '{' + entries.join(',') + '}';
+    });
+    return '[' + parts.join(',') + ']';
+  }
+
+  function toPrettyJson(compact) {
+    const parsed = JSON.parse(compact.replace(/\\\//g, '/'));
+    return JSON.stringify(parsed, null, 2).replace(/\//g, '\\/');
+  }
+
+  let lastCompact = '';
+
+  function render() {
+    if (!lastCompact) return;
+    outputEl.value = prettyEl.checked ? toPrettyJson(lastCompact) : lastCompact;
+  }
+
+  generateBtn.addEventListener('click', function () {
+    const objects = buildObjects();
+    lastCompact   = toCompactJson(objects);
+    render();
+    outputStep.style.display = 'block';
+
+    let valid = true;
+    try { JSON.parse(lastCompact.replace(/\\\//g, '/')); } catch (e) { valid = false; }
+
+    setStatus(
+      valid
+        ? '✓ Valid JSON — ' + objects.length + ' objects, ' + lastCompact.length.toLocaleString() + ' characters.'
+        : '⚠ Something in the output didn\'t parse as valid JSON — check for unusual characters in the source data.',
+      valid ? 'ok' : 'warn'
+    );
+    outputEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  prettyEl.addEventListener('change', render);
+
+  copyBtn.addEventListener('click', async function () {
+    if (!outputEl.value) return;
+    try {
+      await navigator.clipboard.writeText(outputEl.value);
+      copyBtn.textContent = 'Copied ✓';
+      setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1400);
+    } catch (e) {
+      outputEl.select();
+      document.execCommand('copy');
+    }
+  });
+
+  downloadBtn.addEventListener('click', function () {
+    const blob = new Blob([outputEl.value], { type: 'application/json' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'output.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+})();
+</script>
+{{ end }}
