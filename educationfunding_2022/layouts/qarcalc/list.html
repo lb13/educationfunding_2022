@@ -1,0 +1,351 @@
+{{ define "title" }}QAR Calculator | EF·UK{{ end }}
+
+{{ define "styles" }}
+<style>
+/* ============================================================
+   QAR Calculator — adapted to EF·UK design tokens.
+   Light theme only (color-scheme locked on body).
+   CSS vars prefixed qar- where they would override site tokens.
+============================================================ */
+:root {
+  --qar-bg:          #f3f4f8;
+  --qar-surface:     #ffffff;
+  --qar-ink:         #1e2a36;
+  --qar-ink-2:       #5c6b7a;
+  --qar-line:        #e0e6ed;
+  --qar-accent:      #1d5fad;
+  --qar-accent-soft: #e8f1fa;
+  --qar-input:       #fff6c9;
+  --qar-input-bd:    #e6d37a;
+  --qar-warn:        #b3261e;
+  /* Learner-status colours — tool-specific, no site conflict */
+  --nf:#dfe3e8;  --nf-bd:#b4bcc6;
+  --con:#fbe58a; --con-bd:#d4b42a;
+  --wth:#f6b5b0; --wth-bd:#df7d76;
+  --ach:#7fc67c; --ach-bd:#4a9a48;
+  --fail:#d9534f;--fail-bd:#a93a37;
+  --pre:#e6d3f2; --pre-bd:#b48bd1;
+  --trn:#cfe3f7; --trn-bd:#7fb0df;
+  --bil:#c9ece6; --bil-bd:#6cbfb1;
+  --unk:#eef6e6; --unk-bd:#86b878;
+}
+*{box-sizing:border-box}
+body.page-qarcalc{
+  background:var(--qar-bg);color:var(--qar-ink);
+  font:16px/1.45 var(--font-body);
+  -webkit-font-smoothing:antialiased;
+  color-scheme:light;
+}
+.qar-wrap{max-width:1120px;margin:0 auto;padding:24px 16px 56px}
+h1,h2,h3,p{margin:0}
+.qar-wrap h1{font-size:32px;line-height:1.1;font-weight:700;letter-spacing:-.01em;font-family:var(--font-display)}
+.qar-wrap h2{font-size:17px;font-weight:700}
+.sub{color:var(--qar-ink-2);margin-top:6px}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+.page-qarcalc :focus-visible{outline:3px solid var(--qar-accent);outline-offset:2px;border-radius:6px}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:10px 20px;margin-bottom:20px}
+.reset{border:1px solid var(--qar-line);background:var(--qar-surface);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:500}
+.reset:hover{border-color:var(--qar-accent);color:var(--qar-accent)}
+.layout{display:grid;grid-template-columns:360px minmax(0,1fr);gap:20px;align-items:start}
+.card{background:var(--qar-surface);border:1px solid var(--qar-line);border-radius:16px;padding:18px}
+
+/* funnel */
+.stage{display:grid;gap:8px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--qar-line)}
+.stage:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.stage h2 span{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-size:13px;margin-right:8px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.row label{font-size:15px}
+.stepper{display:flex;border:1px solid var(--qar-input-bd);border-radius:9px;overflow:hidden;background:var(--qar-input)}
+.stepper button{border:0;background:transparent;width:30px;font-size:18px;line-height:1}
+.stepper button:hover{background:#f6e9a0}
+.stepper input{width:60px;height:34px;border:0;border-left:1px solid var(--qar-input-bd);border-right:1px solid var(--qar-input-bd);background:var(--qar-input);text-align:center;font-weight:600;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.derived{display:flex;justify-content:space-between;align-items:baseline;background:var(--qar-accent-soft);border-radius:10px;padding:8px 12px;font-weight:600}
+.derived b{font-size:22px;font-variant-numeric:tabular-nums}
+.warn{color:var(--qar-warn);font-size:13.5px;font-weight:500}
+
+/* results */
+.main{display:grid;gap:20px;min-width:0}
+.rates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.rate{all:unset;box-sizing:border-box;display:grid;gap:12px;cursor:pointer;background:var(--qar-surface);border:2px solid var(--qar-line);border-radius:16px;padding:18px}
+.rate:hover{border-color:#b7c5d4}
+.rate[aria-pressed="true"]{border-color:var(--qar-accent);box-shadow:0 0 0 4px var(--qar-accent-soft)}
+.rate:focus-visible{outline:3px solid var(--qar-accent);outline-offset:2px}
+.rate h2{font-size:15px;color:var(--qar-ink-2);text-transform:uppercase;letter-spacing:.05em}
+.rate .formula{font-size:17px;font-weight:600;margin-top:-8px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair>div{display:grid;gap:2px;align-content:start}
+.pair .best{background:var(--qar-accent-soft);border-radius:12px;padding:10px 12px}
+.tag{font-size:12.5px;font-weight:600;color:var(--qar-ink-2);text-transform:uppercase;letter-spacing:.04em}
+.big{font-size:38px;line-height:1;font-weight:700;font-variant-numeric:tabular-nums}
+.best .big{color:var(--qar-accent)}
+.sum{font-size:14px;color:var(--qar-ink-2);font-variant-numeric:tabular-nums}
+.hint{font-size:13px;color:var(--qar-ink-2)}
+
+/* grid of learners */
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;margin:10px 0 14px}
+.legend span{display:inline-flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums}
+.sw{width:18px;height:14px;border-radius:4px;border:1px solid;display:inline-block}
+.blabel{display:flex;justify-content:space-between;font-size:14px;font-weight:600;margin:12px 0 6px}
+.blabel:first-of-type{margin-top:0}
+.pills{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px;max-width:520px}
+.p{height:26px;border:1px solid;border-radius:6px;display:grid;place-items:center;font-size:12px;font-weight:700;transition:opacity .2s,box-shadow .2s}
+.pills.small .p{height:14px;border-radius:3px}
+.g-ach{background:var(--ach);border-color:var(--ach-bd)}
+.g-fail{background:var(--fail);border-color:var(--fail-bd);color:#fff}
+.g-unk{background:var(--unk);border:1px dashed var(--unk-bd);color:#4c7a3f}
+.g-wth{background:var(--wth);border-color:var(--wth-bd)}
+.g-con{background:var(--con);border-color:var(--con-bd)}
+.g-nf{background:var(--nf);border-color:var(--nf-bd)}
+.g-pre{background:var(--pre);border-color:var(--pre-bd)}
+.g-trn{background:var(--trn);border-color:var(--trn-bd)}
+.g-bil{background:var(--bil);border-color:var(--bil-bd)}
+.dim{opacity:.18}
+.num{box-shadow:0 0 0 2px var(--qar-ink);position:relative;z-index:1}
+.divider{border-top:2px dashed var(--nf-bd);margin:14px 0 0}
+.empty{font-size:13px;color:var(--qar-ink-2);border:1px dashed var(--qar-line);border-radius:6px;padding:4px 8px;max-width:520px}
+.cardhead{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.reset.small{padding:4px 12px;font-size:13px}
+.p{cursor:default}
+.tip{position:fixed;z-index:10;pointer-events:none;max-width:250px;background:#fff;border:1px solid var(--qar-line);border-radius:10px;box-shadow:0 6px 22px rgba(30,42,54,.18);padding:9px 12px;font-size:14px;line-height:1.35}
+.tip b{display:block;font-size:15px}
+.tip .st{display:flex;align-items:center;gap:7px;margin-top:3px}
+.tip .st i{width:14px;height:11px;border-radius:3px;border:1px solid;flex:none}
+.tip .nt{color:var(--qar-ink-2);font-size:13px;margin-top:3px}
+.note{font-size:13.5px;color:var(--qar-ink-2);margin-top:12px;min-height:20px}
+
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .rates{grid-template-columns:1fr}
+  .big{font-size:38px}
+  .qar-wrap h1{font-size:27px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+{{ end }}
+
+{{ define "body-class" }}page-qarcalc{{ end }}
+
+{{ define "main" }}
+<div class="qar-wrap">
+  <div class="top">
+    <div>
+      <h1>QAR Calculator</h1>
+      <p class="sub">Fill in the yellow boxes. Everything else works itself out.</p>
+    </div>
+    <button class="reset" id="reset" type="button">Reset example</button>
+  </div>
+
+  <div class="layout">
+    <div class="card" id="funnel"></div>
+
+    <div class="main">
+      <div class="rates" id="rates"></div>
+
+      <div class="card">
+        <div class="cardhead"><h2>Every learner is a box</h2><button class="reset small" id="shuffle" type="button">Shuffle names</button></div>
+        <div class="legend" id="legend"></div>
+        <div id="grid"></div>
+        <p class="note" id="note"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tip" id="tip" role="tooltip" hidden></div>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+var EXAMPLE = { enr:100, non:3, pre:4, trn:1, bil:0, wth:7, con:18, ach:47, fail:18 };
+var s = Object.assign({}, EXAMPLE);
+var lens = null; /* null | 'ret' | 'ach' */
+
+function calc(s){
+  var excluded = s.non + s.pre + s.trn + s.bil;
+  var funded = Math.max(0, s.enr - excluded);
+  var completed = Math.max(0, funded - s.wth - s.con);
+  var unknown = Math.max(0, completed - s.ach - s.fail);
+  var leavers = completed + s.wth;
+  return {
+    excluded: excluded, funded: funded, completed: completed, unknown: unknown, leavers: leavers,
+    badStarts: excluded > s.enr, badSplit: s.wth + s.con > funded, badOutcome: s.ach + s.fail > completed,
+    ret: leavers ? completed / leavers : null,
+    ach: leavers ? s.ach / leavers : null,
+    retBest: funded ? (completed + s.con) / funded : null,
+    achBest: funded ? (s.ach + unknown + s.con) / funded : null,
+    achBestN: s.ach + unknown + s.con
+  };
+}
+function pct(x){ return x === null ? '–' : (x * 100).toFixed(1) + '%'; }
+function $(id){ return document.getElementById(id); }
+
+var FIELDS = [
+  { k:'enr', l:'Enrolments' },
+  { k:'non', l:'Non-starts' }, { k:'pre', l:'Pre-qualifying withdrawals' }, { k:'trn', l:'Transfers' }, { k:'bil', l:'Breaks in learning' },
+  { k:'wth', l:'Withdrawn' }, { k:'con', l:'Continuing' },
+  { k:'ach', l:'Achieved' }, { k:'fail', l:'Failed' }
+];
+function field(k){
+  var f = FIELDS.filter(function(x){ return x.k === k; })[0];
+  return '<div class="row"><label for="in-' + k + '">' + f.l + '</label><div class="stepper">' +
+    '<button type="button" data-k="' + k + '" data-d="-1" aria-label="Fewer ' + f.l + '">−</button>' +
+    '<input id="in-' + k + '" type="number" min="0" max="5000" inputmode="numeric" value="' + s[k] + '">' +
+    '<button type="button" data-k="' + k + '" data-d="1" aria-label="More ' + f.l + '">+</button></div></div>';
+}
+function buildFunnel(){
+  $('funnel').innerHTML =
+    '<div class="stage"><h2><span>1</span>Enrolments</h2>' + field('enr') + '</div>' +
+    '<div class="stage"><h2><span>2</span>Who is not a funded start?</h2>' +
+      field('non') + field('pre') + field('trn') + field('bil') +
+      '<div class="derived"><span>Funded starts</span><b id="d-funded"></b></div><p class="warn" id="w-starts"></p></div>' +
+    '<div class="stage"><h2><span>3</span>What happened to funded starts?</h2>' +
+      field('wth') + field('con') +
+      '<div class="derived"><span>Completed</span><b id="d-completed"></b></div><p class="warn" id="w-split"></p></div>' +
+    '<div class="stage"><h2><span>4</span>Of those who completed</h2>' +
+      field('ach') + field('fail') +
+      '<div class="derived"><span>Unknown outcome</span><b id="d-unknown"></b></div><p class="warn" id="w-outcome"></p></div>';
+}
+
+var FIRST = ['Amelia','Oliver','Priya','Jack','Fatima','Harry','Chloe','Mohammed','Isla','George','Zara','Leo','Ruby','Callum','Aisha','Freddie','Ella','Tyrese','Megan','Arjun','Poppy','Declan','Sofia','Kai','Layla','Ryan','Grace','Ibrahim','Lily','Jamie','Ava','Noah','Maya','Connor','Eva','Sam','Hannah','Dylan','Nadia','Alfie','Jade','Tom','Yasmin','Ethan','Bethany','Kieran','Elsie','Rohan','Molly','Owen'];
+var LAST = ['Smith','Patel','Jones','Taylor','Khan','Brown','Williams','Evans','Hughes','Wilson','Davies','Ahmed','Thomas','Roberts','Walker','Wright','Robinson','Thompson','White','Hall','Green','Edwards','Wood','Clarke','Jackson','Harris','Lewis','Turner','Hill','Cooper','Morris','Ward','Moore','King','Watson','Baker','Harrison','Morgan','Allen','Bailey','Parker','Cook','Bennett','Murray','Shaw','Carter','Mills','Fox','Singh','Ali'];
+var firstOrder = [], lastOrder = [];
+function shuffled(a){
+  var b = a.slice();
+  for (var i = b.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var x = b[i]; b[i] = b[j]; b[j] = x; }
+  return b;
+}
+function shuffleNames(){ firstOrder = shuffled(FIRST); lastOrder = shuffled(LAST); }
+function nameAt(i){
+  return firstOrder[i % firstOrder.length] + ' ' + lastOrder[(i * 13 + Math.floor(i / firstOrder.length)) % lastOrder.length];
+}
+var STATUS = {
+  ach:{ t:'Completed and achieved', n:'Counts as a completer and an achiever.' },
+  fail:{ t:'Completed but did not achieve', n:'Counts as a completer, not an achiever.' },
+  unk:{ t:'Completed, achievement outcome unknown', n:'Counts as a completer. Only counts as an achiever once an outcome is recorded.' },
+  wth:{ t:'Withdrew after the qualifying period', n:'Counts as a leaver, which pulls both rates down.' },
+  con:{ t:'Still on the course', n:'Not a leaver yet, so not in the rates today.' },
+  nf:{ t:'Enrolled but never started', n:'Not a funded start, so not in the rates.' },
+  pre:{ t:'Withdrew inside the qualifying period', n:'Not a funded start, so not in the rates.' },
+  trn:{ t:'Transferred, follow-on enrolment recorded', n:'Not a funded start, so not in the rates.' },
+  bil:{ t:'On a break in learning', n:'Not a funded start, so not in the rates.' }
+};
+var idx = 0;
+function boxes(n, cls, label, role, unit, g){
+  var c = Math.ceil(n / unit), h = '';
+  for (var i = 0; i < c; i++){
+    var nm = unit === 1 ? nameAt(idx++) : '';
+    h += '<span class="p ' + cls + ' ' + role + '" data-g="' + g + '" data-name="' + nm + '" data-u="' + unit + '">' + (unit === 1 ? label : '') + '</span>';
+  }
+  if (unit > 1) idx += n;
+  return h;
+}
+function roleFor(g){
+  if (!lens) return '';
+  var inDen = g === 'ach' || g === 'fail' || g === 'unk' || g === 'wth';
+  if (!inDen) return 'dim';
+  if (lens === 'ret') return (g === 'ach' || g === 'fail' || g === 'unk') ? 'num' : '';
+  return g === 'ach' ? 'num' : '';
+}
+
+function render(){
+  var r = calc(s);
+  $('d-funded').textContent = r.funded;
+  $('d-completed').textContent = r.completed;
+  $('d-unknown').textContent = r.unknown;
+  $('w-starts').textContent = r.badStarts ? 'These add up to more than the enrolments. Check the numbers.' : '';
+  $('w-split').textContent = r.badSplit ? 'Withdrawn plus continuing is more than the funded starts.' : '';
+  $('w-outcome').textContent = r.badOutcome ? 'Achieved plus failed is more than the completers.' : '';
+
+  var retNow = '<b>' + r.completed + '</b> ÷ <b>' + r.leavers + '</b>';
+  var achNow = '<b>' + s.ach + '</b> ÷ <b>' + r.leavers + '</b>';
+  var retBestS = '<b>' + (r.completed + s.con) + '</b> ÷ <b>' + r.funded + '</b>';
+  var achBestS = '<b>' + r.achBestN + '</b> ÷ <b>' + r.funded + '</b>';
+  $('rates').innerHTML =
+    '<button class="rate" type="button" data-lens="ret" aria-pressed="' + (lens === 'ret') + '"><h2>Retention rate</h2><span class="formula">Completers ÷ Leavers</span><div class="pair">' +
+      '<div><span class="tag">Now</span><span class="big">' + pct(r.ret) + '</span><span class="sum">' + retNow + '</span></div>' +
+      '<div class="best"><span class="tag">Best case</span><span class="big">' + pct(r.retBest) + '</span><span class="sum">' + retBestS + '</span></div></div>' +
+      '<span class="hint">Best case: all ' + s.con + ' continuing learners complete.</span></button>' +
+    '<button class="rate" type="button" data-lens="ach" aria-pressed="' + (lens === 'ach') + '"><h2>Achievement rate</h2><span class="formula">Achievers ÷ Leavers</span><div class="pair">' +
+      '<div><span class="tag">Now</span><span class="big">' + pct(r.ach) + '</span><span class="sum">' + achNow + '</span></div>' +
+      '<div class="best"><span class="tag">Best case</span><span class="big">' + pct(r.achBest) + '</span><span class="sum">' + achBestS + '</span></div></div>' +
+      '<span class="hint">Best case: all ' + s.con + ' continuing learners and ' + r.unknown + ' unknown outcomes achieve.</span></button>';
+
+  var total = r.funded + r.excluded;
+  var unit = total > 300 ? Math.ceil(total / 300) : 1;
+  var small = unit > 1 ? ' small' : '';
+  idx = 0;
+  var blk = function(n, cls, label, g){ return boxes(n, cls, label, roleFor(g), unit, g); };
+  var g = '';
+  g += '<div class="blabel"><span>Funded starts</span><span>' + r.funded + '</span></div>';
+  g += r.funded ? '<div class="pills' + small + '">' + blk(s.ach, 'g-ach', '', 'ach') + blk(s.fail, 'g-fail', '', 'fail') + blk(r.unknown, 'g-unk', '?', 'unk') + blk(s.wth, 'g-wth', '', 'wth') + blk(s.con, 'g-con', '', 'con') + '</div>' : '<div class="empty">No funded starts</div>';
+  g += '<div class="divider"></div><div class="blabel"><span>Not funded starts</span><span>' + r.excluded + '</span></div>';
+  g += r.excluded ? '<div class="pills' + small + '">' + blk(s.non, 'g-nf', '', 'nf') + blk(s.pre, 'g-pre', '', 'pre') + blk(s.trn, 'g-trn', '', 'trn') + blk(s.bil, 'g-bil', '', 'bil') + '</div>' : '<div class="empty">None</div>';
+  $('grid').innerHTML = g;
+
+  $('legend').innerHTML =
+    '<span><i class="sw g-ach"></i>Achieved ' + s.ach + '</span>' +
+    '<span><i class="sw g-fail"></i>Failed ' + s.fail + '</span>' +
+    '<span><i class="sw g-unk"></i>Unknown ' + r.unknown + '</span>' +
+    '<span><i class="sw g-wth"></i>Withdrawn ' + s.wth + '</span>' +
+    '<span><i class="sw g-con"></i>Continuing ' + s.con + '</span>' +
+    '<span><i class="sw g-nf"></i>Non-starts ' + s.non + '</span>' +
+    '<span><i class="sw g-pre"></i>Pre-qualifying withdrawals ' + s.pre + '</span>' +
+    '<span><i class="sw g-trn"></i>Transfers ' + s.trn + '</span>' +
+    '<span><i class="sw g-bil"></i>Breaks in learning ' + s.bil + '</span>';
+
+  var msg = 'Click a rate to see who is counted.';
+  if (lens === 'ret') msg = 'Retention: the outlined boxes are the ' + r.completed + ' completers, out of ' + r.leavers + ' leavers (completers plus withdrawn). Faded boxes are not counted. Click the rate again to clear.';
+  if (lens === 'ach') msg = 'Achievement: the outlined boxes are the ' + s.ach + ' achievers, out of ' + r.leavers + ' leavers (completers plus withdrawn). Faded boxes are not counted. Click the rate again to clear.';
+  $('note').textContent = msg + (unit > 1 ? ' Each box stands for about ' + unit + ' learners.' : '');
+}
+
+function setVal(k, v, writeBack){
+  s[k] = Math.max(0, Math.min(5000, Math.floor(Number(v) || 0)));
+  if (writeBack) $('in-' + k).value = s[k];
+  render();
+}
+buildFunnel();
+$('funnel').addEventListener('input', function(e){ if (e.target.tagName === 'INPUT') setVal(e.target.id.slice(3), e.target.value, false); });
+$('funnel').addEventListener('click', function(e){
+  var b = e.target.closest('button[data-k]'); if (b) setVal(b.dataset.k, s[b.dataset.k] + Number(b.dataset.d), true);
+});
+$('rates').addEventListener('click', function(e){
+  var b = e.target.closest('[data-lens]'); if (!b) return;
+  lens = lens === b.dataset.lens ? null : b.dataset.lens; render();
+});
+$('reset').addEventListener('click', function(){
+  s = Object.assign({}, EXAMPLE); lens = null;
+  FIELDS.forEach(function(f){ $('in-' + f.k).value = s[f.k]; }); render();
+});
+var tip = $('tip');
+function showTip(box, x, y){
+  var st = STATUS[box.dataset.g]; if (!st) return;
+  var u = Number(box.dataset.u);
+  var colour = getComputedStyle(box);
+  tip.innerHTML = (u === 1 ? '<b>' + box.dataset.name + '</b>' : '<b>About ' + u + ' learners</b>') +
+    '<div class="st"><i style="background:' + colour.backgroundColor + ';border-color:' + colour.borderTopColor + '"></i>' + st.t + '</div>' +
+    '<div class="nt">' + st.n + '</div>';
+  tip.hidden = false;
+  var w = tip.offsetWidth, h = tip.offsetHeight;
+  var left = Math.min(x + 14, window.innerWidth - w - 8);
+  var top = y + 16 + h > window.innerHeight ? y - h - 12 : y + 16;
+  tip.style.left = Math.max(8, left) + 'px';
+  tip.style.top = Math.max(8, top) + 'px';
+}
+$('grid').addEventListener('mousemove', function(e){
+  var b = e.target.closest('.p'); if (b) showTip(b, e.clientX, e.clientY); else tip.hidden = true;
+});
+$('grid').addEventListener('mouseleave', function(){ tip.hidden = true; });
+$('grid').addEventListener('click', function(e){
+  var b = e.target.closest('.p'); if (b) showTip(b, e.clientX, e.clientY); else tip.hidden = true;
+});
+document.addEventListener('click', function(e){ if (!e.target.closest('#grid')) tip.hidden = true; });
+$('shuffle').addEventListener('click', function(){ shuffleNames(); render(); });
+shuffleNames();
+render();
+</script>
+{{ end }}
